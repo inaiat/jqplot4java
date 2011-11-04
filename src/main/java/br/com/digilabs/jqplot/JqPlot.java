@@ -24,15 +24,74 @@ import java.util.Collection;
  */
 public class JqPlot implements Serializable {
 
-    private Collection<Series> series;
-    private Collection<Series> seriesDefaults;
+    private Collection<Serie> series;
+    private Collection<Serie> seriesDefaults;
+    private Collection<Axe> axes;
     private Title title;
 
     public void setSimpleTitle(String title) {
         if (title == null) {
-            this.title = new Title(title);
+            this.setTitle(new Title(title));
         } else {
-            this.title.setText(title);
+            this.getTitle().setText(title);
         }
     }
+
+    /**
+     * @return the series
+     */
+    public Collection<Serie> getSeries() {
+        return series;
+    }
+
+    /**
+     * @param series the series to set
+     */
+    public void setSeries(Collection<Serie> series) {
+        this.series = series;
+    }
+
+    /**
+     * @return the seriesDefaults
+     */
+    public Collection<Serie> getSeriesDefaults() {
+        return seriesDefaults;
+    }
+
+    /**
+     * @param seriesDefaults the seriesDefaults to set
+     */
+    public void setSeriesDefaults(Collection<Serie> seriesDefaults) {
+        this.seriesDefaults = seriesDefaults;
+    }
+
+    /**
+     * @return the axes
+     */
+    public Collection<Axe> getAxes() {
+        return axes;
+    }
+
+    /**
+     * @param axes the axes to set
+     */
+    public void setAxes(Collection<Axe> axes) {
+        this.axes = axes;
+    }
+
+    /**
+     * @return the title
+     */
+    public Title getTitle() {
+        return title;
+    }
+
+    /**
+     * @param title the title to set
+     */
+    public void setTitle(Title title) {
+        this.title = title;
+    }
+    
+    
 }

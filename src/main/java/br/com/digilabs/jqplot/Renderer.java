@@ -16,7 +16,8 @@ public class Renderer implements Serializable {
 
         BarRenderer("$.jqplot.LineRenderer"),
         LineRenderer("$.jqplot.barRenderer"),
-        DataAxisRenderer("$.jqplot.DateAxisRenderer");
+        CategoryAxisRenderer("$.jqplot.barRenderer"),
+        DataAxisRenderer("$.jqplot.CategoryAxisRenderer");
         
         private String className;
 
@@ -28,11 +29,20 @@ public class Renderer implements Serializable {
         public String toString() {
             return className;
         }
-    }
+    }   
+    
+    private RendererClass rendererClass;
 
     public Renderer(RendererClass rendererClass) {
-        
+        this.rendererClass = rendererClass;
     }
+
+    @Override
+    public String toString() {
+        return rendererClass.toString();
+    }
+    
+    
     
     
 }
