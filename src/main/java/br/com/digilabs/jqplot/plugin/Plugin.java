@@ -16,15 +16,13 @@ public enum Plugin {
     //LineRenderer("$.jqplot.barRenderer"),
     //CategoryAxisRenderer("$.jqplot.barRenderer"),
     //DataAxisRenderer("$.jqplot.CategoryAxisRenderer");
-    
-    private  Class<? extends Renderer>  className;
+    private Class<? extends Renderer> className;
 
     private Plugin(Class<? extends Renderer> className) {
         this.className = className;
     }
-    
-    public Renderer get() throws IllegalAccessException, InstantiationException {
-            return className.newInstance();
-    } 
 
+    public Renderer get() throws IllegalAccessException, InstantiationException {
+        return className.newInstance();
+    }
 }

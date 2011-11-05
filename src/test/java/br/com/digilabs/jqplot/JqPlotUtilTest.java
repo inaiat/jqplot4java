@@ -5,7 +5,11 @@
 package br.com.digilabs.jqplot;
 
 import br.com.digilabs.jqplot.axis.Axis;
+import br.com.digilabs.jqplot.axis.XAxis;
+import br.com.digilabs.jqplot.axis.YAxis;
 import br.com.digilabs.jqplot.plugin.CanvasAxisLabelRenderer;
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 import junit.framework.TestCase;
 
 /**
@@ -36,25 +40,22 @@ public class JqPlotUtilTest extends TestCase {
         JqPlot jqPlot = new JqPlot();
         jqPlot.setSimpleTitle("TESTE");
         
-        Axis xAxis = new Axis(AxisType.xaxis);
+        Axis xAxis = new XAxis();
         xAxis.setLabel("X Axis");
         xAxis.setPad(0F);
-        Axis yAxis = new Axis(AxisType.yaxis);
+        Axis yAxis = new YAxis();
         yAxis.setLabel("Y Axis");
         
         jqPlot.getAxes().add(xAxis);
         jqPlot.getAxes().add(yAxis);
         
-        Axis axisDefault = new Axis(AxisType.xaxis)
-        jqPlot.getAxesDefaults().
+        Axis axisDefault = new Axis();
+        axisDefault.setLabelRenderer(new CanvasAxisLabelRenderer());
+        jqPlot.setAxesDefaults(axisDefault);
         
+        XStream xStream = new XStream(new JsonHierarchicalStreamDriver());
+        System.out.println( xStream.toXML(jqPlot));
         
-        jqPlot.getAxesDefaults().setLabelRenderer(new CanvasAxisLabelRenderer());
-                
-        
-        axis.setLabelRenderer(null);
-        Axes axes = new Axes();
-        axes.setXaxis();
         String divId = "";
         String expResult = "";
         String result = JqPlotUtil.createJquery(jqPlot, divId,"teste");
