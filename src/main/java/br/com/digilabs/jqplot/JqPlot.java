@@ -26,7 +26,7 @@ public class JqPlot implements Serializable {
 
     private Collection<Serie> series;
     private Collection<Serie> seriesDefaults;
-    private Collection<Axe> axis;
+    private Axis axis;
     private Title title;
 
     public void setSimpleTitle(String title) {
@@ -82,17 +82,16 @@ public class JqPlot implements Serializable {
     /**
      * @return the axis
      */
-    public Collection<Axe> getAxis() {
+    public Axis getAxis() {
         return axis;
     }
 
     /**
      * @param axis the axis to set
      */
-    public void setAxis(Collection<Axe> axis) {
+    public void setAxis(Axis axis) {
         this.axis = axis;
     }
-    
     
     
 }
