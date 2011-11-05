@@ -10,4 +10,11 @@ package br.com.digilabs.jqplot;
  */
 public class JqPlotUtil {
     
+    public static String createJquery(JqPlot jqPlot,String divId, String data) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("$(document).ready(function(){");
+        builder.append("   $.jqplot('").append(divId).append("', ").append(data).append(");");
+        return builder.toString();
+    }
+    
 }
