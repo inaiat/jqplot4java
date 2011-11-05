@@ -18,6 +18,23 @@ public class Axe implements Serializable {
     private boolean autoScale;
     private Collection<String> tickOptions;
     private Collection<String> ticks;
+    private final AxeType axesType;
+
+    public enum AxeType {
+        xaxis, yaxis, x2axis, y2axis;
+    }
+    
+    public Axe(AxeType axesType) {
+        this.axesType = axesType;
+    }
+
+    @Override
+    public String toString() {
+        return axesType.toString();
+    }
+    
+    
+    
 
     /**
      * @return the show
