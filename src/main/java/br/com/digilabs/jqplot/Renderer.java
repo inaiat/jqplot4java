@@ -10,38 +10,49 @@ import java.io.Serializable;
  *
  * @author inaiat
  */
-public class Renderer implements Serializable {
+public abstract class Renderer implements Serializable {
 
-    public enum RendererClass {
-
-        BarRenderer("$.jqplot.LineRenderer"),
-        LineRenderer("$.jqplot.barRenderer"),
-        CategoryAxisRenderer("$.jqplot.barRenderer"),
-        DataAxisRenderer("$.jqplot.CategoryAxisRenderer");
-        
-        private String className;
-
-        private RendererClass(String className) {
-            this.className = className;
-        }
-
-        @Override
-        public String toString() {
-            return className;
-        }
-    }   
+    public final String plubinName;
     
-    private RendererClass rendererClass;
-
-    public Renderer(RendererClass rendererClass) {
-        this.rendererClass = rendererClass;
+    public Renderer(String pluginName) {
+        this.plubinName = pluginName;
     }
 
     @Override
     public String toString() {
-        return rendererClass.toString();
-    }
+        return plubinName;
+    }    
     
+//    public enum RendererClass {
+//
+//        BarRenderer("$.jqplot.LineRenderer"),
+//        LineRenderer("$.jqplot.barRenderer"),
+//        CategoryAxisRenderer("$.jqplot.barRenderer"),
+//        DataAxisRenderer("$.jqplot.CategoryAxisRenderer");
+//        
+//        private String className;
+//
+//        private RendererClass(String className) {
+//            this.className = className;
+//        }
+//
+//        @Override
+//        public String toString() {
+//            return className;
+//        }
+//    }   
+//    
+//    private RendererClass rendererClass;
+//
+//    public Renderer(RendererClass rendererClass) {
+//        this.rendererClass = rendererClass;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return rendererClass.toString();
+//    }
+//    
     
     
     
