@@ -2,13 +2,15 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.digilabs.jqplot;
+package br.com.digilabs.jqplot.plugin;
+
+import br.com.digilabs.jqplot.AbstractRenderer;
 
 /**
  *
  * @author inaiat
  */
-public class CanvasAxisLabelRenderer extends Renderer {
+public class CanvasAxisLabelRenderer extends AbstractRenderer {
 
     private static final String PLUGIN_NAME = "$.jqplot.CanvasAxisLabelRenderer";
 
@@ -181,6 +183,10 @@ public class CanvasAxisLabelRenderer extends Renderer {
      */
     public void setPt2px(String pt2px) {
         this.pt2px = pt2px;
+    }
+
+    public String getPluginName() {
+        return PLUGIN_NAME;
     }
     
     

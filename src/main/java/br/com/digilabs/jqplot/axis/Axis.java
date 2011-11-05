@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.digilabs.jqplot;
+package br.com.digilabs.jqplot.axis;
 
+import br.com.digilabs.jqplot.AbstractRenderer;
 import java.io.Serializable;
 import java.util.Collection;
 
@@ -11,30 +12,17 @@ import java.util.Collection;
  *
  * @author inaiat
  */
-public class Axe implements Serializable {
+public class Axis implements Serializable {
     
     private boolean show;
-    private Renderer renderer;
+    private AbstractRenderer renderer;
     private boolean autoScale;
     private Collection<String> tickOptions;
     private Collection<String> ticks;
-    private final AxeType axesType;
+    private AbstractRenderer labelRenderer;
+    private String label;
+    private Float pad;
 
-    public enum AxeType {
-        xaxis, yaxis, x2axis, y2axis;
-    }
-    
-    public Axe(AxeType axesType) {
-        this.axesType = axesType;
-    }
-
-    @Override
-    public String toString() {
-        return axesType.toString();
-    }
-    
-    
-    
 
     /**
      * @return the show
@@ -53,14 +41,14 @@ public class Axe implements Serializable {
     /**
      * @return the renderer
      */
-    public Renderer getRenderer() {
+    public AbstractRenderer getRenderer() {
         return renderer;
     }
 
     /**
      * @param renderer the renderer to set
      */
-    public void setRenderer(Renderer renderer) {
+    public void setRenderer(AbstractRenderer renderer) {
         this.renderer = renderer;
     }
 
@@ -104,6 +92,48 @@ public class Axe implements Serializable {
      */
     public void setTicks(Collection<String> ticks) {
         this.ticks = ticks;
+    }
+
+    /**
+     * @return the labelRenderer
+     */
+    public AbstractRenderer getLabelRenderer() {
+        return labelRenderer;
+    }
+
+    /**
+     * @param labelRenderer the labelRenderer to set
+     */
+    public void setLabelRenderer(AbstractRenderer labelRenderer) {
+        this.labelRenderer = labelRenderer;
+    }
+
+    /**
+     * @return the label
+     */
+    public String getLabel() {
+        return label;
+    }
+
+    /**
+     * @param label the label to set
+     */
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    /**
+     * @return the pad
+     */
+    public Float getPad() {
+        return pad;
+    }
+
+    /**
+     * @param pad the pad to set
+     */
+    public void setPad(Float pad) {
+        this.pad = pad;
     }
     
 }

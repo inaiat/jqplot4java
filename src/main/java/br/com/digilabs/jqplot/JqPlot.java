@@ -15,8 +15,12 @@
  */
 package br.com.digilabs.jqplot;
 
+import br.com.digilabs.jqplot.axis.Axis;
+import br.com.digilabs.jqplot.metadata.Alias;
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *
@@ -26,8 +30,11 @@ public class JqPlot implements Serializable {
 
     private Collection<Serie> series;
     private Collection<Serie> seriesDefaults;
-    private Axis axis;
+    @Alias(value="axes")
+    private Set<Axis> axes = new HashSet<Axis>(0);
     private Title title;
+    @Alias(value="axesDefaults")
+    private Axis axesDefaults;
 
     public void setSimpleTitle(String title) {
         if (title == null) {
@@ -36,7 +43,8 @@ public class JqPlot implements Serializable {
             this.getTitle().setText(title);
         }
     }
-
+    
+    
     /**
      * @return the series
      */
@@ -80,18 +88,19 @@ public class JqPlot implements Serializable {
     }
 
     /**
-     * @return the axis
+     * @return the axes
      */
-    public Axis getAxis() {
-        return axis;
+    public Set<Axis> getAxes() {
+        return axes;
     }
 
     /**
-     * @param axis the axis to set
+     * @param axes the axes to set
      */
-    public void setAxis(Axis axis) {
-        this.axis = axis;
+    public void setAxes(Set<Axis> axes) {
+        this.axes = axes;
     }
+
     
     
 }

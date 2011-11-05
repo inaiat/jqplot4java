@@ -2,15 +2,18 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.digilabs.jqplot;
+package br.com.digilabs.jqplot.plugin;
 
+import br.com.digilabs.jqplot.AbstractRenderer;
 import java.util.Collection;
 
 /**
  *
  * @author inaiat
  */
-public class BarRenderer extends Renderer {
+public class BarRenderer extends AbstractRenderer {
+    
+    public static final String PLUING_NAME = "$.jqplot.barRenderer";
 
     private Integer barPadding;
     private Integer barMargin;
@@ -26,7 +29,7 @@ public class BarRenderer extends Renderer {
     private Collection<String> highlightColors;
 
     public BarRenderer() {
-        super("$.jqplot.barRenderer");
+        super(PLUING_NAME);
     }
 
     /**
@@ -195,6 +198,10 @@ public class BarRenderer extends Renderer {
      */
     public void setHighlightColors(Collection<String> highlightColors) {
         this.highlightColors = highlightColors;
+    }
+
+    public String getPluginName() {
+        return PLUING_NAME;
     }
     
     

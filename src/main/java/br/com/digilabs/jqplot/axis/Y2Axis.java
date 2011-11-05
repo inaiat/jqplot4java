@@ -2,15 +2,15 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.digilabs.jqplot;
+package br.com.digilabs.jqplot.axis;
 
-import java.io.Serializable;
+import br.com.digilabs.jqplot.metadata.Alias;
 
 /**
  *
  * @author inaiat
  */
-public interface Renderer extends Serializable {
+@Alias(value="y2axis")
+public class Y2Axis {
     
-    String getPluginName();
 }

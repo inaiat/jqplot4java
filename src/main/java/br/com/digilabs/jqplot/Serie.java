@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class Serie implements Serializable {
 
     private String label;
-    private Renderer renderer;
+    private AbstractRenderer renderer;
 
     /**
      * @return the label

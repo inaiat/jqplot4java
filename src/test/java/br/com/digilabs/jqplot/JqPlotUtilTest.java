@@ -4,6 +4,8 @@
  */
 package br.com.digilabs.jqplot;
 
+import br.com.digilabs.jqplot.axis.Axis;
+import br.com.digilabs.jqplot.plugin.CanvasAxisLabelRenderer;
 import junit.framework.TestCase;
 
 /**
@@ -31,7 +33,28 @@ public class JqPlotUtilTest extends TestCase {
      */
     public void testCreateJquery() {
         System.out.println("createJquery");
-        JqPlot jqPlot = null;
+        JqPlot jqPlot = new JqPlot();
+        jqPlot.setSimpleTitle("TESTE");
+        
+        Axis xAxis = new Axis(AxisType.xaxis);
+        xAxis.setLabel("X Axis");
+        xAxis.setPad(0F);
+        Axis yAxis = new Axis(AxisType.yaxis);
+        yAxis.setLabel("Y Axis");
+        
+        jqPlot.getAxes().add(xAxis);
+        jqPlot.getAxes().add(yAxis);
+        
+        Axis axisDefault = new Axis(AxisType.xaxis)
+        jqPlot.getAxesDefaults().
+        
+        
+        jqPlot.getAxesDefaults().setLabelRenderer(new CanvasAxisLabelRenderer());
+                
+        
+        axis.setLabelRenderer(null);
+        Axes axes = new Axes();
+        axes.setXaxis();
         String divId = "";
         String expResult = "";
         String result = JqPlotUtil.createJquery(jqPlot, divId,"teste");
