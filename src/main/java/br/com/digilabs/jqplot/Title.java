@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class Title implements Serializable {
     
     private String text;
-    private boolean show;
+    private Boolean show;
     private String fontFamily;
     private String fontSize;
     private String textAlign;
@@ -38,24 +38,10 @@ public class Title implements Serializable {
     }
 
     /**
-     * @param text the text to set
-     */
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    /**
-     * @return the show
-     */
-    public boolean isShow() {
-        return show;
-    }
-
-    /**
      * @param show the show to set
      */
     public void setShow(boolean show) {
-        this.show = show;
+        this.setShow((Boolean) show);
     }
 
     /**
@@ -121,7 +107,7 @@ public class Title implements Serializable {
         return renderer;
     }
 
-    /**
+    /**get'
      * @param renderer the renderer to set
      */
     public void setRenderer(String renderer) {
@@ -154,7 +140,28 @@ public class Title implements Serializable {
      */
     public void setEscapeHtml(String escapeHtml) {
         this.escapeHtml = escapeHtml;
-    }   
+    }
+
+    /**
+     * @return the show
+     */
+    public Boolean getShow() {
+        return show;
+    }
+
+    /**
+     * @param show the show to set
+     */
+    public void setShow(Boolean show) {
+        this.show = show;
+    }
+
+    /**
+     * @param text the text to set
+     */
+    public void setText(String text) {
+        this.text = text;
+    }
     
     
 }
