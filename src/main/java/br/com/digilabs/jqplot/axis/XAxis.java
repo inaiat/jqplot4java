@@ -4,13 +4,13 @@
  */
 package br.com.digilabs.jqplot.axis;
 
-import br.com.digilabs.jqplot.metadata.Alias;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 /**
  *
  * @author inaiat
  */
-@Alias(value="xaxis")
+@XStreamAlias(value="xaxis")
 public class XAxis extends Axis {
 
     

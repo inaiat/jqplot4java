@@ -16,20 +16,22 @@
 package br.com.digilabs.jqplot;
 
 import br.com.digilabs.jqplot.axis.Axis;
+import br.com.digilabs.jqplot.axis.XAxis;
+import br.com.digilabs.jqplot.axis.YAxis;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  *
  * @author inaiat
  */
+@XStreamAlias(value = "STSTE")
 public class JqPlot implements Serializable {
 
     private Collection<Serie> series;
     private Collection<Serie> seriesDefaults;
-    private Set<Axis> axes = new HashSet<Axis>(0);
+    private Axes axes;
     private Title title;
     private Axis axesDefaults;
 
@@ -40,8 +42,26 @@ public class JqPlot implements Serializable {
             this.getTitle().setText(title);
         }
     }
-    
-    
+
+    public Axes createAxes() {
+        if (this.getAxes() == null) {
+            this.setAxes(new Axes());
+        }
+        return this.getAxes();
+    }
+
+    public XAxis createXAxis() {
+        XAxis xAxis = new XAxis();
+        createAxes().setXaxis(xAxis);
+        return xAxis;
+    }
+
+    public YAxis createYAxis() {
+        YAxis yAxis = new YAxis();
+        createAxes().setYaxis(yAxis);
+        return yAxis;
+    }
+
     /**
      * @return the series
      */
@@ -85,20 +105,6 @@ public class JqPlot implements Serializable {
     }
 
     /**
-     * @return the axes
-     */
-    public Set<Axis> getAxes() {
-        return axes;
-    }
-
-    /**
-     * @param axes the axes to set
-     */
-    public void setAxes(Set<Axis> axes) {
-        this.axes = axes;
-    }
-
-    /**
      * @return the axesDefaults
      */
     public Axis getAxesDefaults() {
@@ -112,6 +118,17 @@ public class JqPlot implements Serializable {
         this.axesDefaults = axesDefaults;
     }
 
-    
-    
+    /**
+     * @return the axes
+     */
+    public Axes getAxes() {
+        return axes;
+    }
+
+    /**
+     * @param axes the axes to set
+     */
+    public void setAxes(Axes axes) {
+        this.axes = axes;
+    }
 }
