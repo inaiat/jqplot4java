@@ -21,8 +21,13 @@ public class JqPlotUtil {
 
     public static String createJquery(JqPlot jqPlot, String divId, String data) {
         StringBuilder builder = new StringBuilder();
-        builder.append("$(document).ready(function(){");
-        builder.append("   $.jqplot('").append(divId).append("', ").append(data).append(");");
+        builder.append("$(document).ready(function(){\r\n");
+        builder.append("   $.jqplot('").append(divId).append("', ");
+        builder.append(data);
+        builder.append(", ");
+        builder.append(jqPlotToJson(jqPlot));
+        builder.append(");\r\n");
+        builder.append("});\r\n");
         return builder.toString();
     }
 

@@ -42,7 +42,6 @@ public class JqPlotUtilTest extends TestCase {
      * Test of createJquery method, of class JqPlotUtil.
      */
     public void testCreateJquery() {
-        System.out.println("createJquery");
         JqPlot jqPlot = new JqPlot();
         jqPlot.setSimpleTitle("TESTE");
 
@@ -57,13 +56,7 @@ public class JqPlotUtilTest extends TestCase {
         axisDefault.setLabelRenderer(PluginClasses.CanvasAxisLabelRenderer);
         jqPlot.setAxesDefaults(axisDefault);
 
-        System.out.println(JqPlotUtil.jqPlotToJson(jqPlot));
+        System.out.println(JqPlotUtil.createJquery(jqPlot, "chart1",  "[[3,7,9,1,4,6,8,2,5]]"));
 
-        String divId = "";
-        String expResult = "";
-        String result = JqPlotUtil.createJquery(jqPlot, divId, "teste");
-        assertNotNull(result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 }

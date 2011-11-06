@@ -4,7 +4,6 @@
  */
 package jqplot;
 
-import jqplot.axis.Axis;
 import jqplot.axis.X2Axis;
 import jqplot.axis.XAxis;
 import jqplot.axis.Y2Axis;
