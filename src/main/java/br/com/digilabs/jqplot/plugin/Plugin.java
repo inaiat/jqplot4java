@@ -4,8 +4,6 @@
  */
 package br.com.digilabs.jqplot.plugin;
 
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-
 /**
  *
  * @author inaiat
