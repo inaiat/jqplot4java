@@ -1,4 +1,4 @@
-package br.com.digilabs.jqplot;
+package jqplot;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

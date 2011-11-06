@@ -1,4 +1,4 @@
-package br.com.digilabs.jqplot;
+package jqplot;
 
 import java.util.ArrayList;
 import java.util.Collection;

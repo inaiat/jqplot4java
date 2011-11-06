@@ -2,16 +2,16 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.digilabs.jqplot.plugin;
+package jqplot.plugin;
 
-import br.com.digilabs.jqplot.AbstractRenderer;
 import java.util.Collection;
+import jqplot.Renderer;
 
 /**
  *
  * @author inaiat
  */
-public class BarRenderer extends AbstractRenderer {
+public class BarRenderer implements Renderer {
     
     private Integer barPadding;
     private Integer barMargin;

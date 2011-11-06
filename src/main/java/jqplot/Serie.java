@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.digilabs.jqplot;
+package jqplot;
 
 import java.io.Serializable;
 
@@ -13,7 +13,7 @@ import java.io.Serializable;
 public class Serie implements Serializable {
 
     private String label;
-    private AbstractRenderer renderer;
+    private Renderer renderer;
 
     /**
      * @return the label

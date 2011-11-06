@@ -2,18 +2,18 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.digilabs.jqplot.plugin;
+package jqplot.plugin;
 
-import br.com.digilabs.jqplot.AbstractRenderer;
+import jqplot.Renderer;
 
 /**
  *
  * @author inaiat
  */
-public class CategoryAxisRenderer extends AbstractRenderer {
+public class CategoryAxisRenderer implements Renderer {
 
     private Boolean sortMergedLabels;
-    private AbstractRenderer tickRenderer;
+    private Renderer tickRenderer;
     
     /**
      * @return the sortMergedLabels
@@ -32,14 +32,14 @@ public class CategoryAxisRenderer extends AbstractRenderer {
     /**
      * @return the tickRenderer
      */
-    public AbstractRenderer getTickRenderer() {
+    public Renderer getTickRenderer() {
         return tickRenderer;
     }
 
     /**
      * @param tickRenderer the tickRenderer to set
      */
-    public void setTickRenderer(AbstractRenderer tickRenderer) {
+    public void setTickRenderer(Renderer tickRenderer) {
         this.tickRenderer = tickRenderer;
     }
 

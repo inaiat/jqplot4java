@@ -2,13 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.digilabs.jqplot;
+package jqplot;
 
-import br.com.digilabs.jqplot.axis.Axis;
-import br.com.digilabs.jqplot.axis.X2Axis;
-import br.com.digilabs.jqplot.axis.XAxis;
-import br.com.digilabs.jqplot.axis.Y2Axis;
-import br.com.digilabs.jqplot.axis.YAxis;
+import jqplot.axis.Axis;
+import jqplot.axis.X2Axis;
+import jqplot.axis.XAxis;
+import jqplot.axis.Y2Axis;
+import jqplot.axis.YAxis;
 import java.io.Serializable;
 
 /**

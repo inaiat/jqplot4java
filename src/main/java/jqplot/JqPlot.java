@@ -13,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package br.com.digilabs.jqplot;
+package jqplot;
 
-import br.com.digilabs.jqplot.axis.Axis;
-import br.com.digilabs.jqplot.axis.XAxis;
-import br.com.digilabs.jqplot.axis.YAxis;
+import jqplot.axis.Axis;
+import jqplot.axis.XAxis;
+import jqplot.axis.YAxis;
 import java.io.Serializable;
 import java.util.Collection;
 

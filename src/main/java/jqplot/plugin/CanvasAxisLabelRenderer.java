@@ -2,15 +2,15 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.digilabs.jqplot.plugin;
+package jqplot.plugin;
 
-import br.com.digilabs.jqplot.AbstractRenderer;
+import jqplot.Renderer;
 
 /**
  *
  * @author inaiat
  */
-public class CanvasAxisLabelRenderer extends AbstractRenderer {
+public class CanvasAxisLabelRenderer implements Renderer {
 
     private Float angle;
     private Boolean show;

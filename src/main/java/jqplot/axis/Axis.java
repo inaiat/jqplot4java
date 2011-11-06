@@ -2,13 +2,12 @@
  * To change this template, choose Tools | Templates
  * angetd open the template in the editor.
  */
-package br.com.digilabs.jqplot.axis;
+package jqplot.axis;
 
-import br.com.digilabs.jqplot.AbstractRenderer;
-import br.com.digilabs.jqplot.plugin.PluginClasses;
-import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
+import jqplot.plugin.PluginClasses;
 import java.io.Serializable;
 import java.util.Collection;
+import jqplot.Renderer;
 
 /**
  *
@@ -17,11 +16,10 @@ import java.util.Collection;
 public class Axis implements Serializable {
     
     private Boolean show;
-    private AbstractRenderer renderer;
+    private Renderer renderer;
     private Boolean autoScale;
     private Collection<String> tickOptions;
     private Collection<String> ticks;
-    @XStreamAsAttribute
     private PluginClasses labelRenderer;
     private String label;
     private Float pad;
@@ -43,14 +41,14 @@ public class Axis implements Serializable {
     /**
      * @return the renderer
      */
-    public AbstractRenderer getRenderer() {
+    public Renderer getRenderer() {
         return renderer;
     }
 
     /**
      * @param renderer the renderer to set
      */
-    public void setRenderer(AbstractRenderer renderer) {
+    public void setRenderer(Renderer renderer) {
         this.renderer = renderer;
     }
 

@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.digilabs.jqplot;
+package jqplot;
 
-import br.com.digilabs.jqplot.plugin.PluginClasses;
+import jqplot.plugin.PluginClasses;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.MarshallingContext;
 import com.thoughtworks.xstream.converters.enums.EnumConverter;
