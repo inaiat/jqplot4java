@@ -24,6 +24,10 @@ public enum Plugin {
     @Override
     public String toString() {
         return pluginName;
-    }   
+    }
+    
+    public String getPluginName() {
+        return pluginName;
+    }
 
 }

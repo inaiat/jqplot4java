@@ -6,10 +6,10 @@ package br.com.digilabs.jqplot;
 
 import br.com.digilabs.jqplot.axis.Axis;
 import br.com.digilabs.jqplot.axis.XAxis;
-import br.com.digilabs.jqplot.axis.YAxis;
-import br.com.digilabs.jqplot.plugin.CanvasAxisLabelRenderer;
 import br.com.digilabs.jqplot.plugin.Plugin;
 import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.converters.MarshallingContext;
+import com.thoughtworks.xstream.converters.enums.EnumConverter;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 import com.thoughtworks.xstream.io.json.JsonWriter;
@@ -55,15 +55,7 @@ public class JqPlotUtilTest extends TestCase {
         axisDefault.setLabelRenderer(Plugin.CanvasAxisLabelRenderer);
         jqPlot.setAxesDefaults(axisDefault);
 
-        XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
-
-            @Override
-            public HierarchicalStreamWriter createWriter(Writer writer) {
-                return new JsonWriter(writer, JsonWriter.DROP_ROOT_MODE);
-            }
-                
-        });
-        System.out.println(xstream.toXML(jqPlot));
+        System.out.println(JqPlotUtil.jqPlotToJson(jqPlot));
 
         String divId = "";
         String expResult = "";

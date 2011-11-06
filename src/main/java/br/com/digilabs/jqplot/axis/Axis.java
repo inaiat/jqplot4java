@@ -16,9 +16,9 @@ import java.util.Collection;
  */
 public class Axis implements Serializable {
     
-    private boolean show;
+    private Boolean show;
     private AbstractRenderer renderer;
-    private boolean autoScale;
+    private Boolean autoScale;
     private Collection<String> tickOptions;
     private Collection<String> ticks;
     @XStreamAsAttribute
@@ -26,18 +26,17 @@ public class Axis implements Serializable {
     private String label;
     private Float pad;
 
-
     /**
      * @return the show
      */
-    public boolean isShow() {
+    public Boolean getShow() {
         return show;
     }
 
     /**
      * @param show the show to set
      */
-    public void setShow(boolean show) {
+    public void setShow(Boolean show) {
         this.show = show;
     }
 
@@ -58,14 +57,14 @@ public class Axis implements Serializable {
     /**
      * @return the autoScale
      */
-    public boolean isAutoScale() {
+    public Boolean getAutoScale() {
         return autoScale;
     }
 
     /**
      * @param autoScale the autoScale to set
      */
-    public void setAutoScale(boolean autoScale) {
+    public void setAutoScale(Boolean autoScale) {
         this.autoScale = autoScale;
     }
 
@@ -98,6 +97,20 @@ public class Axis implements Serializable {
     }
 
     /**
+     * @return the labelRenderer
+     */
+    public Plugin getLabelRenderer() {
+        return labelRenderer;
+    }
+
+    /**
+     * @param labelRenderer the labelRenderer to set
+     */
+    public void setLabelRenderer(Plugin labelRenderer) {
+        this.labelRenderer = labelRenderer;
+    }
+
+    /**
      * @return the label
      */
     public String getLabel() {
@@ -124,20 +137,5 @@ public class Axis implements Serializable {
     public void setPad(Float pad) {
         this.pad = pad;
     }
-
-    /**
-     * @return the labelRenderer
-     */
-    public Plugin getLabelRenderer() {
-        return labelRenderer;
-    }
-
-    /**
-     * @param labelRenderer the labelRenderer to set
-     */
-    public void setLabelRenderer(Plugin labelRenderer) {
-        this.labelRenderer = labelRenderer;
-    }
-
-    
+   
 }

@@ -18,7 +18,6 @@ package br.com.digilabs.jqplot;
 import br.com.digilabs.jqplot.axis.Axis;
 import br.com.digilabs.jqplot.axis.XAxis;
 import br.com.digilabs.jqplot.axis.YAxis;
-import com.thoughtworks.xstream.annotations.XStreamAlias;
 import java.io.Serializable;
 import java.util.Collection;
 
@@ -26,7 +25,6 @@ import java.util.Collection;
  *
  * @author inaiat
  */
-@XStreamAlias(value = "STSTE")
 public class JqPlot implements Serializable {
 
     private Collection<Serie> series;
@@ -130,5 +128,6 @@ public class JqPlot implements Serializable {
      */
     public void setAxes(Axes axes) {
         this.axes = axes;
-    }
+    }    
+    
 }
