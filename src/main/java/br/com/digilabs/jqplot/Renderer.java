@@ -11,6 +11,5 @@ import java.io.Serializable;
  * @author inaiat
  */
 public interface Renderer extends Serializable {
-    
-    String getPluginName();
+   public String pluginName();
 }

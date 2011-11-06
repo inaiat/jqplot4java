@@ -10,16 +10,12 @@ package br.com.digilabs.jqplot;
  */
 public abstract class AbstractRenderer implements Renderer {
 
-    public final String plubinName;
-    
-    public AbstractRenderer(String pluginName) {
-        this.plubinName = pluginName;
-    }
-    
     @Override
     public String toString() {
-        return plubinName;
-    }    
+        return pluginName();
+    }   
+    
+    
     
 //    public enum RendererClass {
 //
@@ -51,7 +47,5 @@ public abstract class AbstractRenderer implements Renderer {
 //        return rendererClass.toString();
 //    }
 //    
-    
-    
     
 }

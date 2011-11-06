@@ -12,7 +12,7 @@ import br.com.digilabs.jqplot.AbstractRenderer;
  */
 public class CanvasAxisLabelRenderer extends AbstractRenderer {
 
-    private static final String PLUGIN_NAME = "$.jqplot.CanvasAxisLabelRenderer";
+    public static final String PLUGIN_NAME = "$.jqplot.CanvasAxisLabelRenderer";
 
     private Float angle;
     private Boolean show;
@@ -27,10 +27,6 @@ public class CanvasAxisLabelRenderer extends AbstractRenderer {
     private String pt2px;
     
     
-    public CanvasAxisLabelRenderer() {
-        super(PLUGIN_NAME);
-    }
-
     /**
      * @return the angle
      */
@@ -185,7 +181,7 @@ public class CanvasAxisLabelRenderer extends AbstractRenderer {
         this.pt2px = pt2px;
     }
 
-    public String getPluginName() {
+    public String pluginName() {
         return PLUGIN_NAME;
     }
     

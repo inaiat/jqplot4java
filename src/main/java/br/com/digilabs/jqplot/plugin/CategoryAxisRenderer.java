@@ -17,10 +17,6 @@ public class CategoryAxisRenderer extends AbstractRenderer {
     private Boolean sortMergedLabels;
     private AbstractRenderer tickRenderer;
     
-    public CategoryAxisRenderer() {
-        super(PLUGIN_NAME);
-    }
-
     /**
      * @return the sortMergedLabels
      */
@@ -49,7 +45,7 @@ public class CategoryAxisRenderer extends AbstractRenderer {
         this.tickRenderer = tickRenderer;
     }
 
-    public String getPluginName() {
+    public String pluginName() {
         return PLUGIN_NAME;
     }
     

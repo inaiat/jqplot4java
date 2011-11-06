@@ -8,6 +8,7 @@ import br.com.digilabs.jqplot.axis.Axis;
 import br.com.digilabs.jqplot.axis.XAxis;
 import br.com.digilabs.jqplot.axis.YAxis;
 import br.com.digilabs.jqplot.plugin.CanvasAxisLabelRenderer;
+import br.com.digilabs.jqplot.plugin.Plugin;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
@@ -51,7 +52,7 @@ public class JqPlotUtilTest extends TestCase {
         
 
         Axis axisDefault = new Axis();
-        axisDefault.setLabelRenderer(new CanvasAxisLabelRenderer());
+        axisDefault.setLabelRenderer(Plugin.CanvasAxisLabelRenderer);
         jqPlot.setAxesDefaults(axisDefault);
 
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {

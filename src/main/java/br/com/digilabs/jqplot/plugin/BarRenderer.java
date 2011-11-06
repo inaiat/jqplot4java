@@ -13,7 +13,7 @@ import java.util.Collection;
  */
 public class BarRenderer extends AbstractRenderer {
     
-    public static final String PLUING_NAME = "$.jqplot.barRenderer";
+    public static final String PLUGIN_NAME = "$.jqplot.barRenderer";
 
     private Integer barPadding;
     private Integer barMargin;
@@ -27,10 +27,6 @@ public class BarRenderer extends AbstractRenderer {
     private Boolean highlightMouseOver;
     private Boolean highlightMouseDown;
     private Collection<String> highlightColors;
-
-    public BarRenderer() {
-        super(PLUING_NAME);
-    }
 
     /**
      * @return the barPadding
@@ -200,8 +196,8 @@ public class BarRenderer extends AbstractRenderer {
         this.highlightColors = highlightColors;
     }
 
-    public String getPluginName() {
-        return PLUING_NAME;
+    public String pluginName() {
+        return PLUGIN_NAME;
     }
     
     

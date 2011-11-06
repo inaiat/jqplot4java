@@ -1,10 +1,12 @@
 /*
  * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * angetd open the template in the editor.
  */
 package br.com.digilabs.jqplot.axis;
 
 import br.com.digilabs.jqplot.AbstractRenderer;
+import br.com.digilabs.jqplot.plugin.Plugin;
+import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import java.io.Serializable;
 import java.util.Collection;
 
@@ -19,7 +21,8 @@ public class Axis implements Serializable {
     private boolean autoScale;
     private Collection<String> tickOptions;
     private Collection<String> ticks;
-    private AbstractRenderer labelRenderer;
+    @XStreamAsAttribute
+    private Plugin labelRenderer;
     private String label;
     private Float pad;
 
@@ -95,20 +98,6 @@ public class Axis implements Serializable {
     }
 
     /**
-     * @return the labelRenderer
-     */
-    public AbstractRenderer getLabelRenderer() {
-        return labelRenderer;
-    }
-
-    /**
-     * @param labelRenderer the labelRenderer to set
-     */
-    public void setLabelRenderer(AbstractRenderer labelRenderer) {
-        this.labelRenderer = labelRenderer;
-    }
-
-    /**
      * @return the label
      */
     public String getLabel() {
@@ -135,5 +124,20 @@ public class Axis implements Serializable {
     public void setPad(Float pad) {
         this.pad = pad;
     }
+
+    /**
+     * @return the labelRenderer
+     */
+    public Plugin getLabelRenderer() {
+        return labelRenderer;
+    }
+
+    /**
+     * @param labelRenderer the labelRenderer to set
+     */
+    public void setLabelRenderer(Plugin labelRenderer) {
+        this.labelRenderer = labelRenderer;
+    }
+
     
 }

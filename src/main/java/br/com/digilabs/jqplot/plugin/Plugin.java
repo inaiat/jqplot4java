@@ -4,7 +4,7 @@
  */
 package br.com.digilabs.jqplot.plugin;
 
-import br.com.digilabs.jqplot.Renderer;
+import com.thoughtworks.xstream.annotations.XStreamConverter;
 
 /**
  *
@@ -12,17 +12,20 @@ import br.com.digilabs.jqplot.Renderer;
  */
 public enum Plugin {
 
-    BarRenderer(BarRenderer.class);
+    BarRenderer(""),
+    CanvasAxisLabelRenderer(br.com.digilabs.jqplot.plugin.CanvasAxisLabelRenderer.PLUGIN_NAME);
     //LineRenderer("$.jqplot.barRenderer"),
     //CategoryAxisRenderer("$.jqplot.barRenderer"),
     //DataAxisRenderer("$.jqplot.CategoryAxisRenderer");
-    private Class<? extends Renderer> className;
+    private String pluginName;
 
-    private Plugin(Class<? extends Renderer> className) {
-        this.className = className;
-    }
+    private Plugin(String pluginName) {
+        this.pluginName = pluginName;
+    }   
 
-    public Renderer get() throws IllegalAccessException, InstantiationException {
-        return className.newInstance();
-    }
+    @Override
+    public String toString() {
+        return pluginName;
+    }   
+
 }
