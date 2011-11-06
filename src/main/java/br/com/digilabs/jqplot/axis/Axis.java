@@ -5,7 +5,7 @@
 package br.com.digilabs.jqplot.axis;
 
 import br.com.digilabs.jqplot.AbstractRenderer;
-import br.com.digilabs.jqplot.plugin.Plugin;
+import br.com.digilabs.jqplot.plugin.PluginClasses;
 import com.thoughtworks.xstream.annotations.XStreamAsAttribute;
 import java.io.Serializable;
 import java.util.Collection;
@@ -22,7 +22,7 @@ public class Axis implements Serializable {
     private Collection<String> tickOptions;
     private Collection<String> ticks;
     @XStreamAsAttribute
-    private Plugin labelRenderer;
+    private PluginClasses labelRenderer;
     private String label;
     private Float pad;
 
@@ -99,14 +99,14 @@ public class Axis implements Serializable {
     /**
      * @return the labelRenderer
      */
-    public Plugin getLabelRenderer() {
+    public PluginClasses getLabelRenderer() {
         return labelRenderer;
     }
 
     /**
      * @param labelRenderer the labelRenderer to set
      */
-    public void setLabelRenderer(Plugin labelRenderer) {
+    public void setLabelRenderer(PluginClasses labelRenderer) {
         this.labelRenderer = labelRenderer;
     }
 

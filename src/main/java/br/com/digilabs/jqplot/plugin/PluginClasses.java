@@ -8,16 +8,16 @@ package br.com.digilabs.jqplot.plugin;
  *
  * @author inaiat
  */
-public enum Plugin {
+public enum PluginClasses {
 
-    BarRenderer(""),
-    CanvasAxisLabelRenderer(br.com.digilabs.jqplot.plugin.CanvasAxisLabelRenderer.PLUGIN_NAME);
-    //LineRenderer("$.jqplot.barRenderer"),
-    //CategoryAxisRenderer("$.jqplot.barRenderer"),
-    //DataAxisRenderer("$.jqplot.CategoryAxisRenderer");
+    BarRenderer("$.jqplot.barRenderer"),
+    CanvasAxisLabelRenderer("$.jqplot.CanvasAxisLabelRenderer"),
+    CategoryAxisRenderer("$.jqplot.CategoryAxisRenderer"),
+    LineRenderer("");
+    
     private String pluginName;
 
-    private Plugin(String pluginName) {
+    private PluginClasses(String pluginName) {
         this.pluginName = pluginName;
     }   
 
@@ -29,5 +29,4 @@ public enum Plugin {
     public String getPluginName() {
         return pluginName;
     }
-
 }

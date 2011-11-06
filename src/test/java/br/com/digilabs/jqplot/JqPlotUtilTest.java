@@ -6,7 +6,7 @@ package br.com.digilabs.jqplot;
 
 import br.com.digilabs.jqplot.axis.Axis;
 import br.com.digilabs.jqplot.axis.XAxis;
-import br.com.digilabs.jqplot.plugin.Plugin;
+import br.com.digilabs.jqplot.plugin.PluginClasses;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.MarshallingContext;
 import com.thoughtworks.xstream.converters.enums.EnumConverter;
@@ -52,7 +52,7 @@ public class JqPlotUtilTest extends TestCase {
         
 
         Axis axisDefault = new Axis();
-        axisDefault.setLabelRenderer(Plugin.CanvasAxisLabelRenderer);
+        axisDefault.setLabelRenderer(PluginClasses.CanvasAxisLabelRenderer);
         jqPlot.setAxesDefaults(axisDefault);
 
         System.out.println(JqPlotUtil.jqPlotToJson(jqPlot));

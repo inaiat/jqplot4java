@@ -13,8 +13,6 @@ import java.util.Collection;
  */
 public class BarRenderer extends AbstractRenderer {
     
-    public static final String PLUGIN_NAME = "$.jqplot.barRenderer";
-
     private Integer barPadding;
     private Integer barMargin;
     private String barDirection;
@@ -197,7 +195,7 @@ public class BarRenderer extends AbstractRenderer {
     }
 
     public String pluginName() {
-        return PLUGIN_NAME;
+        return PluginClasses.BarRenderer.getPluginName();
     }
     
     

@@ -12,8 +12,6 @@ import br.com.digilabs.jqplot.AbstractRenderer;
  */
 public class CanvasAxisLabelRenderer extends AbstractRenderer {
 
-    public static final String PLUGIN_NAME = "$.jqplot.CanvasAxisLabelRenderer";
-
     private Float angle;
     private Boolean show;
     private Boolean showLabel;
@@ -182,7 +180,7 @@ public class CanvasAxisLabelRenderer extends AbstractRenderer {
     }
 
     public String pluginName() {
-        return PLUGIN_NAME;
+        return PluginClasses.CanvasAxisLabelRenderer.getPluginName();
     }
     
     

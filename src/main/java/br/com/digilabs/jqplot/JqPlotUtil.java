@@ -4,7 +4,7 @@
  */
 package br.com.digilabs.jqplot;
 
-import br.com.digilabs.jqplot.plugin.Plugin;
+import br.com.digilabs.jqplot.plugin.PluginClasses;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.MarshallingContext;
 import com.thoughtworks.xstream.converters.enums.EnumConverter;
@@ -40,11 +40,11 @@ public class JqPlotUtil {
 
             @Override
             public void marshal(Object source, HierarchicalStreamWriter writer, MarshallingContext context) {
-                Plugin plugin = (Plugin) source;
+                PluginClasses plugin = (PluginClasses) source;
                 writer.setValue(plugin.getPluginName());
             }
         };
-        converter.canConvert(Plugin.class);
+        converter.canConvert(PluginClasses.class);
 
         xstream.registerConverter(converter);
         

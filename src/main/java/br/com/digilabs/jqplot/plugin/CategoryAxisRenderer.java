@@ -12,8 +12,6 @@ import br.com.digilabs.jqplot.AbstractRenderer;
  */
 public class CategoryAxisRenderer extends AbstractRenderer {
 
-    public static final String PLUGIN_NAME = "$.jqplot.CategoryAxisRenderer";
-    
     private Boolean sortMergedLabels;
     private AbstractRenderer tickRenderer;
     
@@ -46,7 +44,7 @@ public class CategoryAxisRenderer extends AbstractRenderer {
     }
 
     public String pluginName() {
-        return PLUGIN_NAME;
+        return PluginClasses.CategoryAxisRenderer.getPluginName();
     }
     
 }
