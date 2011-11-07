@@ -23,17 +23,15 @@ import java.util.Collection;
 public class JqPlotUtil {
 
     public static String createJquery(JqPlot jqPlot, String divId, Collection<? extends Serializable> data) {
-         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
+        XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
 
             @Override
             public HierarchicalStreamWriter createWriter(Writer writer) {
-                Format format = new Format(new char[]{},new char[]{}, Format.COMPACT_EMPTY_ELEMENT);
+                Format format = new Format(new char[]{}, new char[]{}, Format.COMPACT_EMPTY_ELEMENT);
                 JsonWriter jsonWriter = new JsonWriter(writer, JsonWriter.DROP_ROOT_MODE, format);
                 return jsonWriter;
-                
             }
         });
-         
         StringBuilder builder = new StringBuilder();
         builder.append("$(document).ready(function(){\r\n");
         builder.append("   $.jqplot('").append(divId).append("', ");
