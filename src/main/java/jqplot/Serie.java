@@ -5,7 +5,6 @@
 package jqplot;
 
 import java.io.Serializable;
-import jqplot.renderer.plugin.PluginClasses;
 
 /**
  *
@@ -14,7 +13,7 @@ import jqplot.renderer.plugin.PluginClasses;
 public class Serie implements Serializable {
 
     private String label;
-    private PluginClasses renderer;
+    private JqPlotClasses renderer;
 
     /**
      * @return the label
@@ -33,14 +32,14 @@ public class Serie implements Serializable {
     /**
      * @return the renderer
      */
-    public PluginClasses getRenderer() {
+    public JqPlotClasses getRenderer() {
         return renderer;
     }
 
     /**
      * @param renderer the renderer to set
      */
-    public void setRenderer(PluginClasses renderer) {
+    public void setRenderer(JqPlotClasses renderer) {
         this.renderer = renderer;
     }
 }

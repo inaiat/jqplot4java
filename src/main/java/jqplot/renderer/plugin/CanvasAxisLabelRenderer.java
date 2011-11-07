@@ -4,6 +4,7 @@
  */
 package jqplot.renderer.plugin;
 
+import jqplot.JqPlotClasses;
 import jqplot.Renderer;
 
 /**
@@ -23,8 +24,7 @@ public class CanvasAxisLabelRenderer implements Renderer {
     private String textColor;
     private Boolean enableFontSupport;
     private String pt2px;
-    
-    
+
     /**
      * @return the angle
      */
@@ -179,9 +179,7 @@ public class CanvasAxisLabelRenderer implements Renderer {
         this.pt2px = pt2px;
     }
 
-    public PluginClasses pluginClass() {
-        return PluginClasses.CanvasAxisLabelRenderer;
+    public JqPlotClasses jqplotClass() {
+        return JqPlotClasses.CanvasAxisLabelRenderer;
     }
-    
-    
 }

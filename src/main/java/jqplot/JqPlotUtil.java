@@ -4,7 +4,6 @@
  */
 package jqplot;
 
-import jqplot.renderer.plugin.PluginClasses;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.MarshallingContext;
 import com.thoughtworks.xstream.converters.enums.EnumConverter;
@@ -71,12 +70,12 @@ public class JqPlotUtil {
 
             @Override
             public void marshal(Object source, HierarchicalStreamWriter writer, MarshallingContext context) {
-                PluginClasses plugin = (PluginClasses) source;
+                JqPlotClasses plugin = (JqPlotClasses) source;
                 writer.setValue(plugin.getPluginName());
             }
         };
 
-        converter.canConvert(PluginClasses.class);
+        converter.canConvert(JqPlotClasses.class);
 
         xstream.registerConverter(converter);
 

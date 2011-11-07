@@ -2,13 +2,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package jqplot.renderer.plugin;
+package jqplot;
 
 /**
  *
  * @author inaiat
  */
-public enum PluginClasses {
+public enum JqPlotClasses {
 
     BarRenderer("$.jqplot.barRenderer"),
     CanvasAxisLabelRenderer("$.jqplot.CanvasAxisLabelRenderer"),
@@ -16,18 +16,17 @@ public enum PluginClasses {
     CanvasAxisTickRenderer("$.jqplot.CanvasAxisTickRenderer"),
     LineRenderer(""),
     ShadowRenderer("$.jqplot.shadowRenderer");
-    
     private String pluginName;
 
-    private PluginClasses(String pluginName) {
+    private JqPlotClasses(String pluginName) {
         this.pluginName = pluginName;
-    }   
+    }
 
     @Override
     public String toString() {
         return pluginName;
     }
-    
+
     public String getPluginName() {
         return pluginName;
     }

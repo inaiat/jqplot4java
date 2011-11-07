@@ -4,6 +4,7 @@
  */
 package jqplot.renderer.plugin;
 
+import jqplot.JqPlotClasses;
 import java.io.Serializable;
 import jqplot.Renderer;
 
@@ -11,7 +12,7 @@ import jqplot.Renderer;
  *
  * @author inaiat
  */
-public class CanvasAxisTickRenderer implements Renderer, Serializable {
+public class CanvasAxisTickRenderer implements Renderer {
 
     private String mark;
     private Boolean showMark;
@@ -21,7 +22,7 @@ public class CanvasAxisTickRenderer implements Renderer, Serializable {
     private Integer markSize;
     private Boolean show;
     private String labelPosition;
-    private PluginClasses formatter;
+    private JqPlotClasses formatter;
     private String formatString;
     private String prefix;
     private String fontFamily;
@@ -33,8 +34,8 @@ public class CanvasAxisTickRenderer implements Renderer, Serializable {
     private Float pt2px;   
     
 
-    public PluginClasses pluginClass() {
-        return PluginClasses.CategoryAxisRenderer;
+    public JqPlotClasses jqplotClass() {
+        return JqPlotClasses.CategoryAxisRenderer;
     }
 
     /**
@@ -152,14 +153,14 @@ public class CanvasAxisTickRenderer implements Renderer, Serializable {
     /**
      * @return the formatter
      */
-    public PluginClasses getFormatter() {
+    public JqPlotClasses getFormatter() {
         return formatter;
     }
 
     /**
      * @param formatter the formatter to set
      */
-    public void setFormatter(PluginClasses formatter) {
+    public void setFormatter(JqPlotClasses formatter) {
         this.formatter = formatter;
     }
 

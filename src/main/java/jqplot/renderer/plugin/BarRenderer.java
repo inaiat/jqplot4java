@@ -4,6 +4,7 @@
  */
 package jqplot.renderer.plugin;
 
+import jqplot.JqPlotClasses;
 import java.util.Collection;
 import jqplot.Renderer;
 
@@ -194,8 +195,8 @@ public class BarRenderer implements Renderer {
         this.highlightColors = highlightColors;
     }
 
-    public PluginClasses pluginClass() {
-        return PluginClasses.BarRenderer;
+    public JqPlotClasses jqplotClass() {
+        return JqPlotClasses.BarRenderer;
     }
     
     

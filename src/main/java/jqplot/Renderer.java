@@ -5,12 +5,11 @@
 package jqplot;
 
 import java.io.Serializable;
-import jqplot.renderer.plugin.PluginClasses;
 
 /**
  *
  * @author inaiat
  */
 public interface Renderer extends Serializable {
-   public PluginClasses pluginClass();
+   public JqPlotClasses jqplotClass();
 }

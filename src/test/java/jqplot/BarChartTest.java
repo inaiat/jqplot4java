@@ -10,7 +10,6 @@ import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
 import jqplot.renderer.plugin.BarRenderer;
 import jqplot.renderer.plugin.CanvasAxisTickRenderer;
-import jqplot.renderer.plugin.PluginClasses;
 import junit.framework.TestCase;
 
 /**
@@ -37,16 +36,17 @@ public class BarChartTest extends TestCase {
         JqPlot jqPlot = new JqPlot();
         jqPlot.setSimpleTitle("Concern vs. Occurrance");
         Serie serie = jqPlot.createSerie();
-        serie.setRenderer(PluginClasses.BarRenderer);
+        serie.setRenderer(JqPlotClasses.BarRenderer);
+
         Axis axisDefault = new Axis();
-        axisDefault.setTickRenderer(PluginClasses.CanvasAxisTickRenderer);
+        axisDefault.setTickRenderer(JqPlotClasses.CanvasAxisTickRenderer);
         CanvasAxisTickRenderer canvasAxisTickRenderer = new CanvasAxisTickRenderer();
         canvasAxisTickRenderer.setAngle(-30F);
         canvasAxisTickRenderer.setFontSize("10pt");
         axisDefault.setTickOptions(canvasAxisTickRenderer);
         jqPlot.setAxesDefaults(axisDefault);
         XAxis xAxis = jqPlot.createXAxis();
-        xAxis.setRenderer(PluginClasses.CategoryAxisRenderer);
+        xAxis.setRenderer(JqPlotClasses.CategoryAxisRenderer);
 
 
         List<Integer> collection = Arrays.<Integer>asList(3, 7, 9, 1, 4, 6, 8, 2, 5);

@@ -4,7 +4,7 @@
  */
 package jqplot.axis;
 
-import jqplot.renderer.plugin.PluginClasses;
+import jqplot.JqPlotClasses;
 import java.io.Serializable;
 import java.util.Collection;
 import jqplot.Renderer;
@@ -16,12 +16,12 @@ import jqplot.Renderer;
 public class Axis implements Serializable {
     
     private Boolean show;
-    private PluginClasses renderer;
+    private JqPlotClasses renderer;
     private Boolean autoScale;
     private Renderer tickOptions;
     private Collection<String> ticks;
-    private PluginClasses labelRenderer;
-    private PluginClasses tickRenderer;
+    private JqPlotClasses labelRenderer;
+    private JqPlotClasses tickRenderer;
     private String label;
     private Float pad;
 
@@ -84,28 +84,28 @@ public class Axis implements Serializable {
     /**
      * @return the labelRenderer
      */
-    public PluginClasses getLabelRenderer() {
+    public JqPlotClasses getLabelRenderer() {
         return labelRenderer;
     }
 
     /**
      * @param labelRenderer the labelRenderer to set
      */
-    public void setLabelRenderer(PluginClasses labelRenderer) {
+    public void setLabelRenderer(JqPlotClasses labelRenderer) {
         this.labelRenderer = labelRenderer;
     }
 
     /**
      * @return the tickRenderer
      */
-    public PluginClasses getTickRenderer() {
+    public JqPlotClasses getTickRenderer() {
         return tickRenderer;
     }
 
     /**
      * @param tickRenderer the tickRenderer to set
      */
-    public void setTickRenderer(PluginClasses tickRenderer) {
+    public void setTickRenderer(JqPlotClasses tickRenderer) {
         this.tickRenderer = tickRenderer;
     }
 
@@ -140,14 +140,14 @@ public class Axis implements Serializable {
     /**
      * @return the renderer
      */
-    public PluginClasses getRenderer() {
+    public JqPlotClasses getRenderer() {
         return renderer;
     }
 
     /**
      * @param renderer the renderer to set
      */
-    public void setRenderer(PluginClasses renderer) {
+    public void setRenderer(JqPlotClasses renderer) {
         this.renderer = renderer;
     }
 
