@@ -4,18 +4,11 @@
  */
 package jqplot;
 
-import jqplot.JqPlot;
-import jqplot.JqPlotUtil;
+import java.util.Arrays;
+import java.util.List;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
 import jqplot.plugin.PluginClasses;
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.converters.MarshallingContext;
-import com.thoughtworks.xstream.converters.enums.EnumConverter;
-import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
-import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
-import com.thoughtworks.xstream.io.json.JsonWriter;
-import java.io.Writer;
 import junit.framework.TestCase;
 
 /**
@@ -55,8 +48,11 @@ public class JqPlotUtilTest extends TestCase {
         Axis axisDefault = new Axis();
         axisDefault.setLabelRenderer(PluginClasses.CanvasAxisLabelRenderer);
         jqPlot.setAxesDefaults(axisDefault);
+        
+        List<Integer> collection = Arrays.<Integer>asList(3,7,9,1,4,6,8,2,5);       
+        
 
-        System.out.println(JqPlotUtil.createJquery(jqPlot, "chart1",  "[[3,7,9,1,4,6,8,2,5]]"));
+        System.out.println(JqPlotUtil.createJquery(jqPlot, "chart1",  collection));
 
     }
 }
