@@ -10,7 +10,7 @@ package jqplot;
  */
 public class Legend {
     private String options;
-    private String placment = "grid";
+    private String placment;
     private String location = "ne";
     private String border;
     private String background;
@@ -22,16 +22,23 @@ public class Legend {
     
     private Renderer renderer;
     
-    private Double xoffset = 0.0;
-    private Double yoffset = 0.0;
+    private Double xoffset;
+    private Double yoffset;
                 
-    private Boolean show = false;
-    private Boolean showLables = false;
+    private Boolean show = true;
+    private Boolean showLables = true;
     private Boolean showSwatches = false;
     private Boolean preDraw = false;
     private Boolean escapeHtml = false;
 
     private String[] lables;
+    public Legend (){
+
+    }
+    public Legend (boolean show, String location){
+        this.show = show;
+        this.location = location;
+    }
 
     public Legend (String options){
         this.options = options;

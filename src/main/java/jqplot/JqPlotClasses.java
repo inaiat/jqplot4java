@@ -15,6 +15,7 @@ public enum JqPlotClasses {
     CategoryAxisRenderer("$.jqplot.CategoryAxisRenderer"),
     CanvasAxisTickRenderer("$.jqplot.CanvasAxisTickRenderer"),
     LineRenderer(""),
+    PieRenderer("$.jqplot.PieRenderer"),
     ShadowRenderer("$.jqplot.shadowRenderer");
     private String pluginName;
 

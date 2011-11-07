@@ -35,10 +35,11 @@ public class BarChartTest extends TestCase {
     public void testBarChart() {
         JqPlot jqPlot = new JqPlot();
         jqPlot.setSimpleTitle("Concern vs. Occurrance");
-        Serie serie = jqPlot.createSerie();
+        Serie serie = new Serie();
         serie.setRenderer(JqPlotClasses.BarRenderer);
 
         Axis axisDefault = new Axis();
+        
         axisDefault.setTickRenderer(JqPlotClasses.CanvasAxisTickRenderer);
         CanvasAxisTickRenderer canvasAxisTickRenderer = new CanvasAxisTickRenderer();
         canvasAxisTickRenderer.setAngle(-30F);
