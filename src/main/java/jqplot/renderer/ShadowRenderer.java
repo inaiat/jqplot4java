@@ -5,6 +5,7 @@
 package jqplot.renderer;
 
 import jqplot.Renderer;
+import jqplot.plugin.PluginClasses;
 
 /**
  *
@@ -114,6 +115,6 @@ public class ShadowRenderer implements Renderer {
 
     @Override
     public PluginClasses pluginClass() {
-        return null;
+        return PluginClasses.ShadowRenderer;
     }
 }

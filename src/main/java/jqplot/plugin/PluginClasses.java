@@ -14,7 +14,8 @@ public enum PluginClasses {
     CanvasAxisLabelRenderer("$.jqplot.CanvasAxisLabelRenderer"),
     CategoryAxisRenderer("$.jqplot.CategoryAxisRenderer"),
     CanvasAxisTickRenderer("$.jqplot.CanvasAxisTickRenderer"),
-    LineRenderer("");
+    LineRenderer(""),
+    ShadowRenderer("$.jqplot.shadowRenderer");
     
     private String pluginName;
 

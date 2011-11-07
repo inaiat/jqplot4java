@@ -6,7 +6,6 @@ package jqplot;
 
 
 import jqplot.axis.Axis;
-import jqplot.renderer.CanvasGridRenderer;
 import java.io.Serializable;
 
 /**
