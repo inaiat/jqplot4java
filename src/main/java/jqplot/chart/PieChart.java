@@ -2,8 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package jqplot;
+package jqplot.chart;
 
+import jqplot.Legend;
+import jqplot.SeriesDefaults;
 import jqplot.plugin.PluginClasses;
 
 /**
