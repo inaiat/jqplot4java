@@ -48,7 +48,7 @@ public class JqPlotUtil {
 
             @Override
             public HierarchicalStreamWriter createWriter(Writer writer) {
-                return new JsonWriter(writer, JsonWriter.DROP_ROOT_MODE) {
+                return new JsonWriter(writer, JsonWriter.DROP_ROOT_MODE ) {
 
                     @Override
                     protected void addValue(String value, Type type) {
@@ -60,8 +60,8 @@ public class JqPlotUtil {
                         } else {
                             super.addValue(value, type);
                         }
-
-                    }
+                    }             
+                    
                 };
             }
         });

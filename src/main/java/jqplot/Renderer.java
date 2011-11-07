@@ -4,6 +4,7 @@
  */
 package jqplot;
 
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import java.io.Serializable;
 
 /**
@@ -11,5 +12,6 @@ import java.io.Serializable;
  * @author inaiat
  */
 public interface Renderer extends Serializable {
-   public JqPlotClasses jqplotClass();
+
+    public JqPlotClasses jqplotClass();
 }

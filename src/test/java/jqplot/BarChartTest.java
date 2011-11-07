@@ -6,9 +6,9 @@ package jqplot;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
-import jqplot.renderer.plugin.BarRenderer;
 import jqplot.renderer.plugin.CanvasAxisTickRenderer;
 import junit.framework.TestCase;
 
@@ -47,7 +47,7 @@ public class BarChartTest extends TestCase {
         jqPlot.setAxesDefaults(axisDefault);
         XAxis xAxis = jqPlot.createXAxis();
         xAxis.setRenderer(JqPlotClasses.CategoryAxisRenderer);
-
+        
 
         List<Integer> collection = Arrays.<Integer>asList(3, 7, 9, 1, 4, 6, 8, 2, 5);
 

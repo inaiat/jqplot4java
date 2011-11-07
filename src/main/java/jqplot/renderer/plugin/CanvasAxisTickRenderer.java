@@ -5,13 +5,13 @@
 package jqplot.renderer.plugin;
 
 import jqplot.JqPlotClasses;
-import java.io.Serializable;
 import jqplot.Renderer;
 
 /**
  *
  * @author inaiat
  */
+
 public class CanvasAxisTickRenderer implements Renderer {
 
     private String mark;
@@ -31,12 +31,7 @@ public class CanvasAxisTickRenderer implements Renderer {
     private Float fontStretch;
     private String textColor;
     private Boolean enableFontSupport;
-    private Float pt2px;   
-    
-
-    public JqPlotClasses jqplotClass() {
-        return JqPlotClasses.CategoryAxisRenderer;
-    }
+    private Float pt2px;
 
     /**
      * @return the mark
@@ -289,4 +284,9 @@ public class CanvasAxisTickRenderer implements Renderer {
     public void setPt2px(Float pt2px) {
         this.pt2px = pt2px;
     }
+
+    public JqPlotClasses jqplotClass() {
+        return JqPlotClasses.CanvasAxisTickRenderer;
+    }   
+
 }

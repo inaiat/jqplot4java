@@ -56,6 +56,7 @@ public class Axis implements Serializable {
     /**
      * @return the tickOptions
      */
+    
     public Renderer getTickOptions() {
         return tickOptions;
     }
@@ -150,6 +151,5 @@ public class Axis implements Serializable {
     public void setRenderer(JqPlotClasses renderer) {
         this.renderer = renderer;
     }
-
    
 }
