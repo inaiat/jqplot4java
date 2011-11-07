@@ -49,7 +49,21 @@ public class JqPlotUtil {
 
             @Override
             public HierarchicalStreamWriter createWriter(Writer writer) {
-                return new JsonWriter(writer, JsonWriter.DROP_ROOT_MODE);
+                return new JsonWriter(writer, JsonWriter.DROP_ROOT_MODE) {
+
+                    @Override
+                    protected void addValue(String value, Type type) {
+                        // TODO: See if it's the best way to do this. 
+                        // Passing null to avoid having quotes on $. object. 
+                        // With null is being serialized like a JSObject.
+                        if (value.contains("$")) {
+                            super.addValue(value, null);
+                        } else {
+                            super.addValue(value, type);
+                        }
+
+                    }
+                };
             }
         });
 
@@ -61,9 +75,11 @@ public class JqPlotUtil {
                 writer.setValue(plugin.getPluginName());
             }
         };
+
         converter.canConvert(PluginClasses.class);
 
         xstream.registerConverter(converter);
+
 
         return xstream.toXML(jqPlot);
     }
