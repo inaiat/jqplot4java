@@ -4,8 +4,12 @@
  */
 package jqplot;
 
-import java.util.Set;
+import java.util.Arrays;
+import java.util.List;
+import jqplot.axis.Axis;
+import jqplot.axis.XAxis;
 import jqplot.plugin.BarRenderer;
+import jqplot.plugin.PluginClasses;
 import junit.framework.TestCase;
 
 /**
@@ -34,7 +38,9 @@ public class BarChartTest extends TestCase {
         Serie serie = jqPlot.createSerie();
         serie.setRenderer(new BarRenderer());
 
+        Axis axisDefault = new Axis();
         axisDefault.setLabelRenderer(PluginClasses.CanvasAxisLabelRenderer);
+        axisDefault.setTickOptions(null);
         jqPlot.setAxesDefaults(axisDefault);
 
 
@@ -45,7 +51,6 @@ public class BarChartTest extends TestCase {
         yAxis.setLabel("Y Axis");
 
 
-        Axis axisDefault = new Axis();
 
         List<Integer> collection = Arrays.<Integer>asList(3, 7, 9, 1, 4, 6, 8, 2, 5);
 
