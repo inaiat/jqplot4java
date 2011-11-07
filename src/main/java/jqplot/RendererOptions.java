@@ -14,10 +14,37 @@ import jqplot.plugin.PieRenderer;
  *
  * @author bernardo.moura
  */
-
 public class RendererOptions {
+
     private boolean showDataLabels = true;
-  
+    private String dataLabels;
+    private int sliceMargin = 3;
+    private int startAngle;
+
+    public String getDataLabels() {
+        return dataLabels;
+    }
+
+    public void setDataLabels(String dataLabels) {
+        this.dataLabels = dataLabels;
+    }
+
+    public void setStartAngle(int startAngle) {
+        this.startAngle = startAngle;
+    }
+
+    public int getStartAngle() {
+        return startAngle;
+    }
+
+    public int getSliceMargin() {
+        return sliceMargin;
+    }
+
+    public void setSliceMargin(int sliceMargin) {
+        this.sliceMargin = sliceMargin;
+    }
+
     public boolean isShowDataLabels() {
         return showDataLabels;
     }
@@ -25,5 +52,4 @@ public class RendererOptions {
     public void setShowDataLabels(boolean showDataLabels) {
         this.showDataLabels = showDataLabels;
     }
-    
 }
