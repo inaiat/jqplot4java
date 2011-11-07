@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
-import jqplot.plugin.PluginClasses;
+import jqplot.renderer.plugin.PluginClasses;
 import junit.framework.TestCase;
 
 /**

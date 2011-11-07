@@ -4,7 +4,7 @@
  */
 package jqplot;
 
-import jqplot.plugin.PluginClasses;
+import jqplot.renderer.plugin.PluginClasses;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.MarshallingContext;
 import com.thoughtworks.xstream.converters.enums.EnumConverter;

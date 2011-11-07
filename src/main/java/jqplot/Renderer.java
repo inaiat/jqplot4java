@@ -5,7 +5,7 @@
 package jqplot;
 
 import java.io.Serializable;
-import jqplot.plugin.PluginClasses;
+import jqplot.renderer.plugin.PluginClasses;
 
 /**
  *

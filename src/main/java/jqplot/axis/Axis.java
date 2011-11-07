@@ -4,7 +4,7 @@
  */
 package jqplot.axis;
 
-import jqplot.plugin.PluginClasses;
+import jqplot.renderer.plugin.PluginClasses;
 import java.io.Serializable;
 import java.util.Collection;
 import jqplot.Renderer;
@@ -16,7 +16,7 @@ import jqplot.Renderer;
 public class Axis implements Serializable {
     
     private Boolean show;
-    private Renderer renderer;
+    private PluginClasses renderer;
     private Boolean autoScale;
     private Renderer tickOptions;
     private Collection<String> ticks;
@@ -37,20 +37,6 @@ public class Axis implements Serializable {
      */
     public void setShow(Boolean show) {
         this.show = show;
-    }
-
-    /**
-     * @return the renderer
-     */
-    public Renderer getRenderer() {
-        return renderer;
-    }
-
-    /**
-     * @param renderer the renderer to set
-     */
-    public void setRenderer(Renderer renderer) {
-        this.renderer = renderer;
     }
 
     /**
@@ -149,6 +135,20 @@ public class Axis implements Serializable {
      */
     public void setPad(Float pad) {
         this.pad = pad;
+    }
+
+    /**
+     * @return the renderer
+     */
+    public PluginClasses getRenderer() {
+        return renderer;
+    }
+
+    /**
+     * @param renderer the renderer to set
+     */
+    public void setRenderer(PluginClasses renderer) {
+        this.renderer = renderer;
     }
 
    

@@ -2,30 +2,40 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package jqplot.renderer;
+package jqplot.renderer.plugin;
 
-import jqplot.plugin.PluginClasses;
+import java.io.Serializable;
+import jqplot.Renderer;
 
 /**
  *
  * @author inaiat
  */
-public class AxisTickRenderer {
+public class CanvasAxisTickRenderer implements Renderer, Serializable {
 
     private String mark;
     private Boolean showMark;
     private Boolean showGridline;
     private Boolean isMinorTick;
-    private Integer size;
+    private Float angle;
     private Integer markSize;
     private Boolean show;
+    private String labelPosition;
     private PluginClasses formatter;
-    private String prefix;
     private String formatString;
+    private String prefix;
     private String fontFamily;
     private String fontSize;
+    private String fontWeight;
+    private Float fontStretch;
     private String textColor;
-    private Boolean escapeHTML;
+    private Boolean enableFontSupport;
+    private Float pt2px;   
+    
+
+    public PluginClasses pluginClass() {
+        return PluginClasses.CategoryAxisRenderer;
+    }
 
     /**
      * @return the mark
@@ -84,17 +94,17 @@ public class AxisTickRenderer {
     }
 
     /**
-     * @return the size
+     * @return the angle
      */
-    public Integer getSize() {
-        return size;
+    public Float getAngle() {
+        return angle;
     }
 
     /**
-     * @param size the size to set
+     * @param angle the angle to set
      */
-    public void setSize(Integer size) {
-        this.size = size;
+    public void setAngle(Float angle) {
+        this.angle = angle;
     }
 
     /**
@@ -126,6 +136,20 @@ public class AxisTickRenderer {
     }
 
     /**
+     * @return the labelPosition
+     */
+    public String getLabelPosition() {
+        return labelPosition;
+    }
+
+    /**
+     * @param labelPosition the labelPosition to set
+     */
+    public void setLabelPosition(String labelPosition) {
+        this.labelPosition = labelPosition;
+    }
+
+    /**
      * @return the formatter
      */
     public PluginClasses getFormatter() {
@@ -140,20 +164,6 @@ public class AxisTickRenderer {
     }
 
     /**
-     * @return the prefix
-     */
-    public String getPrefix() {
-        return prefix;
-    }
-
-    /**
-     * @param prefix the prefix to set
-     */
-    public void setPrefix(String prefix) {
-        this.prefix = prefix;
-    }
-
-    /**
      * @return the formatString
      */
     public String getFormatString() {
@@ -165,6 +175,20 @@ public class AxisTickRenderer {
      */
     public void setFormatString(String formatString) {
         this.formatString = formatString;
+    }
+
+    /**
+     * @return the prefix
+     */
+    public String getPrefix() {
+        return prefix;
+    }
+
+    /**
+     * @param prefix the prefix to set
+     */
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
     }
 
     /**
@@ -196,6 +220,34 @@ public class AxisTickRenderer {
     }
 
     /**
+     * @return the fontWeight
+     */
+    public String getFontWeight() {
+        return fontWeight;
+    }
+
+    /**
+     * @param fontWeight the fontWeight to set
+     */
+    public void setFontWeight(String fontWeight) {
+        this.fontWeight = fontWeight;
+    }
+
+    /**
+     * @return the fontStretch
+     */
+    public Float getFontStretch() {
+        return fontStretch;
+    }
+
+    /**
+     * @param fontStretch the fontStretch to set
+     */
+    public void setFontStretch(Float fontStretch) {
+        this.fontStretch = fontStretch;
+    }
+
+    /**
      * @return the textColor
      */
     public String getTextColor() {
@@ -210,16 +262,30 @@ public class AxisTickRenderer {
     }
 
     /**
-     * @return the escapeHTML
+     * @return the enableFontSupport
      */
-    public Boolean getEscapeHTML() {
-        return escapeHTML;
+    public Boolean getEnableFontSupport() {
+        return enableFontSupport;
     }
 
     /**
-     * @param escapeHTML the escapeHTML to set
+     * @param enableFontSupport the enableFontSupport to set
      */
-    public void setEscapeHTML(Boolean escapeHTML) {
-        this.escapeHTML = escapeHTML;
+    public void setEnableFontSupport(Boolean enableFontSupport) {
+        this.enableFontSupport = enableFontSupport;
+    }
+
+    /**
+     * @return the pt2px
+     */
+    public Float getPt2px() {
+        return pt2px;
+    }
+
+    /**
+     * @param pt2px the pt2px to set
+     */
+    public void setPt2px(Float pt2px) {
+        this.pt2px = pt2px;
     }
 }
