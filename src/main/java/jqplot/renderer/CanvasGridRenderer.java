@@ -18,7 +18,7 @@ public class CanvasGridRenderer implements Renderer {
     }
    
      @Override
-    public String pluginName(){
+    public PluginClasses pluginClass(){
         return null;
     }
 

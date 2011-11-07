@@ -179,8 +179,8 @@ public class CanvasAxisLabelRenderer implements Renderer {
         this.pt2px = pt2px;
     }
 
-    public String pluginName() {
-        return PluginClasses.CanvasAxisLabelRenderer.getPluginName();
+    public PluginClasses pluginClass() {
+        return PluginClasses.CanvasAxisLabelRenderer;
     }
     
     

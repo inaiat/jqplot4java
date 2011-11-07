@@ -194,8 +194,8 @@ public class BarRenderer implements Renderer {
         this.highlightColors = highlightColors;
     }
 
-    public String pluginName() {
-        return PluginClasses.BarRenderer.getPluginName();
+    public PluginClasses pluginClass() {
+        return PluginClasses.BarRenderer;
     }
     
     

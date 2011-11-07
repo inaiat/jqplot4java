@@ -18,9 +18,10 @@ public class Axis implements Serializable {
     private Boolean show;
     private Renderer renderer;
     private Boolean autoScale;
-    private Collection<String> tickOptions;
+    private Renderer tickOptions;
     private Collection<String> ticks;
     private PluginClasses labelRenderer;
+    private PluginClasses tickRenderer;
     private String label;
     private Float pad;
 
@@ -69,14 +70,14 @@ public class Axis implements Serializable {
     /**
      * @return the tickOptions
      */
-    public Collection<String> getTickOptions() {
+    public Renderer getTickOptions() {
         return tickOptions;
     }
 
     /**
      * @param tickOptions the tickOptions to set
      */
-    public void setTickOptions(Collection<String> tickOptions) {
+    public void setTickOptions(Renderer tickOptions) {
         this.tickOptions = tickOptions;
     }
 
@@ -109,6 +110,20 @@ public class Axis implements Serializable {
     }
 
     /**
+     * @return the tickRenderer
+     */
+    public PluginClasses getTickRenderer() {
+        return tickRenderer;
+    }
+
+    /**
+     * @param tickRenderer the tickRenderer to set
+     */
+    public void setTickRenderer(PluginClasses tickRenderer) {
+        this.tickRenderer = tickRenderer;
+    }
+
+    /**
      * @return the label
      */
     public String getLabel() {
@@ -135,5 +150,6 @@ public class Axis implements Serializable {
     public void setPad(Float pad) {
         this.pad = pad;
     }
+
    
 }

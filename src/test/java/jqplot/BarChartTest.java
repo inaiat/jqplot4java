@@ -9,6 +9,8 @@ import java.util.List;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
 import jqplot.plugin.BarRenderer;
+import jqplot.plugin.CanvasAxisLabelRenderer;
+import jqplot.plugin.CanvasAxisTickRenderer;
 import jqplot.plugin.PluginClasses;
 import junit.framework.TestCase;
 
@@ -39,8 +41,10 @@ public class BarChartTest extends TestCase {
         serie.setRenderer(new BarRenderer());
 
         Axis axisDefault = new Axis();
-        axisDefault.setLabelRenderer(PluginClasses.CanvasAxisLabelRenderer);
-        axisDefault.setTickOptions(null);
+        axisDefault.setTickRenderer(PluginClasses.CanvasAxisLabelRenderer);
+        CanvasAxisLabelRenderer canvasAxisLabelRenderer = new CanvasAxisLabelRenderer();
+        canvasAxisLabelRenderer.setAngle(-30F);
+        canvasAxisLabelRenderer.setFontSize("10pt");
         jqPlot.setAxesDefaults(axisDefault);
 
 

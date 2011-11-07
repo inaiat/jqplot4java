@@ -43,8 +43,8 @@ public class CategoryAxisRenderer implements Renderer {
         this.tickRenderer = tickRenderer;
     }
 
-    public String pluginName() {
-        return PluginClasses.CategoryAxisRenderer.getPluginName();
+    public PluginClasses pluginClass() {
+        return PluginClasses.CategoryAxisRenderer;
     }
     
 }

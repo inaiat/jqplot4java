@@ -25,8 +25,8 @@ public class CanvasAxisTickRenderer implements Renderer {
     private String prefix;
     
 
-    public String pluginName() {
-        return PluginClasses.CategoryAxisRenderer.getPluginName();
+    public PluginClasses pluginClass() {
+        return PluginClasses.CategoryAxisRenderer;
     }
     
 }

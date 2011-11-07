@@ -11,7 +11,8 @@ import jqplot.Renderer;
  * @author bernardo.moura
  */
 public class ShadowRenderer implements Renderer {
-    private Double angle = 45.0; 
+
+    private Double angle = 45.0;
     private Double offset = 1.0;
     private Double alpha = 0.07;
     private Double lineWidth = 1.5;
@@ -110,8 +111,9 @@ public class ShadowRenderer implements Renderer {
     public void setStrokeStyle(String strokeStyle) {
         this.strokeStyle = strokeStyle;
     }
-         @Override
-    public String pluginName(){
+
+    @Override
+    public PluginClasses pluginClass() {
         return null;
     }
 }
