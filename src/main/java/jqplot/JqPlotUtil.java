@@ -4,6 +4,7 @@
  */
 package jqplot;
 
+import com.thoughtworks.xstream.io.json.AbstractJsonWriter.Type;
 import jqplot.plugin.PluginClasses;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.MarshallingContext;
@@ -48,10 +49,25 @@ public class JqPlotUtil {
     public static String jqPlotToJson(JqPlot jqPlot) {
 
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
-
+            
             @Override
             public HierarchicalStreamWriter createWriter(Writer writer) {
-                return new JsonWriter(writer, JsonWriter.DROP_ROOT_MODE);
+                return new JsonWriter(writer, JsonWriter.DROP_ROOT_MODE){
+
+                    @Override
+                    protected void addValue(String value, Type type) {
+                        // TODO: See if it's the best way to do this. 
+                        // Passing null to avoid having quotes on $. object. 
+                        // With null is being serialized like a JSObject.
+                        if(value.contains("$")){
+                             super.addValue(value, null);
+                        }
+                        else{
+                            super.addValue(value, type);
+                        }
+                        
+                    }
+                };
             }
         });
 
