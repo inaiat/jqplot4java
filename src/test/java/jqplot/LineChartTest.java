@@ -15,9 +15,9 @@ import junit.framework.TestCase;
  *
  * @author inaiat
  */
-public class JqPlotUtilTest extends TestCase {
+public class LineChartTest extends TestCase {
 
-    public JqPlotUtilTest(String testName) {
+    public LineChartTest(String testName) {
         super(testName);
     }
 

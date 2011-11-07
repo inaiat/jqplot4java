@@ -28,4 +28,18 @@ public class Serie implements Serializable {
     public void setLabel(String label) {
         this.label = label;
     }
+
+    /**
+     * @return the renderer
+     */
+    public Renderer getRenderer() {
+        return renderer;
+    }
+
+    /**
+     * @param renderer the renderer to set
+     */
+    public void setRenderer(Renderer renderer) {
+        this.renderer = renderer;
+    }
 }

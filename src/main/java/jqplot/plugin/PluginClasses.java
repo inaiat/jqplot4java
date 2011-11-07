@@ -13,6 +13,7 @@ public enum PluginClasses {
     BarRenderer("$.jqplot.barRenderer"),
     CanvasAxisLabelRenderer("$.jqplot.CanvasAxisLabelRenderer"),
     CategoryAxisRenderer("$.jqplot.CategoryAxisRenderer"),
+    CanvasAxisTickRenderer("$.jqplot.CanvasAxisTickRenderer"),
     LineRenderer("");
     
     private String pluginName;

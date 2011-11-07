@@ -19,6 +19,7 @@ import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
 import jqplot.axis.YAxis;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -40,6 +41,21 @@ public class JqPlot implements Serializable {
             this.getTitle().setText(title);
         }
     }
+    
+    public Collection<Serie> createSeries() {
+        if (series==null) {
+            this.series = new ArrayList<Serie>();
+        }
+        return series;
+    }
+    
+    public Serie createSerie() {
+        Serie serie = new Serie();
+        createSeries().add(serie);
+        return serie;
+    }
+    
+    
 
     public Axes createAxes() {
         if (this.getAxes() == null) {
