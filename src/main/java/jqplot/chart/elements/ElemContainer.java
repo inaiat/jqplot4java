@@ -4,11 +4,13 @@
  */
 package jqplot.chart.elements;
 
+import java.io.Serializable;
+
 /**
  *
  * @author bernardo.moura
  */
-public class ElemContainer {
+public class ElemContainer implements Element {
     private Float plotWidth;
     private Float plotHeight;
 

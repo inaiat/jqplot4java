@@ -4,11 +4,13 @@
  */
 package jqplot.chart.elements;
 
+import java.io.Serializable;
+
 /**
  *
  * @author bernardo.moura
  */
-public class Legend {
+public class Legend implements Element {
     private String options;
     private String placment;
     private String location = "ne";

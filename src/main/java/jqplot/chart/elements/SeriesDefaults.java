@@ -4,13 +4,14 @@
  */
 package jqplot.chart.elements;
 
+import java.io.Serializable;
 import jqplot.JqPlotClasses;
 
 /**
  *
  * @author bernardo.moura
  */
-public class SeriesDefaults {
+public class SeriesDefaults implements Element {
     private JqPlotClasses renderer;
     private RendererOptions rendererOptions = new RendererOptions();
 

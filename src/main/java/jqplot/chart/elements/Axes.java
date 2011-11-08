@@ -14,7 +14,7 @@ import java.io.Serializable;
  *
  * @author inaiat
  */
-public class Axes implements Serializable {
+public class Axes implements Element {
     
     private XAxis xaxis;
     private YAxis yaxis;

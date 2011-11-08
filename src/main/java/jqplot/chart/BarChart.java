@@ -16,13 +16,14 @@ import jqplot.axis.YAxis;
  *
  * @author bernardo.moura
  */
-public class BarChart extends BaseChart{
-        private Collection<Serie> series;
+public class BarChart extends BaseChart {
+
+    private Collection<Serie> series;
     private Collection<Serie> seriesDefaults;
     private Axes axes;
     private Title title;
     private Axis axesDefaults;
-    
+
     public void setSimpleTitle(String title) {
         if (getTitle() == null) {
             this.setTitle(new Title(title));
@@ -118,6 +119,5 @@ public class BarChart extends BaseChart{
      */
     public void setAxes(Axes axes) {
         this.axes = axes;
-    }    
-    
+    }
 }

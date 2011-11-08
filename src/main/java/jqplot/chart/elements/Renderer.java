@@ -11,7 +11,7 @@ import jqplot.JqPlotClasses;
  *
  * @author inaiat
  */
-public interface Renderer extends Serializable {
+public interface Renderer extends Element {
 
     public JqPlotClasses jqplotClass();
 }

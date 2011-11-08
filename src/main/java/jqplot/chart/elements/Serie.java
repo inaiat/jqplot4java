@@ -11,7 +11,7 @@ import jqplot.JqPlotClasses;
  *
  * @author inaiat
  */
-public class Serie implements Serializable {
+public class Serie implements Element {
 
     private String label;
     private JqPlotClasses renderer;

@@ -12,7 +12,7 @@ import java.io.Serializable;
  *
  * @author bernardo.moura
  */
-public class Grid implements Serializable {
+public class Grid implements Element {
 
     private Boolean drawGridLines = true;
     private String gridLineColer = "#cccccc";

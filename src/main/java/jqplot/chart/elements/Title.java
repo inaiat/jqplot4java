@@ -4,13 +4,11 @@
  */
 package jqplot.chart.elements;
 
-import java.io.Serializable;
-
 /**
  *
  * @author inaiat
  */
-public class Title implements Serializable {
+public class Title implements Element {
     
     private String text;
     private Boolean show;

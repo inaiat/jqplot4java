@@ -2,17 +2,14 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package jqplot.chart;
+package jqplot.chart.elements;
 
 import java.io.Serializable;
-import jqplot.JqPlot;
 
 /**
  *
- * @author bernardo.moura
+ * @author inaiat
  */
-public class BaseChart implements Serializable{
-    
-
+public interface Element extends Serializable {
     
 }

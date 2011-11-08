@@ -4,17 +4,13 @@
  */
 package jqplot.chart.elements;
 
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-import jqplot.plugin.PieRenderer;
+import java.io.Serializable;
 
 /**
  *
  * @author bernardo.moura
  */
-public class RendererOptions {
+public class RendererOptions implements Element {
 
     private boolean showDataLabels = true;
     private String dataLabels;
