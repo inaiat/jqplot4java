@@ -30,7 +30,7 @@ public class BarChartTest extends TestCase {
     protected void tearDown() throws Exception {
         super.tearDown();
     }
-
+    
     public void testBarChart() {
         JqPlot jqPlot = new JqPlot();
         jqPlot.setSimpleTitle("Concern vs. Occurrance");
@@ -49,8 +49,15 @@ public class BarChartTest extends TestCase {
         
 
         List<Integer> collection = Arrays.<Integer>asList(3, 7, 9, 1, 4, 6, 8, 2, 5);
-
-
+        
         System.out.println(JqPlotUtil.createJquery(jqPlot, "chart1", collection));
+        
+        
+        List<String> resouces = JqPlotUtil.retriveJavaScriptResources(jqPlot);
+        for (String string : resouces) {
+            System.out.println(string);            
+        }
+        
+        
     }
 }

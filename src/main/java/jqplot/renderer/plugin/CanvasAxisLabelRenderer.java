@@ -6,11 +6,13 @@ package jqplot.renderer.plugin;
 
 import jqplot.JqPlotClasses;
 import jqplot.Renderer;
+import jqplot.metadata.JqPlotPlugin;
 
 /**
  *
  * @author inaiat
  */
+@JqPlotPlugin(value= JqPlotClasses.CanvasAxisLabelRenderer)
 public class CanvasAxisLabelRenderer implements Renderer {
 
     private Float angle;

@@ -13,7 +13,14 @@ import com.thoughtworks.xstream.io.json.JsonWriter;
 import com.thoughtworks.xstream.io.json.JsonWriter.Format;
 import java.io.Serializable;
 import java.io.Writer;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import jqplot.metadata.JqPlotPlugin;
+import jqplot.renderer.plugin.BarRenderer;
+import jqplot.renderer.plugin.CanvasAxisLabelRenderer;
+import jqplot.renderer.plugin.CanvasAxisTickRenderer;
+import jqplot.renderer.plugin.CategoryAxisRenderer;
 
 /**
  *
@@ -21,7 +28,25 @@ import java.util.Collection;
  */
 public class JqPlotUtil {
 
-    public static String createJquery(JqPlot jqPlot, String divId, Collection<? extends Serializable> data) {
+    private static final Class<?>[] RESOURCES = new Class<?>[]{
+        BarRenderer.class,
+        CanvasAxisLabelRenderer.class,
+        CanvasAxisTickRenderer.class,
+        CategoryAxisRenderer.class
+    };
+
+    public static List<String> retriveJavaScriptResources(JqPlot jqPlot) {
+        List<String> resources = new ArrayList<String>();
+        for (Class<?> clazz : RESOURCES) {
+            if (clazz.isAnnotationPresent(JqPlotPlugin.class)) {
+                resources.add(clazz.getAnnotation(JqPlotPlugin.class).value().getResource());
+            }
+        }
+        return resources;
+    }
+
+    public static String createJquery(JqPlot jqPlot, String divId, Collection<? extends Serializable> data) {       
+
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
 
             @Override
@@ -48,7 +73,7 @@ public class JqPlotUtil {
 
             @Override
             public HierarchicalStreamWriter createWriter(Writer writer) {
-                return new JsonWriter(writer, JsonWriter.DROP_ROOT_MODE ) {
+                return new JsonWriter(writer, JsonWriter.DROP_ROOT_MODE) {
 
                     @Override
                     protected void addValue(String value, Type type) {
@@ -60,8 +85,7 @@ public class JqPlotUtil {
                         } else {
                             super.addValue(value, type);
                         }
-                    }             
-                    
+                    }
                 };
             }
         });
@@ -79,7 +103,8 @@ public class JqPlotUtil {
 
         xstream.registerConverter(converter);
 
-
         return xstream.toXML(jqPlot);
     }
+
+
 }
