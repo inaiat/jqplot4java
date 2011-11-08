@@ -4,6 +4,7 @@
  */
 package jqplot.chart;
 
+import java.util.Arrays;
 import java.util.Collection;
 import jqplot.chart.elements.Axes;
 import jqplot.chart.elements.Serie;
@@ -11,19 +12,33 @@ import jqplot.chart.elements.Title;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
 import jqplot.axis.YAxis;
-import jqplot.chart.elements.SeriesDefaults;
+import jqplot.chart.data.ChartData;
 
 /**
  *
  * @author bernardo.moura
  */
-public class BarChart extends BaseChart{
+public class BarChart extends BaseChart {
+
     private Collection<Serie> series;
-    private SeriesDefaults seriesDefaults;
     private Axes axes;
     private Title title;
     private Axis axesDefaults;
-    
+    private ChartData data;
+
+    public void addValues(Number... values) {
+        data.addValue(Arrays.asList(values));
+    }
+
+    public void addValue(Number value) {
+        data.addValue(value);
+    }
+
+    @Override
+    public ChartData getData() {
+        return data;
+    }
+
     public void setSimpleTitle(String title) {
         if (getTitle() == null) {
             this.setTitle(new Title(title));
@@ -66,20 +81,6 @@ public class BarChart extends BaseChart{
     }
 
     /**
-     * @return the seriesDefaults
-     */
-    public SeriesDefaults getSeriesDefaults() {
-        return seriesDefaults;
-    }
-
-    /**
-     * @param seriesDefaults the seriesDefaults to set
-     */
-    public void setSeriesDefaults(SeriesDefaults seriesDefaults) {
-        this.setSeriesDefaults(seriesDefaults);
-    }
-
-    /**
      * @return the title
      */
     public Title getTitle() {
@@ -119,6 +120,5 @@ public class BarChart extends BaseChart{
      */
     public void setAxes(Axes axes) {
         this.axes = axes;
-    }    
-    
+    }
 }

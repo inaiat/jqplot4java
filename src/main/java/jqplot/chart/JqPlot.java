@@ -15,6 +15,7 @@
  */
 package jqplot.chart;
 
+import jqplot.chart.data.ChartData;
 import jqplot.chart.elements.Title;
 import jqplot.chart.elements.Serie;
 import jqplot.chart.elements.Axes;
@@ -115,6 +116,11 @@ public class JqPlot extends BaseChart {
      */
     public void setAxes(Axes axes) {
         this.axes = axes;
-    }    
+    }
+
+    @Override
+    public ChartData getData() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     
 }

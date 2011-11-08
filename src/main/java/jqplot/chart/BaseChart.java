@@ -5,13 +5,14 @@
 package jqplot.chart;
 
 import java.io.Serializable;
+import jqplot.chart.data.ChartData;
 import jqplot.chart.elements.SeriesDefaults;
 
 /**
  *
  * @author bernardo.moura
  */
-public class BaseChart implements Serializable {
+public abstract class BaseChart implements Serializable {
 
     private SeriesDefaults seriesDefaults;
 
@@ -22,4 +23,6 @@ public class BaseChart implements Serializable {
     public void setSeriesDefaults(SeriesDefaults seriesDefaults) {
         this.seriesDefaults = seriesDefaults;
     }
+    
+    public abstract ChartData getData();
 }
