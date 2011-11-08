@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
+import jqplot.chart.BarChart;
 import jqplot.renderer.plugin.CanvasAxisTickRenderer;
 import junit.framework.TestCase;
 
@@ -32,7 +33,7 @@ public class BarChartTest extends TestCase {
     }
     
     public void testBarChart() {
-        JqPlot jqPlot = new JqPlot();
+        BarChart jqPlot = new BarChart();
         jqPlot.setSimpleTitle("Concern vs. Occurrance");
         Serie serie = new Serie();
         serie.setRenderer(JqPlotClasses.BarRenderer);

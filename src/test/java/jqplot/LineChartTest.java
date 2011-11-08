@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
+import jqplot.chart.BarChart;
 import junit.framework.TestCase;
 
 /**
@@ -34,7 +35,7 @@ public class LineChartTest extends TestCase {
      * Test of createJquery method, of class JqPlotUtil.
      */
     public void testCreateJquery() {
-        JqPlot jqPlot = new JqPlot();
+        BarChart jqPlot = new BarChart();
         jqPlot.setSimpleTitle("TESTE");
 
         XAxis xAxis = jqPlot.createXAxis();

@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
-import jqplot.plugin.PluginClasses;
+import jqplot.chart.BarChart;
 import junit.framework.TestCase;
 
 /**
@@ -37,7 +37,7 @@ public class JqPlotUtilTest extends TestCase {
      * Test of createJquery method, of class JqPlotUtil.
      */
     public void testCreateJquery() {
-        JqPlot jqPlot = new JqPlot();
+        BarChart jqPlot = new BarChart();
         jqPlot.setSimpleTitle("TESTE");
 
         XAxis xAxis = jqPlot.createXAxis();
@@ -58,7 +58,7 @@ public class JqPlotUtilTest extends TestCase {
 
     }
     
-      public void testCreateJqueryPie() {
+     public void testCreateJqueryPie() {
         PieChart jqPlot = new PieChart();
         
         List<Integer> collection = Arrays.<Integer>asList(3,7,9,1,4,6,8,2,5);       
@@ -66,13 +66,13 @@ public class JqPlotUtilTest extends TestCase {
         data.put("data1", Arrays.<Integer>asList(3,7,9,1,4,6,8,2,5));
         data.put("data2", Arrays.<Integer>asList(3,7,9,1,4,6,8,2,5));
         data.put("data3", Arrays.<Integer>asList(3,7,9,1,4,6,8,2,5));
-        // TODO: Fix methods.
-        //System.out.println(JqPlotUtil.createPieChartJquery(jqPlot, "chart1",  data));
+        
+        System.out.println(JqPlotUtil.createPieChartJquery(jqPlot, "chart1",  data));
         HashMap<String, Double> data2 = new  HashMap<String, Double>();
         data2.put("aaa", 1.2);
         data2.put("bbb", 1.3);
         data2.put("ccc", 1.3);
         // TODO:Fix this.
-        //System.out.println(JqPlotUtil.createPieChartJquery(jqPlot, "chart1",  data2));
+        System.out.println(JqPlotUtil.createPieChartJquery(jqPlot, "chart1",  data2));
     }
 }

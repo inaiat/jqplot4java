@@ -4,21 +4,19 @@
  */
 package jqplot;
 
-import jqplot.plugin.PluginClasses;
-
 /**
  *
  * @author bernardo.moura
  */
 public class SeriesDefaults {
-    private PluginClasses renderer;
+    private JqPlotClasses renderer;
     private RendererOptions rendererOptions = new RendererOptions();
 
-    public PluginClasses getRenderer() {
+    public JqPlotClasses getRenderer() {
         return renderer;
     }
 
-    public void setRenderer(PluginClasses renderer) {
+    public void setRenderer(JqPlotClasses renderer) {
         this.renderer = renderer;
     }
 
