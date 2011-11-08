@@ -71,7 +71,7 @@ public class JqPlotUtil {
             @Override
             public void marshal(Object source, HierarchicalStreamWriter writer, MarshallingContext context) {
                 JqPlotClasses plugin = (JqPlotClasses) source;
-                writer.setValue(plugin.getPluginName());
+                writer.setValue(plugin.getClassName());
             }
         };
 

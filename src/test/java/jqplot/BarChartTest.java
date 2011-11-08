@@ -6,7 +6,6 @@ package jqplot;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
 import jqplot.renderer.plugin.CanvasAxisTickRenderer;

@@ -10,24 +10,35 @@ package jqplot;
  */
 public enum JqPlotClasses {
 
-    BarRenderer("$.jqplot.barRenderer"),
-    CanvasAxisLabelRenderer("$.jqplot.CanvasAxisLabelRenderer"),
-    CategoryAxisRenderer("$.jqplot.CategoryAxisRenderer"),
-    CanvasAxisTickRenderer("$.jqplot.CanvasAxisTickRenderer"),
+    BarRenderer("$.jqplot.barRenderer", "plugins/jqplot.barRenderer.min.js"),
+    CanvasAxisLabelRenderer("$.jqplot.CanvasAxisLabelRenderer", "plugin/jqplot.canvasAxisLabelRenderer.min.js"),
+    CategoryAxisRenderer("$.jqplot.CategoryAxisRenderer", "plugin/jqplot.categoryAxisRenderer.min.js"),
+    CanvasAxisTickRenderer("$.jqplot.CanvasAxisTickRenderer", "jqplot.canvasAxisTickRenderer.min.js"),
     LineRenderer(""),
-    ShadowRenderer("$.jqplot.shadowRenderer");
-    private String pluginName;
+    ShadowRenderer("$.jqplot.ShadowRenderer", "jquery.jqplot.min.js");
+    
+    private String className;
+    private String resource;
 
-    private JqPlotClasses(String pluginName) {
-        this.pluginName = pluginName;
+    private JqPlotClasses(String className) {
+        this(className, null);
+    }
+
+    private JqPlotClasses(String className, String resource) {
+        this.className = className;
+        this.resource = resource;
     }
 
     @Override
     public String toString() {
-        return pluginName;
+        return className;
     }
 
-    public String getPluginName() {
-        return pluginName;
+    public String getClassName() {
+        return className;
+    }
+
+    public String getResource() {
+        return resource;
     }
 }

@@ -7,11 +7,13 @@ package jqplot.renderer.plugin;
 import jqplot.JqPlotClasses;
 import java.util.Collection;
 import jqplot.Renderer;
+import jqplot.metadata.JqPlotPlugin;
 
 /**
  *
  * @author inaiat
  */
+@JqPlotPlugin(value= JqPlotClasses.BarRenderer)
 public class BarRenderer implements Renderer {
     
     private Integer barPadding;
