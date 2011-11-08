@@ -11,6 +11,7 @@ package jqplot;
 public enum JqPlotClasses {
 
     BarRenderer("$.jqplot.barRenderer", "plugins/jqplot.barRenderer.min.js"),
+    PieRenderer("$.jqplot.PieRenderer"),
     CanvasAxisLabelRenderer("$.jqplot.CanvasAxisLabelRenderer", "plugins/jqplot.canvasAxisLabelRenderer.min.js"),
     CategoryAxisRenderer("$.jqplot.CategoryAxisRenderer", "plugins/jqplot.categoryAxisRenderer.min.js"),
     CanvasAxisTickRenderer("$.jqplot.CanvasAxisTickRenderer", "plugins/jqplot.canvasAxisTickRenderer.min.js"),
