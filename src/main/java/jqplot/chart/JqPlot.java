@@ -22,7 +22,6 @@ import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
 import jqplot.axis.YAxis;
 import java.util.Collection;
-import jqplot.chart.BaseChart;
 
 /**
  *

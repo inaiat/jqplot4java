@@ -5,13 +5,11 @@
 package jqplot;
 
 import jqplot.chart.JqPlot;
-import jqplot.chart.PieChart;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
-import jqplot.chart.BarChart;
 import junit.framework.TestCase;
 
 /**

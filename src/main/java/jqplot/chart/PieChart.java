@@ -19,6 +19,8 @@ public class PieChart extends BaseChart {
     public PieChart(){
         legend = new Legend(true, "e");
         seriesDefaults.setRenderer(JqPlotClasses.PieRenderer);
+        seriesDefaults.getRendererOptions().setShowDataLabels(true);
+        seriesDefaults.getRendererOptions().setSliceMargin(3);
     }
     
     public JqPlotClasses getRenderer(){

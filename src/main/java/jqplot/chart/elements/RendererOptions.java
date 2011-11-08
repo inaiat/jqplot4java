@@ -4,21 +4,15 @@
  */
 package jqplot.chart.elements;
 
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-import com.thoughtworks.xstream.annotations.XStreamConverter;
-import com.thoughtworks.xstream.annotations.XStreamImplicit;
-import com.thoughtworks.xstream.annotations.XStreamOmitField;
-import jqplot.plugin.PieRenderer;
-
 /**
  *
  * @author bernardo.moura
  */
 public class RendererOptions {
 
-    private boolean showDataLabels = true;
+    private boolean showDataLabels;
     private String dataLabels;
-    private int sliceMargin = 3;
+    private int sliceMargin;
     private int startAngle;
 
     public String getDataLabels() {

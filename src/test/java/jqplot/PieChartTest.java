@@ -4,9 +4,7 @@
  */
 package jqplot;
 
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import jqplot.chart.DonutChart;
 import jqplot.chart.PieChart;
 import junit.framework.TestCase;
