@@ -4,6 +4,7 @@
  */
 package jqplot;
 
+import jqplot.chart.JqPlot;
 import jqplot.chart.PieChart;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -37,7 +38,7 @@ public class JqPlotUtilTest extends TestCase {
      * Test of createJquery method, of class JqPlotUtil.
      */
     public void testCreateJquery() {
-        BarChart jqPlot = new BarChart();
+        JqPlot jqPlot = new JqPlot();
         jqPlot.setSimpleTitle("TESTE");
 
         XAxis xAxis = jqPlot.createXAxis();

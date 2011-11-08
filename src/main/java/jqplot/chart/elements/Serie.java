@@ -15,6 +15,15 @@ public class Serie implements Serializable {
 
     private String label;
     private JqPlotClasses renderer;
+    private RendererOptions rendererOptions = new RendererOptions();
+
+    public RendererOptions getRendererOptions() {
+        return rendererOptions;
+    }
+
+    public void setRendererOptions(RendererOptions rendererOptions) {
+        this.rendererOptions = rendererOptions;
+    }
 
     /**
      * @return the label

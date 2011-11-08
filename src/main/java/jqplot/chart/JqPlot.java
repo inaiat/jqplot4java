@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jqplot;
+package jqplot.chart;
 
 import jqplot.chart.elements.Title;
 import jqplot.chart.elements.Serie;
@@ -21,17 +21,16 @@ import jqplot.chart.elements.Axes;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
 import jqplot.axis.YAxis;
-import java.io.Serializable;
 import java.util.Collection;
+import jqplot.chart.BaseChart;
 
 /**
  *
  * @author inaiat
  */
-public class JqPlot implements Serializable {
+public class JqPlot extends BaseChart {
 
     private Collection<Serie> series;
-    private Collection<Serie> seriesDefaults;
     private Axes axes;
     private Title title;
     private Axis axesDefaults;
@@ -75,20 +74,6 @@ public class JqPlot implements Serializable {
      */
     public void setSeries(Collection<Serie> series) {
         this.setSeries(series);
-    }
-
-    /**
-     * @return the seriesDefaults
-     */
-    public Collection<Serie> getSeriesDefaults() {
-        return seriesDefaults;
-    }
-
-    /**
-     * @param seriesDefaults the seriesDefaults to set
-     */
-    public void setSeriesDefaults(Collection<Serie> seriesDefaults) {
-        this.setSeriesDefaults(seriesDefaults);
     }
 
     /**

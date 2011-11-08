@@ -11,14 +11,15 @@ import jqplot.chart.elements.Title;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
 import jqplot.axis.YAxis;
+import jqplot.chart.elements.SeriesDefaults;
 
 /**
  *
  * @author bernardo.moura
  */
 public class BarChart extends BaseChart{
-        private Collection<Serie> series;
-    private Collection<Serie> seriesDefaults;
+    private Collection<Serie> series;
+    private SeriesDefaults seriesDefaults;
     private Axes axes;
     private Title title;
     private Axis axesDefaults;
@@ -67,14 +68,14 @@ public class BarChart extends BaseChart{
     /**
      * @return the seriesDefaults
      */
-    public Collection<Serie> getSeriesDefaults() {
+    public SeriesDefaults getSeriesDefaults() {
         return seriesDefaults;
     }
 
     /**
      * @param seriesDefaults the seriesDefaults to set
      */
-    public void setSeriesDefaults(Collection<Serie> seriesDefaults) {
+    public void setSeriesDefaults(SeriesDefaults seriesDefaults) {
         this.setSeriesDefaults(seriesDefaults);
     }
 

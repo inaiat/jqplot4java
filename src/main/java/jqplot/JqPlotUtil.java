@@ -18,7 +18,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import jqplot.chart.BaseChart;
-import jqplot.chart.PieChart;
 import jqplot.metadata.JqPlotPlugin;
 import jqplot.renderer.plugin.BarRenderer;
 import jqplot.renderer.plugin.CanvasAxisLabelRenderer;
@@ -48,7 +47,7 @@ public class JqPlotUtil {
         return resources;
     }
 
-   public static String createPieChartJquery(PieChart jqPlot, String divId, HashMap<String, ?> data) {
+   public static String createPieChartJquery(BaseChart jqPlot, String divId, HashMap<String, ?> data) {
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
 
             @Override
