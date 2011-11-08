@@ -60,16 +60,36 @@ public class JqPlotUtil {
         });
         StringBuilder builder = new StringBuilder();
         builder.append("$(document).ready(function(){\r\n");
-        builder.append("   $.jqplot('").append(divId).append("', ");
+        builder.append("   $.jqplot('").append(divId).append("',[ ");
         builder.append(xstream.toXML(data));
-        builder.append(", ");
+        builder.append("], ");
         builder.append(pieChartToJson(jqPlot));
         builder.append(");\r\n");
         builder.append("});\r\n");
         return builder.toString();
     }
 
-    public static String createJquery(BaseChart jqPlot, String divId, Collection<? extends Serializable> data) {
+    public static String createJquery(BaseChart jqPlot, String divId, HashMap<String, ?> data) {
+        XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
+
+            @Override
+            public HierarchicalStreamWriter createWriter(Writer writer) {
+                Format format = new Format(new char[]{}, new char[]{}, Format.COMPACT_EMPTY_ELEMENT);
+                JsonWriter jsonWriter = new JsonWriter(writer, JsonWriter.DROP_ROOT_MODE, format);
+                return jsonWriter;
+            }
+        });
+        StringBuilder builder = new StringBuilder();
+        builder.append("$(document).ready(function(){\r\n");
+        builder.append("   $.jqplot('").append(divId).append("', ");
+        builder.append(xstream.toXML(data));
+        builder.append(", ");
+        builder.append(jqPlotToJson(jqPlot));
+        builder.append(");\r\n");
+        builder.append("});\r\n");
+        return builder.toString();
+    }
+   public static String createJquery(BaseChart jqPlot, String divId,   Collection<? extends Serializable> data) {
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
 
             @Override
