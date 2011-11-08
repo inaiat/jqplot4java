@@ -82,7 +82,7 @@ public class JqPlotUtil {
         StringBuilder builder = new StringBuilder();
         builder.append("$(document).ready(function(){\r\n");
         builder.append("   $.jqplot('").append(divId).append("', ");
-        builder.append(xstream.toXML(jqPlot.get));
+        builder.append(xstream.toXML(jqPlot.getData()));
         builder.append(", ");
         builder.append(jqPlotToJson(jqPlot));
         builder.append(");\r\n");

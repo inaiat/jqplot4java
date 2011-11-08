@@ -51,7 +51,7 @@ public class BarChartTest extends TestCase {
         xAxis.setRenderer(JqPlotClasses.CategoryAxisRenderer);
 
         jqPlot.addValues(3, 7, 9, 1, 4, 6, 8, 2, 5);
-        System.out.println(JqPlotUtil.createJquery(jqPlot, "chart1", collection));
+        System.out.println(JqPlotUtil.createJquery(jqPlot, "chart1"));
         
         
         List<String> resouces = JqPlotUtil.retriveJavaScriptResources(jqPlot);
