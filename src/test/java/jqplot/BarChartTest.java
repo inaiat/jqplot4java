@@ -4,10 +4,13 @@
  */
 package jqplot;
 
+import jqplot.chart.elements.Serie;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
+import jqplot.chart.BarChart;
 import jqplot.renderer.plugin.CanvasAxisTickRenderer;
 import junit.framework.TestCase;
 
@@ -32,7 +35,7 @@ public class BarChartTest extends TestCase {
     }
     
     public void testBarChart() {
-        JqPlot jqPlot = new JqPlot();
+        BarChart jqPlot = new BarChart();
         jqPlot.setSimpleTitle("Concern vs. Occurrance");
         Serie serie = new Serie();
         serie.setRenderer(JqPlotClasses.BarRenderer);
@@ -50,7 +53,7 @@ public class BarChartTest extends TestCase {
         
 
         List<Integer> collection = Arrays.<Integer>asList(3, 7, 9, 1, 4, 6, 8, 2, 5);
-        
+
         System.out.println(JqPlotUtil.createJquery(jqPlot, "chart1", collection));
         
         

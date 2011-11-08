@@ -4,31 +4,31 @@
  */
 package jqplot.chart;
 
-import jqplot.Legend;
-import jqplot.SeriesDefaults;
-import jqplot.plugin.PluginClasses;
+import jqplot.JqPlotClasses;
+import jqplot.chart.elements.Legend;
+import jqplot.chart.elements.SeriesDefaults;
 
 /**
  *
  * @author bernardo.moura
  */
-public class DonutChart {
+public class DonutChart extends BaseChart {
 
     private Legend legend;
     private SeriesDefaults seriesDefaults = new SeriesDefaults();
 
     public DonutChart() {
         legend = new Legend(true, "e");
-        seriesDefaults.setRenderer(PluginClasses.DonutRenderer);
+        seriesDefaults.setRenderer(JqPlotClasses.DonutRenderer);
         seriesDefaults.getRendererOptions().setSliceMargin(4);
         seriesDefaults.getRendererOptions().setDataLabels("value");
     }
 
-    public PluginClasses getRenderer() {
+    public JqPlotClasses getRenderer() {
         return seriesDefaults.getRenderer();
     }
 
-    public void setRenderer(PluginClasses renderer) {
+    public void setRenderer(JqPlotClasses renderer) {
         seriesDefaults.setRenderer(renderer);
     }
 

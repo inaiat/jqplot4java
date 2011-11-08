@@ -2,23 +2,23 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package jqplot;
+package jqplot.chart.elements;
 
-import jqplot.plugin.PluginClasses;
+import jqplot.JqPlotClasses;
 
 /**
  *
  * @author bernardo.moura
  */
 public class SeriesDefaults {
-    private PluginClasses renderer;
+    private JqPlotClasses renderer;
     private RendererOptions rendererOptions = new RendererOptions();
 
-    public PluginClasses getRenderer() {
+    public JqPlotClasses getRenderer() {
         return renderer;
     }
 
-    public void setRenderer(PluginClasses renderer) {
+    public void setRenderer(JqPlotClasses renderer) {
         this.renderer = renderer;
     }
 
