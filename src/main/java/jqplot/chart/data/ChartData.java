@@ -13,7 +13,6 @@ import java.util.List;
  */
 public interface ChartData{
     public void addValues(List<? extends Serializable> value);
-    public void addValue(Object... value);
-    
+    public void addValue(Object... value);   
    
 }

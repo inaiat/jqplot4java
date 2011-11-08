@@ -6,7 +6,6 @@ package jqplot.chart.elements;
 
 
 import jqplot.axis.Axis;
-import java.io.Serializable;
 
 /**
  *

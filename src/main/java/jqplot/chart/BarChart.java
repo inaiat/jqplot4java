@@ -12,7 +12,6 @@ import jqplot.chart.data.ChartData;
  * @author bernardo.moura
  */
 public class BarChart extends JqPlot implements Chart {
-
     
     private ChartData data;
 

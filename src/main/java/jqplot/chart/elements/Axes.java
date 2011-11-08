@@ -8,7 +8,6 @@ import jqplot.axis.X2Axis;
 import jqplot.axis.XAxis;
 import jqplot.axis.Y2Axis;
 import jqplot.axis.YAxis;
-import java.io.Serializable;
 
 /**
  *

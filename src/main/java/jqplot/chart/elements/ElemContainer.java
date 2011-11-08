@@ -4,8 +4,6 @@
  */
 package jqplot.chart.elements;
 
-import java.io.Serializable;
-
 /**
  *
  * @author bernardo.moura
