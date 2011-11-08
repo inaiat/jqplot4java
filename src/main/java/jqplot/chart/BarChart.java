@@ -5,9 +5,9 @@
 package jqplot.chart;
 
 import java.util.Collection;
-import jqplot.Axes;
-import jqplot.Serie;
-import jqplot.Title;
+import jqplot.chart.elements.Axes;
+import jqplot.chart.elements.Serie;
+import jqplot.chart.elements.Title;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
 import jqplot.axis.YAxis;

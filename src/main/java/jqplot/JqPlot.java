@@ -15,6 +15,9 @@
  */
 package jqplot;
 
+import jqplot.chart.elements.Title;
+import jqplot.chart.elements.Serie;
+import jqplot.chart.elements.Axes;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
 import jqplot.axis.YAxis;

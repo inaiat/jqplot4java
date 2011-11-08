@@ -6,7 +6,7 @@ package jqplot.plugin;
 
 import java.util.Collection;
 import jqplot.JqPlotClasses;
-import jqplot.Renderer;
+import jqplot.chart.elements.Renderer;
 
 /**
  *

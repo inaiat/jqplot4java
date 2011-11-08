@@ -4,7 +4,7 @@
  */
 package jqplot.renderer.core;
 
-import jqplot.Renderer;
+import jqplot.chart.elements.Renderer;
 import jqplot.JqPlotClasses;
 
 /**

@@ -4,6 +4,7 @@
  */
 package jqplot;
 
+import jqplot.chart.elements.Renderer;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 
 /**

@@ -5,7 +5,7 @@
 package jqplot.renderer.plugin;
 
 import jqplot.JqPlotClasses;
-import jqplot.Renderer;
+import jqplot.chart.elements.Renderer;
 import jqplot.metadata.JqPlotPlugin;
 
 /**

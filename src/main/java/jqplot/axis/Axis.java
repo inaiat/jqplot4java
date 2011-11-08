@@ -7,7 +7,7 @@ package jqplot.axis;
 import jqplot.JqPlotClasses;
 import java.io.Serializable;
 import java.util.Collection;
-import jqplot.Renderer;
+import jqplot.chart.elements.Renderer;
 
 /**
  *

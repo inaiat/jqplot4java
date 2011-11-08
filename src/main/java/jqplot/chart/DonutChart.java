@@ -5,8 +5,8 @@
 package jqplot.chart;
 
 import jqplot.JqPlotClasses;
-import jqplot.Legend;
-import jqplot.SeriesDefaults;
+import jqplot.chart.elements.Legend;
+import jqplot.chart.elements.SeriesDefaults;
 
 /**
  *
