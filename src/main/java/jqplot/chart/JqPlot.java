@@ -15,7 +15,6 @@
  */
 package jqplot.chart;
 
-import jqplot.chart.data.ChartData;
 import jqplot.chart.elements.Title;
 import jqplot.chart.elements.Serie;
 import jqplot.chart.elements.Axes;
@@ -23,17 +22,20 @@ import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
 import jqplot.axis.YAxis;
 import java.util.Collection;
+import jqplot.chart.elements.SeriesDefaults;
 
 /**
  *
  * @author inaiat
  */
-public class JqPlot extends BaseChart {
+public class JqPlot {
 
-    private Collection<Serie> series;
-    private Axes axes;
-    private Title title;
-    private Axis axesDefaults;
+    protected Collection<Serie> series;
+    protected Axes axes;
+    protected Title title;
+    protected Axis axesDefaults;
+    private SeriesDefaults seriesDefaults;
+    
     
     public void setSimpleTitle(String title) {
         if (getTitle() == null) {
@@ -117,10 +119,19 @@ public class JqPlot extends BaseChart {
     public void setAxes(Axes axes) {
         this.axes = axes;
     }
+    
+    /**
+     * @return the seriesDefaults
+     */
+    public SeriesDefaults getSeriesDefaults() {
+        return seriesDefaults;
+    }
 
-    @Override
-    public ChartData getData() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    /**
+     * @param seriesDefaults the seriesDefaults to set
+     */
+    public void setSeriesDefaults(SeriesDefaults seriesDefaults) {
+        this.seriesDefaults = seriesDefaults;
     }
     
 }

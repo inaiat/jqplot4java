@@ -13,7 +13,7 @@ import jqplot.chart.elements.SeriesDefaults;
  *
  * @author bernardo.moura
  */
-public class DonutChart extends BaseChart {
+public class DonutChart extends JqPlot implements Chart {
 
     private Legend legend;
     private SeriesDefaults seriesDefaults = new SeriesDefaults();
@@ -49,10 +49,9 @@ public class DonutChart extends BaseChart {
     public void setSeriesDefaults(SeriesDefaults seriesDefaults) {
         this.seriesDefaults = seriesDefaults;
     }
-    
+
     @Override
     public ChartData getData() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
-    
 }

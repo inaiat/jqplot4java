@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
-import jqplot.chart.BaseChart;
+import jqplot.chart.Chart;
 import jqplot.chart.data.ChartData;
 import jqplot.metadata.JqPlotPlugin;
 import jqplot.renderer.plugin.BarRenderer;
@@ -38,7 +38,7 @@ public class JqPlotUtil {
         CategoryAxisRenderer.class
     };
 
-    public static List<String> retriveJavaScriptResources(BaseChart jqPlot) {
+    public static List<String> retriveJavaScriptResources(Chart jqPlot) {
         List<String> resources = new ArrayList<String>();
         for (Class<?> clazz : RESOURCES) {
             if (clazz.isAnnotationPresent(JqPlotPlugin.class)) {
@@ -48,7 +48,7 @@ public class JqPlotUtil {
         return resources;
     }
 
-    public static String createPieChartJquery(BaseChart jqPlot, String divId, HashMap<String, ?> data) {
+    public static String createPieChartJquery(Chart jqPlot, String divId, HashMap<String, ?> data) {
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
 
             @Override
@@ -69,7 +69,7 @@ public class JqPlotUtil {
         return builder.toString();
     }
 
-    public static String createJquery(BaseChart jqPlot, String divId) {
+    public static String createJquery(Chart jqPlot, String divId) {
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
 
             @Override
@@ -90,7 +90,7 @@ public class JqPlotUtil {
         return builder.toString();
     }
 
-    public static String createJquery(BaseChart jqPlot, String divId, HashMap<String, ?> data) {
+    public static String createJquery(Chart jqPlot, String divId, HashMap<String, ?> data) {
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
 
             @Override
@@ -111,7 +111,7 @@ public class JqPlotUtil {
         return builder.toString();
     }
 
-    public static String createJquery(BaseChart jqPlot, String divId, Collection<? extends Serializable> data) {
+    public static String createJquery(Chart jqPlot, String divId, Collection<? extends Serializable> data) {
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
 
             @Override
@@ -132,7 +132,7 @@ public class JqPlotUtil {
         return builder.toString();
     }
 
-    public static String pieChartToJson(BaseChart jqPlot) {
+    public static String pieChartToJson(Chart jqPlot) {
 
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
 
@@ -181,7 +181,7 @@ public class JqPlotUtil {
         return xstream.toXML(jqPlot);
     }
 
-    public static String jqPlotToJson(BaseChart jqPlot) {
+    public static String jqPlotToJson(Chart jqPlot) {
 
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
 

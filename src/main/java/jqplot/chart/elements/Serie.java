@@ -4,7 +4,6 @@
  */
 package jqplot.chart.elements;
 
-import java.io.Serializable;
 import jqplot.JqPlotClasses;
 
 /**

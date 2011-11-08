@@ -13,7 +13,7 @@ import jqplot.chart.elements.SeriesDefaults;
  *
  * @author bernardo.moura
  */
-public class PieChart extends BaseChart {
+public class PieChart extends JqPlot implements Chart {
     private Legend legend;
     private SeriesDefaults seriesDefaults = new SeriesDefaults();
         
