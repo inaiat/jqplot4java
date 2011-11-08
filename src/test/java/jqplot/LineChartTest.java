@@ -5,7 +5,6 @@
 package jqplot;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;

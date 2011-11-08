@@ -5,6 +5,7 @@
 package jqplot.chart;
 
 import jqplot.JqPlotClasses;
+import jqplot.chart.data.ChartData;
 import jqplot.chart.elements.Legend;
 import jqplot.chart.elements.SeriesDefaults;
 
@@ -22,6 +23,7 @@ public class DonutChart extends BaseChart {
         seriesDefaults.setRenderer(JqPlotClasses.DonutRenderer);
         seriesDefaults.getRendererOptions().setSliceMargin(4);
         seriesDefaults.getRendererOptions().setDataLabels("value");
+        seriesDefaults.getRendererOptions().setShowDataLabels(true);
     }
 
     public JqPlotClasses getRenderer() {
@@ -47,4 +49,10 @@ public class DonutChart extends BaseChart {
     public void setSeriesDefaults(SeriesDefaults seriesDefaults) {
         this.seriesDefaults = seriesDefaults;
     }
+    
+    @Override
+    public ChartData getData() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    
 }

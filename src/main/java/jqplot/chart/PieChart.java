@@ -5,6 +5,7 @@
 package jqplot.chart;
 
 import jqplot.JqPlotClasses;
+import jqplot.chart.data.ChartData;
 import jqplot.chart.elements.Legend;
 import jqplot.chart.elements.SeriesDefaults;
 
@@ -19,6 +20,14 @@ public class PieChart extends BaseChart {
     public PieChart(){
         legend = new Legend(true, "e");
         seriesDefaults.setRenderer(JqPlotClasses.PieRenderer);
+        seriesDefaults.getRendererOptions().setShowDataLabels(true);
+        seriesDefaults.getRendererOptions().setSliceMargin(3);
+    }
+    
+    
+    @Override
+    public ChartData getData() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
     
     public JqPlotClasses getRenderer(){

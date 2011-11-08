@@ -4,17 +4,15 @@
  */
 package jqplot.chart.elements;
 
-import java.io.Serializable;
-
 /**
  *
  * @author bernardo.moura
  */
 public class RendererOptions implements Element {
 
-    private boolean showDataLabels = true;
+    private boolean showDataLabels;
     private String dataLabels;
-    private int sliceMargin = 3;
+    private int sliceMargin;
     private int startAngle;
 
     public String getDataLabels() {

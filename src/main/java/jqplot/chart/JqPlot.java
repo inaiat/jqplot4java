@@ -13,25 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jqplot;
+package jqplot.chart;
 
+import jqplot.chart.data.ChartData;
 import jqplot.chart.elements.Title;
 import jqplot.chart.elements.Serie;
 import jqplot.chart.elements.Axes;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
 import jqplot.axis.YAxis;
-import java.io.Serializable;
 import java.util.Collection;
 
 /**
  *
  * @author inaiat
  */
-public class JqPlot implements Serializable {
+public class JqPlot extends BaseChart {
 
     private Collection<Serie> series;
-    private Collection<Serie> seriesDefaults;
     private Axes axes;
     private Title title;
     private Axis axesDefaults;
@@ -78,20 +77,6 @@ public class JqPlot implements Serializable {
     }
 
     /**
-     * @return the seriesDefaults
-     */
-    public Collection<Serie> getSeriesDefaults() {
-        return seriesDefaults;
-    }
-
-    /**
-     * @param seriesDefaults the seriesDefaults to set
-     */
-    public void setSeriesDefaults(Collection<Serie> seriesDefaults) {
-        this.setSeriesDefaults(seriesDefaults);
-    }
-
-    /**
      * @return the title
      */
     public Title getTitle() {
@@ -131,6 +116,11 @@ public class JqPlot implements Serializable {
      */
     public void setAxes(Axes axes) {
         this.axes = axes;
-    }    
+    }
+
+    @Override
+    public ChartData getData() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
     
 }

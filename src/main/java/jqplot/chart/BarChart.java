@@ -4,6 +4,7 @@
  */
 package jqplot.chart;
 
+import java.util.Arrays;
 import java.util.Collection;
 import jqplot.chart.elements.Axes;
 import jqplot.chart.elements.Serie;
@@ -11,6 +12,7 @@ import jqplot.chart.elements.Title;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
 import jqplot.axis.YAxis;
+import jqplot.chart.data.ChartData;
 
 /**
  *
@@ -19,10 +21,23 @@ import jqplot.axis.YAxis;
 public class BarChart extends BaseChart {
 
     private Collection<Serie> series;
-    private Collection<Serie> seriesDefaults;
     private Axes axes;
     private Title title;
     private Axis axesDefaults;
+    private ChartData data;
+
+    public void addValues(Number... values) {
+        data.addValue(Arrays.asList(values));
+    }
+
+    public void addValue(Number value) {
+        data.addValue(value);
+    }
+
+    @Override
+    public ChartData getData() {
+        return data;
+    }
 
     public void setSimpleTitle(String title) {
         if (getTitle() == null) {
@@ -63,20 +78,6 @@ public class BarChart extends BaseChart {
      */
     public void setSeries(Collection<Serie> series) {
         this.setSeries(series);
-    }
-
-    /**
-     * @return the seriesDefaults
-     */
-    public Collection<Serie> getSeriesDefaults() {
-        return seriesDefaults;
-    }
-
-    /**
-     * @param seriesDefaults the seriesDefaults to set
-     */
-    public void setSeriesDefaults(Collection<Serie> seriesDefaults) {
-        this.setSeriesDefaults(seriesDefaults);
     }
 
     /**

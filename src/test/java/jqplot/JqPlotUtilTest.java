@@ -4,13 +4,12 @@
  */
 package jqplot;
 
-import jqplot.chart.PieChart;
+import jqplot.chart.JqPlot;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
-import jqplot.chart.BarChart;
 import junit.framework.TestCase;
 
 /**
@@ -37,7 +36,7 @@ public class JqPlotUtilTest extends TestCase {
      * Test of createJquery method, of class JqPlotUtil.
      */
     public void testCreateJquery() {
-        BarChart jqPlot = new BarChart();
+        JqPlot jqPlot = new JqPlot();
         jqPlot.setSimpleTitle("TESTE");
 
         XAxis xAxis = jqPlot.createXAxis();

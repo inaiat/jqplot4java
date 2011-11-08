@@ -1,5 +1,5 @@
+/* To change this template, choose Tools | Templates
 /*
- * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 package jqplot.chart.elements;
@@ -15,6 +15,15 @@ public class Serie implements Element {
 
     private String label;
     private JqPlotClasses renderer;
+    private RendererOptions rendererOptions = new RendererOptions();
+
+    public RendererOptions getRendererOptions() {
+        return rendererOptions;
+    }
+
+    public void setRendererOptions(RendererOptions rendererOptions) {
+        this.rendererOptions = rendererOptions;
+    }
 
     /**
      * @return the label
