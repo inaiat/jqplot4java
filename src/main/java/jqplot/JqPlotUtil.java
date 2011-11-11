@@ -17,8 +17,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
-import jqplot.chart.Chart;
-import jqplot.chart.data.ChartData;
+import jqplot.chart.data.Chart;
+import jqplot.chart.JqPlot;
+import jqplot.chart.data.AbstractChartData;
+import jqplot.chart.data.LinedData;
 import jqplot.metadata.JqPlotPlugin;
 import jqplot.renderer.plugin.BarRenderer;
 import jqplot.renderer.plugin.CanvasAxisLabelRenderer;
@@ -77,14 +79,18 @@ public class JqPlotUtil {
                 Format format = new Format(new char[]{}, new char[]{}, Format.COMPACT_EMPTY_ELEMENT);
                 JsonWriter jsonWriter = new JsonWriter(writer, JsonWriter.DROP_ROOT_MODE, format);
                 return jsonWriter;
-            }
-        });
+            }            
+            
+        });  
+
+        xstream.omitField(AbstractChartData.class, "data");
+        
         StringBuilder builder = new StringBuilder();
         builder.append("$(document).ready(function(){\r\n");
         builder.append("   $.jqplot('").append(divId).append("', ");
         builder.append(xstream.toXML(jqPlot.getData()));
         builder.append(", ");
-        builder.append(jqPlotToJson(jqPlot));
+        builder.append(jqPlotToJson((JqPlot)jqPlot));
         builder.append(");\r\n");
         builder.append("});\r\n");
         return builder.toString();
@@ -105,7 +111,7 @@ public class JqPlotUtil {
         builder.append("   $.jqplot('").append(divId).append("', ");
         builder.append(xstream.toXML(data));
         builder.append(", ");
-        builder.append(jqPlotToJson(jqPlot));
+        builder.append(jqPlotToJson((JqPlot)jqPlot));
         builder.append(");\r\n");
         builder.append("});\r\n");
         return builder.toString();
@@ -126,7 +132,7 @@ public class JqPlotUtil {
         builder.append("   $.jqplot('").append(divId).append("', ");
         builder.append(xstream.toXML(data));
         builder.append(", ");
-        builder.append(jqPlotToJson(jqPlot));
+        builder.append(jqPlotToJson((JqPlot)jqPlot));
         builder.append(");\r\n");
         builder.append("});\r\n");
         return builder.toString();
@@ -181,7 +187,7 @@ public class JqPlotUtil {
         return xstream.toXML(jqPlot);
     }
 
-    public static String jqPlotToJson(Chart jqPlot) {
+    public static String jqPlotToJson(JqPlot jqPlot) {
 
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
 

@@ -44,19 +44,18 @@ public class JqPlotUtilTest extends TestCase {
         xAxis.setPad(0F);
         Axis yAxis = jqPlot.createYAxis();
         yAxis.setLabel("Y Axis");
-        
+
 
         Axis axisDefault = new Axis();
         axisDefault.setLabelRenderer(JqPlotClasses.CanvasAxisLabelRenderer);
         jqPlot.setAxesDefaults(axisDefault);
-        
-            List<Integer> collection = Arrays.<Integer>asList(3, 7, 9, 1, 4, 6, 8, 2, 5);
-        HashMap<String, List<Integer>> data = new HashMap<String, List<Integer>>();
-        data.put("", collection);      
-        
 
-        System.out.println(JqPlotUtil.createJquery(jqPlot, "chart1",  data));
+        List<Integer> collection = Arrays.<Integer>asList(3, 7, 9, 1, 4, 6, 8, 2, 5);
+        HashMap<String, List<Integer>> data = new HashMap<String, List<Integer>>();
+        data.put("", collection);
+
+
+        //System.out.println(JqPlotUtil.createJquery(jqPlot, "chart1", data));
 
     }
-    
 }

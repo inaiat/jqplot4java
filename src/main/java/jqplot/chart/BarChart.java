@@ -4,6 +4,7 @@
  */
 package jqplot.chart;
 
+import jqplot.chart.data.Chart;
 import java.util.Arrays;
 import jqplot.chart.data.ChartData;
 
@@ -11,7 +12,7 @@ import jqplot.chart.data.ChartData;
  *
  * @author bernardo.moura
  */
-public class BarChart extends JqPlot implements Chart {
+public class BarChart extends JqPlot  {
     
     private ChartData data;
 
@@ -22,11 +23,5 @@ public class BarChart extends JqPlot implements Chart {
     public void addValue(Number value) {
         data.addValue(value);
     }
-
-    @Override
-    public ChartData getData() {
-        return data;
-    }
-
   
 }

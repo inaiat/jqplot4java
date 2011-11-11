@@ -35,33 +35,53 @@ public class JqPlot {
     protected Title title;
     protected Axis axesDefaults;
     private SeriesDefaults seriesDefaults;
-    
-    
+
     public void setSimpleTitle(String title) {
-        if (getTitle() == null) {
-            this.setTitle(new Title(title));
+        if (title == null) {
+            this.title = new Title(title);
         } else {
-            this.getTitle().setText(title);
+            this.title.setText(title);
         }
     }
-
+    
     public Axes createAxes() {
-        if (this.getAxes() == null) {
-            this.setAxes(new Axes());
+        if (axes == null) {
+            this.axes = new Axes();
         }
-        return this.getAxes();
+        return this.axes;
     }
 
     public XAxis createXAxis() {
-        XAxis xAxis = new XAxis();
-        createAxes().setXaxis(xAxis);
-        return xAxis;
+        Axes newAxes = createAxes();
+        if (newAxes.getXaxis()==null) {
+            XAxis xAxis = new XAxis();
+            newAxes.setXaxis(xAxis);
+        }
+        return newAxes.getXaxis();
     }
 
     public YAxis createYAxis() {
-        YAxis yAxis = new YAxis();
-        createAxes().setYaxis(yAxis);
-        return yAxis;
+        Axes newAxes = createAxes();
+        if (newAxes.getYaxis()==null) {
+            YAxis yAxis = new YAxis();
+            newAxes.setYaxis(yAxis);
+        }
+        return newAxes.getYaxis();
+    }
+
+    public Axis createAxesDefaults() {
+        if (axesDefaults == null) {
+            axesDefaults = new Axis();
+        }
+        return axesDefaults;
+    }
+
+    public void setLabelX(String label) {
+        createXAxis().setLabel(label);
+    }
+
+    public void setLabelY(String label) {
+        createYAxis().setLabel(label);
     }
 
     /**
@@ -119,7 +139,7 @@ public class JqPlot {
     public void setAxes(Axes axes) {
         this.axes = axes;
     }
-    
+
     /**
      * @return the seriesDefaults
      */
@@ -133,5 +153,4 @@ public class JqPlot {
     public void setSeriesDefaults(SeriesDefaults seriesDefaults) {
         this.seriesDefaults = seriesDefaults;
     }
-    
 }

@@ -4,25 +4,19 @@
  */
 package jqplot.chart.data;
 
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 /**
  *
  * @author bernardo.moura
  */
-public class LinedData implements ChartData{
-    private ArrayList<Object> data = new ArrayList<Object>();
-    public LinedData(){
-    }
+public class LinedData<N extends Number> extends AbstractChartData<N> {
     
-    public void addValues(List<? extends Serializable> value) {
-        data.add(value);
-    }
+    private ArrayList<N> data = new ArrayList<N>();        
 
-    public void addValue(Object... values) {
-        data.add(values);
+    public Collection<N> getData() {
+        return data;
     }
     
 }

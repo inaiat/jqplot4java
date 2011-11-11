@@ -5,14 +5,17 @@
 package jqplot.chart.data;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
 
 /**
  *
  * @author bernardo.moura
  */
-public interface ChartData{
-    public void addValues(List<? extends Serializable> value);
-    public void addValue(Object... value);   
-   
+public interface ChartData<T> {
+
+    Collection<T> getData();
+
+    public void addValues(Collection<? extends Serializable> value);
+
+    public void addValue(Object... value);
 }
