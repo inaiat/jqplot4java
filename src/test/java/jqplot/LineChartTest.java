@@ -4,9 +4,6 @@
  */
 package jqplot;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import jqplot.chart.LineChart;
 import jqplot.chart.data.LinedData;
 import junit.framework.TestCase;

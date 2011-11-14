@@ -4,18 +4,13 @@
  */
 package jqplot;
 
-import jqplot.chart.elements.Serie;
-import java.util.List;
-import jqplot.axis.Axis;
-import jqplot.axis.XAxis;
-import jqplot.chart.BarChart;
-import jqplot.renderer.plugin.CanvasAxisTickRenderer;
 import junit.framework.TestCase;
 
 /**
  *
  * @author inaiat
  */
+
 public class BarChartTest extends TestCase {
 
 //    public BarChartTest(String testName) {

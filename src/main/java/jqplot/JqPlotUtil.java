@@ -42,7 +42,10 @@ public class JqPlotUtil {
         List<String> resources = new ArrayList<String>();
         for (Class<?> clazz : RESOURCES) {
             if (clazz.isAnnotationPresent(JqPlotPlugin.class)) {
-                resources.add(clazz.getAnnotation(JqPlotPlugin.class).value().getResource());
+                JqPlotResources[] jqPlotResourceses = clazz.getAnnotation(JqPlotPlugin.class).values();
+                for (JqPlotResources jqPlotResources : jqPlotResourceses) {
+                    resources.add(jqPlotResources.getResource());                    
+                }
             }
         }
         return resources;
@@ -79,7 +82,7 @@ public class JqPlotUtil {
                 return jsonWriter;
             }            
             
-        });  
+        });          
 
         StringBuilder builder = new StringBuilder();
         builder.append("$(document).ready(function(){\r\n");

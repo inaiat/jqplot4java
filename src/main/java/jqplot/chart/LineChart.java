@@ -6,12 +6,14 @@ package jqplot.chart;
 
 import jqplot.JqPlotResources;
 import jqplot.chart.data.ChartData;
+import jqplot.metadata.JqPlotPlugin;
 
 /**
  *
  * @author inaiat
  */
-public class LineChart<T extends ChartData> extends AbstractChart<T> {
+@JqPlotPlugin(values={JqPlotResources.CanvasTextRenderer, JqPlotResources.CategoryAxisRenderer})
+public class LineChart<T extends ChartData> extends DefaultChart<T> {
 
     public LineChart() {
         getJqPlot().createAxesDefaults().setLabelRenderer(JqPlotResources.CanvasAxisLabelRenderer);

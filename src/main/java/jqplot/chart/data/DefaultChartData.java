@@ -11,7 +11,7 @@ import java.util.Collection;
  *
  * @author inaiat
  */
-public abstract class AbstractChartData<T> implements ChartData<T>  {
+public abstract class DefaultChartData<T> implements ChartData<T>  {
 
     public void addValues(Collection<T> value) {
         getData().addAll(value);

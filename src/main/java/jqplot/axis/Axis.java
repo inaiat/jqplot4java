@@ -6,7 +6,6 @@ package jqplot.axis;
 
 import jqplot.JqPlotResources;
 import java.io.Serializable;
-import java.util.Collection;
 import jqplot.chart.elements.Renderer;
 
 /**
@@ -19,7 +18,7 @@ public class Axis implements Serializable {
     private JqPlotResources renderer;
     private Boolean autoScale;
     private Renderer tickOptions;
-    private Collection<String> ticks;
+    private String[] ticks;
     private JqPlotResources labelRenderer;
     private JqPlotResources tickRenderer;
     private String label;
@@ -66,20 +65,6 @@ public class Axis implements Serializable {
      */
     public void setTickOptions(Renderer tickOptions) {
         this.tickOptions = tickOptions;
-    }
-
-    /**
-     * @return the ticks
-     */
-    public Collection<String> getTicks() {
-        return ticks;
-    }
-
-    /**
-     * @param ticks the ticks to set
-     */
-    public void setTicks(Collection<String> ticks) {
-        this.ticks = ticks;
     }
 
     /**
@@ -150,6 +135,20 @@ public class Axis implements Serializable {
      */
     public void setRenderer(JqPlotResources renderer) {
         this.renderer = renderer;
+    }
+
+    /**
+     * @return the ticks
+     */
+    public String[] getTicks() {
+        return ticks;
+    }
+
+    /**
+     * @param ticks the ticks to set
+     */
+    public void setTicks(String[] ticks) {
+        this.ticks = ticks;
     }
    
 }

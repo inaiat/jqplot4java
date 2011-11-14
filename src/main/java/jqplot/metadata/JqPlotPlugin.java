@@ -17,5 +17,5 @@ import jqplot.JqPlotResources;
 @Retention(RetentionPolicy.RUNTIME)
 @Target( { ElementType.TYPE })
 public @interface JqPlotPlugin {
-    JqPlotResources value();
+    JqPlotResources[] values();
 }

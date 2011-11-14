@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author bernardo.moura
  */
-public class LinedData<T extends Number> extends AbstractChartData<T> {
+public class LinedData<T extends Number> extends DefaultChartData<T> {
     
     private List<T> data = new ArrayList<T>();
 

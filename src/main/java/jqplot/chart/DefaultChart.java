@@ -18,12 +18,12 @@ import jqplot.chart.elements.Title;
  *
  * @author inaiat
  */
-public abstract class AbstractChart<T extends ChartData> implements Chart<T> {
+public abstract class DefaultChart<T extends ChartData> implements Chart<T> {
 
     private final JqPlot jqPlot;
     private T chartData;
 
-    public AbstractChart() {
+    public DefaultChart() {
         this.jqPlot = new JqPlot();
     }   
 

@@ -13,7 +13,7 @@ import jqplot.metadata.JqPlotPlugin;
  *
  * @author inaiat
  */
-@JqPlotPlugin(value= JqPlotResources.BarRenderer)
+@JqPlotPlugin(values= {JqPlotResources.BarRenderer})
 public class BarRenderer implements Renderer {
     
     private Integer barPadding;

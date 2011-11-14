@@ -12,7 +12,7 @@ import jqplot.metadata.JqPlotPlugin;
  *
  * @author inaiat
  */
-@JqPlotPlugin(value= JqPlotResources.CanvasAxisLabelRenderer)
+@JqPlotPlugin(values= {JqPlotResources.CanvasTextRenderer,  JqPlotResources.CanvasAxisLabelRenderer})
 public class CanvasAxisLabelRenderer implements Renderer {
 
     private Float angle;

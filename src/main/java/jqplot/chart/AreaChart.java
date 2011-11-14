@@ -4,7 +4,6 @@
  */
 package jqplot.chart;
 
-import java.util.Arrays;
 import jqplot.JqPlotResources;
 import jqplot.axis.XAxis;
 import jqplot.chart.data.ChartData;
@@ -14,7 +13,7 @@ import jqplot.chart.elements.SeriesDefaults;
  *
  * @author inaiat
  */
-public class AreaChart<T extends ChartData> extends AbstractChart<T> {
+public class AreaChart<T extends ChartData> extends DefaultChart<T> {
 
     public AreaChart() {
         getJqPlot().setStackSeries(true);
@@ -24,7 +23,6 @@ public class AreaChart<T extends ChartData> extends AbstractChart<T> {
         setSeriesDefaults(defaults);        
         XAxis xAxis = createXAxis();
         xAxis.setRenderer(JqPlotResources.CategoryAxisRenderer);
-        xAxis.setTicks(Arrays.asList("Seg","Ter","Qua","Qui","Sex"));        
     }    
     
 }
