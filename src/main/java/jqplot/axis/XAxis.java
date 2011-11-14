@@ -4,13 +4,10 @@
  */
 package jqplot.axis;
 
-import com.thoughtworks.xstream.annotations.XStreamAlias;
-
 /**
  *
  * @author inaiat
  */
-@XStreamAlias(value="xaxis")
 public class XAxis extends Axis {
 
     
