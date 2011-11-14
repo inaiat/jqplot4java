@@ -4,7 +4,7 @@
  */
 package jqplot.axis;
 
-import jqplot.JqPlotClasses;
+import jqplot.JqPlotResources;
 import java.io.Serializable;
 import java.util.Collection;
 import jqplot.chart.elements.Renderer;
@@ -16,12 +16,12 @@ import jqplot.chart.elements.Renderer;
 public class Axis implements Serializable {
     
     private Boolean show;
-    private JqPlotClasses renderer;
+    private JqPlotResources renderer;
     private Boolean autoScale;
     private Renderer tickOptions;
     private Collection<String> ticks;
-    private JqPlotClasses labelRenderer;
-    private JqPlotClasses tickRenderer;
+    private JqPlotResources labelRenderer;
+    private JqPlotResources tickRenderer;
     private String label;
     private Float pad;
 
@@ -85,28 +85,28 @@ public class Axis implements Serializable {
     /**
      * @return the labelRenderer
      */
-    public JqPlotClasses getLabelRenderer() {
+    public JqPlotResources getLabelRenderer() {
         return labelRenderer;
     }
 
     /**
      * @param labelRenderer the labelRenderer to set
      */
-    public void setLabelRenderer(JqPlotClasses labelRenderer) {
+    public void setLabelRenderer(JqPlotResources labelRenderer) {
         this.labelRenderer = labelRenderer;
     }
 
     /**
      * @return the tickRenderer
      */
-    public JqPlotClasses getTickRenderer() {
+    public JqPlotResources getTickRenderer() {
         return tickRenderer;
     }
 
     /**
      * @param tickRenderer the tickRenderer to set
      */
-    public void setTickRenderer(JqPlotClasses tickRenderer) {
+    public void setTickRenderer(JqPlotResources tickRenderer) {
         this.tickRenderer = tickRenderer;
     }
 
@@ -141,14 +141,14 @@ public class Axis implements Serializable {
     /**
      * @return the renderer
      */
-    public JqPlotClasses getRenderer() {
+    public JqPlotResources getRenderer() {
         return renderer;
     }
 
     /**
      * @param renderer the renderer to set
      */
-    public void setRenderer(JqPlotClasses renderer) {
+    public void setRenderer(JqPlotResources renderer) {
         this.renderer = renderer;
     }
    

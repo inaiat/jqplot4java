@@ -47,7 +47,7 @@ public class JqPlotUtilTest extends TestCase {
 
 
         Axis axisDefault = new Axis();
-        axisDefault.setLabelRenderer(JqPlotClasses.CanvasAxisLabelRenderer);
+        axisDefault.setLabelRenderer(JqPlotResources.CanvasAxisLabelRenderer);
         jqPlot.setAxesDefaults(axisDefault);
 
         List<Integer> collection = Arrays.<Integer>asList(3, 7, 9, 1, 4, 6, 8, 2, 5);

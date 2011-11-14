@@ -8,7 +8,7 @@ package jqplot;
  *
  * @author inaiat
  */
-public enum JqPlotClasses {
+public enum JqPlotResources {
 
     BarRenderer("$.jqplot.barRenderer", "plugins/jqplot.barRenderer.min.js"),
     PieRenderer("$.jqplot.PieRenderer", "plugins/jqplot.pieRenderer.min.js"),
@@ -22,11 +22,11 @@ public enum JqPlotClasses {
     private String className;
     private String resource;
 
-    private JqPlotClasses(String className) {
+    private JqPlotResources(String className) {
         this(className, null);
     }
 
-    private JqPlotClasses(String className, String resource) {
+    private JqPlotResources(String className, String resource) {
         this.className = className;
         this.resource = resource;
     }

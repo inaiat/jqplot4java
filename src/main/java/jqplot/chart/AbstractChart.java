@@ -20,6 +20,25 @@ import jqplot.chart.elements.Title;
  */
 public abstract class AbstractChart<T extends ChartData> implements Chart<T> {
 
+    private final JqPlot jqPlot;
+    private T chartData;
+
+    public AbstractChart() {
+        this.jqPlot = new JqPlot();
+    }   
+
+    public JqPlot getJqPlot() {
+        return jqPlot;
+    }
+
+    public T getChartData() {
+        return chartData;
+    }
+
+    public void setChartData(T value) {
+        this.chartData = value;
+    }
+
     public void setSimpleTitle(String title) {
         getJqPlot().setSimpleTitle(title);
     }

@@ -4,7 +4,7 @@
  */
 package jqplot.renderer.plugin;
 
-import jqplot.JqPlotClasses;
+import jqplot.JqPlotResources;
 import jqplot.chart.elements.Renderer;
 
 /**
@@ -22,7 +22,7 @@ public class CanvasAxisTickRenderer implements Renderer {
     private Integer markSize;
     private Boolean show;
     private String labelPosition;
-    private JqPlotClasses formatter;
+    private JqPlotResources formatter;
     private String formatString;
     private String prefix;
     private String fontFamily;
@@ -148,14 +148,14 @@ public class CanvasAxisTickRenderer implements Renderer {
     /**
      * @return the formatter
      */
-    public JqPlotClasses getFormatter() {
+    public JqPlotResources getFormatter() {
         return formatter;
     }
 
     /**
      * @param formatter the formatter to set
      */
-    public void setFormatter(JqPlotClasses formatter) {
+    public void setFormatter(JqPlotResources formatter) {
         this.formatter = formatter;
     }
 
@@ -285,8 +285,8 @@ public class CanvasAxisTickRenderer implements Renderer {
         this.pt2px = pt2px;
     }
 
-    public JqPlotClasses jqplotClass() {
-        return JqPlotClasses.CanvasAxisTickRenderer;
+    public JqPlotResources resource() {
+        return JqPlotResources.CanvasAxisTickRenderer;
     }   
 
 }

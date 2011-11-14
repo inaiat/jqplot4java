@@ -4,7 +4,7 @@
  */
 package jqplot.plugin;
 
-import jqplot.JqPlotClasses;
+import jqplot.JqPlotResources;
 import jqplot.chart.elements.Renderer;
 
 /**
@@ -111,7 +111,7 @@ public class ShadowRenderer implements Renderer {
     public void setStrokeStyle(String strokeStyle) {
         this.strokeStyle = strokeStyle;
     }
-    public JqPlotClasses jqplotClass() {
-        return JqPlotClasses.ShadowRenderer;
+    public JqPlotResources resource() {
+        return JqPlotResources.ShadowRenderer;
     }
 }

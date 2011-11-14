@@ -4,7 +4,7 @@
  */
 package jqplot.plugin;
 
-import jqplot.JqPlotClasses;
+import jqplot.JqPlotResources;
 import jqplot.chart.elements.Renderer;
 
 /**
@@ -22,7 +22,7 @@ public class CanvasGridRenderer implements Renderer {
     }
 
     
-    public JqPlotClasses jqplotClass() {
+    public JqPlotResources resource() {
         return null;
     }
 }

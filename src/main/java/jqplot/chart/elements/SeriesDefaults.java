@@ -8,7 +8,6 @@ package jqplot.chart.elements;
  *
  * @author bernardo.moura
  */
-public class SeriesDefaults extends Serie {
-   
+public class SeriesDefaults extends Serie {    
     
 }

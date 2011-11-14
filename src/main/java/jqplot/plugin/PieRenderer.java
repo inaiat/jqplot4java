@@ -4,7 +4,7 @@
  */
 package jqplot.plugin;
 
-import jqplot.JqPlotClasses;
+import jqplot.JqPlotResources;
 import jqplot.chart.elements.Renderer;
 
 /**
@@ -89,7 +89,7 @@ public class PieRenderer implements Renderer {
         return PluginClasses.PieRenderer.getPluginName();
     }
 
-    public JqPlotClasses jqplotClass() {
-        return JqPlotClasses.PieRenderer;
+    public JqPlotResources resource() {
+        return JqPlotResources.PieRenderer;
     }
 }

@@ -35,6 +35,8 @@ public class JqPlot {
     protected Title title;
     protected Axis axesDefaults;
     private SeriesDefaults seriesDefaults;
+    private Boolean stackSeries;
+    private Boolean showMarker;
 
     public void setSimpleTitle(String title) {
         if (title == null) {
@@ -152,5 +154,33 @@ public class JqPlot {
      */
     public void setSeriesDefaults(SeriesDefaults seriesDefaults) {
         this.seriesDefaults = seriesDefaults;
+    }
+
+    /**
+     * @return the stackSeries
+     */
+    public Boolean getStackSeries() {
+        return stackSeries;
+    }
+
+    /**
+     * @param stackSeries the stackSeries to set
+     */
+    public void setStackSeries(Boolean stackSeries) {
+        this.stackSeries = stackSeries;
+    }
+
+    /**
+     * @return the showMarker
+     */
+    public Boolean getShowMarker() {
+        return showMarker;
+    }
+
+    /**
+     * @param showMarker the showMarker to set
+     */
+    public void setShowMarker(Boolean showMarker) {
+        this.showMarker = showMarker;
     }
 }

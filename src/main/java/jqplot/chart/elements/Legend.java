@@ -11,7 +11,7 @@ package jqplot.chart.elements;
 public class Legend implements Element {
     private String options;
     private String placment;
-    private String location = "ne";
+    private String location;
     private String border;
     private String background;
     private String fontFamily;
@@ -25,11 +25,11 @@ public class Legend implements Element {
     private Double xoffset;
     private Double yoffset;
                 
-    private Boolean show = true;
-    private Boolean showLables = true;
-    private Boolean showSwatches = false;
-    private Boolean preDraw = false;
-    private Boolean escapeHtml = false;
+    private Boolean show;
+    private Boolean showLables;
+    private Boolean showSwatches;
+    private Boolean preDraw;
+    private Boolean escapeHtml; 
 
     private String[] lables;
     public Legend (){

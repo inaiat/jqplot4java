@@ -12,20 +12,20 @@ import java.util.List;
  *
  * @author bernardo.moura
  */
-public class LinedData extends AbstractChartData<Integer> {
+public class LinedData<T extends Number> extends AbstractChartData<T> {
     
-    private List<Integer> data = new ArrayList<Integer>();
+    private List<T> data = new ArrayList<T>();
 
     public LinedData() {
     }
     
-    public LinedData(Integer... values) {
+    public LinedData(T... values) {
         addValues(values);
     }    
     
 
     @Override
-    public Collection<Integer> getData() {
+    public Collection<T> getData() {
         return data;
     }
 

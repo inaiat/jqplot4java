@@ -4,7 +4,7 @@
  */
 package jqplot.renderer.plugin;
 
-import jqplot.JqPlotClasses;
+import jqplot.JqPlotResources;
 import jqplot.chart.elements.Renderer;
 import jqplot.metadata.JqPlotPlugin;
 
@@ -12,7 +12,7 @@ import jqplot.metadata.JqPlotPlugin;
  *
  * @author inaiat
  */
-@JqPlotPlugin(value= JqPlotClasses.CanvasAxisLabelRenderer)
+@JqPlotPlugin(value= JqPlotResources.CanvasAxisLabelRenderer)
 public class CanvasAxisLabelRenderer implements Renderer {
 
     private Float angle;
@@ -181,7 +181,7 @@ public class CanvasAxisLabelRenderer implements Renderer {
         this.pt2px = pt2px;
     }
 
-    public JqPlotClasses jqplotClass() {
-        return JqPlotClasses.CanvasAxisLabelRenderer;
+    public JqPlotResources resource() {
+        return JqPlotResources.CanvasAxisLabelRenderer;
     }
 }

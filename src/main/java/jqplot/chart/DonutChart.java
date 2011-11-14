@@ -4,7 +4,7 @@
  */
 package jqplot.chart;
 
-import jqplot.JqPlotClasses;
+import jqplot.JqPlotResources;
 import jqplot.chart.elements.Legend;
 import jqplot.chart.elements.SeriesDefaults;
 
@@ -19,17 +19,17 @@ public class DonutChart extends JqPlot {
 
     public DonutChart() {
         legend = new Legend(true, "e");
-        seriesDefaults.setRenderer(JqPlotClasses.DonutRenderer);
+        seriesDefaults.setRenderer(JqPlotResources.DonutRenderer);
         seriesDefaults.getRendererOptions().setSliceMargin(4);
         seriesDefaults.getRendererOptions().setDataLabels("value");
         seriesDefaults.getRendererOptions().setShowDataLabels(true);
     }
 
-    public JqPlotClasses getRenderer() {
+    public JqPlotResources getRenderer() {
         return seriesDefaults.getRenderer();
     }
 
-    public void setRenderer(JqPlotClasses renderer) {
+    public void setRenderer(JqPlotResources renderer) {
         seriesDefaults.setRenderer(renderer);
     }
 

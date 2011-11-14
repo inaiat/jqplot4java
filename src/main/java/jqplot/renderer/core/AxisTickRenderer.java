@@ -4,7 +4,7 @@
  */
 package jqplot.renderer.core;
 
-import jqplot.JqPlotClasses;
+import jqplot.JqPlotResources;
 
 /**
  *
@@ -19,7 +19,7 @@ public class AxisTickRenderer {
     private Integer size;
     private Integer markSize;
     private Boolean show;
-    private JqPlotClasses formatter;
+    private JqPlotResources formatter;
     private String prefix;
     private String formatString;
     private String fontFamily;
@@ -128,14 +128,14 @@ public class AxisTickRenderer {
     /**
      * @return the formatter
      */
-    public JqPlotClasses getFormatter() {
+    public JqPlotResources getFormatter() {
         return formatter;
     }
 
     /**
      * @param formatter the formatter to set
      */
-    public void setFormatter(JqPlotClasses formatter) {
+    public void setFormatter(JqPlotResources formatter) {
         this.formatter = formatter;
     }
 

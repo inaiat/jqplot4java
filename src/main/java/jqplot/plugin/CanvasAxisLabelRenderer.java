@@ -4,7 +4,7 @@
  */
 package jqplot.plugin;
 
-import jqplot.JqPlotClasses;
+import jqplot.JqPlotResources;
 import jqplot.chart.elements.Renderer;
 
 /**
@@ -183,7 +183,7 @@ public class CanvasAxisLabelRenderer implements Renderer {
         return PluginClasses.CanvasAxisLabelRenderer.getPluginName();
     }
 
-    public JqPlotClasses jqplotClass() {
-        return JqPlotClasses.CanvasAxisLabelRenderer;
+    public JqPlotResources resource() {
+        return JqPlotResources.CanvasAxisLabelRenderer;
     }
 }

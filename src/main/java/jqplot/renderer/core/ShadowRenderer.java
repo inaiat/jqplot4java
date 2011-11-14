@@ -5,7 +5,7 @@
 package jqplot.renderer.core;
 
 import jqplot.chart.elements.Renderer;
-import jqplot.JqPlotClasses;
+import jqplot.JqPlotResources;
 
 /**
  *
@@ -114,7 +114,7 @@ public class ShadowRenderer implements Renderer {
     }
 
     @Override
-    public JqPlotClasses jqplotClass() {
-        return JqPlotClasses.ShadowRenderer;
+    public JqPlotResources resource() {
+        return JqPlotResources.ShadowRenderer;
     }
 }

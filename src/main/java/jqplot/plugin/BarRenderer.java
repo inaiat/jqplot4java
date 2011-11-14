@@ -5,7 +5,7 @@
 package jqplot.plugin;
 
 import java.util.Collection;
-import jqplot.JqPlotClasses;
+import jqplot.JqPlotResources;
 import jqplot.chart.elements.Renderer;
 
 /**
@@ -195,8 +195,8 @@ public class BarRenderer implements Renderer {
         this.highlightColors = highlightColors;
     }
 
-    public JqPlotClasses jqplotClass(){
-        return JqPlotClasses.BarRenderer;
+    public JqPlotResources resource(){
+        return JqPlotResources.BarRenderer;
     }
     
     public String pluginName() {

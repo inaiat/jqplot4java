@@ -4,7 +4,7 @@
  */
 package jqplot.plugin;
 
-import jqplot.JqPlotClasses;
+import jqplot.JqPlotResources;
 import jqplot.chart.elements.Renderer;
 
 /**
@@ -48,7 +48,7 @@ public class CategoryAxisRenderer implements Renderer {
         return PluginClasses.CategoryAxisRenderer.getPluginName();
     }
 
-    public JqPlotClasses jqplotClass() {
-        return JqPlotClasses.CategoryAxisRenderer;
+    public JqPlotResources resource() {
+        return JqPlotResources.CategoryAxisRenderer;
     }
 }

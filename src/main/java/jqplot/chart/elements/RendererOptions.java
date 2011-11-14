@@ -10,40 +10,64 @@ package jqplot.chart.elements;
  */
 public class RendererOptions implements Element {
 
-    private boolean showDataLabels;
+    private Boolean showDataLabels;
     private String dataLabels;
-    private int sliceMargin;
-    private int startAngle;
+    private Integer sliceMargin;
+    private Integer startAngle;
 
+    /**
+     * @return the showDataLabels
+     */
+    public Boolean getShowDataLabels() {
+        return showDataLabels;
+    }
+
+    /**
+     * @param showDataLabels the showDataLabels to set
+     */
+    public void setShowDataLabels(Boolean showDataLabels) {
+        this.showDataLabels = showDataLabels;
+    }
+
+    /**
+     * @return the dataLabels
+     */
     public String getDataLabels() {
         return dataLabels;
     }
 
+    /**
+     * @param dataLabels the dataLabels to set
+     */
     public void setDataLabels(String dataLabels) {
         this.dataLabels = dataLabels;
     }
 
-    public void setStartAngle(int startAngle) {
-        this.startAngle = startAngle;
-    }
-
-    public int getStartAngle() {
-        return startAngle;
-    }
-
-    public int getSliceMargin() {
+    /**
+     * @return the sliceMargin
+     */
+    public Integer getSliceMargin() {
         return sliceMargin;
     }
 
-    public void setSliceMargin(int sliceMargin) {
+    /**
+     * @param sliceMargin the sliceMargin to set
+     */
+    public void setSliceMargin(Integer sliceMargin) {
         this.sliceMargin = sliceMargin;
     }
 
-    public boolean isShowDataLabels() {
-        return showDataLabels;
+    /**
+     * @return the startAngle
+     */
+    public Integer getStartAngle() {
+        return startAngle;
     }
 
-    public void setShowDataLabels(boolean showDataLabels) {
-        this.showDataLabels = showDataLabels;
+    /**
+     * @param startAngle the startAngle to set
+     */
+    public void setStartAngle(Integer startAngle) {
+        this.startAngle = startAngle;
     }
 }

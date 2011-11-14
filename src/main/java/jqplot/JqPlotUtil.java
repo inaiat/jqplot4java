@@ -48,7 +48,7 @@ public class JqPlotUtil {
         return resources;
     }
 
-    public static String createPieChartJquery(Chart jqPlot, String divId, HashMap<String, ?> data) {
+    public static String createPieChartJquery(Chart chart, String divId, HashMap<String, ?> data) {
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
 
             @Override
@@ -63,7 +63,7 @@ public class JqPlotUtil {
         builder.append("   $.jqplot('").append(divId).append("',[ ");
         builder.append(xstream.toXML(data));
         builder.append("], ");
-        builder.append(pieChartToJson(jqPlot));
+        builder.append(pieChartToJson(chart));
         builder.append(");\r\n");
         builder.append("});\r\n");
         return builder.toString();
@@ -84,7 +84,9 @@ public class JqPlotUtil {
         StringBuilder builder = new StringBuilder();
         builder.append("$(document).ready(function(){\r\n");
         builder.append("   $.jqplot('").append(divId).append("', ");
-        builder.append(xstream.toXML(chart.getChartData()));
+        builder.append("[");
+        builder.append(xstream.toXML(chart.getChartData().getData()));
+        builder.append("]");
         builder.append(", ");
         builder.append(jqPlotToJson(chart.getJqPlot()));
         builder.append(");\r\n");
@@ -92,7 +94,7 @@ public class JqPlotUtil {
         return builder.toString();
     }
 
-    public static String createJquery(Chart jqPlot, String divId, HashMap<String, ?> data) {
+    public static String createJquery(Chart chart, String divId, HashMap<String, ?> data) {
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
 
             @Override
@@ -107,13 +109,13 @@ public class JqPlotUtil {
         builder.append("   $.jqplot('").append(divId).append("', ");
         builder.append(xstream.toXML(data));
         builder.append(", ");
-        builder.append(jqPlotToJson((JqPlot)jqPlot));
+        builder.append(jqPlotToJson((JqPlot)chart));
         builder.append(");\r\n");
         builder.append("});\r\n");
         return builder.toString();
     }
 
-    public static String createJquery(Chart jqPlot, String divId, Collection<? extends Serializable> data) {
+    public static String createJquery(Chart chart, String divId, Collection<? extends Serializable> data) {
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
 
             @Override
@@ -128,7 +130,7 @@ public class JqPlotUtil {
         builder.append("   $.jqplot('").append(divId).append("', ");
         builder.append(xstream.toXML(data));
         builder.append(", ");
-        builder.append(jqPlotToJson((JqPlot)jqPlot));
+        builder.append(jqPlotToJson((JqPlot)chart));
         builder.append(");\r\n");
         builder.append("});\r\n");
         return builder.toString();
@@ -170,12 +172,12 @@ public class JqPlotUtil {
 
             @Override
             public void marshal(Object source, HierarchicalStreamWriter writer, MarshallingContext context) {
-                JqPlotClasses plugin = (JqPlotClasses) source;
+                JqPlotResources plugin = (JqPlotResources) source;
                 writer.setValue(plugin.getClassName());
             }
         };
 
-        converter.canConvert(JqPlotClasses.class);
+        converter.canConvert(JqPlotResources.class);
 
         xstream.registerConverter(converter);
 
@@ -218,12 +220,12 @@ public class JqPlotUtil {
 
             @Override
             public void marshal(Object source, HierarchicalStreamWriter writer, MarshallingContext context) {
-                JqPlotClasses plugin = (JqPlotClasses) source;
+                JqPlotResources plugin = (JqPlotResources) source;
                 writer.setValue(plugin.getClassName());
             }
         };
 
-        converter.canConvert(JqPlotClasses.class);
+        converter.canConvert(JqPlotResources.class);
 
         xstream.registerConverter(converter);
 

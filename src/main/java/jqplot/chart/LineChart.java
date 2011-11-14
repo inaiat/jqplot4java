@@ -4,7 +4,7 @@
  */
 package jqplot.chart;
 
-import jqplot.JqPlotClasses;
+import jqplot.JqPlotResources;
 import jqplot.chart.data.ChartData;
 
 /**
@@ -13,30 +13,14 @@ import jqplot.chart.data.ChartData;
  */
 public class LineChart<T extends ChartData> extends AbstractChart<T> {
 
-    private JqPlot jqPlot = new JqPlot();
-    private T chartData;
-
     public LineChart() {
-        jqPlot.createAxesDefaults().setLabelRenderer(JqPlotClasses.CanvasAxisLabelRenderer);
-        jqPlot.createXAxis().setPad(0F);
+        getJqPlot().createAxesDefaults().setLabelRenderer(JqPlotResources.CanvasAxisLabelRenderer);
+        getJqPlot().createXAxis().setPad(0F);
     }
 
     public LineChart(String title, String labelX, String labelY) {
         this();
-        jqPlot.setLabelX(labelX);
-        jqPlot.setLabelY(labelY);
-    }
-
-    public JqPlot getJqPlot() {
-        return jqPlot;
-    }
-
-    public T getChartData() {
-        return chartData;
-    }
-
-    public void setChartData(T value) {
-        this.chartData = value;
-    }
-   
+        getJqPlot().setLabelX(labelX);
+        getJqPlot().setLabelY(labelY);
+    }  
 }

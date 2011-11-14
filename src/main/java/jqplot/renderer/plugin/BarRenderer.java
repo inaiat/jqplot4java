@@ -4,7 +4,7 @@
  */
 package jqplot.renderer.plugin;
 
-import jqplot.JqPlotClasses;
+import jqplot.JqPlotResources;
 import java.util.Collection;
 import jqplot.chart.elements.Renderer;
 import jqplot.metadata.JqPlotPlugin;
@@ -13,7 +13,7 @@ import jqplot.metadata.JqPlotPlugin;
  *
  * @author inaiat
  */
-@JqPlotPlugin(value= JqPlotClasses.BarRenderer)
+@JqPlotPlugin(value= JqPlotResources.BarRenderer)
 public class BarRenderer implements Renderer {
     
     private Integer barPadding;
@@ -197,8 +197,8 @@ public class BarRenderer implements Renderer {
         this.highlightColors = highlightColors;
     }
 
-    public JqPlotClasses jqplotClass() {
-        return JqPlotClasses.BarRenderer;
+    public JqPlotResources resource() {
+        return JqPlotResources.BarRenderer;
     }
     
     

@@ -4,7 +4,7 @@
  */
 package jqplot.chart.elements;
 
-import jqplot.JqPlotClasses;
+import jqplot.JqPlotResources;
 
 /**
  *
@@ -13,8 +13,9 @@ import jqplot.JqPlotClasses;
 public class Serie implements Element {
 
     private String label;
-    private JqPlotClasses renderer;
-    private RendererOptions rendererOptions = new RendererOptions();
+    private JqPlotResources renderer;
+    private RendererOptions rendererOptions;
+    private Boolean fill;
 
     public RendererOptions getRendererOptions() {
         return rendererOptions;
@@ -41,14 +42,28 @@ public class Serie implements Element {
     /**
      * @return the renderer
      */
-    public JqPlotClasses getRenderer() {
+    public JqPlotResources getRenderer() {
         return renderer;
     }
 
     /**
      * @param renderer the renderer to set
      */
-    public void setRenderer(JqPlotClasses renderer) {
+    public void setRenderer(JqPlotResources renderer) {
         this.renderer = renderer;
+    }
+
+    /**
+     * @return the fill
+     */
+    public Boolean getFill() {
+        return fill;
+    }
+
+    /**
+     * @param fill the fill to set
+     */
+    public void setFill(Boolean fill) {
+        this.fill = fill;
     }
 }

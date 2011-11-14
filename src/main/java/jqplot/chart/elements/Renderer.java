@@ -4,7 +4,7 @@
  */
 package jqplot.chart.elements;
 
-import jqplot.JqPlotClasses;
+import jqplot.JqPlotResources;
 
 /**
  *
@@ -12,5 +12,5 @@ import jqplot.JqPlotClasses;
  */
 public interface Renderer extends Element {
 
-    public JqPlotClasses jqplotClass();
+    public JqPlotResources resource();
 }
