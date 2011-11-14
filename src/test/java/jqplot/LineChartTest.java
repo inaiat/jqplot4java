@@ -10,10 +10,9 @@ import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 import com.thoughtworks.xstream.io.json.JsonWriter;
 import com.thoughtworks.xstream.io.json.JsonWriter.Format;
 import java.io.Writer;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import jqplot.chart.LineChart;
+import jqplot.chart.data.LinedData;
 import junit.framework.TestCase;
 
 /**
@@ -54,13 +53,14 @@ public class LineChartTest extends TestCase {
 //        axisDefault.setLabelRenderer(JqPlotClasses.CanvasAxisLabelRenderer);
 //        jqPlot.setAxesDefaults(axisDefault);
 
-        LineChart<Integer> chart = new LineChart<Integer>();
-        chart.addValues(1, 2, 3, 4, 5, 6);
+        LineChart<LinedData> lineChart = new LineChart<LinedData>();
+        LinedData data = new LinedData(1, 2, 3, 4, 5, 6);
+        lineChart.setChartData(data);
                 
         //chart.addValues(1, 2, 3, 4, 5, 6);
 
 
-        System.out.println(JqPlotUtil.createJquery(chart, "chart1"));
+        System.out.println(JqPlotUtil.createJquery(lineChart, "chart1"));
 
         //System.out.println(JqPlotUtil.createJquery(jqPlot, "chart1", collection));
     }

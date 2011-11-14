@@ -6,17 +6,28 @@ package jqplot.chart.data;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 /**
  *
  * @author bernardo.moura
  */
-public class LinedData<N extends Number> extends AbstractChartData<N> {
+public class LinedData extends AbstractChartData<Integer> {
     
-    private ArrayList<N> data = new ArrayList<N>();        
+    private List<Integer> data = new ArrayList<Integer>();
 
-    public Collection<N> getData() {
+    public LinedData() {
+    }
+    
+    public LinedData(Integer... values) {
+        addValues(values);
+    }    
+    
+
+    @Override
+    public Collection<Integer> getData() {
         return data;
     }
+
     
 }

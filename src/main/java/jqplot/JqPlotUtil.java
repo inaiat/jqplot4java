@@ -17,10 +17,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
-import jqplot.chart.data.Chart;
+import jqplot.chart.Chart;
 import jqplot.chart.JqPlot;
-import jqplot.chart.data.AbstractChartData;
-import jqplot.chart.data.LinedData;
 import jqplot.metadata.JqPlotPlugin;
 import jqplot.renderer.plugin.BarRenderer;
 import jqplot.renderer.plugin.CanvasAxisLabelRenderer;
@@ -71,7 +69,7 @@ public class JqPlotUtil {
         return builder.toString();
     }
 
-    public static String createJquery(Chart jqPlot, String divId) {
+    public static String createJquery(Chart chart, String divId) {
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
 
             @Override
@@ -83,14 +81,12 @@ public class JqPlotUtil {
             
         });  
 
-        xstream.omitField(AbstractChartData.class, "data");
-        
         StringBuilder builder = new StringBuilder();
         builder.append("$(document).ready(function(){\r\n");
         builder.append("   $.jqplot('").append(divId).append("', ");
-        builder.append(xstream.toXML(jqPlot.getData()));
+        builder.append(xstream.toXML(chart.getChartData()));
         builder.append(", ");
-        builder.append(jqPlotToJson((JqPlot)jqPlot));
+        builder.append(jqPlotToJson(chart.getJqPlot()));
         builder.append(");\r\n");
         builder.append("});\r\n");
         return builder.toString();

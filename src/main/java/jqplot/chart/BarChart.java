@@ -4,7 +4,6 @@
  */
 package jqplot.chart;
 
-import jqplot.chart.data.Chart;
 import java.util.Arrays;
 import jqplot.chart.data.ChartData;
 

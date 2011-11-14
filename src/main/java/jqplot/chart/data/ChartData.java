@@ -4,7 +4,6 @@
  */
 package jqplot.chart.data;
 
-import java.io.Serializable;
 import java.util.Collection;
 
 /**
@@ -15,7 +14,9 @@ public interface ChartData<T> {
 
     Collection<T> getData();
 
-    public void addValues(Collection<? extends Serializable> value);
+    public void addValues(Collection<T> value);
+    
+    public void addValues(T... values);
 
-    public void addValue(Object... value);
+    public void addValue(T value);
 }

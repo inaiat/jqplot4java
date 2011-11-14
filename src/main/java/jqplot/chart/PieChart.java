@@ -4,9 +4,7 @@
  */
 package jqplot.chart;
 
-import jqplot.chart.data.Chart;
 import jqplot.JqPlotClasses;
-import jqplot.chart.data.ChartData;
 import jqplot.chart.elements.Legend;
 import jqplot.chart.elements.SeriesDefaults;
 
