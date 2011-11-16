@@ -18,12 +18,14 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import jqplot.chart.Chart;
+import jqplot.chart.DonutsChart;
 import jqplot.chart.JqPlot;
 import jqplot.metadata.JqPlotPlugin;
 import jqplot.renderer.plugin.BarRenderer;
 import jqplot.renderer.plugin.CanvasAxisLabelRenderer;
 import jqplot.renderer.plugin.CanvasAxisTickRenderer;
 import jqplot.renderer.plugin.CategoryAxisRenderer;
+import jqplot.renderer.plugin.PieRenderer;
 
 /**
  *
@@ -35,6 +37,8 @@ public class JqPlotUtil {
         BarRenderer.class,
         CanvasAxisLabelRenderer.class,
         CanvasAxisTickRenderer.class,
+        PieRenderer.class,
+        
         CategoryAxisRenderer.class
     };
 

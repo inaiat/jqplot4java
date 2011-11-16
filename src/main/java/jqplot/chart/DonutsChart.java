@@ -14,15 +14,15 @@ import jqplot.chart.elements.SeriesDefaults;
  *
  * @author bernardo.moura
  */
-public class PieChart<T extends ChartData> extends DefaultChart<T> {
+public class DonutsChart<T extends ChartData> extends DefaultChart<T> {
 
-    public PieChart(){
-        
+    public DonutsChart() {
         getJqPlot().setLegend(new Legend(true, "e"));
         getJqPlot().setSeriesDefaults(new SeriesDefaults());
-        getJqPlot().getSeriesDefaults().setRenderer(JqPlotResources.PieRenderer);
+        getJqPlot().getSeriesDefaults().setRenderer(JqPlotResources.DonutRenderer);
         getJqPlot().getSeriesDefaults().setRendererOptions(new RendererOptions());
+        getJqPlot().getSeriesDefaults().getRendererOptions().setSliceMargin(4);
+        getJqPlot().getSeriesDefaults().getRendererOptions().setDataLabels("value");
         getJqPlot().getSeriesDefaults().getRendererOptions().setShowDataLabels(true);
-        getJqPlot().getSeriesDefaults().getRendererOptions().setSliceMargin(3);
     }
 }
