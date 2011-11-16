@@ -4,6 +4,7 @@
  */
 package jqplot.chart;
 
+import jqplot.chart.config.ChartConfiguration;
 import jqplot.chart.data.ChartData;
 
 /**
@@ -12,7 +13,7 @@ import jqplot.chart.data.ChartData;
  */
 public interface Chart<T extends ChartData> {
     
-    JqPlot getJqPlot();
+    ChartConfiguration getChartConfiguration();
     T getChartData();
     void setChartData(T value);
 }

@@ -4,6 +4,7 @@
  */
 package jqplot.chart;
 
+import jqplot.chart.config.ChartConfiguration;
 import jqplot.JqPlotResources;
 import jqplot.chart.elements.Legend;
 import jqplot.chart.elements.SeriesDefaults;
@@ -12,7 +13,7 @@ import jqplot.chart.elements.SeriesDefaults;
  *
  * @author bernardo.moura
  */
-public class PieChart extends JqPlot {
+public class PieChart extends ChartConfiguration {
     private Legend legend;
     private SeriesDefaults seriesDefaults = new SeriesDefaults();
         

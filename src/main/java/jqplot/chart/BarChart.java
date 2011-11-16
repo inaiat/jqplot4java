@@ -4,6 +4,7 @@
  */
 package jqplot.chart;
 
+import jqplot.chart.config.ChartConfiguration;
 import java.util.Arrays;
 import jqplot.chart.data.ChartData;
 
@@ -11,7 +12,7 @@ import jqplot.chart.data.ChartData;
  *
  * @author bernardo.moura
  */
-public class BarChart extends JqPlot  {
+public class BarChart extends ChartConfiguration  {
     
     private ChartData data;
 

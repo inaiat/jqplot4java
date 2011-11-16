@@ -16,13 +16,13 @@ import jqplot.metadata.JqPlotPlugin;
 public class LineChart<T extends ChartData> extends DefaultChart<T> {
 
     public LineChart() {
-        getJqPlot().createAxesDefaults().setLabelRenderer(JqPlotResources.CanvasAxisLabelRenderer);
-        getJqPlot().createXAxis().setPad(0F);
+        getChartConfiguration().createAxesDefaults().setLabelRenderer(JqPlotResources.CanvasAxisLabelRenderer);
+        getChartConfiguration().createXAxis().setPad(0F);
     }
 
     public LineChart(String title, String labelX, String labelY) {
         this();
-        getJqPlot().setLabelX(labelX);
-        getJqPlot().setLabelY(labelY);
+        getChartConfiguration().setLabelX(labelX);
+        getChartConfiguration().setLabelY(labelY);
     }  
 }

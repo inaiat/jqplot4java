@@ -18,7 +18,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import jqplot.chart.Chart;
-import jqplot.chart.JqPlot;
+import jqplot.chart.config.ChartConfiguration;
 import jqplot.metadata.JqPlotPlugin;
 import jqplot.renderer.plugin.BarRenderer;
 import jqplot.renderer.plugin.CanvasAxisLabelRenderer;
@@ -89,7 +89,7 @@ public class JqPlotUtil {
         builder.append("   $.jqplot('").append(divId).append("', ");
         builder.append(chart.getChartData().toJsonString());
         builder.append(", ");
-        builder.append(jqPlotToJson(chart.getJqPlot()));
+        builder.append(jqPlotToJson(chart.getChartConfiguration()));
         builder.append(");\r\n");
         builder.append("});\r\n");
         return builder.toString();
@@ -110,7 +110,7 @@ public class JqPlotUtil {
         builder.append("   $.jqplot('").append(divId).append("', ");
         builder.append(xstream.toXML(data));
         builder.append(", ");
-        builder.append(jqPlotToJson((JqPlot)chart));
+        builder.append(jqPlotToJson((ChartConfiguration)chart));
         builder.append(");\r\n");
         builder.append("});\r\n");
         return builder.toString();
@@ -131,7 +131,7 @@ public class JqPlotUtil {
         builder.append("   $.jqplot('").append(divId).append("', ");
         builder.append(xstream.toXML(data));
         builder.append(", ");
-        builder.append(jqPlotToJson((JqPlot)chart));
+        builder.append(jqPlotToJson((ChartConfiguration)chart));
         builder.append(");\r\n");
         builder.append("});\r\n");
         return builder.toString();
@@ -186,7 +186,7 @@ public class JqPlotUtil {
         return xstream.toXML(jqPlot);
     }
 
-    public static String jqPlotToJson(JqPlot jqPlot) {
+    public static String jqPlotToJson(ChartConfiguration jqPlot) {
 
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
 

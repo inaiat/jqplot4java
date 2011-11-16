@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jqplot.chart;
+package jqplot.chart.config;
 
 import jqplot.chart.elements.Title;
 import jqplot.chart.elements.Serie;
@@ -28,7 +28,7 @@ import jqplot.chart.elements.SeriesDefaults;
  *
  * @author inaiat
  */
-public class JqPlot {
+public class ChartConfiguration {
 
     protected Collection<Serie> series;
     protected Axes axes;
