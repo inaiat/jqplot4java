@@ -6,11 +6,13 @@ package jqplot.renderer.plugin;
 
 import jqplot.JqPlotResources;
 import jqplot.chart.elements.Renderer;
+import jqplot.metadata.JqPlotPlugin;
 
 /**
  *
  * @author inaiat
  */
+@JqPlotPlugin(values={JqPlotResources.CategoryAxisRenderer})
 public class CategoryAxisRenderer implements Renderer {
 
     private Boolean sortMergedLabels;

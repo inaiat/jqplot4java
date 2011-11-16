@@ -6,12 +6,14 @@ package jqplot.renderer.plugin;
 
 import jqplot.JqPlotResources;
 import jqplot.chart.elements.Renderer;
+import jqplot.metadata.JqPlotPlugin;
 
 /**
  *
  * @author inaiat
  */
 
+@JqPlotPlugin(values={JqPlotResources.CanvasAxisTickRenderer})
 public class CanvasAxisTickRenderer implements Renderer {
 
     private String mark;

@@ -24,7 +24,6 @@ import jqplot.renderer.plugin.BarRenderer;
 import jqplot.renderer.plugin.CanvasAxisLabelRenderer;
 import jqplot.renderer.plugin.CanvasAxisTickRenderer;
 import jqplot.renderer.plugin.CategoryAxisRenderer;
-import org.json.JSONArray;
 
 /**
  *
