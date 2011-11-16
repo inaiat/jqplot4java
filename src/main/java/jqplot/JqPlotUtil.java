@@ -24,6 +24,7 @@ import jqplot.renderer.plugin.BarRenderer;
 import jqplot.renderer.plugin.CanvasAxisLabelRenderer;
 import jqplot.renderer.plugin.CanvasAxisTickRenderer;
 import jqplot.renderer.plugin.CategoryAxisRenderer;
+import org.json.JSONArray;
 
 /**
  *
@@ -87,9 +88,7 @@ public class JqPlotUtil {
         StringBuilder builder = new StringBuilder();
         builder.append("$(document).ready(function(){\r\n");
         builder.append("   $.jqplot('").append(divId).append("', ");
-        builder.append("[");
-        builder.append(xstream.toXML(chart.getChartData().getData()));
-        builder.append("]");
+        builder.append(chart.getChartData().toJsonString());
         builder.append(", ");
         builder.append(jqPlotToJson(chart.getJqPlot()));
         builder.append(");\r\n");

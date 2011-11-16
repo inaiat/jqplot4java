@@ -4,7 +4,6 @@
  */
 package jqplot.chart.data;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
@@ -17,8 +16,7 @@ public abstract class AbstractChartData<T> implements ChartData<T>  {
     private T type;
 
     public AbstractChartData() {
-    } 
-    
+    }     
     
     public void addValues(Collection<T> value) {
         getData().addAll(value);

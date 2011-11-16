@@ -7,6 +7,7 @@ package jqplot.chart.data;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import org.json.JSONArray;
 
 /**
  *
@@ -22,11 +23,16 @@ public class AreaFillData<T extends Number> extends AbstractChartData<Collection
     public AreaFillData(Collection<T>... values) {
         for (int i = 0; i < values.length; i++) {
             Collection<T> collection = values[i];
-            addValue(collection);            
+            addValue(collection);
         }
     }
 
     public Collection<Collection<T>> getData() {
         return data;
+    }
+
+    public String toJsonString() {
+        JSONArray jsonArray = new JSONArray(data);
+        return jsonArray.toString();
     }
 }

@@ -20,6 +20,5 @@ public interface ChartData<T> {
 
     void addValue(T value);
     
-    Class getType();
-    
+    String toJsonString();
 }

@@ -17,6 +17,7 @@ import java.util.List;
 import jqplot.chart.AreaChart;
 import jqplot.chart.data.AreaFillData;
 import junit.framework.TestCase;
+import org.json.JSONArray;
 
 /**
  *
@@ -62,21 +63,23 @@ public class AreaFillTest extends TestCase {
         });
         
         Collection<Integer> x = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5));
-        //x.add(new Integer[]{1,2,3});
-        //x.add(new Integer[]{1,2,3});
-        //x.add(1);
-        //x.add(2);
-        //x.add(3);   
         
-        Collection<Collection<Integer>> c = new ArrayList<Collection<Integer>>();
+        JSONArray array = new JSONArray();
+        array.put(x);
         
-        Class clazz = c.getClass();
-                
+        System.out.println(array);
+        
+        Collection<Collection<Integer>> c = new ArrayList<Collection<Integer>>();        
         
         c.add(new ArrayList<Integer>(Arrays.asList(1,2,3,4,5)));
+        c.add(new ArrayList<Integer>(Arrays.asList(9,8,7,6,5)));
+        
+        array = new JSONArray();
+        array.put(c);
+
         
         
-        System.out.println(xstream.toXML(c.toArray()));
+        System.out.println(array);
 
 
 

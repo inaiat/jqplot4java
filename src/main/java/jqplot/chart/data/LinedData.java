@@ -7,6 +7,7 @@ package jqplot.chart.data;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import org.json.JSONArray;
 
 /**
  *
@@ -22,12 +23,17 @@ public class LinedData<T extends Number> extends AbstractChartData<T> {
     public LinedData(T... values) {
         addValues(values);
     }    
-    
 
     @Override
     public Collection<T> getData() {
         return data;
     }
+
+    public String toJsonString() {
+        JSONArray jsonArray = new JSONArray();
+        jsonArray.put(data);
+        return jsonArray.toString();
+    }    
 
     
 }
