@@ -31,9 +31,7 @@ public class LineChartTest extends TestCase {
     /**
      * Test of createJquery method, of class JqPlotUtil.
      */
-    public void testCreateJquery() {
-
-        
+    public void testCreateJquery() {       
         
         LineChart<LinedData> lineChart = new LineChart<LinedData>();
         LinedData<Integer> data = new LinedData<Integer>(1, 2, 3, 4, 5, 6);

@@ -14,9 +14,12 @@ public interface ChartData<T> {
 
     Collection<T> getData();
 
-    public void addValues(Collection<T> value);
+    void addValues(Collection<T> value);
     
-    public void addValues(T... values);
+    void addValues(T... values);
 
-    public void addValue(T value);
+    void addValue(T value);
+    
+    Class getType();
+    
 }

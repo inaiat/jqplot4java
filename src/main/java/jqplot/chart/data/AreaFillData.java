@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @author inaiat
  */
-public class AreaFillData<T extends Number> extends DefaultChartData<Collection<T>> {
+public class AreaFillData<T extends Number> extends AbstractChartData<Collection<T>> {
 
     private List<Collection<T>> data = new ArrayList<Collection<T>>();
 
