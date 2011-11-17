@@ -46,24 +46,18 @@ public class AreaFillTest extends TestCase {
      * Test of createJquery method, of class JqPlotUtil.
      */
     public void testCreateJquery() {
-        List<Integer> l2 = new ArrayList<Integer>(Arrays.asList(11, 9, 5, 12, 14));
-        List<Integer> l3 = new ArrayList<Integer>(Arrays.asList(4, 8, 5, 3, 6));
-        List<Integer> l4 = new ArrayList<Integer>(Arrays.asList(12, 6, 13, 11, 2));
-        AreaFillData<Integer> data = new AreaFillData<Integer>(l2, l3, l4);
-        AreaChart chart = new AreaChart();
+        List<Integer> l2 = new ArrayList<Integer>(Arrays.<Integer>asList(11, 9, 5, 12, 14));
+        List<Integer> l3 = new ArrayList<Integer>(Arrays.<Integer>asList(4, 8, 5, 3, 6));
+        List<Integer> l4 = new ArrayList<Integer>(Arrays.<Integer>asList(12, 6, 13, 11, 2));        
+		
+        @SuppressWarnings("unchecked")
+		AreaFillData<Integer> data = new AreaFillData<Integer>(l2, l3, l4);
+		
+        AreaChart<AreaFillData<Integer>> chart = new AreaChart<AreaFillData<Integer>>();
         chart.getAxes().getXaxis().setTicks(new String[]{"Seg", "Ter", "Qua", "Qui", "Sex"});
         chart.setChartData(data);
         System.out.println(JqPlotUtil.createJquery(chart, "chart1"));
 
-        XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
-
-            @Override
-            public HierarchicalStreamWriter createWriter(Writer writer) {
-                Format format = new Format(new char[]{}, new char[]{}, Format.COMPACT_EMPTY_ELEMENT);
-                JsonWriter jsonWriter = new JsonWriter(writer, JsonWriter.DROP_ROOT_MODE, format);
-                return jsonWriter;
-            }
-        });
         
         Collection<Integer> x = new ArrayList<Integer>(Arrays.asList(1,2,3,4,5));
         

@@ -33,7 +33,7 @@ public class LineChartTest extends TestCase {
      */
     public void testCreateJquery() {       
         
-        LineChart lineChart = new LineChart();
+        LineChart<LinedData<Integer>> lineChart = new LineChart<LinedData<Integer>>();
         LinedData<Integer> data = new LinedData<Integer>(1, 2, 3, 4, 5, 6);
         lineChart.setChartData(data);            
         System.out.println(JqPlotUtil.createJquery(lineChart, "chart1"));

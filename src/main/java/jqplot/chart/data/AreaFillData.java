@@ -9,21 +9,21 @@ import org.json.JSONArray;
  *
  * @author inaiat
  */
-public class AreaFillData<T extends Number> extends AbstractCollectionData<Collection<T>> {
+public class AreaFillData<T extends Number> extends AbstractCollectionData<List<T>> {
 
-    private List<Collection<T>> data = new ArrayList<Collection<T>>();
+    private List<List<T>> data = new ArrayList<List<T>>();
 
     public AreaFillData() {
     }
 
-    public AreaFillData(Collection<T>... values) {
+    public AreaFillData(List<T>... values) {
         for (int i = 0; i < values.length; i++) {
-            Collection<T> collection = values[i];
-            addValue(collection);
+        	List<T> list = values[i];
+            addValue(list);
         }
     }
 
-    public Collection<Collection<T>> getData() {
+    public Collection<List<T>> getData() {
         return data;
     }
 
