@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package jqplot.renderer.plugin;
 
 import jqplot.JqPlotResources;
@@ -12,7 +8,6 @@ import jqplot.metadata.JqPlotPlugin;
  *
  * @author bernardo.moura
  */
-@JqPlotPlugin(values = {JqPlotResources.DonutRenderer})
 public class DonutRenderer implements Renderer {
 
 	private static final long serialVersionUID = -3572013159602499333L;

@@ -13,7 +13,6 @@ import jqplot.metadata.JqPlotPlugin;
  * @author inaiat
  */
 
-@JqPlotPlugin(values={JqPlotResources.CanvasAxisTickRenderer})
 public class CanvasAxisTickRenderer implements Renderer {
 
 	private static final long serialVersionUID = -2722557983084932478L;

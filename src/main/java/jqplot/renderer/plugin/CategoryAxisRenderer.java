@@ -12,7 +12,6 @@ import jqplot.metadata.JqPlotPlugin;
  *
  * @author inaiat
  */
-@JqPlotPlugin(values={JqPlotResources.CategoryAxisRenderer})
 public class CategoryAxisRenderer implements Renderer {
 
 	private static final long serialVersionUID = -6281926919874791228L;
