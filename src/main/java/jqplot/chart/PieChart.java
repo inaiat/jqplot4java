@@ -17,7 +17,7 @@ import jqplot.metadata.JqPlotPlugin;
  * @author bernardo.moura
  */
 @JqPlotPlugin(values={JqPlotResources.PieRenderer})
-public class PieChart<T extends ChartData> extends DefaultChart<T> {
+public class PieChart<T extends ChartData<?>> extends DefaultChart<T> {
 
     public PieChart(){
         

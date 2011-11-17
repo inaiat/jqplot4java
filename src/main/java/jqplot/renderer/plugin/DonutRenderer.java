@@ -15,7 +15,9 @@ import jqplot.metadata.JqPlotPlugin;
 @JqPlotPlugin(values = {JqPlotResources.DonutRenderer})
 public class DonutRenderer implements Renderer {
 
-    public JqPlotResources resource() {
+	private static final long serialVersionUID = -3572013159602499333L;
+
+	public JqPlotResources resource() {
         return JqPlotResources.PieRenderer;
     }
 

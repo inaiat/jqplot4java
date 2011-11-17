@@ -129,7 +129,7 @@ public class JSONObject {
     /**
      * The map where the JSONObject's properties are kept.
      */
-    private Map map;
+    private Map<Object, Object> map;
 
 
     /**
@@ -145,7 +145,7 @@ public class JSONObject {
      * Construct an empty JSONObject.
      */
     public JSONObject() {
-        this.map = new HashMap();
+        this.map = new HashMap<Object, Object>();
     }
 
 
@@ -234,11 +234,12 @@ public class JSONObject {
      * @throws JSONException
      */
     public JSONObject(Map map) {
-        this.map = new HashMap();
+        this.map = new HashMap<Object, Object>();
         if (map != null) {
-            Iterator i = map.entrySet().iterator();
+            Iterator<?> i = map.entrySet().iterator();
             while (i.hasNext()) {
-                Map.Entry e = (Map.Entry)i.next();
+                @SuppressWarnings("unchecked")
+				Map.Entry<Object, Object> e = (Map.Entry<Object, Object>)i.next();
                 Object value = e.getValue();
                 if (value != null) {
                     this.map.put(e.getKey(), wrap(value));
@@ -286,7 +287,7 @@ public class JSONObject {
      */
     public JSONObject(Object object, String names[]) {
         this();
-        Class c = object.getClass();
+        Class<? extends Object> c = object.getClass();
         for (int i = 0; i < names.length; i += 1) {
             String name = names[i];
             try {
@@ -590,7 +591,7 @@ public class JSONObject {
         if (length == 0) {
             return null;
         }
-        Iterator iterator = jo.keys();
+        Iterator<Object> iterator = jo.keys();
         String[] names = new String[length];
         int i = 0;
         while (iterator.hasNext()) {
@@ -610,7 +611,7 @@ public class JSONObject {
         if (object == null) {
             return null;
         }
-        Class klass = object.getClass();
+        Class<? extends Object> klass = object.getClass();
         Field[] fields = klass.getFields();
         int length = fields.length;
         if (length == 0) {
@@ -696,7 +697,7 @@ public class JSONObject {
      *
      * @return An iterator of the keys.
      */
-    public Iterator keys() {
+    public Iterator<Object> keys() {
         return this.map.keySet().iterator();
     }
 
@@ -719,7 +720,7 @@ public class JSONObject {
      */
     public JSONArray names() {
         JSONArray ja = new JSONArray();
-        Iterator  keys = this.keys();
+        Iterator<Object>  keys = this.keys();
         while (keys.hasNext()) {
             ja.put(keys.next());
         }
@@ -951,7 +952,7 @@ public class JSONObject {
 
 
     private void populateMap(Object bean) {
-        Class klass = bean.getClass();
+        Class<? extends Object> klass = bean.getClass();
 
 // If klass is a System class then set includeSuperClass to false.
 
@@ -1335,7 +1336,7 @@ public class JSONObject {
      */
     public String toString() {
         try {
-            Iterator     keys = this.keys();
+            Iterator<Object>     keys = this.keys();
             StringBuffer sb = new StringBuffer("{");
 
             while (keys.hasNext()) {
@@ -1391,7 +1392,7 @@ public class JSONObject {
         if (length == 0) {
             return "{}";
         }
-        Iterator     keys = this.keys();
+        Iterator<Object>     keys = this.keys();
         int          newindent = indent + indentFactor;
         Object       object;
         StringBuffer sb = new StringBuffer("{");
@@ -1607,7 +1608,7 @@ public class JSONObject {
      public Writer write(Writer writer) throws JSONException {
         try {
             boolean  commanate = false;
-            Iterator keys = this.keys();
+            Iterator<Object> keys = this.keys();
             writer.write('{');
 
             while (keys.hasNext()) {
