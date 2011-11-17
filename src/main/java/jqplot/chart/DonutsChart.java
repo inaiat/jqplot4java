@@ -10,21 +10,19 @@ import jqplot.chart.elements.Legend;
 import jqplot.chart.elements.RendererOptions;
 import jqplot.chart.elements.SeriesDefaults;
 
-
 /**
  *
  * @author bernardo.moura
  */
-public class PieChart<T extends ChartData> extends DefaultChart<T> {
+public class DonutsChart<T extends ChartData> extends DefaultChart<T> {
 
-    public PieChart(){
-        
+    public DonutsChart() {
         getChartConfiguration().setLegend(new Legend(true, "e"));
         getChartConfiguration().setSeriesDefaults(new SeriesDefaults());
-        getChartConfiguration().getSeriesDefaults().setRenderer(JqPlotResources.PieRenderer);
+        getChartConfiguration().getSeriesDefaults().setRenderer(JqPlotResources.DonutRenderer);
         getChartConfiguration().getSeriesDefaults().setRendererOptions(new RendererOptions());
+        getChartConfiguration().getSeriesDefaults().getRendererOptions().setSliceMargin(4);
+        getChartConfiguration().getSeriesDefaults().getRendererOptions().setDataLabels("value");
         getChartConfiguration().getSeriesDefaults().getRendererOptions().setShowDataLabels(true);
-        getChartConfiguration().getSeriesDefaults().getRendererOptions().setSliceMargin(3);
     }
-
 }

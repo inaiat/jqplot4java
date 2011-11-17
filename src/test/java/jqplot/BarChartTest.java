@@ -10,7 +10,6 @@ import junit.framework.TestCase;
  *
  * @author inaiat
  */
-
 public class BarChartTest extends TestCase {
 
 //    public BarChartTest(String testName) {

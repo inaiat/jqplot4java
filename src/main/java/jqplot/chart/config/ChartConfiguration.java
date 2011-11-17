@@ -23,6 +23,7 @@ import jqplot.axis.Axis;
 import jqplot.axis.XAxis;
 import jqplot.axis.YAxis;
 import java.util.Collection;
+import jqplot.chart.elements.Legend;
 import jqplot.chart.elements.SeriesDefaults;
 
 /**
@@ -38,7 +39,16 @@ public class ChartConfiguration implements Serializable {
     private SeriesDefaults seriesDefaults;
     private Boolean stackSeries;
     private Boolean showMarker;
+    protected Legend legend;
 
+    public Legend getLegend() {
+        return legend;
+    }
+
+    public void setLegend(Legend legend) {
+        this.legend = legend;
+    }
+    
     public void setSimpleTitle(String title) {
         if (title == null) {
             this.title = new Title(title);
