@@ -9,7 +9,7 @@ import jqplot.chart.elements.SeriesDefaults;
  *
  * @author inaiat
  */
-public class AreaChart<T extends ChartData> extends DefaultChart<T> {
+public class AreaChart<T extends ChartData<?>> extends DefaultChart<T> {
 
     public AreaChart() {
         getChartConfiguration().setStackSeries(true);

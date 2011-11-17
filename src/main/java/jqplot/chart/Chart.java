@@ -7,7 +7,7 @@ import jqplot.chart.data.ChartData;
  *
  * @author inaiat
  */
-public interface Chart<T extends ChartData> {
+public interface Chart<T extends ChartData<?>> {
     
     ChartConfiguration getChartConfiguration();
     T getChartData();

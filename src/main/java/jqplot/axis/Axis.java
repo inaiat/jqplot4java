@@ -10,7 +10,9 @@ import jqplot.chart.elements.Renderer;
  */
 public class Axis implements Serializable {
     
-    private Boolean show;
+	private static final long serialVersionUID = -5426777530263336010L;
+
+	private Boolean show;
     private JqPlotResources renderer;
     private Boolean autoScale;
     private Renderer tickOptions;

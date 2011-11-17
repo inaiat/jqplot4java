@@ -9,7 +9,7 @@ import jqplot.metadata.JqPlotPlugin;
  * @author inaiat
  */
 @JqPlotPlugin(values={JqPlotResources.CanvasTextRenderer, JqPlotResources.CategoryAxisRenderer})
-public class LineChart<T extends ChartData> extends DefaultChart<T> {
+public class LineChart<T extends ChartData<?>> extends DefaultChart<T> {
 
     public LineChart() {
         getChartConfiguration().createAxesDefaults().setLabelRenderer(JqPlotResources.CanvasAxisLabelRenderer);
