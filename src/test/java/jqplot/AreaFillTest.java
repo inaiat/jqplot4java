@@ -11,9 +11,9 @@ import java.util.List;
 
 import jqplot.chart.AreaChart;
 import jqplot.chart.data.AreaFillData;
+import jqplot.json.JSONArray;
 import junit.framework.TestCase;
 
-import org.json.JSONArray;
 
 /**
  *
