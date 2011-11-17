@@ -13,7 +13,7 @@ import org.json.JSONArray;
  *
  * @author inaiat
  */
-public class AreaFillData<T extends Number> extends AbstractChartData<Collection<T>> {
+public class AreaFillData<T extends Number> extends AbstractCollectionData<Collection<T>> {
 
     private List<Collection<T>> data = new ArrayList<Collection<T>>();
 
