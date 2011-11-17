@@ -5,8 +5,6 @@
 package jqplot.chart;
 
 import jqplot.chart.config.ChartConfiguration;
-import java.util.Arrays;
-import jqplot.chart.data.ChartData;
 
 /**
  *
@@ -14,14 +12,5 @@ import jqplot.chart.data.ChartData;
  */
 public class BarChart extends ChartConfiguration  {
     
-    private ChartData data;
-
-    public void addValues(Number... values) {
-        data.addValue(Arrays.asList(values));
-    }
-
-    public void addValue(Number value) {
-        data.addValue(value);
-    }
   
 }
