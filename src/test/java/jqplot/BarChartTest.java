@@ -11,7 +11,7 @@ import junit.framework.TestCase;
  * @author inaiat
  */
 public class BarChartTest extends TestCase {
-
+    public void test(){}
 //    public BarChartTest(String testName) {
 //        super(testName);
 //    }

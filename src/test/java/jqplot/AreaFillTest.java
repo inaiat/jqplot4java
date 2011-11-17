@@ -50,7 +50,7 @@ public class AreaFillTest extends TestCase {
         List<Integer> l3 = new ArrayList<Integer>(Arrays.asList(4, 8, 5, 3, 6));
         List<Integer> l4 = new ArrayList<Integer>(Arrays.asList(12, 6, 13, 11, 2));
         AreaFillData<Integer> data = new AreaFillData<Integer>(l2, l3, l4);
-        AreaChart<AreaFillData> chart = new AreaChart<AreaFillData>();
+        AreaChart chart = new AreaChart();
         chart.getAxes().getXaxis().setTicks(new String[]{"Seg", "Ter", "Qua", "Qui", "Sex"});
         chart.setChartData(data);
         System.out.println(JqPlotUtil.createJquery(chart, "chart1"));
