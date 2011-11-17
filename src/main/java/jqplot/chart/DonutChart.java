@@ -15,7 +15,9 @@ import jqplot.chart.elements.SeriesDefaults;
  */
 public class DonutChart extends ChartConfiguration {
 
-    private Legend legend;
+	private static final long serialVersionUID = 7957575711673711213L;
+
+	private Legend legend;
     private SeriesDefaults seriesDefaults = new SeriesDefaults();
 
     public DonutChart() {

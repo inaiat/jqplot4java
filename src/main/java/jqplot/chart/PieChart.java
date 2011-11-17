@@ -15,7 +15,7 @@ import jqplot.chart.elements.SeriesDefaults;
  *
  * @author bernardo.moura
  */
-public class PieChart<T extends ChartData> extends DefaultChart<T> {
+public class PieChart<T extends ChartData<?>> extends DefaultChart<T> {
 
     public PieChart(){
         

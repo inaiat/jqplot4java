@@ -16,7 +16,9 @@ import jqplot.metadata.JqPlotPlugin;
 @JqPlotPlugin(values= {JqPlotResources.BarRenderer})
 public class BarRenderer implements Renderer {
     
-    private Integer barPadding;
+	private static final long serialVersionUID = 2044639222061941989L;
+
+	private Integer barPadding;
     private Integer barMargin;
     private String barDirection;
     private String barWidth;

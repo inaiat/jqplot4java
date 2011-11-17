@@ -15,7 +15,9 @@ import jqplot.metadata.JqPlotPlugin;
 @JqPlotPlugin(values={JqPlotResources.CategoryAxisRenderer})
 public class CategoryAxisRenderer implements Renderer {
 
-    private Boolean sortMergedLabels;
+	private static final long serialVersionUID = -6281926919874791228L;
+
+	private Boolean sortMergedLabels;
     private Renderer tickRenderer;
     
     /**

@@ -12,7 +12,9 @@ import jqplot.JqPlotResources;
  */
 public class Serie implements Element {
 
-    private String label;
+	private static final long serialVersionUID = 7138260563176853708L;
+
+	private String label;
     private JqPlotResources renderer;
     private RendererOptions rendererOptions;
     private Boolean fill;

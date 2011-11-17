@@ -8,6 +8,8 @@ package jqplot.chart.elements;
  *
  * @author bernardo.moura
  */
-public class SeriesDefaults extends Serie {    
+public class SeriesDefaults extends Serie {
+
+	private static final long serialVersionUID = -7921968769382552293L;    
     
 }

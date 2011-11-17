@@ -32,7 +32,9 @@ import jqplot.chart.elements.SeriesDefaults;
  */
 public class ChartConfiguration implements Serializable {
 
-    protected Collection<Serie> series;
+	private static final long serialVersionUID = 7082325039222592701L;
+
+	protected Collection<Serie> series;
     protected Axes axes;
     protected Title title;
     protected Axis axesDefaults;

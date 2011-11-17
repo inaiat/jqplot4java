@@ -1,18 +1,12 @@
 package jqplot;
 
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.converters.MarshallingContext;
-import com.thoughtworks.xstream.converters.enums.EnumConverter;
-import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
-import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
-import com.thoughtworks.xstream.io.json.JsonWriter;
-import com.thoughtworks.xstream.io.json.JsonWriter.Format;
 import java.io.Serializable;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+
 import jqplot.chart.Chart;
 import jqplot.chart.config.ChartConfiguration;
 import jqplot.metadata.JqPlotPlugin;
@@ -20,8 +14,14 @@ import jqplot.renderer.plugin.BarRenderer;
 import jqplot.renderer.plugin.CanvasAxisLabelRenderer;
 import jqplot.renderer.plugin.CanvasAxisTickRenderer;
 import jqplot.renderer.plugin.CategoryAxisRenderer;
-import jqplot.renderer.plugin.DonutRenderer;
-import jqplot.renderer.plugin.PieRenderer;
+
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.converters.MarshallingContext;
+import com.thoughtworks.xstream.converters.enums.EnumConverter;
+import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
+import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
+import com.thoughtworks.xstream.io.json.JsonWriter;
+import com.thoughtworks.xstream.io.json.JsonWriter.Format;
 
 /**
  *

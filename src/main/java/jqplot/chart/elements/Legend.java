@@ -9,7 +9,10 @@ package jqplot.chart.elements;
  * @author bernardo.moura
  */
 public class Legend implements Element {
-    private String options;
+	
+	private static final long serialVersionUID = 7228235274262615669L;
+
+	private String options;
     private String placment;
     private String location;
     private String border;

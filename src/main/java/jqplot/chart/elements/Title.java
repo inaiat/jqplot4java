@@ -9,8 +9,10 @@ package jqplot.chart.elements;
  * @author inaiat
  */
 public class Title implements Element {
-    
-    private String text;
+	
+	private static final long serialVersionUID = -277067293084389272L;
+
+	private String text;
     private Boolean show;
     private String fontFamily;
     private String fontSize;

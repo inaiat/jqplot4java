@@ -16,7 +16,9 @@ import jqplot.metadata.JqPlotPlugin;
 @JqPlotPlugin(values={JqPlotResources.CanvasAxisTickRenderer})
 public class CanvasAxisTickRenderer implements Renderer {
 
-    private String mark;
+	private static final long serialVersionUID = -2722557983084932478L;
+
+	private String mark;
     private Boolean showMark;
     private Boolean showGridline;
     private Boolean isMinorTick;

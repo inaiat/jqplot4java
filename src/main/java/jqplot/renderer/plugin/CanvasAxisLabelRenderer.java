@@ -15,7 +15,9 @@ import jqplot.metadata.JqPlotPlugin;
 @JqPlotPlugin(values= {JqPlotResources.CanvasTextRenderer,  JqPlotResources.CanvasAxisLabelRenderer})
 public class CanvasAxisLabelRenderer implements Renderer {
 
-    private Float angle;
+	private static final long serialVersionUID = -5172222371889152689L;
+
+	private Float angle;
     private Boolean show;
     private Boolean showLabel;
     private String label;

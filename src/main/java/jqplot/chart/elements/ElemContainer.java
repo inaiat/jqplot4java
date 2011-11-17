@@ -9,7 +9,10 @@ package jqplot.chart.elements;
  * @author bernardo.moura
  */
 public class ElemContainer implements Element {
-    private Float plotWidth;
+	
+	private static final long serialVersionUID = -3849421146501469906L;
+
+	private Float plotWidth;
     private Float plotHeight;
 
     public ElemContainer(Float plotWidth, Float plotHeight){

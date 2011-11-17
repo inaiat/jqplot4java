@@ -15,7 +15,9 @@ import jqplot.axis.YAxis;
  */
 public class Axes implements Element {
     
-    private XAxis xaxis;
+	private static final long serialVersionUID = -1464182411022493685L;
+
+	private XAxis xaxis;
     private YAxis yaxis;
     private X2Axis x2axis;
     private Y2Axis y2axis;

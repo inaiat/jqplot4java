@@ -13,7 +13,9 @@ import jqplot.JqPlotResources;
  */
 public class ShadowRenderer implements Renderer {
 
-    private Double angle = 45.0;
+	private static final long serialVersionUID = 4595091532005199206L;
+
+	private Double angle = 45.0;
     private Double offset = 1.0;
     private Double alpha = 0.07;
     private Double lineWidth = 1.5;

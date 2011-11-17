@@ -13,7 +13,9 @@ import jqplot.axis.Axis;
  */
 public class Grid implements Element {
 
-    private Boolean drawGridLines = true;
+	private static final long serialVersionUID = 5478580499167992682L;
+
+	private Boolean drawGridLines = true;
     private String gridLineColer = "#cccccc";
     private Double gridLineWidth = 1.0;
     private String background = "#fffdf6";

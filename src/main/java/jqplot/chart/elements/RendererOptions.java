@@ -10,7 +10,9 @@ package jqplot.chart.elements;
  */
 public class RendererOptions implements Element {
 
-    private Boolean showDataLabels;
+	private static final long serialVersionUID = -3555383297912526665L;
+
+	private Boolean showDataLabels;
     private String dataLabels;
     private Integer sliceMargin;
     private Integer startAngle;
