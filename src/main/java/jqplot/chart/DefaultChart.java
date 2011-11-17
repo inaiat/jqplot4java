@@ -15,7 +15,7 @@ import jqplot.chart.elements.Title;
  *
  * @author inaiat
  */
-public class DefaultChart<T extends ChartData> implements Chart<T> {
+public class DefaultChart<T extends ChartData<?>> implements Chart<T> {
 
     private final ChartConfiguration configuration;
     private T chartData;

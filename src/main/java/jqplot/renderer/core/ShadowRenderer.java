@@ -113,7 +113,6 @@ public class ShadowRenderer implements Renderer {
         this.strokeStyle = strokeStyle;
     }
 
-    @Override
     public JqPlotResources resource() {
         return JqPlotResources.ShadowRenderer;
     }

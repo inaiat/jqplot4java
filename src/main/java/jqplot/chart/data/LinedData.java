@@ -20,7 +20,6 @@ public class LinedData<T extends Number> extends AbstractCollectionData<T> {
         addValues(values);
     }    
 
-    @Override
     public Collection<T> getData() {
         return data;
     }

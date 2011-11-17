@@ -15,6 +15,7 @@
  */
 package jqplot.chart.config;
 
+import java.io.Serializable;
 import jqplot.chart.elements.Title;
 import jqplot.chart.elements.Serie;
 import jqplot.chart.elements.Axes;
@@ -28,7 +29,7 @@ import jqplot.chart.elements.SeriesDefaults;
  *
  * @author inaiat
  */
-public class ChartConfiguration {
+public class ChartConfiguration implements Serializable {
 
     protected Collection<Serie> series;
     protected Axes axes;
