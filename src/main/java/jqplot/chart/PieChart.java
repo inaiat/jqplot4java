@@ -4,47 +4,27 @@
  */
 package jqplot.chart;
 
-import jqplot.chart.config.ChartConfiguration;
 import jqplot.JqPlotResources;
+import jqplot.chart.data.ChartData;
 import jqplot.chart.elements.Legend;
+import jqplot.chart.elements.RendererOptions;
 import jqplot.chart.elements.SeriesDefaults;
+
 
 /**
  *
  * @author bernardo.moura
  */
-public class PieChart extends ChartConfiguration {
-    private Legend legend;
-    private SeriesDefaults seriesDefaults = new SeriesDefaults();
-        
+public class PieChart<T extends ChartData> extends DefaultChart<T> {
+
     public PieChart(){
-        legend = new Legend(true, "e");
-        seriesDefaults.setRenderer(JqPlotResources.PieRenderer);
-        seriesDefaults.getRendererOptions().setShowDataLabels(true);
-        seriesDefaults.getRendererOptions().setSliceMargin(3);
-    }
-    
-
-    public JqPlotResources getRenderer(){
-        return seriesDefaults.getRenderer();
-    }
-    public void setRenderer(JqPlotResources renderer){
-        seriesDefaults.setRenderer(renderer);
-    }
-    public Legend getLegend() {
-        return legend;
+        
+        getChartConfiguration().setLegend(new Legend(true, "e"));
+        getChartConfiguration().setSeriesDefaults(new SeriesDefaults());
+        getChartConfiguration().getSeriesDefaults().setRenderer(JqPlotResources.PieRenderer);
+        getChartConfiguration().getSeriesDefaults().setRendererOptions(new RendererOptions());
+        getChartConfiguration().getSeriesDefaults().getRendererOptions().setShowDataLabels(true);
+        getChartConfiguration().getSeriesDefaults().getRendererOptions().setSliceMargin(3);
     }
 
-    public void setLegend(Legend legend) {
-        this.legend = legend;
-    }
-
-    public SeriesDefaults getSeriesDefaults() {
-        return seriesDefaults;
-    }
-
-    public void setSeriesDefaults(SeriesDefaults seriesDefaults) {
-        this.seriesDefaults = seriesDefaults;
-    }
-    
 }
