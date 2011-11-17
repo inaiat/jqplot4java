@@ -1,53 +1,31 @@
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 package jqplot.chart;
 
-import jqplot.chart.config.ChartConfiguration;
 import jqplot.JqPlotResources;
+import jqplot.chart.data.ChartData;
 import jqplot.chart.elements.Legend;
+import jqplot.chart.elements.RendererOptions;
 import jqplot.chart.elements.SeriesDefaults;
+import jqplot.metadata.JqPlotPlugin;
 
 /**
  *
  * @author bernardo.moura
  */
-public class DonutChart extends ChartConfiguration {
-
-    private Legend legend;
-    private SeriesDefaults seriesDefaults = new SeriesDefaults();
+@JqPlotPlugin(values = {JqPlotResources.DonutRenderer})
+public class DonutChart<T extends ChartData> extends DefaultChart<T> {
 
     public DonutChart() {
-        legend = new Legend(true, "e");
-        seriesDefaults.setRenderer(JqPlotResources.DonutRenderer);
-        seriesDefaults.getRendererOptions().setSliceMargin(4);
-        seriesDefaults.getRendererOptions().setDataLabels("value");
-        seriesDefaults.getRendererOptions().setShowDataLabels(true);
+        getChartConfiguration().setLegend(new Legend(true, "e"));
+        getChartConfiguration().setSeriesDefaults(new SeriesDefaults());
+        getChartConfiguration().getSeriesDefaults().setRenderer(JqPlotResources.DonutRenderer);
+        getChartConfiguration().getSeriesDefaults().setRendererOptions(new RendererOptions());
+        getChartConfiguration().getSeriesDefaults().getRendererOptions().setSliceMargin(4);
+        getChartConfiguration().getSeriesDefaults().getRendererOptions().setDataLabels("value");
+        getChartConfiguration().getSeriesDefaults().getRendererOptions().setShowDataLabels(true);
     }
-
-    public JqPlotResources getRenderer() {
-        return seriesDefaults.getRenderer();
-    }
-
-    public void setRenderer(JqPlotResources renderer) {
-        seriesDefaults.setRenderer(renderer);
-    }
-
-    public Legend getLegend() {
-        return legend;
-    }
-
-    public void setLegend(Legend legend) {
-        this.legend = legend;
-    }
-
-    public SeriesDefaults getSeriesDefaults() {
-        return seriesDefaults;
-    }
-
-    public void setSeriesDefaults(SeriesDefaults seriesDefaults) {
-        this.seriesDefaults = seriesDefaults;
-    }
-
 }

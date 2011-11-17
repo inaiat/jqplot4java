@@ -9,12 +9,14 @@ import jqplot.chart.data.ChartData;
 import jqplot.chart.elements.Legend;
 import jqplot.chart.elements.RendererOptions;
 import jqplot.chart.elements.SeriesDefaults;
+import jqplot.metadata.JqPlotPlugin;
 
 
 /**
  *
  * @author bernardo.moura
  */
+@JqPlotPlugin(values={JqPlotResources.PieRenderer})
 public class PieChart<T extends ChartData> extends DefaultChart<T> {
 
     public PieChart(){
