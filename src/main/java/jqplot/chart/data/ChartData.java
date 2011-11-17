@@ -4,15 +4,13 @@
  */
 package jqplot.chart.data;
 
-import java.util.Collection;
-
 /**
  *
  * @author bernardo.moura
  */
 public interface ChartData<T> {
 
-    Collection<T> getData();
+    T getData();
     
     String toJsonString();
 }
