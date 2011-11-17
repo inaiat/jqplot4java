@@ -17,12 +17,12 @@ import jqplot.chart.elements.SeriesDefaults;
 public class DonutsChart<T extends ChartData> extends DefaultChart<T> {
 
     public DonutsChart() {
-        getJqPlot().setLegend(new Legend(true, "e"));
-        getJqPlot().setSeriesDefaults(new SeriesDefaults());
-        getJqPlot().getSeriesDefaults().setRenderer(JqPlotResources.DonutRenderer);
-        getJqPlot().getSeriesDefaults().setRendererOptions(new RendererOptions());
-        getJqPlot().getSeriesDefaults().getRendererOptions().setSliceMargin(4);
-        getJqPlot().getSeriesDefaults().getRendererOptions().setDataLabels("value");
-        getJqPlot().getSeriesDefaults().getRendererOptions().setShowDataLabels(true);
+        getChartConfiguration().setLegend(new Legend(true, "e"));
+        getChartConfiguration().setSeriesDefaults(new SeriesDefaults());
+        getChartConfiguration().getSeriesDefaults().setRenderer(JqPlotResources.DonutRenderer);
+        getChartConfiguration().getSeriesDefaults().setRendererOptions(new RendererOptions());
+        getChartConfiguration().getSeriesDefaults().getRendererOptions().setSliceMargin(4);
+        getChartConfiguration().getSeriesDefaults().getRendererOptions().setDataLabels("value");
+        getChartConfiguration().getSeriesDefaults().getRendererOptions().setShowDataLabels(true);
     }
 }

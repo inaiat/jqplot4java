@@ -13,11 +13,14 @@ import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import jqplot.chart.AreaChart;
 import jqplot.chart.data.AreaFillData;
 import junit.framework.TestCase;
 import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONTokener;
 
 /**
  *
@@ -69,19 +72,9 @@ public class AreaFillTest extends TestCase {
         
         System.out.println(array);
         
-        Collection<Collection<Integer>> c = new ArrayList<Collection<Integer>>();        
-        
-        c.add(new ArrayList<Integer>(Arrays.asList(1,2,3,4,5)));
-        c.add(new ArrayList<Integer>(Arrays.asList(9,8,7,6,5)));
-        
-        array = new JSONArray();
-        array.put(c);
-
-        
-        
-        System.out.println(array);
-
-
-
+        Collection<JSONArray> c = new ArrayList<JSONArray>();
+        c.add(new JSONArray(Arrays.asList("A",1)));        
+        c.add(new JSONArray(Arrays.asList("B",2)));        
+        System.out.println(new JSONArray(c).toString());
     }
 }

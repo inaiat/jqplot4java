@@ -16,8 +16,8 @@ import jqplot.chart.elements.SeriesDefaults;
 public class AreaChart<T extends ChartData> extends DefaultChart<T> {
 
     public AreaChart() {
-        getJqPlot().setStackSeries(true);
-        getJqPlot().setShowMarker(false);
+        getChartConfiguration().setStackSeries(true);
+        getChartConfiguration().setShowMarker(false);
         SeriesDefaults defaults = new SeriesDefaults();
         defaults.setFill(true);
         setSeriesDefaults(defaults);        

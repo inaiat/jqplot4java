@@ -4,23 +4,13 @@
  */
 package jqplot.chart;
 
-import java.util.Arrays;
-import jqplot.chart.data.ChartData;
+import jqplot.chart.config.ChartConfiguration;
 
 /**
  *
  * @author bernardo.moura
  */
-public class BarChart extends JqPlot  {
+public class BarChart extends ChartConfiguration  {
     
-    private ChartData data;
-
-    public void addValues(Number... values) {
-        data.addValue(Arrays.asList(values));
-    }
-
-    public void addValue(Number value) {
-        data.addValue(value);
-    }
   
 }

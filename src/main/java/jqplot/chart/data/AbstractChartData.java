@@ -12,11 +12,6 @@ import java.util.Collection;
  * @author inaiat
  */
 public abstract class AbstractChartData<T> implements ChartData<T>  {
-
-    private T type;
-
-    public AbstractChartData() {
-    }     
     
     public void addValues(Collection<T> value) {
         getData().addAll(value);
@@ -28,11 +23,6 @@ public abstract class AbstractChartData<T> implements ChartData<T>  {
 
     public void addValue(T value) {
         getData().add(value);
-    }
-
-    public Class getType() {
-        return type.getClass();
-    }
-    
+    }   
     
 }

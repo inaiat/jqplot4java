@@ -21,6 +21,8 @@ import jqplot.chart.Chart;
 import jqplot.chart.config.ChartConfiguration;
 import jqplot.metadata.JqPlotPlugin;
 import jqplot.renderer.plugin.BarRenderer;
+import jqplot.renderer.plugin.PieRenderer;
+import jqplot.renderer.plugin.DonutRenderer;
 import jqplot.renderer.plugin.CanvasAxisLabelRenderer;
 import jqplot.renderer.plugin.CanvasAxisTickRenderer;
 import jqplot.renderer.plugin.CategoryAxisRenderer;
@@ -33,6 +35,8 @@ public class JqPlotUtil {
 
     private static final Class<?>[] RESOURCES = new Class<?>[]{
         BarRenderer.class,
+        PieRenderer.class,
+        DonutRenderer.class,
         CanvasAxisLabelRenderer.class,
         CanvasAxisTickRenderer.class,
         CategoryAxisRenderer.class

@@ -13,12 +13,6 @@ import java.util.Collection;
 public interface ChartData<T> {
 
     Collection<T> getData();
-
-    void addValues(Collection<T> value);
-    
-    void addValues(T... values);
-
-    void addValue(T value);
     
     String toJsonString();
 }
