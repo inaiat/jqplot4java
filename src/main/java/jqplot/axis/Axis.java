@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * angetd open the template in the editor.
- */
 package jqplot.axis;
 
 import jqplot.JqPlotResources;

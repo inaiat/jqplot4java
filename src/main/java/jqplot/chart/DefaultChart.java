@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package jqplot.chart;
 
 import jqplot.chart.config.ChartConfiguration;
@@ -21,15 +17,15 @@ import jqplot.chart.elements.Title;
  */
 public class DefaultChart<T extends ChartData> implements Chart<T> {
 
-    private final ChartConfiguration jqPlot;
+    private final ChartConfiguration configuration;
     private T chartData;
 
     public DefaultChart() {
-        this.jqPlot = new ChartConfiguration();
+        this.configuration = new ChartConfiguration();
     }   
 
     public ChartConfiguration getChartConfiguration() {
-        return jqPlot;
+        return configuration;
     }
 
     public T getChartData() {
