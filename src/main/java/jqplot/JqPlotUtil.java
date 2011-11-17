@@ -25,6 +25,7 @@ import jqplot.renderer.plugin.BarRenderer;
 import jqplot.renderer.plugin.CanvasAxisLabelRenderer;
 import jqplot.renderer.plugin.CanvasAxisTickRenderer;
 import jqplot.renderer.plugin.CategoryAxisRenderer;
+import jqplot.renderer.plugin.DonutRenderer;
 import jqplot.renderer.plugin.PieRenderer;
 
 /**
@@ -38,7 +39,7 @@ public class JqPlotUtil {
         CanvasAxisLabelRenderer.class,
         CanvasAxisTickRenderer.class,
         PieRenderer.class,
-        
+        DonutRenderer.class,
         CategoryAxisRenderer.class
     };
 
