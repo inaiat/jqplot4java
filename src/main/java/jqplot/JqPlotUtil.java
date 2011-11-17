@@ -14,6 +14,8 @@ import jqplot.renderer.plugin.BarRenderer;
 import jqplot.renderer.plugin.CanvasAxisLabelRenderer;
 import jqplot.renderer.plugin.CanvasAxisTickRenderer;
 import jqplot.renderer.plugin.CategoryAxisRenderer;
+import jqplot.renderer.plugin.DonutRenderer;
+import jqplot.renderer.plugin.PieRenderer;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.MarshallingContext;
@@ -40,12 +42,11 @@ public class JqPlotUtil {
 
     public static List<String> retriveJavaScriptResources(Chart jqPlot) {
         List<String> resources = new ArrayList<String>();
-        for (Class<?> clazz : RESOURCES) {
-            if (clazz.isAnnotationPresent(JqPlotPlugin.class)) {
-                JqPlotResources[] jqPlotResourceses = clazz.getAnnotation(JqPlotPlugin.class).values();
-                for (JqPlotResources jqPlotResources : jqPlotResourceses) {
-                    resources.add(jqPlotResources.getResource());                    
-                }
+        Class<?> klazz = jqPlot.getClass();
+        if (klazz.isAnnotationPresent(JqPlotPlugin.class)) {
+            JqPlotResources[] jqPlotResourceses = klazz.getAnnotation(JqPlotPlugin.class).values();
+            for (JqPlotResources jqPlotResources : jqPlotResourceses) {
+                resources.add(jqPlotResources.getResource());
             }
         }
         return resources;
@@ -80,9 +81,8 @@ public class JqPlotUtil {
                 Format format = new Format(new char[]{}, new char[]{}, Format.COMPACT_EMPTY_ELEMENT);
                 JsonWriter jsonWriter = new JsonWriter(writer, JsonWriter.DROP_ROOT_MODE, format);
                 return jsonWriter;
-            }            
-            
-        });          
+            }
+        });
 
         StringBuilder builder = new StringBuilder();
         builder.append("$(document).ready(function(){\r\n");
@@ -110,7 +110,7 @@ public class JqPlotUtil {
         builder.append("   $.jqplot('").append(divId).append("', ");
         builder.append(xstream.toXML(data));
         builder.append(", ");
-        builder.append(jqPlotToJson((ChartConfiguration)chart));
+        builder.append(jqPlotToJson((ChartConfiguration) chart));
         builder.append(");\r\n");
         builder.append("});\r\n");
         return builder.toString();
@@ -131,7 +131,7 @@ public class JqPlotUtil {
         builder.append("   $.jqplot('").append(divId).append("', ");
         builder.append(xstream.toXML(data));
         builder.append(", ");
-        builder.append(jqPlotToJson((ChartConfiguration)chart));
+        builder.append(jqPlotToJson((ChartConfiguration) chart));
         builder.append(");\r\n");
         builder.append("});\r\n");
         return builder.toString();
