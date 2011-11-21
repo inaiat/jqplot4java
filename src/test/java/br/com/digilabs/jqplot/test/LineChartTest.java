@@ -50,11 +50,8 @@ public class LineChartTest extends TestCase {
         		"    \"labelRenderer\": $.jqplot.CanvasAxisLabelRenderer\n" +
         		"  }\n" +
         		"});\r\n" +
-        		"});\r\n";
+        		"});\r\n";        
         
-        
-        System.out.println(result);
-        System.out.println(extectedResult);
         
         assertEquals(extectedResult, result);
         
