@@ -9,11 +9,10 @@ package br.com.digilabs.jqplot.chart.elements;
  * @author bernardo.moura
  */
 public class Legend implements Element {
-	
-	private static final long serialVersionUID = 7228235274262615669L;
 
-	private String options;
-    private String placment;
+    private static final long serialVersionUID = 7228235274262615669L;
+    private String options;
+    private String placement;
     private String location;
     private String border;
     private String background;
@@ -22,28 +21,25 @@ public class Legend implements Element {
     private String marginRight;
     private String marginBottom;
     private String marginLeft;
-    
     private Renderer renderer;
-    
     private Double xoffset;
     private Double yoffset;
-                
     private Boolean show;
     private Boolean showLables;
     private Boolean showSwatches;
     private Boolean preDraw;
-    private Boolean escapeHtml; 
-
+    private Boolean escapeHtml;
     private String[] lables;
-    public Legend (){
 
+    public Legend() {
     }
-    public Legend (boolean show, String location){
+
+    public Legend(boolean show, String location) {
         this.show = show;
         this.location = location;
     }
 
-    public Legend (String options){
+    public Legend(String options) {
         this.options = options;
     }
 
@@ -128,11 +124,11 @@ public class Legend implements Element {
     }
 
     public String getPlacment() {
-        return placment;
+        return placement;
     }
 
     public void setPlacment(String placment) {
-        this.placment = placment;
+        this.placement = placment;
     }
 
     public Boolean getPreDraw() {
@@ -190,7 +186,7 @@ public class Legend implements Element {
     public void setYoffset(Double yoffset) {
         this.yoffset = yoffset;
     }
-   
+
     public String getOptions() {
         return options;
     }
@@ -198,6 +194,4 @@ public class Legend implements Element {
     public void setOptions(String options) {
         this.options = options;
     }
-    
-    
 }

@@ -10,12 +10,46 @@ package br.com.digilabs.jqplot.chart.elements;
  */
 public class RendererOptions implements Element {
 
-	private static final long serialVersionUID = -3555383297912526665L;
-
-	private Boolean showDataLabels;
+    private static final long serialVersionUID = -3555383297912526665L;
+    private Boolean showDataLabels;
     private String dataLabels;
     private Integer sliceMargin;
     private Integer startAngle;
+    private String barDirection;
+    private boolean highlightMouseDown;
+    private int barMargin;
+
+    public int getBarMargin() {
+        return barMargin;
+    }
+
+    public void setBarMargin(int barMargin) {
+        this.barMargin = barMargin;
+    }
+    public boolean isHighlightMouseDown() {
+        return highlightMouseDown;
+    }
+
+    public void setHighlightMouseDown(boolean highlightMouseDown) {
+        this.highlightMouseDown = highlightMouseDown;
+    }
+
+    public String getBarDirection() {
+        return barDirection;
+    }
+
+    public void setBarDirection(String barDirection) {
+        this.barDirection = barDirection;
+    }
+
+    public boolean isFillZero() {
+        return fillZero;
+    }
+
+    public void setFillZero(boolean fillZero) {
+        this.fillZero = fillZero;
+    }
+    private boolean fillZero;
 
     /**
      * @return the showDataLabels

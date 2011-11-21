@@ -4,7 +4,6 @@
  */
 package br.com.digilabs.jqplot.chart.elements;
 
-
 import br.com.digilabs.jqplot.axis.Axis;
 
 /**
@@ -13,34 +12,30 @@ import br.com.digilabs.jqplot.axis.Axis;
  */
 public class Grid implements Element {
 
-	private static final long serialVersionUID = 5478580499167992682L;
-
-	private Boolean drawGridLines = true;
-    private String gridLineColer = "#cccccc";
-    private Double gridLineWidth = 1.0;
-    private String background = "#fffdf6";
-    private String borderColor = "#999999";
-    private Double borderWidth = 2.0;
-    private Boolean drawBorder = true;
-    private Boolean shadow = true;
-    private Double shadowAngle = 45.0;
-    private Double shadowOffset = 1.5;
-    private Double shadowWidth = 3.0;
-    private Double shadowDepth = 3.0;
-    private String shadowColor = null;
-    private String shadowAlpha = "0.7";
+    private static final long serialVersionUID = 5478580499167992682L;
+    private Boolean drawGridLines;
+    private String gridLineColer;
+    private Double gridLineWidth;
+    private String background;
+    private String borderColor;
+    private Double borderWidth;
+    private Boolean drawBorder;
+    private Boolean shadow;
+    private Double shadowAngle;
+    private Double shadowOffset;
+    private Double shadowWidth;
+    private Double shadowDepth;
+    private String shadowColor;
+    private String shadowAlpha;
     private Float left;
     private Float top;
     private Float right;
     private Float bottom;
     private Float width;
     private Float height;
-    private Axis[] axis = null;
-    // TODO: What pluginName should be passed?
-    //private Renderer renderer = new CanvasGridRenderer(null);
+    private Axis[] axis;
     private String[] rendererOptions;
-    
-    
+
     public Axis[] getAxis() {
         return axis;
     }
@@ -129,7 +124,6 @@ public class Grid implements Element {
         this.left = left;
     }
 
-
     public String[] getRendererOptions() {
         return rendererOptions;
     }
@@ -217,5 +211,4 @@ public class Grid implements Element {
     public void setWidth(Float width) {
         this.width = width;
     }
-
 }

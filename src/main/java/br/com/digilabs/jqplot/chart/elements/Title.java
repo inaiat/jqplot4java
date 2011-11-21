@@ -9,10 +9,9 @@ package br.com.digilabs.jqplot.chart.elements;
  * @author inaiat
  */
 public class Title implements Element {
-	
-	private static final long serialVersionUID = -277067293084389272L;
 
-	private String text;
+    private static final long serialVersionUID = -277067293084389272L;
+    private String text;
     private Boolean show;
     private String fontFamily;
     private String fontSize;
@@ -24,11 +23,10 @@ public class Title implements Element {
 
     public Title() {
     }
-    
+
     public Title(String text) {
         this.text = text;
     }
-    
 
     /**
      * @return the text
@@ -162,6 +160,4 @@ public class Title implements Element {
     public void setText(String text) {
         this.text = text;
     }
-    
-    
 }

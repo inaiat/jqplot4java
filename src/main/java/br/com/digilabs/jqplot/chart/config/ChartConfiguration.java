@@ -26,6 +26,7 @@ import br.com.digilabs.jqplot.chart.elements.Legend;
 import br.com.digilabs.jqplot.chart.elements.Serie;
 import br.com.digilabs.jqplot.chart.elements.SeriesDefaults;
 import br.com.digilabs.jqplot.chart.elements.Title;
+import java.util.ArrayList;
 
 /**
  *
@@ -33,17 +34,25 @@ import br.com.digilabs.jqplot.chart.elements.Title;
  */
 public class ChartConfiguration implements Serializable {
 
-	private static final long serialVersionUID = 7082325039222592701L;
-
-	protected Collection<Serie> series;
+    private static final long serialVersionUID = 7082325039222592701L;
+    protected Collection<Serie> series;
     protected Axes axes;
     protected Title title;
     protected Axis axesDefaults;
     private SeriesDefaults seriesDefaults;
     private Boolean stackSeries;
     private Boolean showMarker;
-    protected Legend legend;
+    private Legend legend;
+    private boolean captureRightClick;
 
+    public boolean isCaptureRightClick() {
+        return captureRightClick;
+    }
+
+    public void setCaptureRightClick(boolean captureRightClick) {
+        this.captureRightClick = captureRightClick;
+    }
+    
     public Legend getLegend() {
         return legend;
     }
@@ -51,7 +60,7 @@ public class ChartConfiguration implements Serializable {
     public void setLegend(Legend legend) {
         this.legend = legend;
     }
-    
+
     public void setSimpleTitle(String title) {
         if (title == null) {
             this.title = new Title(title);
@@ -59,7 +68,7 @@ public class ChartConfiguration implements Serializable {
             this.title.setText(title);
         }
     }
-    
+
     public Axes createAxes() {
         if (axes == null) {
             this.axes = new Axes();
@@ -69,7 +78,7 @@ public class ChartConfiguration implements Serializable {
 
     public XAxis createXAxis() {
         Axes newAxes = createAxes();
-        if (newAxes.getXaxis()==null) {
+        if (newAxes.getXaxis() == null) {
             XAxis xAxis = new XAxis();
             newAxes.setXaxis(xAxis);
         }
@@ -78,7 +87,7 @@ public class ChartConfiguration implements Serializable {
 
     public YAxis createYAxis() {
         Axes newAxes = createAxes();
-        if (newAxes.getYaxis()==null) {
+        if (newAxes.getYaxis() == null) {
             YAxis yAxis = new YAxis();
             newAxes.setYaxis(yAxis);
         }
@@ -104,6 +113,8 @@ public class ChartConfiguration implements Serializable {
      * @return the series
      */
     public Collection<Serie> getSeries() {
+        if(series == null)
+            series = new ArrayList<Serie>();
         return series;
     }
 
@@ -111,7 +122,14 @@ public class ChartConfiguration implements Serializable {
      * @param series the series to set
      */
     public void setSeries(Collection<Serie> series) {
-        this.setSeries(series);
+        this.series = series;
+    }
+    /**
+     * 
+     * @param serie 
+     */
+    public void addSeries(Serie serie) {
+        this.getSeries().add(serie);
     }
 
     /**

@@ -4,25 +4,34 @@ import java.io.Serializable;
 
 import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.chart.elements.Renderer;
+import br.com.digilabs.jqplot.chart.elements.TickOptions;
 
 /**
  *
  * @author inaiat
  */
 public class Axis implements Serializable {
-    
-	private static final long serialVersionUID = -5426777530263336010L;
 
-	private Boolean show;
+    private static final long serialVersionUID = -5426777530263336010L;
+    private Boolean show;
     private JqPlotResources renderer;
     private Boolean autoScale;
-    private Renderer tickOptions;
+    private TickOptions tickOptions;
     private String[] ticks;
     private JqPlotResources labelRenderer;
     private JqPlotResources tickRenderer;
     private String label;
     private Float pad;
+    private int padMin;
 
+    public int getPadMin() {
+        return padMin;
+    }
+
+    public void setPadMin(int padMin) {
+        this.padMin = padMin;
+    }
+    
     /**
      * @return the show
      */
@@ -54,15 +63,14 @@ public class Axis implements Serializable {
     /**
      * @return the tickOptions
      */
-    
-    public Renderer getTickOptions() {
+    public TickOptions getTickOptions() {
         return tickOptions;
     }
 
     /**
      * @param tickOptions the tickOptions to set
      */
-    public void setTickOptions(Renderer tickOptions) {
+    public void setTickOptions(TickOptions tickOptions) {
         this.tickOptions = tickOptions;
     }
 
@@ -149,5 +157,4 @@ public class Axis implements Serializable {
     public void setTicks(String[] ticks) {
         this.ticks = ticks;
     }
-   
 }

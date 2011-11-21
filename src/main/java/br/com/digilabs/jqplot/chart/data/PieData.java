@@ -10,7 +10,7 @@ import br.com.digilabs.jqplot.json.JSONArray;
  *
  * @author bernardo.moura
  */
-public class PieChartData<T extends Object> extends  AbstractCollectionData<T>  {
+public class PieData<T extends Object> extends  AbstractCollectionData<T>  {
 
     private Collection<T> data = new ArrayList<T>();
 

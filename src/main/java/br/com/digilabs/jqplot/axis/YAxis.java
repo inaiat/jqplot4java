@@ -6,6 +6,5 @@ package br.com.digilabs.jqplot.axis;
  */
 public class YAxis extends Axis {
 
-	private static final long serialVersionUID = 1964421050362233742L;
-    
+    private static final long serialVersionUID = 1964421050362233742L;
 }

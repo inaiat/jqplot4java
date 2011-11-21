@@ -12,12 +12,18 @@ import br.com.digilabs.jqplot.JqPlotResources;
  */
 public class Serie implements Element {
 
-	private static final long serialVersionUID = 7138260563176853708L;
-
-	private String label;
+    private static final long serialVersionUID = 7138260563176853708L;
+    private String label;
     private JqPlotResources renderer;
     private RendererOptions rendererOptions;
     private Boolean fill;
+
+    public Serie(){
+    }
+
+    public Serie(String label) {
+        this.label = label;
+    }
 
     public RendererOptions getRendererOptions() {
         return rendererOptions;
