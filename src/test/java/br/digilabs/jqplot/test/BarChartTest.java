@@ -19,8 +19,6 @@ import br.com.digilabs.jqplot.JqPlotUtil;
 import br.com.digilabs.jqplot.chart.BarChart;
 import br.com.digilabs.jqplot.chart.data.BarData;
 import br.com.digilabs.jqplot.chart.elements.PointLabels;
-import br.com.digilabs.jqplot.chart.elements.Serie;
-import br.com.digilabs.jqplot.chart.elements.TickOptions;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
