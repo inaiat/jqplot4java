@@ -4,10 +4,10 @@
  */
 package br.digilabs.jqplot.test;
 
+import junit.framework.TestCase;
 import br.digilabs.jqplot.JqPlotUtil;
 import br.digilabs.jqplot.chart.LineChart;
 import br.digilabs.jqplot.chart.data.LinedData;
-import junit.framework.TestCase;
 
 /**
  *
@@ -37,7 +37,31 @@ public class LineChartTest extends TestCase {
         LineChart<LinedData<Integer>> lineChart = new LineChart<LinedData<Integer>>();
         LinedData<Integer> data = new LinedData<Integer>(1, 2, 3, 4, 5, 6);
         lineChart.setChartData(data);            
-        System.out.println(JqPlotUtil.createJquery(lineChart, "chart1"));
+        String result = JqPlotUtil.createJquery(lineChart, "chart1");
+        
+        String  extectedResult = "$(document).ready(function(){\r\n" +
+        		"   $.jqplot('chart1', [[1,2,3,4,5,6]], {\n" +
+        		"  \"axes\": {\n" +
+        		"    \"xaxis\": {\n" +
+        		"      \"pad\": 0.0\n" +
+        		"    }\n" +
+        		"  },\n" +
+        		"  \"axesDefaults\": {\n" +
+        		"    \"labelRenderer\": $.jqplot.CanvasAxisLabelRenderer\n" +
+        		"  }\n" +
+        		"});\r\n" +
+        		"});\r\n";
+        
+        
+        System.out.println(result);
+        System.out.println(extectedResult);
+        
+        assertEquals(extectedResult, result);
+        
     }
-
 }
+  		
+        		
+        		
+        		
+        		
