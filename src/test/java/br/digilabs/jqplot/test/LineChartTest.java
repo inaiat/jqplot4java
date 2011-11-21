@@ -4,10 +4,11 @@
  */
 package br.digilabs.jqplot.test;
 
+import br.com.digilabs.jqplot.JqPlotUtil;
+import br.com.digilabs.jqplot.chart.LineChart;
+import br.com.digilabs.jqplot.chart.data.LinedData;
 import junit.framework.TestCase;
-import br.digilabs.jqplot.JqPlotUtil;
-import br.digilabs.jqplot.chart.LineChart;
-import br.digilabs.jqplot.chart.data.LinedData;
+
 
 /**
  *
