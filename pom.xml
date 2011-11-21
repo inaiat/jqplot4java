@@ -10,7 +10,7 @@
 		<version>7</version>
 	</parent>
 
-	<groupId>jqplot</groupId>
+	<groupId>br.com.digilabs.jqplot</groupId>
 	<artifactId>jqplot4java</artifactId>
 	<version>1.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
