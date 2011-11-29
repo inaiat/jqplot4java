@@ -14,7 +14,7 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
 /**
  *
- * @author bernardo.moura
+ * @author inaiat
  */
 @JqPlotPlugin(values = {JqPlotResources.DonutRenderer})
 public class PieDonutChart<T extends ChartData<?>> extends DefaultChart<T> {

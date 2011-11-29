@@ -13,9 +13,8 @@ import br.com.digilabs.jqplot.chart.elements.Renderer;
  */
 public class CanvasAxisLabelRenderer implements Renderer {
 
-	private static final long serialVersionUID = -5172222371889152689L;
-
-	private Float angle;
+    private static final long serialVersionUID = -5172222371889152689L;
+    private Float angle;
     private Boolean show;
     private Boolean showLabel;
     private String label;

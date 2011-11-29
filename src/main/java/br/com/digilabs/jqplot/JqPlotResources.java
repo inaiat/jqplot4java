@@ -6,13 +6,17 @@ package br.com.digilabs.jqplot;
  */
 public enum JqPlotResources {
 
-    BarRenderer("$.jqplot.barRenderer", "plugins/jqplot.barRenderer.min.js"),
+    BarRenderer("$.jqplot.BarRenderer", "plugins/jqplot.barRenderer.min.js"),
+    BubbleRenderer("$.jqplot.BubbleRenderer", "plugins/jqplot.bubbleRenderer.min.js"),
     PieRenderer("$.jqplot.PieRenderer", "plugins/jqplot.pieRenderer.min.js"),
     DonutRenderer("$.jqplot.DonutRenderer", "plugins/jqplot.donutRenderer.min.js"),
     CanvasAxisLabelRenderer("$.jqplot.CanvasAxisLabelRenderer", "plugins/jqplot.canvasAxisLabelRenderer.min.js"),
     CategoryAxisRenderer("$.jqplot.CategoryAxisRenderer", "plugins/jqplot.categoryAxisRenderer.min.js"),
     CanvasAxisTickRenderer("$.jqplot.CanvasAxisTickRenderer", "plugins/jqplot.canvasAxisTickRenderer.min.js"),
     CanvasTextRenderer("$.jqplot.CanvasTextRenderer","plugins/jqplot.canvasTextRenderer.min.js"),
+    DateAxisRenderer("$.jqplot.DateAxisRenderer","plugins/jqplot.dateAxisRenderer.min.js"),
+    MeterGaugeRenderer("$.jqplot.MeterGaugeRenderer","plugins/jqplot.meterGaugeRenderer.min.js"),
+    PointLabels("$.jqplot.DateAxisRenderer","plugins/jqplot.pointLabels.min.js"),
     ShadowRenderer("$.jqplot.ShadowRenderer", "jquery.jqplot.min.js");
     
     private String className;
@@ -40,3 +44,4 @@ public enum JqPlotResources {
         return resource;
     }
 }
+

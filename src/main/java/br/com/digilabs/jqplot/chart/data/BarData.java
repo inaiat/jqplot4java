@@ -8,7 +8,7 @@ import org.json.JSONArray;
 
 /**
  *
- * @author bernardo.moura
+ * @author inaiat
  */
 public class BarData<T extends Number> extends AbstractCollectionData<Collection<T>> {
     

@@ -43,13 +43,13 @@ public class ChartConfiguration implements Serializable {
     private Boolean stackSeries;
     private Boolean showMarker;
     private Legend legend;
-    private boolean captureRightClick;
+    private Boolean captureRightClick = null;
 
-    public boolean isCaptureRightClick() {
+    public Boolean isCaptureRightClick() {
         return captureRightClick;
     }
 
-    public void setCaptureRightClick(boolean captureRightClick) {
+    public void setCaptureRightClick(Boolean captureRightClick) {
         this.captureRightClick = captureRightClick;
     }
     

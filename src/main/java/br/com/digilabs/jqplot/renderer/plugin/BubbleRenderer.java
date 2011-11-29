@@ -9,9 +9,9 @@ import br.com.digilabs.jqplot.chart.elements.Renderer;
 
 /**
  *
- * @author inaiat
+ * @author bernardo.moura
  */
-public class CategoryAxisRenderer implements Renderer {
+public class BubbleRenderer implements Renderer {
 
     private static final long serialVersionUID = -6281926919874791228L;
     private Boolean sortMergedLabels;
@@ -46,6 +46,6 @@ public class CategoryAxisRenderer implements Renderer {
     }
 
     public JqPlotResources resource() {
-        return JqPlotResources.CategoryAxisRenderer;
+        return JqPlotResources.BubbleRenderer;
     }
 }

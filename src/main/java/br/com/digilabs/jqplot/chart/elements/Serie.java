@@ -17,12 +17,66 @@ public class Serie implements Element {
     private JqPlotResources renderer;
     private RendererOptions rendererOptions;
     private Boolean fill;
+    private Integer lineWidth;
+    private MarkerOptions markerOptions;
+    private Boolean showMarker;
+    private Boolean showAlpha;
+    private Boolean shadow;
+    private Float shadowAlpha;
 
-    public Serie(){
+    public Serie() {
     }
 
     public Serie(String label) {
         this.label = label;
+    }
+
+    public Float getShadowAlpha() {
+        return shadowAlpha;
+    }
+
+    public void setShadowAlpha(Float shadowAlpha) {
+        this.shadowAlpha = shadowAlpha;
+    }
+
+    public Boolean getShowAlpha() {
+        return showAlpha;
+    }
+
+    public void setShowAlpha(Boolean showAlpha) {
+        this.showAlpha = showAlpha;
+    }
+
+    public Boolean getShadow() {
+        return shadow;
+    }
+
+    public void setShadow(Boolean shadow) {
+        this.shadow = shadow;
+    }
+
+    public Boolean getShowMarker() {
+        return showMarker;
+    }
+
+    public void setShowMarker(Boolean showMarker) {
+        this.showMarker = showMarker;
+    }
+
+    public MarkerOptions getMarkerOptions() {
+        return markerOptions;
+    }
+
+    public void setMarkerOptions(MarkerOptions markerOptions) {
+        this.markerOptions = markerOptions;
+    }
+
+    public Integer getLineWidth() {
+        return lineWidth;
+    }
+
+    public void setLineWidth(Integer lineWidth) {
+        this.lineWidth = lineWidth;
     }
 
     public RendererOptions getRendererOptions() {

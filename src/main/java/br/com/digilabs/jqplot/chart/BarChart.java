@@ -7,15 +7,14 @@ import br.com.digilabs.jqplot.chart.config.ChartConfiguration;
 import br.com.digilabs.jqplot.chart.data.ChartData;
 import br.com.digilabs.jqplot.chart.elements.Legend;
 import br.com.digilabs.jqplot.chart.elements.RendererOptions;
-import br.com.digilabs.jqplot.chart.elements.Serie;
 import br.com.digilabs.jqplot.chart.elements.SeriesDefaults;
-import java.util.ArrayList;
-import java.util.Collection;
+import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
 /**
  *
- * @author bernardo.moura
+ * @author inaiat
  */
+@JqPlotPlugin(values={JqPlotResources.CategoryAxisRenderer, JqPlotResources.BarRenderer, JqPlotResources.PointLabels})
 public class BarChart<T extends ChartData<?>> extends DefaultChart<T> {
 
     private static final long serialVersionUID = -8122703368130701972L;

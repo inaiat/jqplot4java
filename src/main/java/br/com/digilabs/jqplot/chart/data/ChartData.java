@@ -2,7 +2,7 @@ package br.com.digilabs.jqplot.chart.data;
 
 /**
  *
- * @author bernardo.moura
+ * @author inaiat
  */
 public interface ChartData<T> {
 

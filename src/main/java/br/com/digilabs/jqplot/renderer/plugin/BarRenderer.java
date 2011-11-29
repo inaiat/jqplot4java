@@ -14,10 +14,9 @@ import br.com.digilabs.jqplot.chart.elements.Renderer;
  * @author inaiat
  */
 public class BarRenderer implements Renderer {
-    
-	private static final long serialVersionUID = 2044639222061941989L;
 
-	private Integer barPadding;
+    private static final long serialVersionUID = 2044639222061941989L;
+    private Integer barPadding;
     private Integer barMargin;
     private String barDirection;
     private String barWidth;
@@ -201,6 +200,4 @@ public class BarRenderer implements Renderer {
     public JqPlotResources resource() {
         return JqPlotResources.BarRenderer;
     }
-    
-    
 }

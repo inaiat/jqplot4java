@@ -5,7 +5,7 @@ import br.com.digilabs.jqplot.chart.elements.Renderer;
 
 /**
  *
- * @author bernardo.moura
+ * @author inaiat
  */
 public class DonutRenderer implements Renderer {
 

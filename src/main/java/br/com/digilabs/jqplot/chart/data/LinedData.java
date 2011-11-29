@@ -9,7 +9,7 @@ import org.json.JSONArray;
 
 /**
  *
- * @author bernardo.moura
+ * @author inaiat
  */
 public class LinedData<T extends Number> extends AbstractCollectionData<T> {
     

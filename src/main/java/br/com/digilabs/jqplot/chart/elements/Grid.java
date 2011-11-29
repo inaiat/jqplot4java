@@ -8,7 +8,7 @@ import br.com.digilabs.jqplot.axis.Axis;
 
 /**
  *
- * @author bernardo.moura
+ * @author inaiat
  */
 public class Grid implements Element {
 

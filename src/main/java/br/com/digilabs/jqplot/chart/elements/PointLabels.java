@@ -15,14 +15,26 @@
  */
 package br.com.digilabs.jqplot.chart.elements;
 
+import java.util.Collection;
+
 /**
  *
- * @author bernardo.moura
+ * @author inaiat
  */
 public class PointLabels {
-    private boolean show = true;
+
+    private Boolean show = true;
     private String location;
     private Integer edgeTolerance;
+    private Collection<String> lables;
+
+    public Collection<String> getLables() {
+        return lables;
+    }
+
+    public void setLables(Collection<String> lables) {
+        this.lables = lables;
+    }
 
     public Integer getEdgeTolerance() {
         return edgeTolerance;
@@ -40,12 +52,11 @@ public class PointLabels {
         this.location = location;
     }
 
-    public boolean isShow() {
+    public Boolean isShow() {
         return show;
     }
 
-    public void setShow(boolean show) {
+    public void setShow(Boolean show) {
         this.show = show;
     }
-    
 }

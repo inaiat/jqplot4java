@@ -1,5 +1,6 @@
 package br.com.digilabs.jqplot;
 
+import br.com.digilabs.jqplot.support.JqPlotJsonMapHierarchicalWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;

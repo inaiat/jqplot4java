@@ -6,7 +6,7 @@ package br.com.digilabs.jqplot.chart.elements;
 
 /**
  *
- * @author bernardo.moura
+ * @author inaiat
  */
 public class Legend implements Element {
 

@@ -8,7 +8,7 @@ import org.json.JSONArray;
 
 /**
  *
- * @author bernardo.moura
+ * @author inaiat
  */
 public class PieData<T extends Object> extends  AbstractCollectionData<T>  {
 
