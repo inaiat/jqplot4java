@@ -9,12 +9,10 @@ import java.util.Arrays;
 
 import junit.framework.TestCase;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 
 import br.com.digilabs.jqplot.JqPlotUtil;
 import br.com.digilabs.jqplot.chart.BarChart;
-import br.com.digilabs.jqplot.data.item.LabeledItem;
 
 /**
  *

@@ -7,6 +7,8 @@ import java.io.Serializable;
  */
 public class LabeledItem<T extends Number> implements Serializable {
 	
+	private static final long serialVersionUID = -2937733251569937709L;
+
 	private String label;
 	private T value;
 	
