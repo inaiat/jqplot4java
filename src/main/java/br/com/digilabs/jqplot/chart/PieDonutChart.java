@@ -1,31 +1,45 @@
-
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.digilabs.jqplot.chart;
 
-import br.com.digilabs.jqplot.JqPlotResources;
-import br.com.digilabs.jqplot.chart.data.ChartData;
-import br.com.digilabs.jqplot.chart.elements.Legend;
-import br.com.digilabs.jqplot.chart.elements.RendererOptions;
-import br.com.digilabs.jqplot.chart.elements.SeriesDefaults;
-import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
+import java.util.Collection;
 
-/**
- *
- * @author inaiat
- */
-@JqPlotPlugin(values = {JqPlotResources.DonutRenderer})
-public class PieDonutChart<T extends ChartData<?>> extends DefaultChart<T> {
+
+import br.com.digilabs.jqplot.JqPlotResources;
+import br.com.digilabs.jqplot.data.PieDonutData;
+import br.com.digilabs.jqplot.data.item.LabeledItem;
+import br.com.digilabs.jqplot.elements.RendererOptions;
+import br.com.digilabs.jqplot.elements.SeriesDefaults;
+import br.com.digilabs.jqplot.elements.Title;
+
+public class PieDonutChart<T extends Number> extends AbstractChart<PieDonutData<T>> {
+
+    PieDonutData<T> data = new PieDonutData<T>();
 
     public PieDonutChart() {
-        getChartConfiguration().setLegend(new Legend(true, "e"));
+        this(null);
+    }
+
+    public PieDonutChart(String title) {
+        getChartConfiguration().setTitle(new Title(title));
         getChartConfiguration().setSeriesDefaults(new SeriesDefaults());
-        getChartConfiguration().getSeriesDefaults().setRenderer(JqPlotResources.DonutRenderer);
-        getChartConfiguration().getSeriesDefaults().setRendererOptions(new RendererOptions());
+        getChartConfiguration().getSeriesDefaults().setRenderer(
+                JqPlotResources.DonutRenderer);
+        getChartConfiguration().getSeriesDefaults().setRendererOptions(
+                new RendererOptions());
         getChartConfiguration().getSeriesDefaults().getRendererOptions().setSliceMargin(4);
-        getChartConfiguration().getSeriesDefaults().getRendererOptions().setDataLabels("value");
         getChartConfiguration().getSeriesDefaults().getRendererOptions().setShowDataLabels(true);
+        getChartConfiguration().getSeriesDefaults().getRendererOptions().setDataLabels("value");
+    }
+
+    public void addValue(Collection<LabeledItem<T>> value) {
+        data.addValue(value);
+    }
+
+    public PieDonutData<T> getChartData() {
+        return data;
+    }
+
+    public void setChartData(PieDonutData<T> value) {
+        this.data = value;
+
     }
 }

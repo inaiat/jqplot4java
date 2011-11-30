@@ -1,0 +1,11 @@
+package br.com.bradseg.framework.chart.jqplot.chart.elements;
+
+import java.io.Serializable;
+
+/**
+ *
+ * @author inaiat
+ */
+public interface Element extends Serializable {
+    
+}

@@ -1,0 +1,19 @@
+package br.com.bradseg.framework.chart.jqplot.renderer.plugin;
+
+import br.com.bradseg.framework.chart.jqplot.JqPlotResources;
+import br.com.bradseg.framework.chart.jqplot.metadata.JqPlotPlugin;
+import br.com.bradseg.framework.chart.jqplot.renderer.Renderer;
+
+/**
+ *
+ * @author inaiat
+ */
+@JqPlotPlugin(values= {JqPlotResources.PieRenderer})
+public class PieRenderer implements Renderer {
+
+	private static final long serialVersionUID = 1L;
+
+	public JqPlotResources resource() {
+        return JqPlotResources.PieRenderer;
+    }
+}

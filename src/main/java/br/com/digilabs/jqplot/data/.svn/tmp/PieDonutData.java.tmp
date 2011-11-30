@@ -1,0 +1,45 @@
+package br.com.bradseg.framework.chart.jqplot.chart.data;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+public class PieDonutData<T extends Number> extends  AbstractCollectionData<Collection<LabeledItem<T>>>  {
+
+    private Collection<Collection<LabeledItem<T>>> data = new ArrayList<Collection<LabeledItem<T>>>();
+
+//    public Collection<T> getData() {
+//        return data;
+//    }
+
+    public String toJsonString() {
+    	StringBuilder builder = new StringBuilder();
+    	boolean isFirst = true;
+    	for (Collection<LabeledItem<T>> col : data) {
+    		if (!isFirst) {
+    			builder.append(",");
+    		}
+			isFirst = false;
+    		builder.append("[");
+    		boolean isFirstItem = true;
+    		for (LabeledItem<T> teste : col) {
+    			if (!isFirstItem) {
+        			builder.append(",");
+        		}
+    			isFirstItem = false;
+        		builder.append("[");
+        		builder.append("\"");
+        		builder.append(teste.getLabel());
+        		builder.append("\"");
+        		builder.append(", ");
+        		builder.append(teste.getValue());
+        		builder.append("]");    			
+			}
+    		builder.append("]");
+    	}    	
+        return builder.toString();
+    }
+
+	public Collection<Collection<LabeledItem<T>>> getData() {
+		return data;
+	}
+}

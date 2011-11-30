@@ -3,7 +3,7 @@ package br.com.digilabs.jqplot.axis;
 import java.io.Serializable;
 
 import br.com.digilabs.jqplot.JqPlotResources;
-import br.com.digilabs.jqplot.chart.elements.TickOptions;
+import br.com.digilabs.jqplot.elements.TickOptions;
 
 /**
  *
@@ -21,41 +21,72 @@ public class Axis implements Serializable {
     private JqPlotResources tickRenderer;
     private String label;
     private Float pad;
-    private Integer padMin;
-    private Integer padMax;
+    private Float padMin;
+    private Float padMax;
     private String min;
     private String tickInterval;
 
+    /**
+     * 
+     * @return 
+     */
     public String getMin() {
         return min;
     }
 
+    /**
+     * 
+     * @param min 
+     */
     public void setMin(String min) {
         this.min = min;
     }
 
+    /**
+     * 
+     * @return 
+     */
     public String getTickInterval() {
         return tickInterval;
     }
 
+    /**
+     * 
+     * @param tickInterval 
+     */
     public void setTickInterval(String tickInterval) {
         this.tickInterval = tickInterval;
     }
 
-    
-    public Integer getPadMin() {
+    /**
+     * 
+     * @return 
+     */
+    public Float getPadMin() {
         return padMin;
     }
 
-    public void setPadMin(Integer padMin) {
+    /**
+     * 
+     * @param padMin 
+     */
+    public void setPadMin(Float padMin) {
         this.padMin = padMin;
     }
 
-    public Integer getPadMax() {
+    /**
+     * 
+     * @return 
+     */
+    public Float getPadMax() {
         return padMax;
     }
 
-    public void setPadMax(Integer padMax) {
+    /**
+     * 
+     * @param padMax 
+     */
+    public void setPadMax(Float padMax) {
         this.padMax = padMax;
     }
 

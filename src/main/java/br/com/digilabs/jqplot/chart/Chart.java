@@ -1,7 +1,7 @@
 package br.com.digilabs.jqplot.chart;
 
-import br.com.digilabs.jqplot.chart.config.ChartConfiguration;
-import br.com.digilabs.jqplot.chart.data.ChartData;
+import br.com.digilabs.jqplot.JqPlotConfiguration;
+import br.com.digilabs.jqplot.data.ChartData;
 
 /**
  *
@@ -9,7 +9,7 @@ import br.com.digilabs.jqplot.chart.data.ChartData;
  */
 public interface Chart<T extends ChartData<?>> {
     
-    ChartConfiguration getChartConfiguration();
+    JqPlotConfiguration getChartConfiguration();
     T getChartData();
     void setChartData(T value);
 }

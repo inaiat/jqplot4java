@@ -7,7 +7,7 @@ package br.com.digilabs.jqplot.renderer.plugin;
 import java.util.Collection;
 
 import br.com.digilabs.jqplot.JqPlotResources;
-import br.com.digilabs.jqplot.chart.elements.Renderer;
+import br.com.digilabs.jqplot.renderer.Renderer;
 
 /**
  *

@@ -1,7 +1,7 @@
 package br.com.digilabs.jqplot;
 
 /**
- *
+ * Recuros de javascript e css necessários para montar os gráficos
  * @author inaiat
  */
 public enum JqPlotResources {
@@ -22,10 +22,19 @@ public enum JqPlotResources {
     private String className;
     private String resource;
 
+    /**
+     * 
+     * @param className 
+     */
     private JqPlotResources(String className) {
         this(className, null);
     }
 
+    /**
+     * 
+     * @param className
+     * @param resource 
+     */
     private JqPlotResources(String className, String resource) {
         this.className = className;
         this.resource = resource;
@@ -36,10 +45,18 @@ public enum JqPlotResources {
         return className;
     }
 
+    /**
+     * 
+     * @return o nome da classe
+     */
     public String getClassName() {
         return className;
     }
 
+    /**
+     * Retorna o resurce
+     * @return o resource
+     */
     public String getResource() {
         return resource;
     }

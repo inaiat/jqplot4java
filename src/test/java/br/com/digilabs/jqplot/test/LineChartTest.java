@@ -6,8 +6,9 @@ package br.com.digilabs.jqplot.test;
 
 import junit.framework.TestCase;
 import br.com.digilabs.jqplot.JqPlotUtil;
+import br.com.digilabs.jqplot.chart.LabeledLineChart;
 import br.com.digilabs.jqplot.chart.LineChart;
-import br.com.digilabs.jqplot.chart.data.LinedData;
+import br.com.digilabs.jqplot.data.item.LabeledItem;
 
 /**
  *
@@ -29,36 +30,21 @@ public class LineChartTest extends TestCase {
         super.tearDown();
     }
 
-    /**
-     * Test of createJquery method, of class JqPlotUtil.
-     */
-    public void testCreateJquery() {       
-        
-        LineChart<LinedData<Integer>> lineChart = new LineChart<LinedData<Integer>>();
-        LinedData<Integer> data = new LinedData<Integer>(1, 2, 3, 4, 5, 6);
-        lineChart.setChartData(data);            
-        String result = JqPlotUtil.createJquery(lineChart, "chart1");
-        
-        String  extectedResult = "$(document).ready(function(){\r\n" +
-        		"   $.jqplot('chart1', [[1,2,3,4,5,6]], {\n" +
-        		"  \"axes\": {\n" +
-        		"    \"xaxis\": {\n" +
-        		"      \"pad\": 0.0\n" +
-        		"    }\n" +
-        		"  },\n" +
-        		"  \"axesDefaults\": {\n" +
-        		"    \"labelRenderer\": $.jqplot.CanvasAxisLabelRenderer\n" +
-        		"  }\n" +
-        		"});\r\n" +
-        		"});\r\n";        
-        
-        
-        assertEquals(extectedResult, result);
-        
+    public void testAddValues() {
+    	
+        Integer[] values = {1, 2, 3, 4, 5};
+        LineChart<Integer> instance = new LineChart<Integer>();
+        instance.addValues(values);
+        System.out.println(JqPlotUtil.createJquery(instance, "chart"));
+    }
+    
+    public void testBarChart() {
+        LabeledLineChart<Integer> chart = new LabeledLineChart<Integer>("Test","Incliment Occurrance","Incliment Factor",15);
+        chart.addValue(new LabeledItem<Integer>("1/1/2008", 42));
+        chart.addValue(new LabeledItem<Integer>("2/14/2008", 56));
+        chart.addValue(new LabeledItem<Integer>("3/7/2008", 39));
+        chart.addValue(new LabeledItem<Integer>("4/22/2008", 81));
+        System.out.println(JqPlotUtil.createJquery(chart, "chart"));
+        System.out.println(JqPlotUtil.retriveJavaScriptResources(chart));
     }
 }
-  		
-        		
-        		
-        		
-        		

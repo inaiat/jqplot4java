@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/bsad_framework/!svn/ver/177/trunk/foundation/presentation/view-libraries/src/main/java/br/com/bradseg/framework/chart/jqplot/renderer/plugin
+END
+DonutRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/bsad_framework/!svn/ver/170/trunk/foundation/presentation/view-libraries/src/main/java/br/com/bradseg/framework/chart/jqplot/renderer/plugin/DonutRenderer.java
+END
+CanvasAxisTickRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 173
+/svn/bsad_framework/!svn/ver/170/trunk/foundation/presentation/view-libraries/src/main/java/br/com/bradseg/framework/chart/jqplot/renderer/plugin/CanvasAxisTickRenderer.java
+END
+BubbleRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/bsad_framework/!svn/ver/175/trunk/foundation/presentation/view-libraries/src/main/java/br/com/bradseg/framework/chart/jqplot/renderer/plugin/BubbleRenderer.java
+END
+PieRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/bsad_framework/!svn/ver/170/trunk/foundation/presentation/view-libraries/src/main/java/br/com/bradseg/framework/chart/jqplot/renderer/plugin/PieRenderer.java
+END
+CanvasAxisLabelRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 174
+/svn/bsad_framework/!svn/ver/170/trunk/foundation/presentation/view-libraries/src/main/java/br/com/bradseg/framework/chart/jqplot/renderer/plugin/CanvasAxisLabelRenderer.java
+END
+CategoryAxisRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 171
+/svn/bsad_framework/!svn/ver/170/trunk/foundation/presentation/view-libraries/src/main/java/br/com/bradseg/framework/chart/jqplot/renderer/plugin/CategoryAxisRenderer.java
+END
+DateAxisRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 167
+/svn/bsad_framework/!svn/ver/177/trunk/foundation/presentation/view-libraries/src/main/java/br/com/bradseg/framework/chart/jqplot/renderer/plugin/DateAxisRenderer.java
+END
+BarRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/bsad_framework/!svn/ver/170/trunk/foundation/presentation/view-libraries/src/main/java/br/com/bradseg/framework/chart/jqplot/renderer/plugin/BarRenderer.java
+END
+MeterGaugeRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/bsad_framework/!svn/ver/170/trunk/foundation/presentation/view-libraries/src/main/java/br/com/bradseg/framework/chart/jqplot/renderer/plugin/MeterGaugeRenderer.java
+END
