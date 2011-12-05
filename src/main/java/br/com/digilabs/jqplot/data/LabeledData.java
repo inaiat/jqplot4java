@@ -9,7 +9,6 @@ import java.util.List;
 import org.json.JSONArray;
 
 /**
- * Representa os dados de um labeled chart
  * @author inaiat
  * @param <T> 
  */
@@ -33,14 +32,16 @@ public class LabeledData<T extends Number> extends AbstractCollectionData<Labele
      * @return json
      */
     public String toJsonString() {
-        JSONArray jsonArray = new JSONArray();
+    	JSONArray jsonArray = new JSONArray();        
         for (LabeledItem<T> labeledItem : data) {
             JSONArray itemArray = new JSONArray();
             itemArray.put(labeledItem.getLabel());
             itemArray.put(labeledItem.getValue());
             jsonArray.put(itemArray);
         }
-        return jsonArray.toString();
+        JSONArray outerArray = new JSONArray();
+        outerArray.put(jsonArray);
+        return outerArray.toString();
     }
 
     /**

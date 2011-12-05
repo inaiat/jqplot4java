@@ -1,7 +1,6 @@
 package br.com.digilabs.jqplot;
 
 /**
- * Recuros de javascript e css necessários para montar os gráficos
  * @author inaiat
  */
 public enum JqPlotResources {

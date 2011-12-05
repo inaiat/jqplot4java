@@ -5,7 +5,7 @@
 package br.com.digilabs.jqplot.test;
 
 import junit.framework.TestCase;
-import br.com.digilabs.jqplot.JavaScriptGenerator;
+import br.com.digilabs.jqplot.JavaScriptUtil;
 import br.com.digilabs.jqplot.chart.LabeledLineChart;
 import br.com.digilabs.jqplot.chart.LineChart;
 import br.com.digilabs.jqplot.data.item.LabeledItem;
@@ -35,7 +35,7 @@ public class LineChartTest extends TestCase {
         Integer[] values = {1, 2, 3, 4, 5};
         LineChart<Integer> instance = new LineChart<Integer>();
         instance.addValues(values);
-        System.out.println(JavaScriptGenerator.createJquery(instance, "chart"));
+        System.out.println(JavaScriptUtil.createJquery(instance, "chart"));
     }
     
     public void testBarChart() {
@@ -44,7 +44,7 @@ public class LineChartTest extends TestCase {
         chart.addValue(new LabeledItem<Integer>("2/14/2008", 56));
         chart.addValue(new LabeledItem<Integer>("3/7/2008", 39));
         chart.addValue(new LabeledItem<Integer>("4/22/2008", 81));
-        System.out.println(JavaScriptGenerator.createJquery(chart, "chart"));
-        System.out.println(JavaScriptGenerator.retriveJavaScriptResources(chart));
+        System.out.println(JavaScriptUtil.createJquery(chart, "chart"));
+        System.out.println(JavaScriptUtil.retriveJavaScriptResources(chart));
     }
 }
