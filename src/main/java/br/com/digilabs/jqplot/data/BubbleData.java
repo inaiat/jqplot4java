@@ -11,17 +11,25 @@ import java.util.Collection;
 import org.json.JSONArray;
 
 /**
- *
+ * Dados de um chart bubble
  * @author inaiat
  */
 public class BubbleData<T extends BubbleItem> extends AbstractCollectionData<T> {
 
     private Collection<T> data = new ArrayList<T>();
 
+    /**
+     * 
+     * @return Collection
+     */
     public Collection<T> getData() {
         return data;
     }
 
+    /**
+     * retorna o json
+     * @return json
+     */
     public String toJsonString() {
         JSONArray outerArray = new JSONArray();
         JSONArray jsonArray = new JSONArray();

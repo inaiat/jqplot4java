@@ -2,8 +2,8 @@ package br.com.digilabs.jqplot.axis;
 
 import java.io.Serializable;
 
-import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.elements.TickOptions;
+import br.com.digilabs.jqplot.util.JqPlotResources;
 
 /**
  *

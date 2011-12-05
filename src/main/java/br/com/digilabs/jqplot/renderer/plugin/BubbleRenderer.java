@@ -4,11 +4,11 @@
  */
 package br.com.digilabs.jqplot.renderer.plugin;
 
-import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.renderer.Renderer;
+import br.com.digilabs.jqplot.util.JqPlotResources;
 
 /**
- *
+ * Renderizadir de um chart bubble
  * @author inaiat
  */
 public class BubbleRenderer implements Renderer {
@@ -45,6 +45,10 @@ public class BubbleRenderer implements Renderer {
         this.tickRenderer = tickRenderer;
     }
 
+    /**
+     * 
+     * @return 
+     */
     public JqPlotResources resource() {
         return JqPlotResources.BubbleRenderer;
     }

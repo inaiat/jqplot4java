@@ -1,9 +1,9 @@
 package br.com.digilabs.jqplot.elements;
 
-import br.com.digilabs.jqplot.JqPlotResources;
+import br.com.digilabs.jqplot.util.JqPlotResources;
 
 /**
- *
+ * Representa uma serie
  * @author inaiat
  */
 public class Serie implements Element {
@@ -20,61 +20,120 @@ public class Serie implements Element {
     private Boolean shadow;
     private Float shadowAlpha;
 
+    /**
+     * Construtor
+     */
     public Serie() {
     }
 
+    /**
+     * 
+     * @param label 
+     */
     public Serie(String label) {
         this.label = label;
     }
 
+    /**
+     * 
+     * @return shadowAlpha
+     */
     public Float getShadowAlpha() {
         return shadowAlpha;
     }
 
+    /**
+     * 
+     * @param shadowAlpha 
+     */
     public void setShadowAlpha(Float shadowAlpha) {
         this.shadowAlpha = shadowAlpha;
     }
 
+    /**
+     * 
+     * @return showAlpha true ou false
+     */
     public Boolean getShowAlpha() {
         return showAlpha;
     }
 
+    /**
+     * 
+     * @param showAlpha 
+     */
     public void setShowAlpha(Boolean showAlpha) {
         this.showAlpha = showAlpha;
     }
 
+    /**
+     * 
+     * @return shadow
+     */
     public Boolean getShadow() {
         return shadow;
     }
 
+    /**
+     * 
+     * @param shadow 
+     */
     public void setShadow(Boolean shadow) {
         this.shadow = shadow;
     }
 
+    /**
+     * 
+     * @return 
+     */
     public Boolean getShowMarker() {
         return showMarker;
     }
 
+    /**
+     * 
+     * @param showMarker 
+     */
     public void setShowMarker(Boolean showMarker) {
         this.showMarker = showMarker;
     }
-
+    
+    /**
+     * 
+     * @return 
+     */
     public MarkerOptions getMarkerOptions() {
         return markerOptions;
     }
 
+    /**
+     * 
+     * @param markerOptions 
+     */
     public void setMarkerOptions(MarkerOptions markerOptions) {
         this.markerOptions = markerOptions;
     }
 
+    /**
+     * 
+     * @return 
+     */
     public Integer getLineWidth() {
         return lineWidth;
     }
 
+    /**
+     * 
+     * @param lineWidth 
+     */
     public void setLineWidth(Integer lineWidth) {
         this.lineWidth = lineWidth;
     }
 
+    /**
+     * 
+     * @return 
+     */
     public RendererOptions getRendererOptions() {
         return rendererOptions;
     }
@@ -83,6 +142,7 @@ public class Serie implements Element {
         this.rendererOptions = rendererOptions;
     }
 
+    
     /**
      * @return the label
      */

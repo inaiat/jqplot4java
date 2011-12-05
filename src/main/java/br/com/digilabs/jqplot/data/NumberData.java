@@ -4,35 +4,43 @@
  */
 package br.com.digilabs.jqplot.data;
 
-import org.json.JSONArray;
 
 /**
- *
- * @author bernardo.moura
+ * Representa um number
+ * @author inaiat
  */
-public class NumberData implements ChartData {
+public abstract class NumberData<T extends Number> implements ChartData<T> {
 
-    protected Number data = new Float(0);
-
-    public NumberData() {
-        
-    }
-
-    public NumberData(Number value) {
+    
+   private T data;
+    
+    /**
+     * 
+     * @param value 
+     */
+    public NumberData(T value) {
         data = value;
     }
 
-    public Number getData() {
+    /**
+     * 
+     * @return data
+     */
+    public T getData() {
         return data;
     }
 
-    public void setValue(Number value) {
-        data = value;
+    /**
+     * 
+     * @param value 
+     */
+    public void setValue(T value) {
+        this.data = value;
     }
 
-    public String toJsonString() {
-        JSONArray jsonArray = new JSONArray();
-        jsonArray.put(data);
-        return jsonArray.toString();
-    }
+    /**
+     * retorna o json com as informações
+     * @return json
+     */
+    public abstract String toJsonString();
 }

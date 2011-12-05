@@ -9,10 +9,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import br.com.digilabs.jqplot.JqPlotResources;
+import br.com.digilabs.jqplot.util.JqPlotResources;
 
 /**
- *
+ * Representa o plugin para o jqplot
  * @author inaiat
  */
 @Retention(RetentionPolicy.RUNTIME)

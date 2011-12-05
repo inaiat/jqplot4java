@@ -4,14 +4,18 @@
  */
 package br.com.digilabs.jqplot.renderer;
 
-import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.elements.Element;
+import br.com.digilabs.jqplot.util.JqPlotResources;
 
 /**
- *
+ * Classe abstrata que representa um renderer
  * @author inaiat
  */
 public interface Renderer extends Element {
 
+    /**
+     * 
+     * @return 
+     */
     public JqPlotResources resource();
 }

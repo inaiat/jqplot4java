@@ -3,7 +3,7 @@ package br.com.digilabs.jqplot.elements;
 import br.com.digilabs.jqplot.renderer.Renderer;
 
 /**
- * The Class Legend.
+ * Representa uma Legend.
  *
  * @author inaiat
  */

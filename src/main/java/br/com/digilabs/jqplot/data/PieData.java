@@ -7,13 +7,18 @@ import java.util.Collection;
 import org.json.JSONArray;
 
 /**
- *
+ * Representa os dados de um chart Pie
  * @author inaiat
  */
 public class PieData<T extends Number> extends AbstractCollectionData<LabeledItem<T>> {
 
     private Collection<LabeledItem<T>> data = new ArrayList<LabeledItem<T>>();
 
+    /**
+     * Retorna o json
+     * 
+     * @return 
+     */
     public String toJsonString() {
         JSONArray outerArray = new JSONArray();
         JSONArray jsonArray = new JSONArray();
@@ -27,6 +32,10 @@ public class PieData<T extends Number> extends AbstractCollectionData<LabeledIte
         return outerArray.toString();
     }
 
+    /**
+     * 
+     * @return Collection
+     */
     public Collection<LabeledItem<T>> getData() {
         return data;
     }

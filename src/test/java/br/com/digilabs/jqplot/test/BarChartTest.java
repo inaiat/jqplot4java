@@ -11,8 +11,8 @@ import junit.framework.TestCase;
 
 import org.json.JSONException;
 
-import br.com.digilabs.jqplot.JqPlotUtil;
-import br.com.digilabs.jqplot.chart.BarChart;
+import br.com.digilabs.jqplot.BarChart;
+import br.com.digilabs.jqplot.util.JavaScriptGenerator;
 
 /**
  *
@@ -39,7 +39,7 @@ public class BarChartTest extends TestCase {
         chart.addValue(Arrays.<Integer>asList(200, 600, 700, 1000));
         chart.addValue(Arrays.<Integer>asList(200, 600, 700, 1000));
         chart.addValue(Arrays.<Integer>asList(200, 600, 700, 1000));
-        System.out.println(JqPlotUtil.createJquery(chart, "chart"));
+        System.out.println(JavaScriptGenerator.createJquery(chart, "chart"));
 
     }
 }

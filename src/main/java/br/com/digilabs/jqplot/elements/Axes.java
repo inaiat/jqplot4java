@@ -6,14 +6,13 @@ import br.com.digilabs.jqplot.axis.Y2Axis;
 import br.com.digilabs.jqplot.axis.YAxis;
 
 /**
- *
+ * Representa as coordenadas de uma Axis
  * @author inaiat
  */
 public class Axes implements Element {
-    
-	private static final long serialVersionUID = -1464182411022493685L;
 
-	private XAxis xaxis;
+    private static final long serialVersionUID = -1464182411022493685L;
+    private XAxis xaxis;
     private YAxis yaxis;
     private X2Axis x2axis;
     private Y2Axis y2axis;
@@ -73,6 +72,4 @@ public class Axes implements Element {
     public void setY2axis(Y2Axis y2axis) {
         this.y2axis = y2axis;
     }
-
-    
 }

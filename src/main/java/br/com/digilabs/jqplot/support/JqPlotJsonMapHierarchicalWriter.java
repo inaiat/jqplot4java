@@ -11,7 +11,7 @@
  */
 package br.com.digilabs.jqplot.support;
 
-import br.com.digilabs.jqplot.JqPlotResources;
+import br.com.digilabs.jqplot.util.JqPlotResources;
 
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.core.util.FastStack;
@@ -24,7 +24,10 @@ import java.io.Writer;
 import java.util.Collection;
 import java.util.Map;
 
-
+/**
+ * 
+ * @author inaiat
+ */
 public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStreamWriter {
 
     /**
@@ -87,22 +90,48 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
     private final String newLine;
     private int mode;
 
+    /**
+     * 
+     * @param writer
+     * @param lineIndenter
+     * @param newLine 
+     */
     public JqPlotJsonMapHierarchicalWriter(Writer writer, char[] lineIndenter, String newLine) {
         this(writer, lineIndenter, newLine, 0);
     }
 
+    /**
+     * 
+     * @param writer
+     * @param lineIndenter 
+     */
     public JqPlotJsonMapHierarchicalWriter(Writer writer, char[] lineIndenter) {
         this(writer, lineIndenter, "\n");
     }
 
+    /**
+     * 
+     * @param writer
+     * @param lineIndenter
+     * @param newLine 
+     */
     public JqPlotJsonMapHierarchicalWriter(Writer writer, String lineIndenter, String newLine) {
         this(writer, lineIndenter.toCharArray(), newLine);
     }
 
+    /**
+     * 
+     * @param writer
+     * @param lineIndenter 
+     */
     public JqPlotJsonMapHierarchicalWriter(Writer writer, String lineIndenter) {
         this(writer, lineIndenter.toCharArray());
     }
 
+    /**
+     * 
+     * @param writer 
+     */
     public JqPlotJsonMapHierarchicalWriter(Writer writer) {
         this(writer, new char[]{' ', ' '});
     }
@@ -144,6 +173,11 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
 
     }
 
+    /**
+     * 
+     * @param name
+     * @param clazz 
+     */
     public void startNode(String name, Class clazz) {
         Node currNode = (Node)elementStack.peek();
         if (currNode == null
@@ -182,6 +216,9 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
         tagIsEmpty = true;
     }
 
+    /**
+     * 
+     */
     public class Node {
         public final String name;
         public final Class clazz;
@@ -195,6 +232,10 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
         }
     }
 
+    /**
+     * 
+     * @param text 
+     */
     public void setValue(String text) {
         Node currNode = (Node)elementStack.peek();
         if (currNode != null && currNode.fieldAlready) {
@@ -214,6 +255,11 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
         }
     }
 
+    /**
+     * 
+     * @param key
+     * @param value 
+     */
     public void addAttribute(String key, String value) {
         Node currNode = (Node)elementStack.peek();
         if (currNode == null || !currNode.isCollection) {
@@ -224,16 +270,31 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
         }
     }
 
+    /**
+     * 
+     * @param writer
+     * @param text 
+     */
     protected void writeAttributeValue(QuickWriter writer, String text) {
         writeText(text, null);
     }
 
+    /**
+     * 
+     * @param writer
+     * @param text 
+     */
     protected void writeText(QuickWriter writer, String text) {
         Node foo = (Node)elementStack.peek();
 
         writeText(text, foo.clazz);
     }
 
+    /**
+     * 
+     * @param text
+     * @param clazz 
+     */
     private void writeText(String text, Class clazz) {
         boolean isJqPlotResource = clazz.isAssignableFrom(JqPlotResources.class);
         if (!isJqPlotResource && needsQuotes(clazz)) {
@@ -269,6 +330,11 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
         }
     }
 
+    /**
+     * 
+     * @param clazz
+     * @return 
+     */
     private boolean isCollection(Class clazz) {
         return clazz != null
             && (Collection.class.isAssignableFrom(clazz)
@@ -276,12 +342,20 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
                 || Map.class.isAssignableFrom(clazz) || Map.Entry.class.isAssignableFrom(clazz));
     }
 
+    /**
+     * 
+     * @param clazz
+     * @return 
+     */
     private boolean needsQuotes(Class clazz) {
         
         clazz = clazz != null && clazz.isPrimitive() ? clazz : Primitives.unbox(clazz);
         return clazz == null || clazz == Character.TYPE;
     }
 
+    /**
+     * 
+     */
     public void endNode() {
         depth-- ;
         Node node = (Node)elementStack.pop();
@@ -308,6 +382,9 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
         }
     }
 
+    /**
+     * 
+     */
     private void finishTag() {
         if (readyForNewLine) {
             endOfLine();
@@ -316,6 +393,9 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
         tagIsEmpty = false;
     }
 
+    /**
+     * 
+     */
     protected void endOfLine() {
         writer.write(newLine);
         for (int i = 0; i < depth; i++ ) {
@@ -323,14 +403,24 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
         }
     }
 
+    /**
+     * 
+     */
     public void flush() {
         writer.flush();
     }
 
+    /**
+     * 
+     */
     public void close() {
         writer.close();
     }
 
+    /**
+     * 
+     * @return 
+     */
     public HierarchicalStreamWriter underlyingWriter() {
         return this;
     }

@@ -4,12 +4,12 @@
  */
 package br.com.digilabs.jqplot.renderer.plugin;
 
-import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.renderer.Renderer;
+import br.com.digilabs.jqplot.util.JqPlotResources;
 
 /**
- *
- * @author bernardo.moura
+ * Renderizador de um chart meter gauge
+ * @author inaiat
  */
 public class MeterGaugeRenderer implements Renderer {
 
@@ -45,6 +45,10 @@ public class MeterGaugeRenderer implements Renderer {
         this.tickRenderer = tickRenderer;
     }
 
+    /**
+     * 
+     * @return 
+     */
     public JqPlotResources resource() {
         return JqPlotResources.MeterGaugeRenderer;
     }

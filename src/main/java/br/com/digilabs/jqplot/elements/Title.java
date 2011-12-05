@@ -1,7 +1,6 @@
 package br.com.digilabs.jqplot.elements;
 
 /**
- *
  * @author inaiat
  */
 public class Title implements Element {
@@ -17,9 +16,16 @@ public class Title implements Element {
     private String rendererOptions;
     private String escapeHtml;
 
+    /**
+     * Construtor
+     */
     public Title() {
     }
 
+    /**
+     * 
+     * @param text 
+     */
     public Title(String text) {
         this.text = text;
     }

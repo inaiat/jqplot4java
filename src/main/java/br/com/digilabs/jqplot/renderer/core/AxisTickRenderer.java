@@ -4,10 +4,10 @@
  */
 package br.com.digilabs.jqplot.renderer.core;
 
-import br.com.digilabs.jqplot.JqPlotResources;
+import br.com.digilabs.jqplot.util.JqPlotResources;
 
 /**
- *
+ * Renderizador AxisTick
  * @author inaiat
  */
 public class AxisTickRenderer {
