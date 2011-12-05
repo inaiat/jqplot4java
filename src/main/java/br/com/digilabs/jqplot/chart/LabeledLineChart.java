@@ -10,7 +10,6 @@ import br.com.digilabs.jqplot.elements.Title;
 import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
 /**
- * Cria gr�fico de linha com etiquetas.
  * 
  * @author inaiat
  */
@@ -24,16 +23,35 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 })
 public class LabeledLineChart<T extends Number> extends AbstractChart<LabeledData<T>> {
 
-    LabeledData labeledData = new LabeledData();
+	private static final long serialVersionUID = -6833884146696085085L;
 
+	LabeledData<T> labeledData = new LabeledData<T>();
+
+    /**
+     * Construtor
+     */
     public LabeledLineChart() {
         this(null, null, null, 15);
     }
 
+    /**
+     * Construtor
+     * @param title
+     * @param labelX
+     * @param labelY 
+     */
     public LabeledLineChart(String title, String labelX, String labelY) {
         this(title, labelX, labelY, 15);
     }
 
+    /**
+     * Construtor
+     * 
+     * @param title
+     * @param labelX
+     * @param labelY
+     * @param tickAngle 
+     */
     public LabeledLineChart(String title, String labelX, String labelY,
             Integer tickAngle) {
         getChartConfiguration().setTitle(new Title(title));
@@ -50,19 +68,27 @@ public class LabeledLineChart<T extends Number> extends AbstractChart<LabeledDat
         getChartConfiguration().setLabelY(labelY);
     }
 
+    /**
+     * 
+     * @param value 
+     */
     public void addValue(LabeledItem<T> value) {
         labeledData.addValue(value);
     }
 
+    /**
+     * 
+     * @param values 
+     */
     public void addValues(LabeledItem<T>... values) {
         labeledData.addValues(values);
     }
 
-    public LabeledData getChartData() {
+    /**
+     * 
+     * @return 
+     */
+    public LabeledData<T> getChartData() {
         return labeledData;
-    }
-
-    public void setChartData(LabeledData value) {
-        this.labeledData = value;
     }
 }

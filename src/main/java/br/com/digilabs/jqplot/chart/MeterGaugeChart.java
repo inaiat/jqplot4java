@@ -1,56 +1,69 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.com.digilabs.jqplot.chart;
 
+import br.com.digilabs.jqplot.ChartConfiguration;
 import br.com.digilabs.jqplot.JqPlotResources;
-import br.com.digilabs.jqplot.chart.config.ChartConfiguration;
-import br.com.digilabs.jqplot.chart.data.ChartData;
-import br.com.digilabs.jqplot.chart.elements.RendererOptions;
-import br.com.digilabs.jqplot.chart.elements.SeriesDefaults;
+import br.com.digilabs.jqplot.data.MeterData;
+import br.com.digilabs.jqplot.elements.RendererOptions;
+import br.com.digilabs.jqplot.elements.SeriesDefaults;
+import br.com.digilabs.jqplot.elements.Title;
 import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
-import java.util.Arrays;
 
 /**
- *
- * @author bernardo.moura
+ * @author inaiat
  */
-@JqPlotPlugin(values={JqPlotResources.MeterGaugeRenderer})
-public class MeterGaugeChart <T extends ChartData<?>> extends DefaultChart<T> {
+@JqPlotPlugin(values = {JqPlotResources.MeterGaugeRenderer})
+public class MeterGaugeChart extends AbstractChart<MeterData> {
 
     private static final long serialVersionUID = -8122703368130701972L;
-    
+    private MeterData data = new MeterData(0F);
+
+    /**
+     * Construtor
+     */
     public MeterGaugeChart() {
         initialize(null);
 
     }
 
+    /**
+     * Construtor
+     * @param title 
+     */
     public MeterGaugeChart(String title) {
-        this();
         initialize(title);
     }
 
+    /**
+     * Inicialização
+     * @param title 
+     */
     protected final void initialize(String title) {
         ChartConfiguration chartConfiguration = getChartConfiguration();
-
+        chartConfiguration.setTitle(new Title(title));
         SeriesDefaults sd = new SeriesDefaults();
         RendererOptions ro = new RendererOptions();
         sd.setRenderer(JqPlotResources.MeterGaugeRenderer);
-        sd.setRendererOptions(ro);   
+        sd.setRendererOptions(ro);
         chartConfiguration.setSeriesDefaults(sd);
     }
-    public void addIntervalColors(String... values){
-        getChartConfiguration().getSeriesDefaults().getRendererOptions().getIntervalColors().addAll(Arrays.asList(values));
-    }
-    public void addIntervals(Integer... values){
-        getChartConfiguration().getSeriesDefaults().getRendererOptions().getIntervals().addAll(Arrays.asList(values));
-    }
-    public void setMax(Integer max){
-        getChartConfiguration().getSeriesDefaults().getRendererOptions().setMax(max);
-    }
-    public void setMin(Integer min){
-        getChartConfiguration().getSeriesDefaults().getRendererOptions().setMin(min);
+
+    /**
+     * 
+     * @param value 
+     */
+    public void setValue(Float value) {
+        data.setValue(value);
     }
 
+    /**
+     * 
+     * @param value 
+     */
+    public void setValue(Integer value) {
+        data.setValue(value.floatValue());
+    }
+
+    public MeterData getChartData() {
+        return data;
+    }
 }

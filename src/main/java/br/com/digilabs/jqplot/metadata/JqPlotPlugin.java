@@ -9,7 +9,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import br.com.digilabs.jqplot.util.JqPlotResources;
+import br.com.digilabs.jqplot.JqPlotResources;
 
 /**
  * Representa o plugin para o jqplot

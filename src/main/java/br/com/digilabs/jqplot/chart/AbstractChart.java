@@ -1,10 +1,9 @@
 package br.com.digilabs.jqplot.chart;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 
-import br.com.digilabs.jqplot.JqPlotConfiguration;
+import br.com.digilabs.jqplot.Chart;
+import br.com.digilabs.jqplot.ChartConfiguration;
 import br.com.digilabs.jqplot.axis.Axis;
 import br.com.digilabs.jqplot.axis.XAxis;
 import br.com.digilabs.jqplot.axis.YAxis;
@@ -15,22 +14,37 @@ import br.com.digilabs.jqplot.elements.Serie;
 import br.com.digilabs.jqplot.elements.SeriesDefaults;
 import br.com.digilabs.jqplot.elements.Title;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
- *
  * @author inaiat
  */
 public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> {
 
-    private final JqPlotConfiguration configuration;
+	private static final long serialVersionUID = -5744130130488157491L;
 
+	private final ChartConfiguration configuration;
+
+    /**
+     * Construtor
+     */
     public AbstractChart() {
-        this.configuration = new JqPlotConfiguration();
+        this.configuration = new ChartConfiguration();
     }
 
+    /**
+     * 
+     * @param ticks 
+     */
     public void setTicks(String... ticks) {
         getChartConfiguration().getAxes().getXaxis().setTicks(ticks);
     }
 
+    /**
+     * Adiciona uma serie
+     * @param serie 
+     */
     public void addSerie(Serie serie) {
         Collection<Serie> series = getSeries();
         if (series == null) {
@@ -39,6 +53,10 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
         series.add(serie);
     }
 
+    /**
+     * Adiciona uma serie
+     * @param series 
+     */
     public void addSeries(Serie... series) {
         Collection<Serie> chartSeries = getSeries();
         if (chartSeries == null) {
@@ -51,38 +69,74 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
 
     }
 
-    public JqPlotConfiguration getChartConfiguration() {
+    /**
+     * 
+     * @return chartConfiguration
+     */
+    public ChartConfiguration getChartConfiguration() {
         return configuration;
     }
 
+    /**
+     * 
+     * @param title 
+     */
     public void setSimpleTitle(String title) {
         getChartConfiguration().setSimpleTitle(title);
     }
 
+    /**
+     * 
+     * @param padMin 
+     */
     public void setPadMin(Float padMin) {
         getChartConfiguration().getAxes().getYaxis().setPadMin(1.05f);
     }
 
+    /**
+     * 
+     * @return Axes
+     */
     public Axes createAxes() {
         return getChartConfiguration().createAxes();
     }
 
+    /**
+     * 
+     * @return xAxis
+     */
     public XAxis createXAxis() {
         return getChartConfiguration().createXAxis();
     }
 
+    /**
+     * 
+     * @return yAxis
+     */
     public YAxis createYAxis() {
         return getChartConfiguration().createYAxis();
     }
 
+    /**
+     * 
+     * @return axis
+     */
     public Axis createAxesDefaults() {
         return getChartConfiguration().createAxesDefaults();
     }
 
+    /**
+     * 
+     * @param label 
+     */
     public void setLabelX(String label) {
         getChartConfiguration().setLabelX(label);
     }
 
+    /**
+     * 
+     * @param label 
+     */
     public void setLabelY(String label) {
         getChartConfiguration().setLabelY(label);
     }
@@ -157,88 +211,168 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
         getChartConfiguration().setSeriesDefaults(seriesDefaults);
     }
 
+    /**
+     * 
+     * @param values 
+     */
     public void addIntervalColors(String... values) {
         getChartConfiguration().getSeriesDefaults().getRendererOptions().getIntervalColors().addAll(Arrays.asList(values));
     }
 
+    /**
+     * 
+     * @param values 
+     */
     public void addIntervals(Integer... values) {
         getChartConfiguration().getSeriesDefaults().getRendererOptions().getIntervals().addAll(Arrays.asList(values));
     }
 
+    /**
+     * 
+     * @param max 
+     */
     public void setMax(Integer max) {
         getChartConfiguration().getSeriesDefaults().getRendererOptions().setMax(max);
     }
 
+    /**
+     * 
+     * @param min 
+     */
     public void setMin(Integer min) {
         getChartConfiguration().getSeriesDefaults().getRendererOptions().setMin(min);
     }
 
+    /**
+     * 
+     * @param stackSeries 
+     */
     public void setStackSeries(Boolean stackSeries) {
         getChartConfiguration().setStackSeries(stackSeries);
     }
 
+    /**
+     * 
+     * @param captureRightClick 
+     */
     public void setCaptureRightClick(Boolean captureRightClick) {
         getChartConfiguration().setCaptureRightClick(captureRightClick);
     }
 
+    /**
+     * 
+     * @param highlightMouseDown 
+     */
     public void setHighlightMouseDown(Boolean highlightMouseDown) {
         getChartConfiguration().getSeriesDefaults().getRendererOptions().setHighlightMouseDown(highlightMouseDown);
     }
 
+    /**
+     * 
+     * @param margin 
+     */
     public void setBarMargin(Integer margin) {
         getChartConfiguration().getSeriesDefaults().getRendererOptions().setBarMargin(margin);
     }
 
+    /**
+     * 
+     * @param margin 
+     */
     public void setSliceMargin(Integer margin) {
         getChartConfiguration().getSeriesDefaults().getRendererOptions().setSliceMargin(margin);
     }
 
+    /**
+     * 
+     * @param dataLabels 
+     */
     public void setDataLabels(String dataLabels) {
         getChartConfiguration().getSeriesDefaults().getRendererOptions().setDataLabels(dataLabels);
     }
 
+    /**
+     * 
+     * @param width 
+     */
     public void setLineWidth(Integer width) {
         getChartConfiguration().getSeriesDefaults().getRendererOptions().setLineWidth(width);
     }
 
+    /**
+     * 
+     * @param showDataLabels 
+     */
     public void setShowDataLabels(Boolean showDataLabels) {
         getChartConfiguration().getSeriesDefaults().getRendererOptions().setShowDataLabels(showDataLabels);
     }
 
+    /**
+     * 
+     * @param fill 
+     */
     public void setFill(Boolean fill) {
         getChartConfiguration().getSeriesDefaults().getRendererOptions().setFill(fill);
     }
 
+    /**
+     * 
+     * @param alpha 
+     */
     public void setBubbleAlpha(Float alpha) {
-        JqPlotConfiguration chartConfiguration = getChartConfiguration();
+        ChartConfiguration chartConfiguration = getChartConfiguration();
         chartConfiguration.getSeriesDefaults().getRendererOptions().setBubbleAlpha(alpha);
     }
 
+    /**
+     * 
+     * @param alpha 
+     */
     public void setHighlightAlpha(Float alpha) {
-        JqPlotConfiguration chartConfiguration = getChartConfiguration();
+        ChartConfiguration chartConfiguration = getChartConfiguration();
         chartConfiguration.getSeriesDefaults().getRendererOptions().setHighlightAlpha(alpha);
     }
 
+    /**
+     * 
+     * @param showLabels 
+     */
     public void setShowLabels(Boolean showLabels) {
-        JqPlotConfiguration chartConfiguration = getChartConfiguration();
+        ChartConfiguration chartConfiguration = getChartConfiguration();
         chartConfiguration.getSeriesDefaults().getRendererOptions().setShowLables(showLabels);
     }
 
+    /**
+     * 
+     * @param alpha 
+     */
     public void setShadowAlpha(Float alpha) {
-        JqPlotConfiguration chartConfiguration = getChartConfiguration();
+        ChartConfiguration chartConfiguration = getChartConfiguration();
         chartConfiguration.getSeriesDefaults().setShadowAlpha(alpha);
     }
 
+    /**
+     * 
+     * @param fillZero 
+     */
     public void setFillZero(Boolean fillZero) {
-        JqPlotConfiguration chartConfiguration = getChartConfiguration();
+        ChartConfiguration chartConfiguration = getChartConfiguration();
         chartConfiguration.getSeriesDefaults().getRendererOptions().setFillZero(fillZero);
     }
 
+    /**
+     * 
+     * @param shadow 
+     */
     public void setShadow(Boolean shadow) {
-        JqPlotConfiguration chartConfiguration = getChartConfiguration();
+        ChartConfiguration chartConfiguration = getChartConfiguration();
         chartConfiguration.getSeriesDefaults().setShadow(shadow);
     }
 
+    /**
+     * 
+     * @param legend 
+     */
     public void setLegend(Legend legend) {
         getChartConfiguration().setLegend(legend);
     }

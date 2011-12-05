@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import junit.framework.TestCase;
-import br.com.digilabs.jqplot.PieDonutChart;
+import br.com.digilabs.jqplot.JavaScriptGenerator;
+import br.com.digilabs.jqplot.chart.PieDonutChart;
 import br.com.digilabs.jqplot.data.item.LabeledItem;
-import br.com.digilabs.jqplot.util.JavaScriptGenerator;
 
 /**
  *

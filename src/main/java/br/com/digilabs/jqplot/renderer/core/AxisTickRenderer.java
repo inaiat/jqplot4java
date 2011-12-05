@@ -4,7 +4,7 @@
  */
 package br.com.digilabs.jqplot.renderer.core;
 
-import br.com.digilabs.jqplot.util.JqPlotResources;
+import br.com.digilabs.jqplot.JqPlotResources;
 
 /**
  * Renderizador AxisTick

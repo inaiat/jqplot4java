@@ -5,10 +5,10 @@
 package br.com.digilabs.jqplot.test;
 
 import junit.framework.TestCase;
-import br.com.digilabs.jqplot.LabeledLineChart;
-import br.com.digilabs.jqplot.LineChart;
+import br.com.digilabs.jqplot.JavaScriptGenerator;
+import br.com.digilabs.jqplot.chart.LabeledLineChart;
+import br.com.digilabs.jqplot.chart.LineChart;
 import br.com.digilabs.jqplot.data.item.LabeledItem;
-import br.com.digilabs.jqplot.util.JavaScriptGenerator;
 
 /**
  *

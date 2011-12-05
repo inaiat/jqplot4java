@@ -1,6 +1,6 @@
 package br.com.digilabs.jqplot.elements;
 
-import br.com.digilabs.jqplot.util.JqPlotResources;
+import br.com.digilabs.jqplot.JqPlotResources;
 
 /**
  * Representa uma serie

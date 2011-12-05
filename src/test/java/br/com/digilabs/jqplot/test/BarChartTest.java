@@ -11,8 +11,8 @@ import junit.framework.TestCase;
 
 import org.json.JSONException;
 
-import br.com.digilabs.jqplot.BarChart;
-import br.com.digilabs.jqplot.util.JavaScriptGenerator;
+import br.com.digilabs.jqplot.JavaScriptGenerator;
+import br.com.digilabs.jqplot.chart.BarChart;
 
 /**
  *

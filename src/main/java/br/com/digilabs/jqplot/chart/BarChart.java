@@ -2,7 +2,7 @@ package br.com.digilabs.jqplot.chart;
 
 import java.util.Collection;
 
-import br.com.digilabs.jqplot.JqPlotConfiguration;
+import br.com.digilabs.jqplot.ChartConfiguration;
 import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.axis.XAxis;
 import br.com.digilabs.jqplot.data.BarData;
@@ -14,26 +14,39 @@ import br.com.digilabs.jqplot.elements.Title;
 import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
 /**
- * 
- * Classe respons�vel pela montagem do gr�fico de Barras.
- * 
  * @author inaiat
  */
 @JqPlotPlugin(values = {JqPlotResources.CategoryAxisRenderer, JqPlotResources.BarRenderer, JqPlotResources.PointLabels})
 public class BarChart<T extends Number> extends AbstractChart<BarData<T>> {
 
-    BarData<T> barData = new BarData<T>();
+	private static final long serialVersionUID = 3650210485517566138L;
 
+	private BarData<T> barData = new BarData<T>();
+
+    /**
+     * Construtor
+     */
     public BarChart() {
         this(null, null, null);
     }
 
+    /**
+     * Construtor
+     * @param title 
+     */
     public BarChart(String title) {
         this(title, null, null);
     }
 
+    /**
+     * Construtor
+     * 
+     * @param title
+     * @param labelX
+     * @param labelY 
+     */
     public BarChart(String title, String labelX, String labelY) {
-        JqPlotConfiguration chartConfiguration = getChartConfiguration();
+        ChartConfiguration chartConfiguration = getChartConfiguration();
         chartConfiguration.setTitle(new Title(title));
 
         SeriesDefaults sd = new SeriesDefaults();
@@ -57,22 +70,29 @@ public class BarChart<T extends Number> extends AbstractChart<BarData<T>> {
 
         getChartConfiguration().createYAxis();
     }
-
- 
     
+    /**
+     * Adiciona um valor
+     * @param value 
+     */
     public void addValue(Collection<T> value) {
         barData.addValue(value);
     }
 
+    /**
+     * 
+     * @param value 
+     */
     public void addValues(Collection<T>... value) {
         barData.addValues(value);
     }
 
+    /**
+     * 
+     * @return charData
+     */
     public BarData<T> getChartData() {
         return barData;
     }
 
-    public void setChartData(BarData<T> value) {
-        this.barData = value;
-    }
 }

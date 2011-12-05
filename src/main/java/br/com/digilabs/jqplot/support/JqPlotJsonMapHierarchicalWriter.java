@@ -11,7 +11,7 @@
  */
 package br.com.digilabs.jqplot.support;
 
-import br.com.digilabs.jqplot.util.JqPlotResources;
+import br.com.digilabs.jqplot.JqPlotResources;
 
 import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.core.util.FastStack;

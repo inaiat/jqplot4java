@@ -1,7 +1,7 @@
 package br.com.digilabs.jqplot.renderer.plugin;
 
+import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.renderer.Renderer;
-import br.com.digilabs.jqplot.util.JqPlotResources;
 
 /**
  * Renderizador de um chart Donut
