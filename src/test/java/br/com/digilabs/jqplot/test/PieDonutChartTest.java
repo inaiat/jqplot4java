@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import junit.framework.TestCase;
-import br.com.digilabs.jqplot.JavaScriptUtil;
+import br.com.digilabs.jqplot.JqPlotUtils;
 import br.com.digilabs.jqplot.chart.PieDonutChart;
 import br.com.digilabs.jqplot.data.item.LabeledItem;
 
@@ -49,6 +49,6 @@ public class PieDonutChartTest extends TestCase {
     	chart.addValue(list2);
     	
     	
-        System.out.println(JavaScriptUtil.createJquery(chart, "chart"));
+        System.out.println(JqPlotUtils.createJquery(chart, "chart"));
     }
 }
