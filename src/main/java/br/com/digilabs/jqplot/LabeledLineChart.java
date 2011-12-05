@@ -91,12 +91,4 @@ public class LabeledLineChart<T extends Number> extends AbstractChart<LabeledDat
     public LabeledData<T> getChartData() {
         return labeledData;
     }
-
-    /**
-     * 
-     * @param value 
-     */
-    public void setChartData(LabeledData<T> value) {
-        this.labeledData = value;
-    }
 }

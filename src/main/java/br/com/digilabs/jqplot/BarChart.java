@@ -94,11 +94,4 @@ public class BarChart<T extends Number> extends AbstractChart<BarData<T>> {
         return barData;
     }
 
-    /**
-     * 
-     * @param value 
-     */
-    public void setChartData(BarData<T> value) {
-        this.barData = value;
-    }
 }

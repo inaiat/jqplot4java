@@ -26,7 +26,7 @@ import java.util.Map;
 
 /**
  * 
- * @author inaiat
+ * @author Joe Walnes. / inaiat
  */
 public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStreamWriter {
 

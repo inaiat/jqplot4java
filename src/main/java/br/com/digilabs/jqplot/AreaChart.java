@@ -48,14 +48,6 @@ public class AreaChart<T extends Number> extends AbstractChart<AreaFillData<T>> 
     }
 
     /**
-     * 
-     * @param value 
-     */
-    public void setChartData(AreaFillData<T> value) {
-        this.data = value;
-    }
-
-    /**
      * Adiciona um valor
      * @param value 
      */

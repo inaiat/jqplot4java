@@ -68,13 +68,4 @@ public class LineChart<T extends Number> extends AbstractChart<LinedData<T>> {
     public LinedData<T> getChartData() {
         return linedData;
     }
-
-    /**
-     * 
-     * @param value 
-     */
-    public void setChartData(LinedData<T> value) {
-        this.linedData = value;
-
-    }
 }

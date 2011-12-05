@@ -54,15 +54,6 @@ public class BubbleChart extends AbstractChart<BubbleData<BubbleItem>> {
     public BubbleData<BubbleItem> getChartData() {
         return bubbleData;
     }
-
-    /**
-     * 
-     * @param value 
-     */
-    public void setChartData(BubbleData<BubbleItem> value) {
-        this.bubbleData = value;
-        
-    }
     
     /**
      * 

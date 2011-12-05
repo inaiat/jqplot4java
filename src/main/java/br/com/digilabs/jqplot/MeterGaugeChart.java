@@ -65,8 +65,4 @@ public class MeterGaugeChart extends AbstractChart<MeterData> {
     public MeterData getChartData() {
         return data;
     }
-
-    public void setChartData(MeterData value) {
-        this.data = value;
-    }
 }

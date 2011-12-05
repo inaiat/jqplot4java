@@ -11,5 +11,4 @@ public interface Chart<T extends ChartData<?>> extends Serializable {
     
     ChartConfiguration getChartConfiguration();
     T getChartData();
-    void setChartData(T value);
 }

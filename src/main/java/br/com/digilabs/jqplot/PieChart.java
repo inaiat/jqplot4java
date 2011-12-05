@@ -73,11 +73,4 @@ public class PieChart<T extends Number> extends AbstractChart<PieData<T>> {
         return data;
     }
 
-    /**
-     * 
-     * @param value 
-     */
-    public void setChartData(PieData<T> value) {
-        this.data = value;
-    }
 }

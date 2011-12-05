@@ -59,13 +59,4 @@ public class PieDonutChart<T extends Number> extends AbstractChart<PieDonutData<
     public PieDonutData<T> getChartData() {
         return data;
     }
-
-    /**
-     * 
-     * @param value 
-     */
-    public void setChartData(PieDonutData<T> value) {
-        this.data = value;
-
-    }
 }
