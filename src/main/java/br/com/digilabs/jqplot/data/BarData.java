@@ -12,7 +12,9 @@ import org.json.JSONArray;
  */
 public class BarData<T extends Number> extends AbstractCollectionData<Collection<T>> {
     
-    private Collection<Collection<T>> data = new ArrayList<Collection<T>>();
+	private static final long serialVersionUID = -2087356275172825289L;
+
+	private Collection<Collection<T>> data = new ArrayList<Collection<T>>();
 
     /**
      * Construtor

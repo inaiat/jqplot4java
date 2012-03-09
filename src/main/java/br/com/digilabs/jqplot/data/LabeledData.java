@@ -14,7 +14,9 @@ import org.json.JSONArray;
  */
 public class LabeledData<T extends Number> extends AbstractCollectionData<LabeledItem<T>> {
 
-    private List<LabeledItem<T>> data = new ArrayList<LabeledItem<T>>();
+	private static final long serialVersionUID = -1202233319043142424L;
+
+	private List<LabeledItem<T>> data = new ArrayList<LabeledItem<T>>();
 
     public LabeledData() {
     }

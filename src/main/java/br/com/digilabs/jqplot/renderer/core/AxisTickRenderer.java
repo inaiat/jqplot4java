@@ -4,15 +4,19 @@
  */
 package br.com.digilabs.jqplot.renderer.core;
 
+import java.io.Serializable;
+
 import br.com.digilabs.jqplot.JqPlotResources;
 
 /**
  * Renderizador AxisTick
  * @author inaiat
  */
-public class AxisTickRenderer {
+public class AxisTickRenderer implements Serializable {
 
-    private String mark;
+	private static final long serialVersionUID = 1L;
+
+	private String mark;
     private Boolean showMark;
     private Boolean showGridline;
     private Boolean isMinorTick;

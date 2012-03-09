@@ -13,7 +13,9 @@ import org.json.JSONArray;
  */
 public class PieDonutData<T extends Number> extends AbstractCollectionData<Collection<LabeledItem<T>>> {
 
-    private Collection<Collection<LabeledItem<T>>> data = new ArrayList<Collection<LabeledItem<T>>>();
+	private static final long serialVersionUID = -7450037021913733446L;
+
+	private Collection<Collection<LabeledItem<T>>> data = new ArrayList<Collection<LabeledItem<T>>>();
 
     /**
      * Obtem o json

@@ -8,7 +8,9 @@ import org.json.JSONArray;
  */
 public class MeterData extends NumberData<Float> {
 
-    /**
+	private static final long serialVersionUID = -1543265764447003656L;
+
+	/**
      * Construtor
      */
     public MeterData() {

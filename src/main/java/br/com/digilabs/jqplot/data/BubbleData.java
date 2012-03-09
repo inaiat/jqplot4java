@@ -16,7 +16,9 @@ import org.json.JSONArray;
  */
 public class BubbleData<T extends BubbleItem> extends AbstractCollectionData<T> {
 
-    private Collection<T> data = new ArrayList<T>();
+	private static final long serialVersionUID = 5564319083971645500L;
+
+	private Collection<T> data = new ArrayList<T>();
 
     /**
      * 

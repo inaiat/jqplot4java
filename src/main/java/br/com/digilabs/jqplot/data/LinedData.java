@@ -13,7 +13,9 @@ import org.json.JSONArray;
  */
 public class LinedData<T extends Number> extends AbstractCollectionData<T> {
     
-    private List<T> data = new ArrayList<T>();
+	private static final long serialVersionUID = -550315213084815871L;
+
+	private List<T> data = new ArrayList<T>();
 
     /**
      * Construtor

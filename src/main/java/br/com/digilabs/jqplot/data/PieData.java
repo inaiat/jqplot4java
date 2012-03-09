@@ -12,6 +12,8 @@ import org.json.JSONArray;
  */
 public class PieData<T extends Number> extends AbstractCollectionData<LabeledItem<T>> {
 
+    private static final long serialVersionUID = 5789136755213249502L;
+	
     private Collection<LabeledItem<T>> data = new ArrayList<LabeledItem<T>>();
 
     /**

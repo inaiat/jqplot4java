@@ -12,7 +12,9 @@ package br.com.digilabs.jqplot.data;
 public abstract class NumberData<T extends Number> implements ChartData<T> {
 
     
-   private T data;
+	private static final long serialVersionUID = 3043833458517563918L;
+
+	private T data;
     
     /**
      * 

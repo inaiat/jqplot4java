@@ -13,7 +13,9 @@ import org.json.JSONArray;
  */
 public class AreaFillData<T extends Number> extends AbstractCollectionData<List<T>> {
 
-    private List<List<T>> data = new ArrayList<List<T>>();
+	private static final long serialVersionUID = -2456625545492808162L;
+
+	private List<List<T>> data = new ArrayList<List<T>>();
 
     /**
      * Construtor
