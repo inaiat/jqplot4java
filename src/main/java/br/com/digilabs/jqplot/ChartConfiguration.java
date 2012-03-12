@@ -44,6 +44,7 @@ public class ChartConfiguration implements Serializable {
     private Boolean stackSeries;
     private Boolean showMarker;
     private Legend legend;
+    private Boolean animate;
     private Boolean captureRightClick = null;
 
     /**
@@ -263,5 +264,19 @@ public class ChartConfiguration implements Serializable {
      */
     public void setShowMarker(Boolean showMarker) {
         this.showMarker = showMarker;
+    }
+
+    /**
+     * @return animate property
+     */
+    public Boolean getAnimate() {
+        return animate;
+    }
+
+    /** Turns on animation for all series in this plot.
+     * @param animate true, false
+     */
+    public void setAnimate(Boolean animate) {
+        this.animate = animate;
     }
 }
