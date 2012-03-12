@@ -35,6 +35,7 @@ public class Serie implements Element {
     private Boolean showAlpha;
     private Boolean shadow;
     private Float shadowAlpha;
+    private String color;
 
     /**
      * Construtor
@@ -199,5 +200,21 @@ public class Serie implements Element {
      */
     public void setFill(Boolean fill) {
         this.fill = fill;
+    }
+
+    /**
+     *
+     * @return the color
+     */
+    public String getColor() {
+        return color;
+    }
+
+    /**
+     *
+     * @param color, "#ffffff" for ex.
+     */
+    public void setColor(String color) {
+        this.color = color;
     }
 }
