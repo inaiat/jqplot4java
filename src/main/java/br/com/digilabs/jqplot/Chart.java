@@ -21,11 +21,22 @@ import java.io.Serializable;
 import br.com.digilabs.jqplot.data.ChartData;
 
 /**
- *
+ * 
+ * Base of all charts
+ * 
  * @author inaiat
  */
 public interface Chart<T extends ChartData<?>> extends Serializable {
     
-    ChartConfiguration getChartConfiguration();
+    /**
+     * Return chart configuration
+     * @return {@link ChartConfiguration}
+     */
+	ChartConfiguration getChartConfiguration();
+	
+	/**
+	 * Return chart data. 
+	 * @return {@link ChartData}
+	 */
     T getChartData();
 }

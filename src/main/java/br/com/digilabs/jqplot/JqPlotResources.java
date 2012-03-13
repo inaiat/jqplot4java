@@ -17,6 +17,9 @@
 package br.com.digilabs.jqplot;
 
 /**
+ * 
+ * Resources of JqPlot aka Plugins.
+ * 
  * @author inaiat
  */
 public enum JqPlotResources {

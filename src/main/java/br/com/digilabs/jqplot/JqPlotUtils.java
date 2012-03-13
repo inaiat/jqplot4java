@@ -33,7 +33,7 @@ import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 import com.thoughtworks.xstream.io.json.JsonWriter;
 
 /**
- * Classe utilitária
+ * Utility class to provide json from {@link Chart} object.
  * 
  * @author inaiat
  */

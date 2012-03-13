@@ -29,22 +29,22 @@ public class PointLabels implements Serializable {
     private Boolean show = true;
     private String location;
     private Integer edgeTolerance;
-    private List<String> lables;
+    private List<String> labels;
 
     /**
      * 
      * @return lista de lables
      */
-    public List<String> getLables() {
-        return lables;
+    public List<String> getLabels() {
+        return labels;
     }
 
     /**
      * 
-     * @param lables 
+     * @param labels 
      */
-    public void setLables(List<String> lables) {
-        this.lables = lables;
+    public void setLabels(List<String> labels) {
+        this.labels = labels;
     }
 
     /**
