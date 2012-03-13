@@ -41,12 +41,31 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
 	private static final long serialVersionUID = -5744130130488157491L;
 
 	private final ChartConfiguration configuration;
+	
 
     /**
      * Construtor
      */
     public AbstractChart() {
         this.configuration = new ChartConfiguration();
+    }
+    
+    public void addSeriesColors(String... colors) {
+    	Collection<String> seriesColor = getChartConfiguration().createSeriesColors();
+    	seriesColor.addAll(Arrays.asList(colors));
+    }
+    
+    public void addSeriesColors(Collection<String> colors) {
+    	Collection<String> seriesColor = getChartConfiguration().createSeriesColors();
+    	seriesColor.addAll(colors);
+    }
+    
+    public void setSeriesColors(Collection<String> colors) {
+    	getChartConfiguration().setSeriesColors(colors);
+    }    
+    
+    public Collection<String> getSeriesColors() {
+    	return getChartConfiguration().getSeriesColors();
     }
 
     /**
@@ -161,7 +180,7 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
      * @return the series
      */
     public Collection<Serie> getSeries() {
-        return getChartConfiguration().getSeries();
+        return getChartConfiguration().createSeries();
     }
 
     /**

@@ -52,6 +52,7 @@ public class RendererOptions implements Element {
     private Integer numberRows;
     private String marginTop;
     private Integer padding;
+    private Boolean varyBarColor;
 
     /**
      * 
@@ -485,4 +486,12 @@ public class RendererOptions implements Element {
     public void setStartAngle(Integer startAngle) {
         this.startAngle = startAngle;
     }
+
+	public Boolean getVaryBarColor() {
+		return varyBarColor;
+	}
+
+	public void setVaryBarColor(Boolean varyBarColor) {
+		this.varyBarColor = varyBarColor;
+	}
 }

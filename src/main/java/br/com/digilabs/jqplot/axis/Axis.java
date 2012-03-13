@@ -22,7 +22,8 @@ import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.elements.TickOptions;
 
 /**
- *
+ * See http://www.jqplot.com/docs/files/jqplot-core-js.html#Axis
+ * 
  * @author inaiat
  */
 public class Axis implements Serializable {

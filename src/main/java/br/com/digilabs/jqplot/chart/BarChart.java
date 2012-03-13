@@ -16,13 +16,13 @@
  */
 package br.com.digilabs.jqplot.chart;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 import br.com.digilabs.jqplot.ChartConfiguration;
 import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.axis.XAxis;
 import br.com.digilabs.jqplot.data.BarData;
-import br.com.digilabs.jqplot.elements.Legend;
 import br.com.digilabs.jqplot.elements.PointLabels;
 import br.com.digilabs.jqplot.elements.RendererOptions;
 import br.com.digilabs.jqplot.elements.SeriesDefaults;
@@ -65,19 +65,15 @@ public class BarChart<T extends Number> extends AbstractChart<BarData<T>> {
         ChartConfiguration chartConfiguration = getChartConfiguration();
         chartConfiguration.setTitle(new Title(title));
 
-        SeriesDefaults sd = new SeriesDefaults();
-        RendererOptions ro = new RendererOptions();
-        sd.setRenderer(JqPlotResources.BarRenderer);
-        sd.setRendererOptions(ro);
-        chartConfiguration.setSeriesDefaults(sd);
+        SeriesDefaults seriesDefaults = new SeriesDefaults();
+        RendererOptions rendererOptions = new RendererOptions();
+        seriesDefaults.setRenderer(JqPlotResources.BarRenderer);
+        seriesDefaults.setRendererOptions(rendererOptions);
+        chartConfiguration.setSeriesDefaults(seriesDefaults);
         chartConfiguration.getSeriesDefaults().setPointLabels(new PointLabels());
 
-        ro.setFillZero(true);
+        rendererOptions.setFillZero(true);
 
-        Legend legend = new Legend();
-        legend.setShow(true);
-        legend.setPlacment("outsideGrid");
-        chartConfiguration.setLegend(legend);
         chartConfiguration.setLabelX(labelX);
         chartConfiguration.setLabelY(labelY);
 
@@ -102,6 +98,12 @@ public class BarChart<T extends Number> extends AbstractChart<BarData<T>> {
     public void addValues(Collection<T>... value) {
         barData.addValues(value);
     }
+    
+	@SuppressWarnings("unchecked")
+	public void addValues(T... values) {
+        barData.addValues(Arrays.<T>asList(values));
+    }
+
 
     /**
      * 
