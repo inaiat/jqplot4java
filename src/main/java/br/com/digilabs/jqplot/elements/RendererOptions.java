@@ -53,6 +53,16 @@ public class RendererOptions implements Element {
     private String marginTop;
     private Integer padding;
     private Boolean varyBarColor;
+    
+    public RendererOptions smooth(Boolean smooth) {
+    	this.setSmooth(smooth);
+    	return this;
+    }
+    
+    public RendererOptions varyBarColor(Boolean varyBarColor) {
+    	this.setVaryBarColor(varyBarColor);
+    	return this;
+    }
 
     /**
      * 

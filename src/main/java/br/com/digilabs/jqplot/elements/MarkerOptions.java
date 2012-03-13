@@ -18,6 +18,8 @@ package br.com.digilabs.jqplot.elements;
 
 import java.io.Serializable;
 
+import br.com.digilabs.jqplot.JqPlotResources;
+
 /**
  * Marquer options
  * 
@@ -26,7 +28,42 @@ import java.io.Serializable;
 public class MarkerOptions implements Serializable {
 
     private static final long serialVersionUID = 3501054776797812489L;
+    private Boolean show;
     private String style;
+    private Integer lineWidth;
+    private Float size;
+    private String color;
+    private Boolean shadow;
+    private Float shadowAngle;
+    private Integer shadowOffset;
+    private Integer shadowDepth;
+    private String shadowAlpha;
+    private JqPlotResources shadowRenderer;
+    private JqPlotResources shapeRenderer;
+    
+    public MarkerOptions() {
+	}   
+
+    
+    public MarkerOptions style(String style) {
+    	this.style = style;
+    	return this;
+    }
+    
+    public MarkerOptions size(Float size) {
+    	this.size = size;
+    	return this;
+    }
+  
+    public MarkerOptions lineWidth(Integer lineWidth) {
+    	this.lineWidth = lineWidth;
+    	return this;
+    }
+    
+    public MarkerOptions show(Boolean show) {
+    	this.show = show;
+    	return this;
+    }    
 
     /**
      * 
@@ -43,4 +80,93 @@ public class MarkerOptions implements Serializable {
     public void setStyle(String style) {
         this.style = style;
     }
+
+	public Boolean getShow() {
+		return show;
+	}
+
+	public void setShow(Boolean show) {
+		this.show = show;
+	}
+
+	public Integer getLineWidth() {
+		return lineWidth;
+	}
+
+	public void setLineWidth(Integer lineWidth) {
+		this.lineWidth = lineWidth;
+	}
+
+	public Float getSize() {
+		return size;
+	}
+
+	public void setSize(Float size) {
+		this.size = size;
+	}
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public Boolean getShadow() {
+		return shadow;
+	}
+
+	public void setShadow(Boolean shadow) {
+		this.shadow = shadow;
+	}
+
+	public Float getShadowAngle() {
+		return shadowAngle;
+	}
+
+	public void setShadowAngle(Float shadowAngle) {
+		this.shadowAngle = shadowAngle;
+	}
+
+	public Integer getShadowOffset() {
+		return shadowOffset;
+	}
+
+	public void setShadowOffset(Integer shadowOffset) {
+		this.shadowOffset = shadowOffset;
+	}
+
+	public Integer getShadowDepth() {
+		return shadowDepth;
+	}
+
+	public void setShadowDepth(Integer shadowDepth) {
+		this.shadowDepth = shadowDepth;
+	}
+
+	public String getShadowAlpha() {
+		return shadowAlpha;
+	}
+
+	public void setShadowAlpha(String shadowAlpha) {
+		this.shadowAlpha = shadowAlpha;
+	}
+
+	public JqPlotResources getShadowRenderer() {
+		return shadowRenderer;
+	}
+
+	public void setShadowRenderer(JqPlotResources shadowRenderer) {
+		this.shadowRenderer = shadowRenderer;
+	}
+
+	public JqPlotResources getShapeRenderer() {
+		return shapeRenderer;
+	}
+
+	public void setShapeRenderer(JqPlotResources shapeRenderer) {
+		this.shapeRenderer = shapeRenderer;
+	}    
+    
 }

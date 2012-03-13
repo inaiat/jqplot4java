@@ -381,7 +381,7 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
      * 
      * @param alpha 
      */
-    public void setShadowAlpha(Float alpha) {
+    public void setShadowAlpha(String alpha) {
         ChartConfiguration chartConfiguration = getChartConfiguration();
         chartConfiguration.getSeriesDefaults().setShadowAlpha(alpha);
     }

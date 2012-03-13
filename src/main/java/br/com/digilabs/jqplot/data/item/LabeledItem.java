@@ -16,13 +16,12 @@
  */
 package br.com.digilabs.jqplot.data.item;
 
-import java.io.Serializable;
 
 /**
  * 
  * @author inaiat
  */
-public class LabeledItem<T extends Number> implements Serializable {
+public class LabeledItem<T extends Number> implements BaseItem {
 
 
 	private static final long serialVersionUID = -3747989015336492114L;

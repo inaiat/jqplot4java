@@ -34,27 +34,46 @@ public class Serie implements Element {
     private Boolean showMarker;
     private Boolean showAlpha;
     private Boolean shadow;
-    private Float shadowAlpha;
+    private String shadowAlpha;
+    private Boolean showLine;
 
-    /**
-     * Construtor
-     */
     public Serie() {
+    }  
+
+    public Serie(String label) {
+    	this.label = label;
     }
 
-    /**
-     * 
-     * @param label 
-     */
-    public Serie(String label) {
-        this.label = label;
+    public Serie lineWidth(Integer lineWidth) {
+    	this.lineWidth = lineWidth;
+    	return this;
+    }
+    
+    public Serie markerOptions(MarkerOptions markerOptions) {
+    	this.markerOptions = markerOptions;
+    	return this;
+    }
+    
+    public Serie showLine(Boolean showLine) {
+    	this.setShowLine(showLine);
+    	return this;
+    }
+    
+    public Serie rendererOptions(RendererOptions rendererOptions) {
+    	this.rendererOptions = rendererOptions;
+    	return this;
+    }
+    
+    public Serie renderer(JqPlotResources renderer) {
+    	this.renderer = renderer;
+    	return this;
     }
 
     /**
      * 
      * @return shadowAlpha
      */
-    public Float getShadowAlpha() {
+    public String getShadowAlpha() {
         return shadowAlpha;
     }
 
@@ -62,7 +81,7 @@ public class Serie implements Element {
      * 
      * @param shadowAlpha 
      */
-    public void setShadowAlpha(Float shadowAlpha) {
+    public void setShadowAlpha(String shadowAlpha) {
         this.shadowAlpha = shadowAlpha;
     }
 
@@ -200,4 +219,12 @@ public class Serie implements Element {
     public void setFill(Boolean fill) {
         this.fill = fill;
     }
+
+	public Boolean getShowLine() {
+		return showLine;
+	}
+
+	public void setShowLine(Boolean showLine) {
+		this.showLine = showLine;
+	}
 }

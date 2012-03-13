@@ -16,13 +16,12 @@
  */
 package br.com.digilabs.jqplot.data.item;
 
-import java.io.Serializable;
 
 /**
  * Representa um item do bubble chart
  * @author inaiat
  */
-public class BubbleItem implements Serializable {
+public class BubbleItem implements BaseItem {
 
 	private static final long serialVersionUID = 8361687784430405282L;
 

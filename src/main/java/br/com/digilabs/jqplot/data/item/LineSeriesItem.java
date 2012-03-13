@@ -14,47 +14,43 @@
  *  limitations under the License.
  *  under the License.
  */
-package br.com.digilabs.jqplot.data;
+package br.com.digilabs.jqplot.data.item;
 
-import java.io.Serializable;
+/**
+ * 
+ * Helper to build line series charts.
+ * 
+ * @author inaiat
+ *
+ * @param <I> index of series
+ * @param <V> value of series
+ */
+public class LineSeriesItem<I extends Number, V extends Number> implements BaseItem {
 
-public class LabeledItem<T extends Number> implements Serializable {
+	private static final long serialVersionUID = 1L;
 	
-	private static final long serialVersionUID = 2905145421607972600L;
-
-	private String label;
-	private T value;
+	private I index;
+	private V value;	
 	
-	public LabeledItem() {
+	public LineSeriesItem() {
 	}
 	
-	public LabeledItem(String label, T value) {
-		this.label = label;
+	public LineSeriesItem(I index, V value) {
+		this.index = index;
 		this.value = value;
 	}
 	
-	/**
-	 * @param label the label to set
-	 */
-	public void setLabel(String label) {
-		this.label = label;
+	public I getIndex() {
+		return index;
 	}
-	/**
-	 * @return the label
-	 */
-	public String getLabel() {
-		return label;
+	public void setIndex(I index) {
+		this.index = index;
 	}
-	/**
-	 * @param value the value to set
-	 */
-	public void setValue(T value) {
-		this.value = value;
-	}
-	/**
-	 * @return the value
-	 */
-	public T getValue() {
+	public V getValue() {
 		return value;
 	}
+	public void setValue(V value) {
+		this.value = value;
+	}	
+
 }
