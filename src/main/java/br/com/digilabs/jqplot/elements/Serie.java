@@ -36,6 +36,7 @@ public class Serie implements Element {
     private Boolean shadow;
     private String shadowAlpha;
     private Boolean showLine;
+    private String color;
 
     public Serie() {
     }  
@@ -220,6 +221,22 @@ public class Serie implements Element {
         this.fill = fill;
     }
 
+
+    /**
+     *
+     * @return the color
+     */
+    public String getColor() {
+        return color;
+    }
+
+    /**
+     *
+     * @param color, "#ffffff" for ex.
+     */
+    public void setColor(String color) {
+        this.color = color;
+    }
 	public Boolean getShowLine() {
 		return showLine;
 	}

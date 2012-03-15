@@ -52,6 +52,7 @@ public class RendererOptions implements Element {
     private Integer numberRows;
     private String marginTop;
     private Integer padding;
+    private Animation animation;
     private Boolean varyBarColor;
     
     public RendererOptions smooth(Boolean smooth) {
@@ -495,6 +496,18 @@ public class RendererOptions implements Element {
      */
     public void setStartAngle(Integer startAngle) {
         this.startAngle = startAngle;
+    }
+
+    public Animation getAnimation() {
+        return animation;
+    }
+
+    /**
+     * @param animation object for setting
+     * different animation speed
+     */
+    public void setAnimation(Animation animation) {
+        this.animation = animation;
     }
 
 	public Boolean getVaryBarColor() {

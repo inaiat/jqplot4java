@@ -31,27 +31,28 @@ import br.com.digilabs.jqplot.elements.Title;
 import java.util.ArrayList;
 
 /**
- * 
+ *
  * Base configuration of JqPlot Chart. See jqplot documention http://www.jqplot.com/docs/files/usage-txt.html
- * 
+ *
  * @author inaiat
  */
 public class ChartConfiguration implements Serializable {
 
-	private static final long serialVersionUID = 7082325039222592701L;
-	protected Collection<Serie> series;
-	protected Axes axes;
-	protected Title title;
-	protected Axis axesDefaults;
-	private SeriesDefaults seriesDefaults;
-	private Boolean stackSeries;
-	private Boolean showMarker;
-	private Legend legend;
+    private static final long serialVersionUID = 7082325039222592701L;
+    protected Collection<Serie> series;
+    protected Axes axes;
+    protected Title title;
+    protected Axis axesDefaults;
+    private SeriesDefaults seriesDefaults;
+    private Boolean stackSeries;
+    private Boolean showMarker;
+    private Legend legend;
 	private Boolean captureRightClick = null;
 	private Collection<String> seriesColors;
+    private Boolean animate;
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public Boolean isCaptureRightClick() {
@@ -59,7 +60,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param captureRightClick
 	 */
 	public void setCaptureRightClick(Boolean captureRightClick) {
@@ -67,7 +68,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public Legend getLegend() {
@@ -75,7 +76,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param legend
 	 */
 	public void setLegend(Legend legend) {
@@ -83,7 +84,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param title
 	 */
 	public void setSimpleTitle(String title) {
@@ -95,7 +96,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public Axes createAxes() {
@@ -106,7 +107,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public XAxis createXAxis() {
@@ -119,7 +120,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public YAxis createYAxis() {
@@ -132,7 +133,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public Axis createAxesDefaults() {
@@ -143,7 +144,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param label
 	 */
 	public void setLabelX(String label) {
@@ -153,7 +154,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param label
 	 */
 	public void setLabelY(String label) {
@@ -174,6 +175,8 @@ public class ChartConfiguration implements Serializable {
 	 * @return the series
 	 */
 	public Collection<Serie> getSeries() {
+        if(series == null)
+            series = new ArrayList<Serie>();
 		return series;
 	}
 
@@ -186,7 +189,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param serie
 	 */
 	public void addSeries(Serie serie) {
@@ -304,4 +307,20 @@ public class ChartConfiguration implements Serializable {
 	public void setSeriesColors(Collection<String> seriesColor) {
 		this.seriesColors = seriesColor;
 	}
+
+
+
+    /**
+     * @return animate property
+     */
+    public Boolean getAnimate() {
+        return animate;
+    }
+
+    /** Turns on animation for all series in this plot.
+     * @param animate true, false
+     */
+    public void setAnimate(Boolean animate) {
+        this.animate = animate;
+    }
 }
