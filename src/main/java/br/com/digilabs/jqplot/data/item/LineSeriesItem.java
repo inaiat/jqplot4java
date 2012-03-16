@@ -16,6 +16,8 @@
  */
 package br.com.digilabs.jqplot.data.item;
 
+import java.io.Serializable;
+
 /**
  * 
  * Helper to build line series charts.
@@ -25,7 +27,7 @@ package br.com.digilabs.jqplot.data.item;
  * @param <I> index of series
  * @param <V> value of series
  */
-public class LineSeriesItem<I extends Number, V extends Number> implements BaseItem {
+public class LineSeriesItem<I extends Serializable, V extends Serializable> implements BaseItem {
 
 	private static final long serialVersionUID = 1L;
 	
