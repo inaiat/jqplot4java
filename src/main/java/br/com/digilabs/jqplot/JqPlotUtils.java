@@ -125,8 +125,13 @@ public class JqPlotUtils {
             @Override
             public void marshal(Object source, HierarchicalStreamWriter writer,
                     MarshallingContext context) {
-                JqPlotResources plugin = (JqPlotResources) source;
-                writer.setValue(plugin.getClassName());
+                if(source instanceof JqPlotResources) {
+                    JqPlotResources plugin = (JqPlotResources) source;
+                    writer.setValue(plugin.getClassName());
+                } else {
+                    super.marshal(source, writer, context);
+                }
+
             }
         };
 
