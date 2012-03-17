@@ -19,10 +19,7 @@ package br.com.digilabs.jqplot.chart;
 import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.data.PieData;
 import br.com.digilabs.jqplot.data.item.LabeledItem;
-import br.com.digilabs.jqplot.elements.Legend;
-import br.com.digilabs.jqplot.elements.RendererOptions;
-import br.com.digilabs.jqplot.elements.SeriesDefaults;
-import br.com.digilabs.jqplot.elements.Title;
+import br.com.digilabs.jqplot.elements.*;
 import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
 /**
@@ -48,7 +45,7 @@ public class PieChart<T extends Number> extends AbstractChart<PieData<T>> {
      */
     public PieChart(String title) {
         getChartConfiguration().setTitle(new Title(title));
-        getChartConfiguration().setLegend(new Legend(true, "e"));
+        getChartConfiguration().setLegend(new Legend(true, Location.e));
         getChartConfiguration().setSeriesDefaults(new SeriesDefaults());
         getChartConfiguration().getSeriesDefaults().setRenderer(JqPlotResources.PieRenderer);
         getChartConfiguration().getSeriesDefaults().setRendererOptions(new RendererOptions());
