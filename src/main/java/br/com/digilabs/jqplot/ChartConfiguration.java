@@ -22,11 +22,7 @@ import java.util.Collection;
 import br.com.digilabs.jqplot.axis.Axis;
 import br.com.digilabs.jqplot.axis.XAxis;
 import br.com.digilabs.jqplot.axis.YAxis;
-import br.com.digilabs.jqplot.elements.Axes;
-import br.com.digilabs.jqplot.elements.Legend;
-import br.com.digilabs.jqplot.elements.Serie;
-import br.com.digilabs.jqplot.elements.SeriesDefaults;
-import br.com.digilabs.jqplot.elements.Title;
+import br.com.digilabs.jqplot.elements.*;
 
 import java.util.ArrayList;
 
@@ -50,6 +46,7 @@ public class ChartConfiguration implements Serializable {
 	private Boolean captureRightClick = null;
 	private Collection<String> seriesColors;
     private Boolean animate;
+    private Highlighter highlighter;
 
 	/**
 	 *
@@ -322,5 +319,27 @@ public class ChartConfiguration implements Serializable {
      */
     public void setAnimate(Boolean animate) {
         this.animate = animate;
+    }
+
+    public Highlighter createHighlighter() {
+        if(highlighter == null) {
+            highlighter = new Highlighter();
+        }
+        return highlighter;
+    }
+
+    /**
+     * @return hightLighter
+     */
+    public Highlighter getHighlighter() {
+        return highlighter;
+    }
+
+    /**
+     * set the highlighter
+     * @param highlighter property
+     */
+    public void setHighlighter(Highlighter highlighter) {
+        this.highlighter = highlighter;
     }
 }
