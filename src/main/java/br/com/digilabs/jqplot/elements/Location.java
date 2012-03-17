@@ -3,7 +3,7 @@ package br.com.digilabs.jqplot.elements;
 /**
  * @author balamaci
  */
-public enum TooltipLocation {
+public enum Location {
 
     n,
     ne,
