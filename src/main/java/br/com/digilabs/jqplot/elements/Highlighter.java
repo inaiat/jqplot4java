@@ -31,7 +31,7 @@ public class Highlighter implements Element {
     private Double sizeAdjust;
 
     /** Where to position tooltip, ‘n’, ‘ne’, ‘e’, ‘se’, ‘s’, ‘sw’, ‘w’, ‘nw’ */
-    private TooltipLocation tooltipLocation;
+    private Location tooltipLocation;
 
     /** true = fade in/out tooltip, false = show/hide tooltip */
     private Boolean fadeTooltip;
@@ -117,11 +117,11 @@ public class Highlighter implements Element {
         this.sizeAdjust = sizeAdjust;
     }
 
-    public TooltipLocation getTooltipLocation() {
+    public Location getTooltipLocation() {
         return tooltipLocation;
     }
 
-    public void setTooltipLocation(TooltipLocation tooltipLocation) {
+    public void setTooltipLocation(Location tooltipLocation) {
         this.tooltipLocation = tooltipLocation;
     }
 
