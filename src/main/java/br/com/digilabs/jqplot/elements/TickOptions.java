@@ -27,6 +27,8 @@ public class TickOptions implements Serializable {
     private static final long serialVersionUID = -8139093369426118021L;
     private String formatString;
     private Integer angle;
+    private String labelPosition;
+    
 
     /**
      * 
@@ -56,5 +58,21 @@ public class TickOptions implements Serializable {
      */
     public Integer getAngle() {
         return angle;
+    }
+
+    /**
+     * 
+     * @return the labelPosition
+     */
+    public String getLabelPosition() {
+        return labelPosition;
+    }
+
+    /**
+     * 
+     * @param labelPosition to set
+     */
+    public void setLabelPosition(String labelPosition) {
+        this.labelPosition = labelPosition;
     }
 }

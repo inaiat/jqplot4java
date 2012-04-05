@@ -47,7 +47,9 @@ public class LineSeriesChart <I extends Number, V extends Number> extends Abstra
 	public LineSeriesChart(String title, String labelX, String labelY) {
         getChartConfiguration().setTitle(new Title(title));
         getChartConfiguration().setLabelX(labelX);
-        getChartConfiguration().setLabelY(labelY);
+        getChartConfiguration().setLabelY(labelY);        
+        getChartConfiguration().createAxesDefaults();
+        getChartConfiguration().createXAxis();
     }
 	
 	@Override
