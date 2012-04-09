@@ -24,6 +24,8 @@ package br.com.digilabs.jqplot;
  */
 public enum JqPlotResources {
 
+    Highlighter("$.jqplot.Highlighter", "plugins/jqplot.highlighter.min.js"),
+
     BarRenderer("$.jqplot.BarRenderer", "plugins/jqplot.barRenderer.min.js"),
     BubbleRenderer("$.jqplot.BubbleRenderer", "plugins/jqplot.bubbleRenderer.min.js"),
     PieRenderer("$.jqplot.PieRenderer", "plugins/jqplot.pieRenderer.min.js"),

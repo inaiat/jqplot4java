@@ -35,7 +35,7 @@ public class Legend implements Element {
     private String placement;
     
     /** The location. */
-    private String location;
+    private Location location;
     
     /** The border. */
     private String border;
@@ -97,7 +97,7 @@ public class Legend implements Element {
      * @param show the show
      * @param location the location
      */
-    public Legend(boolean show, String location) {
+    public Legend(boolean show, Location location) {
         this.show = show;
         this.location = location;
     }
@@ -206,7 +206,7 @@ public class Legend implements Element {
      *
      * @return the location
      */
-    public String getLocation() {
+    public Location getLocation() {
         return location;
     }
 
@@ -215,7 +215,7 @@ public class Legend implements Element {
      *
      * @param location the new location
      */
-    public void setLocation(String location) {
+    public void setLocation(Location location) {
         this.location = location;
     }
 

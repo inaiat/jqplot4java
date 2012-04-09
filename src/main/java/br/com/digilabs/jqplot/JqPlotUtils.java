@@ -46,6 +46,7 @@ public class JqPlotUtils {
      */
     public static List<String> retriveJavaScriptResources(Chart<?> chart) {
         List<String> resources = new ArrayList<String>();
+
         Class<?> clazz = chart.getClass();
         if (clazz.isAnnotationPresent(JqPlotPlugin.class)) {
             JqPlotResources[] jqPlotResourceses = clazz.getAnnotation(
@@ -54,6 +55,12 @@ public class JqPlotUtils {
                 resources.add(jqPlotResources.getResource());
             }
         }
+
+        //can it/should we make this more generic?
+        if(chart.getChartConfiguration().getHighlighter() != null) {
+            resources.add(JqPlotResources.Highlighter.getResource());
+        }
+
         return resources;
     }
 
@@ -118,8 +125,13 @@ public class JqPlotUtils {
             @Override
             public void marshal(Object source, HierarchicalStreamWriter writer,
                     MarshallingContext context) {
-                JqPlotResources plugin = (JqPlotResources) source;
-                writer.setValue(plugin.getClassName());
+                if(source instanceof JqPlotResources) {
+                    JqPlotResources plugin = (JqPlotResources) source;
+                    writer.setValue(plugin.getClassName());
+                } else {
+                    super.marshal(source, writer, context);
+                }
+
             }
         };
 
