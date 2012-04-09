@@ -40,8 +40,8 @@ public class Axis implements Serializable {
     private Float pad;
     private Float padMin;
     private Float padMax;
-    private Integer min;
-    private Integer max;
+    private String min;
+    private String max;
     private String tickInterval;
 
 
@@ -220,19 +220,20 @@ public class Axis implements Serializable {
         this.ticks = ticks;
     }
 
-	public Integer getMin() {
+	public String getMin() {
 		return min;
 	}
 
-	public void setMin(Integer min) {
+	public void setMin(String min) {
 		this.min = min;
 	}
 
-	public Integer getMax() {
+	public String getMax() {
 		return max;
 	}
 
-	public void setMax(Integer max) {
+	public void setMax(String max) {
 		this.max = max;
 	}
+
 }
