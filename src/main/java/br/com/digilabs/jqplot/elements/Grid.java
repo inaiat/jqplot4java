@@ -19,7 +19,11 @@ package br.com.digilabs.jqplot.elements;
 import br.com.digilabs.jqplot.axis.Axis;
 
 /**
- * Representa um Grid
+ * Object representing the grid on which the plot is drawn.  The grid in this context is the area bounded by the axes, 
+ * the area which will contain the series.  Note, the series are drawn on their own canvas.  
+ * The Grid object cannot be instantiated directly, but is created by the Plot oject.  
+ * Grid properties can be set or overriden by the options passed in from the user. 
+ * 
  * @author inaiat
  */
 public class Grid implements Element {
@@ -28,6 +32,8 @@ public class Grid implements Element {
     private Boolean drawGridLines;
     private String gridLineColer;
     private Double gridLineWidth;
+    
+    /** The background. */
     private String background;
     private String borderColor;
     private Double borderWidth;
@@ -57,8 +63,9 @@ public class Grid implements Element {
     }
 
     /**
-     * 
-     * @param axis 
+     * Sets the axis.
+     *
+     * @param axis the new axis
      */
     public void setAxis(Axis[] axis) {
         this.axis = axis;

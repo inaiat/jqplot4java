@@ -22,11 +22,26 @@ import br.com.digilabs.jqplot.axis.Y2Axis;
 import br.com.digilabs.jqplot.axis.YAxis;
 
 /**
- * Representa as coordenadas de uma Axis
+ * Axes options are specified within an axes object at the top level of the plot options like so:
+ *
+ * <pre>
+ {
+  axes: {
+     xaxis: {min: 5},
+       yaxis: {min: 2, max: 8, numberTicks:4},
+       x2axis: {pad: 1.5},
+       y2axis: {ticks:[22, 44, 66, 88]}
+   }
+ }
+ * </pre>
+ * There are 2 x axes, ‘xaxis’ and ‘x2axis’, and 9 yaxes, ‘yaxis’, ‘y2axis’.  ‘y3axis’, ...  Any or all of which may be specified.
+ * 
  * @author inaiat
+ * 
  */
 public class Axes implements Element {
 
+    /** The Constant serialVersionUID. */
     private static final long serialVersionUID = -1464182411022493685L;
     private XAxis xaxis;
     private YAxis yaxis;

@@ -19,7 +19,7 @@ package br.com.digilabs.jqplot.data.item;
 import java.io.Serializable;
 
 /**
- * Mark interface for Chart Items
+ * Marker interface for Chart Items
  * 
  * @author inaiat
  *

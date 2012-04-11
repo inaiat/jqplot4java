@@ -18,6 +18,8 @@ package br.com.digilabs.jqplot.axis;
 
 /**
  *
+ * which y axis to use with this series, either ‘yaxis’ or ‘y2axis’.
+ *
  * @author inaiat
  */
 public class Y2Axis extends Axis {

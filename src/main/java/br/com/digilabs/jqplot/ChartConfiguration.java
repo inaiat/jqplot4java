@@ -35,56 +35,88 @@ import java.util.ArrayList;
  */
 public class ChartConfiguration implements Serializable {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 7082325039222592701L;
+	
+	/** The series. */
 	protected Collection<Serie> series;
+	
+	/** The axes. */
 	protected Axes axes;
+	
+	/** The title. */
 	protected Title title;
+	
+	/** The axes defaults. */
 	protected Axis axesDefaults;
+	
+	/** The series defaults. */
 	private SeriesDefaults seriesDefaults;
+	
+	/** The stack series. */
 	private Boolean stackSeries;
+	
+	/** The show marker. */
 	private Boolean showMarker;
+	
+	/** The legend. */
 	private Legend legend;
+	
+	/** The capture right click. */
 	private Boolean captureRightClick = null;
+	
+	/** The series colors. */
 	private Collection<String> seriesColors;
+	
+	/** The animate. */
 	private Boolean animate;
+	
+	/** The highlighter. */
 	private Highlighter highlighter;
+	
+	/** The grid. */
 	private Grid grid;
 
 	/**
-	 * 
-	 * @return
+	 * Checks if is capture right click.
+	 *
+	 * @return the boolean
 	 */
 	public Boolean isCaptureRightClick() {
 		return captureRightClick;
 	}
 
 	/**
-	 * 
-	 * @param captureRightClick
+	 * Sets the capture right click.
+	 *
+	 * @param captureRightClick the new capture right click
 	 */
 	public void setCaptureRightClick(Boolean captureRightClick) {
 		this.captureRightClick = captureRightClick;
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Gets the legend.
+	 *
+	 * @return the legend
 	 */
 	public Legend getLegend() {
 		return legend;
 	}
 
 	/**
-	 * 
-	 * @param legend
+	 * Sets the legend.
+	 *
+	 * @param legend the new legend
 	 */
 	public void setLegend(Legend legend) {
 		this.legend = legend;
 	}
 
 	/**
-	 * 
-	 * @param title
+	 * Sets the simple title.
+	 *
+	 * @param title the new simple title
 	 */
 	public void setSimpleTitle(String title) {
 		if (title == null) {
@@ -94,6 +126,11 @@ public class ChartConfiguration implements Serializable {
 		}
 	}
 	
+	/**
+	 * Creates the grid.
+	 *
+	 * @return the grid
+	 */
 	public Grid createGrid() {
 		if (grid == null) {
 			grid = new Grid();
@@ -102,8 +139,9 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Creates the axes.
+	 *
+	 * @return the axes
 	 */
 	public Axes createAxes() {
 		if (axes == null) {
@@ -113,8 +151,9 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Creates the x axis.
+	 *
+	 * @return the x axis
 	 */
 	public XAxis createXAxis() {
 		Axes newAxes = createAxes();
@@ -126,8 +165,9 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Creates the y axis.
+	 *
+	 * @return the y axis
 	 */
 	public YAxis createYAxis() {
 		Axes newAxes = createAxes();
@@ -139,8 +179,9 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Creates the axes defaults.
+	 *
+	 * @return the axis
 	 */
 	public Axis createAxesDefaults() {
 		if (axesDefaults == null) {
@@ -150,8 +191,9 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
-	 * @param label
+	 * Sets the label x.
+	 *
+	 * @param label the new label x
 	 */
 	public void setLabelX(String label) {
 		if (label != null) {
@@ -160,8 +202,9 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
-	 * @param label
+	 * Sets the label y.
+	 *
+	 * @param label the new label y
 	 */
 	public void setLabelY(String label) {
 		if (label != null) {
@@ -169,6 +212,11 @@ public class ChartConfiguration implements Serializable {
 		}
 	}
 
+	/**
+	 * Creates the series.
+	 *
+	 * @return the collection
+	 */
 	public Collection<Serie> createSeries() {
 		if (series == null) {
 			series = new ArrayList<Serie>();
@@ -178,6 +226,8 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
+	 * Gets the series.
+	 *
 	 * @return the series
 	 */
 	public Collection<Serie> getSeries() {
@@ -187,22 +237,26 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * @param series
-	 *            the series to set
+	 * Sets the series.
+	 *
+	 * @param series the series to set
 	 */
 	public void setSeries(Collection<Serie> series) {
 		this.series = series;
 	}
 
 	/**
-	 * 
-	 * @param serie
+	 * Adds the series.
+	 *
+	 * @param serie the serie
 	 */
 	public void addSeries(Serie serie) {
 		this.createSeries().add(serie);
 	}
 
 	/**
+	 * Gets the title.
+	 *
 	 * @return the title
 	 */
 	public Title getTitle() {
@@ -210,14 +264,17 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * @param title
-	 *            the title to set
+	 * Sets the title.
+	 *
+	 * @param title the title to set
 	 */
 	public void setTitle(Title title) {
 		this.title = title;
 	}
 
 	/**
+	 * Gets the axes defaults.
+	 *
 	 * @return the axesDefaults
 	 */
 	public Axis getAxesDefaults() {
@@ -225,14 +282,17 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * @param axesDefaults
-	 *            the axesDefaults to set
+	 * Sets the axes defaults.
+	 *
+	 * @param axesDefaults the axesDefaults to set
 	 */
 	public void setAxesDefaults(Axis axesDefaults) {
 		this.axesDefaults = axesDefaults;
 	}
 
 	/**
+	 * Gets the axes.
+	 *
 	 * @return the axes
 	 */
 	public Axes getAxes() {
@@ -240,13 +300,19 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * @param axes
-	 *            the axes to set
+	 * Sets the axes.
+	 *
+	 * @param axes the axes to set
 	 */
 	public void setAxes(Axes axes) {
 		this.axes = axes;
 	}
 
+	/**
+	 * Creates the series defaults.
+	 *
+	 * @return the series defaults
+	 */
 	public SeriesDefaults createSeriesDefaults() {
 		if (seriesDefaults == null) {
 			seriesDefaults = new SeriesDefaults();
@@ -255,6 +321,8 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
+	 * Gets the series defaults.
+	 *
 	 * @return the seriesDefaults
 	 */
 	public SeriesDefaults getSeriesDefaults() {
@@ -262,14 +330,17 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * @param seriesDefaults
-	 *            the seriesDefaults to set
+	 * Sets the series defaults.
+	 *
+	 * @param seriesDefaults the seriesDefaults to set
 	 */
 	public void setSeriesDefaults(SeriesDefaults seriesDefaults) {
 		this.seriesDefaults = seriesDefaults;
 	}
 
 	/**
+	 * Gets the stack series.
+	 *
 	 * @return the stackSeries
 	 */
 	public Boolean getStackSeries() {
@@ -277,14 +348,17 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * @param stackSeries
-	 *            the stackSeries to set
+	 * Sets the stack series.
+	 *
+	 * @param stackSeries the stackSeries to set
 	 */
 	public void setStackSeries(Boolean stackSeries) {
 		this.stackSeries = stackSeries;
 	}
 
 	/**
+	 * Gets the show marker.
+	 *
 	 * @return the showMarker
 	 */
 	public Boolean getShowMarker() {
@@ -292,13 +366,19 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * @param showMarker
-	 *            the showMarker to set
+	 * Sets the show marker.
+	 *
+	 * @param showMarker the showMarker to set
 	 */
 	public void setShowMarker(Boolean showMarker) {
 		this.showMarker = showMarker;
 	}
 
+	/**
+	 * Creates the series colors.
+	 *
+	 * @return the collection
+	 */
 	public Collection<String> createSeriesColors() {
 		if (this.seriesColors == null) {
 			this.seriesColors = new ArrayList<String>();
@@ -306,15 +386,27 @@ public class ChartConfiguration implements Serializable {
 		return seriesColors;
 	}
 
+	/**
+	 * Gets the series colors.
+	 *
+	 * @return the series colors
+	 */
 	public Collection<String> getSeriesColors() {
 		return seriesColors;
 	}
 
+	/**
+	 * Sets the series colors.
+	 *
+	 * @param seriesColor the new series colors
+	 */
 	public void setSeriesColors(Collection<String> seriesColor) {
 		this.seriesColors = seriesColor;
 	}
 
 	/**
+	 * Gets the animate.
+	 *
 	 * @return animate property
 	 */
 	public Boolean getAnimate() {
@@ -331,6 +423,11 @@ public class ChartConfiguration implements Serializable {
 		this.animate = animate;
 	}
 
+	/**
+	 * Creates the highlighter.
+	 *
+	 * @return the highlighter
+	 */
 	public Highlighter createHighlighter() {
 		if (highlighter == null) {
 			highlighter = new Highlighter();
@@ -339,6 +436,8 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
+	 * Gets the highlighter.
+	 *
 	 * @return hightLighter
 	 */
 	public Highlighter getHighlighter() {
@@ -346,19 +445,28 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * set the highlighter
-	 * 
-	 * @param highlighter
-	 *            property
+	 * set the highlighter.
+	 *
+	 * @param highlighter property
 	 */
 	public void setHighlighter(Highlighter highlighter) {
 		this.highlighter = highlighter;
 	}
 
+	/**
+	 * Gets the grid.
+	 *
+	 * @return the grid
+	 */
 	public Grid getGrid() {
 		return grid;
 	}
 
+	/**
+	 * Sets the grid.
+	 *
+	 * @param grid the new grid
+	 */
 	public void setGrid(Grid grid) {
 		this.grid = grid;
 	}
