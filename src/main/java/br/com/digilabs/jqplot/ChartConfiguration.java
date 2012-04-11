@@ -20,6 +20,7 @@ import java.io.Serializable;
 import java.util.Collection;
 
 import br.com.digilabs.jqplot.axis.Axis;
+import br.com.digilabs.jqplot.axis.AxisString;
 import br.com.digilabs.jqplot.axis.XAxis;
 import br.com.digilabs.jqplot.axis.YAxis;
 import br.com.digilabs.jqplot.elements.*;
@@ -27,31 +28,31 @@ import br.com.digilabs.jqplot.elements.*;
 import java.util.ArrayList;
 
 /**
- * 
- * Base configuration of JqPlot Chart. See jqplot documention
- * http://www.jqplot.com/docs/files/usage-txt.html
- * 
+ *
+ * Base configuration of JqPlot Chart. See jqplot documention http://www.jqplot.com/docs/files/usage-txt.html
+ *
  * @author inaiat
  */
 public class ChartConfiguration implements Serializable {
 
-	private static final long serialVersionUID = 7082325039222592701L;
-	protected Collection<Serie> series;
-	protected Axes axes;
-	protected Title title;
-	protected Axis axesDefaults;
-	private SeriesDefaults seriesDefaults;
-	private Boolean stackSeries;
-	private Boolean showMarker;
-	private Legend legend;
+    private static final long serialVersionUID = 7082325039222592701L;
+    protected Collection<Serie> series;
+    protected Axes axes;
+    protected Title title;
+    protected Axis axesDefaults;
+    private SeriesDefaults seriesDefaults;
+    private Boolean stackSeries;
+    private Boolean showMarker;
+    private Legend legend;
 	private Boolean captureRightClick = null;
 	private Collection<String> seriesColors;
-	private Boolean animate;
-	private Highlighter highlighter;
-	private Grid grid;
+    private Boolean animate;
+    private Highlighter highlighter;
+    private Grid grid;
+    private Cursor cursor;
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public Boolean isCaptureRightClick() {
@@ -59,7 +60,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param captureRightClick
 	 */
 	public void setCaptureRightClick(Boolean captureRightClick) {
@@ -67,7 +68,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public Legend getLegend() {
@@ -75,7 +76,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param legend
 	 */
 	public void setLegend(Legend legend) {
@@ -83,7 +84,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param title
 	 */
 	public void setSimpleTitle(String title) {
@@ -93,16 +94,9 @@ public class ChartConfiguration implements Serializable {
 			this.title.setText(title);
 		}
 	}
-	
-	public Grid createGrid() {
-		if (grid == null) {
-			grid = new Grid();
-		}
-		return grid;
-	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public Axes createAxes() {
@@ -113,7 +107,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public XAxis createXAxis() {
@@ -126,7 +120,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public YAxis createYAxis() {
@@ -138,19 +132,21 @@ public class ChartConfiguration implements Serializable {
 		return newAxes.getYaxis();
 	}
 
+	
+	
 	/**
-	 * 
+	 *
 	 * @return
 	 */
 	public Axis createAxesDefaults() {
 		if (axesDefaults == null) {
-			axesDefaults = new Axis();
+			axesDefaults = new AxisString();
 		}
 		return axesDefaults;
 	}
 
 	/**
-	 * 
+	 *
 	 * @param label
 	 */
 	public void setLabelX(String label) {
@@ -160,7 +156,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param label
 	 */
 	public void setLabelY(String label) {
@@ -181,8 +177,8 @@ public class ChartConfiguration implements Serializable {
 	 * @return the series
 	 */
 	public Collection<Serie> getSeries() {
-		if (series == null)
-			series = new ArrayList<Serie>();
+        if(series == null)
+            series = new ArrayList<Serie>();
 		return series;
 	}
 
@@ -195,7 +191,7 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param serie
 	 */
 	public void addSeries(Serie serie) {
@@ -300,11 +296,11 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	public Collection<String> createSeriesColors() {
-		if (this.seriesColors == null) {
-			this.seriesColors = new ArrayList<String>();
-		}
-		return seriesColors;
-	}
+    	if (this.seriesColors==null) {
+    		this.seriesColors = new ArrayList<String>();
+    	}
+    	return seriesColors;
+    }
 
 	public Collection<String> getSeriesColors() {
 		return seriesColors;
@@ -314,52 +310,83 @@ public class ChartConfiguration implements Serializable {
 		this.seriesColors = seriesColor;
 	}
 
-	/**
-	 * @return animate property
-	 */
-	public Boolean getAnimate() {
-		return animate;
-	}
 
-	/**
-	 * Turns on animation for all series in this plot.
-	 * 
-	 * @param animate
-	 *            true, false
-	 */
-	public void setAnimate(Boolean animate) {
-		this.animate = animate;
-	}
 
-	public Highlighter createHighlighter() {
-		if (highlighter == null) {
-			highlighter = new Highlighter();
-		}
-		return highlighter;
-	}
+    /**
+     * @return animate property
+     */
+    public Boolean getAnimate() {
+        return animate;
+    }
 
-	/**
-	 * @return hightLighter
-	 */
-	public Highlighter getHighlighter() {
-		return highlighter;
-	}
+    /** Turns on animation for all series in this plot.
+     * @param animate true, false
+     */
+    public void setAnimate(Boolean animate) {
+        this.animate = animate;
+    }
 
-	/**
-	 * set the highlighter
-	 * 
-	 * @param highlighter
-	 *            property
-	 */
-	public void setHighlighter(Highlighter highlighter) {
-		this.highlighter = highlighter;
-	}
+    public Highlighter createHighlighter() {
+        if(highlighter == null) {
+            highlighter = new Highlighter();
+        }
+        return highlighter;
+    }
 
+    /**
+     * @return hightLighter
+     */
+    public Highlighter getHighlighter() {
+        return highlighter;
+    }
+
+    /**
+     * set the highlighter
+     * @param highlighter property
+     */
+    public void setHighlighter(Highlighter highlighter) {
+        this.highlighter = highlighter;
+    }
+    
+    public Grid createGrid(){
+    	if(grid == null){
+    		grid = new Grid();
+    	}
+    	return grid;
+    }
+
+    /**
+     * 
+     * @return
+     */
 	public Grid getGrid() {
 		return grid;
 	}
 
+	/**
+	 * set the grid
+	 * @param grid
+	 */
 	public void setGrid(Grid grid) {
 		this.grid = grid;
 	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public Cursor getCursor() {
+		return cursor;
+	}
+
+	/**
+	 * Set the cursor
+	 * @param cursor
+	 */
+	public void setCursor(Cursor cursor) {
+		this.cursor = cursor;
+	}
+    
+	
+    
 }

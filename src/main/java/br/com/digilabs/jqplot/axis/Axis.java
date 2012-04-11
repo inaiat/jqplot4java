@@ -26,7 +26,7 @@ import br.com.digilabs.jqplot.elements.TickOptions;
  * 
  * @author inaiat
  */
-public class Axis implements Serializable {
+public abstract class Axis<T> implements Serializable {
 
     private static final long serialVersionUID = -5426777530263336010L;
     private Boolean show;
@@ -40,16 +40,48 @@ public class Axis implements Serializable {
     private Float pad;
     private Float padMin;
     private Float padMax;
-    private String min;
-    private String max;
-    private String tickInterval;
-
+    private T min;
+    private T max;
+    private T tickInterval;
 
     /**
      * 
      * @return 
      */
-    public String getTickInterval() {
+    public T getMin() {
+        return min;
+    }
+
+    /**
+     * 
+     * @param min 
+     */
+    public void setMin(T min) {
+        this.min = min;
+    }
+    
+    
+    /**
+     * 
+     * @return
+     */
+    public T getMax() {
+		return max;
+	}
+
+    /**
+     * 
+     * @param max
+     */
+	public void setMax(T max) {
+		this.max = max;
+	}
+
+	/**
+     * 
+     * @return 
+     */
+    public T getTickInterval() {
         return tickInterval;
     }
 
@@ -57,7 +89,7 @@ public class Axis implements Serializable {
      * 
      * @param tickInterval 
      */
-    public void setTickInterval(String tickInterval) {
+    public void setTickInterval(T tickInterval) {
         this.tickInterval = tickInterval;
     }
 
@@ -219,21 +251,4 @@ public class Axis implements Serializable {
     public void setTicks(String[] ticks) {
         this.ticks = ticks;
     }
-
-	public String getMin() {
-		return min;
-	}
-
-	public void setMin(String min) {
-		this.min = min;
-	}
-
-	public String getMax() {
-		return max;
-	}
-
-	public void setMax(String max) {
-		this.max = max;
-	}
-
 }
