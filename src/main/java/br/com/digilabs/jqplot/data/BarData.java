@@ -23,40 +23,43 @@ import org.json.JSONArray;
 
 
 /**
- * representa os dados de um chart de barra
+ * Data Helper to build Area Charts.
+ *
+ * @param <T> Type of number. Ex.: Double, Integer, Float, etc.
  * @author inaiat
  */
 public class BarData<T extends Number> extends AbstractCollectionData<Collection<T>> {
     
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -2087356275172825289L;
 
+	/** The data. */
 	private Collection<Collection<T>> data = new ArrayList<Collection<T>>();
 
     /**
-     * Construtor
+     * Instantiates a new bar data.
      */
     public BarData() {
     }
     
     /**
-     * 
-     * @param values 
+     * Instantiates a new bar data.
+     *
+     * @param values the values
      */
     public BarData(Collection<T>... values) {
         addValues(values);
     }    
 
-    /**
-     * 
-     * @return Collection
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.data.ChartData#getData()
      */
     public Collection<Collection<T>> getData() {
         return data;
     }
 
-    /**
-     * retorna o json
-     * @return json
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
      */
     public String toJsonString() {
         JSONArray jsonArray = new JSONArray(data);

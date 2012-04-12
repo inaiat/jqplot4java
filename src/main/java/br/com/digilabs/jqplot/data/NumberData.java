@@ -16,45 +16,48 @@
  */
 package br.com.digilabs.jqplot.data;
 
-
 /**
- * Representa um number
+ * The Class NumberData.
+ *
+ * @param <T> the generic type
  * @author inaiat
  */
 public abstract class NumberData<T extends Number> implements ChartData<T> {
 
     
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 3043833458517563918L;
 
+	/** The data. */
 	private T data;
     
     /**
-     * 
-     * @param value 
+     * Instantiates a new number data.
+     *
+     * @param value the value
      */
     public NumberData(T value) {
         data = value;
     }
 
-    /**
-     * 
-     * @return data
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.data.ChartData#getData()
      */
     public T getData() {
         return data;
     }
 
     /**
-     * 
-     * @param value 
+     * Sets the value.
+     *
+     * @param value the new value
      */
     public void setValue(T value) {
         this.data = value;
     }
 
-    /**
-     * retorna o json com as informações
-     * @return json
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
      */
     public abstract String toJsonString();
 }

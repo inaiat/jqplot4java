@@ -18,32 +18,35 @@ package br.com.digilabs.jqplot.data;
 
 import org.json.JSONArray;
 
+// TODO: Auto-generated Javadoc
 /**
- * Representa os dados de um chart Meter
+ * Data Helper to build Meter Charts.
+ *
  * @author inaiat
  */
 public class MeterData extends NumberData<Float> {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -1543265764447003656L;
 
-	/**
-     * Construtor
+    /**
+     * Instantiates a new meter data.
      */
     public MeterData() {
         super(0F);
     }
 
     /**
-     * Construtor
-     * @param value 
+     * Instantiates a new meter data.
+     *
+     * @param value the value
      */
     public MeterData(Float value) {
         super(value);
     }
     
-    /**
-     * retorna o json
-     * @return string correspondendo ao json
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.data.NumberData#toJsonString()
      */
     @Override
     public String toJsonString() {

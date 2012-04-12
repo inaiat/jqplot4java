@@ -19,12 +19,24 @@ package br.com.digilabs.jqplot.data;
 import java.io.Serializable;
 
 /**
- * Interface que representa os dados de um chart
+ * Base interface to handle data.
+ *
+ * @param <T> the generic type
  * @author inaiat
  */
 public interface ChartData<T> extends Serializable {
 
+    /**
+     * Gets the data.
+     *
+     * @return the data
+     */
     T getData();
     
+    /**
+     * To json string.
+     *
+     * @return the string
+     */
     String toJsonString();
 }

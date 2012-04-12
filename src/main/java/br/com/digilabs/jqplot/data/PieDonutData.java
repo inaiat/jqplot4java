@@ -23,9 +23,10 @@ import java.util.Collection;
 import org.json.JSONArray;
 
 /**
- * Representa os dados de um Pie ou Donut chart
+ * Data Helper to build Pie Donut Charts.
+ *
+ * @param <T> the generic type
  * @author inaiat
- * @param <T> 
  */
 public class PieDonutData<T extends Number> extends AbstractCollectionData<Collection<LabeledItem<T>>> {
 
@@ -33,10 +34,6 @@ public class PieDonutData<T extends Number> extends AbstractCollectionData<Colle
 
 	private Collection<Collection<LabeledItem<T>>> data = new ArrayList<Collection<LabeledItem<T>>>();
 
-    /**
-     * Obtem o json
-     * @return 
-     */
     public String toJsonString() {
         JSONArray dataArray = new JSONArray();
         JSONArray jsonArray = new JSONArray();
@@ -57,10 +54,6 @@ public class PieDonutData<T extends Number> extends AbstractCollectionData<Colle
         return dataArray.toString();
     }
 
-    /**
-     * 
-     * @return Collection
-     */
     public Collection<Collection<LabeledItem<T>>> getData() {
         return data;
     }
