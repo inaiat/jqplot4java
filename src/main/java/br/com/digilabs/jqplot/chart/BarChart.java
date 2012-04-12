@@ -33,7 +33,7 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
  * @author inaiat
  */
 @JqPlotPlugin(values = {JqPlotResources.CategoryAxisRenderer, JqPlotResources.BarRenderer, JqPlotResources.PointLabels})
-public class BarChart<T extends Number> extends AbstractChart<BarData<T>> {
+public class BarChart<T extends Number> extends AbstractChart<BarData<T>, String> {
 
 	private static final long serialVersionUID = 3650210485517566138L;
 
@@ -62,7 +62,7 @@ public class BarChart<T extends Number> extends AbstractChart<BarData<T>> {
      * @param labelY 
      */
     public BarChart(String title, String labelX, String labelY) {
-        ChartConfiguration chartConfiguration = getChartConfiguration();
+        ChartConfiguration<String> chartConfiguration = getChartConfiguration();
         chartConfiguration.setTitle(new Title(title));
 
         SeriesDefaults seriesDefaults = new SeriesDefaults();
@@ -77,7 +77,7 @@ public class BarChart<T extends Number> extends AbstractChart<BarData<T>> {
         chartConfiguration.setLabelX(labelX);
         chartConfiguration.setLabelY(labelY);
 
-        XAxis xAxis = getChartConfiguration().createXAxis();
+        XAxis<String> xAxis = getChartConfiguration().createXAxis();
         xAxis.setRenderer(JqPlotResources.CategoryAxisRenderer);
 
         getChartConfiguration().createYAxis();

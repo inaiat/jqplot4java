@@ -25,7 +25,7 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
  * @author inaiat
  */
 @JqPlotPlugin(values = {JqPlotResources.CanvasTextRenderer, JqPlotResources.CategoryAxisRenderer})
-public class LineChart<T extends Number> extends AbstractChart<LinedData<T>> {
+public class LineChart<T extends Number> extends AbstractChart<LinedData<T>,String> {
 
 	private static final long serialVersionUID = -643105267124184518L;
 

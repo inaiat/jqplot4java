@@ -31,9 +31,11 @@ import java.util.ArrayList;
  * Base configuration of JqPlot Chart. See jqplot documention
  * http://www.jqplot.com/docs/files/usage-txt.html
  * 
+ * @param <T> Type of {@link Axis}
+ * 
  * @author inaiat
  */
-public class ChartConfiguration implements Serializable {
+public class ChartConfiguration<T extends Serializable> implements Serializable {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 7082325039222592701L;
@@ -42,13 +44,13 @@ public class ChartConfiguration implements Serializable {
 	protected Collection<Serie> series;
 	
 	/** The axes. */
-	protected Axes axes;
+	protected Axes<T> axes;
 	
 	/** The title. */
 	protected Title title;
 	
 	/** The axes defaults. */
-	protected Axis axesDefaults;
+	protected Axis<T> axesDefaults;
 	
 	/** The series defaults. */
 	private SeriesDefaults seriesDefaults;
@@ -75,7 +77,11 @@ public class ChartConfiguration implements Serializable {
 	private Highlighter highlighter;
 	
 	/** The grid. */
-	private Grid grid;
+	private Grid<T> grid;
+	
+	
+	/** The cursor. */
+	private Cursor cursor;
 
 	/**
 	 * Checks if is capture right click.
@@ -127,13 +133,25 @@ public class ChartConfiguration implements Serializable {
 	}
 	
 	/**
+	 * Creates the cursor.
+	 *
+	 * @return the cursor
+	 */
+	public Cursor createCursor() {
+		if (cursor == null) {
+			cursor = new Cursor();
+		}
+		return cursor;
+	}	
+	
+	/**
 	 * Creates the grid.
 	 *
 	 * @return the grid
 	 */
-	public Grid createGrid() {
+	public Grid<T> createGrid() {
 		if (grid == null) {
-			grid = new Grid();
+			grid = new Grid<T>();
 		}
 		return grid;
 	}
@@ -143,9 +161,9 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @return the axes
 	 */
-	public Axes createAxes() {
+	public Axes<T> createAxes() {
 		if (axes == null) {
-			this.axes = new Axes();
+			this.axes = new Axes<T>();
 		}
 		return this.axes;
 	}
@@ -155,10 +173,10 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @return the x axis
 	 */
-	public XAxis createXAxis() {
-		Axes newAxes = createAxes();
+	public XAxis<T> createXAxis() {
+		Axes<T> newAxes = createAxes();
 		if (newAxes.getXaxis() == null) {
-			XAxis xAxis = new XAxis();
+			XAxis<T> xAxis = new XAxis<T>();
 			newAxes.setXaxis(xAxis);
 		}
 		return newAxes.getXaxis();
@@ -169,10 +187,10 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @return the y axis
 	 */
-	public YAxis createYAxis() {
-		Axes newAxes = createAxes();
+	public YAxis<T> createYAxis() {
+		Axes<T> newAxes = createAxes();
 		if (newAxes.getYaxis() == null) {
-			YAxis yAxis = new YAxis();
+			YAxis<T> yAxis = new YAxis<T>();
 			newAxes.setYaxis(yAxis);
 		}
 		return newAxes.getYaxis();
@@ -183,9 +201,9 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @return the axis
 	 */
-	public Axis createAxesDefaults() {
+	public Axis<T> createAxesDefaults() {
 		if (axesDefaults == null) {
-			axesDefaults = new Axis();
+			axesDefaults = new Axis<T>();
 		}
 		return axesDefaults;
 	}
@@ -277,7 +295,7 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @return the axesDefaults
 	 */
-	public Axis getAxesDefaults() {
+	public Axis<T> getAxesDefaults() {
 		return axesDefaults;
 	}
 
@@ -286,7 +304,7 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @param axesDefaults the axesDefaults to set
 	 */
-	public void setAxesDefaults(Axis axesDefaults) {
+	public void setAxesDefaults(Axis<T> axesDefaults) {
 		this.axesDefaults = axesDefaults;
 	}
 
@@ -295,7 +313,7 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @return the axes
 	 */
-	public Axes getAxes() {
+	public Axes<T> getAxes() {
 		return axes;
 	}
 
@@ -304,7 +322,7 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @param axes the axes to set
 	 */
-	public void setAxes(Axes axes) {
+	public void setAxes(Axes<T> axes) {
 		this.axes = axes;
 	}
 
@@ -458,7 +476,7 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @return the grid
 	 */
-	public Grid getGrid() {
+	public Grid<T> getGrid() {
 		return grid;
 	}
 
@@ -467,7 +485,25 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @param grid the new grid
 	 */
-	public void setGrid(Grid grid) {
+	public void setGrid(Grid<T> grid) {
 		this.grid = grid;
+	}
+
+	/**
+	 * Gets the cursor.
+	 *
+	 * @return the cursor
+	 */
+	public Cursor getCursor() {
+		return cursor;
+	}
+
+	/**
+	 * Sets the cursor.
+	 *
+	 * @param cursor the new cursor
+	 */
+	public void setCursor(Cursor cursor) {
+		this.cursor = cursor;
 	}
 }

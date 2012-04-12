@@ -37,7 +37,7 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
     JqPlotResources.CanvasAxisLabelRenderer,
     JqPlotResources.CanvasAxisTickRenderer
 })
-public class LabeledLineChart<T extends Number> extends AbstractChart<LabeledData<T>> {
+public class LabeledLineChart<T extends Number> extends AbstractChart<LabeledData<T>,String> {
 
 	private static final long serialVersionUID = -6833884146696085085L;
 
@@ -71,7 +71,7 @@ public class LabeledLineChart<T extends Number> extends AbstractChart<LabeledDat
     public LabeledLineChart(String title, String labelX, String labelY,
             Integer tickAngle) {
         getChartConfiguration().setTitle(new Title(title));
-        Axis xAxis = getChartConfiguration().createXAxis();
+        Axis<String> xAxis = getChartConfiguration().createXAxis();
         xAxis.setRenderer(JqPlotResources.DateAxisRenderer);
         xAxis.setLabelRenderer(JqPlotResources.CanvasAxisLabelRenderer);
         xAxis.setTickRenderer(JqPlotResources.CanvasAxisTickRenderer);

@@ -16,13 +16,15 @@
  */
 package br.com.digilabs.jqplot.axis;
 
+import java.io.Serializable;
+
 /**
  *
  * which y axis to use with this series, either ‘yaxis’ or ‘y2axis’.
  * 
  * @author inaiat
  */
-public class YAxis extends Axis {
+public class YAxis<T extends Serializable> extends Axis<T> {
 
     private static final long serialVersionUID = 1964421050362233742L;
 }

@@ -16,6 +16,7 @@
  */
 package br.com.digilabs.jqplot.chart;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 import br.com.digilabs.jqplot.Chart;
@@ -38,19 +39,22 @@ import java.util.Arrays;
  * Abstract class to help build end charts.
  * 
  * @author inaiat
+ * 
+ * @param <S> Type of {@link Axis} 
+ * 
  */
-public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> {
+public abstract class AbstractChart<T extends ChartData<?>, S extends Serializable> implements Chart<T> {
 
 	private static final long serialVersionUID = -5744130130488157491L;
 
-	private final ChartConfiguration configuration;
+	private final ChartConfiguration<S> configuration;
 	
 
     /**
      * Construtor
      */
     public AbstractChart() {
-        this.configuration = new ChartConfiguration();
+        this.configuration = new ChartConfiguration<S>();
     }
     
     public void addSeriesColors(String... colors) {
@@ -111,7 +115,7 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
      * 
      * @return chartConfiguration
      */
-    public ChartConfiguration getChartConfiguration() {
+    public ChartConfiguration<S> getChartConfiguration() {
         return configuration;
     }
 
@@ -135,7 +139,7 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
      * 
      * @return Axes
      */
-    public Axes createAxes() {
+    public Axes<S> createAxes() {
         return getChartConfiguration().createAxes();
     }
 
@@ -143,7 +147,7 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
      * 
      * @return xAxis
      */
-    public XAxis createXAxis() {
+    public XAxis<S> createXAxis() {
         return getChartConfiguration().createXAxis();
     }
 
@@ -151,7 +155,7 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
      * 
      * @return yAxis
      */
-    public YAxis createYAxis() {
+    public YAxis<S> createYAxis() {
         return getChartConfiguration().createYAxis();
     }
 
@@ -159,7 +163,7 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
      * 
      * @return axis
      */
-    public Axis createAxesDefaults() {
+    public Axis<S> createAxesDefaults() {
         return getChartConfiguration().createAxesDefaults();
     }
 
@@ -210,28 +214,28 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
     /**
      * @return the axesDefaults
      */
-    public Axis getAxesDefaults() {
+    public Axis<S> getAxesDefaults() {
         return getChartConfiguration().getAxesDefaults();
     }
 
     /**
      * @param axesDefaults the axesDefaults to set
      */
-    public void setAxesDefaults(Axis axesDefaults) {
+    public void setAxesDefaults(Axis<S> axesDefaults) {
         getChartConfiguration().setAxesDefaults(axesDefaults);
     }
 
     /**
      * @return the axes
      */
-    public Axes getAxes() {
+    public Axes<S> getAxes() {
         return getChartConfiguration().getAxes();
     }
 
     /**
      * @param axes the axes to set
      */
-    public void setAxes(Axes axes) {
+    public void setAxes(Axes<S> axes) {
         getChartConfiguration().setAxes(axes);
     }
 
@@ -358,7 +362,7 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
      * @param alpha 
      */
     public void setBubbleAlpha(Float alpha) {
-        ChartConfiguration chartConfiguration = getChartConfiguration();
+        ChartConfiguration<S> chartConfiguration = getChartConfiguration();
         chartConfiguration.getSeriesDefaults().getRendererOptions().setBubbleAlpha(alpha);
     }
 
@@ -367,7 +371,7 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
      * @param alpha 
      */
     public void setHighlightAlpha(Float alpha) {
-        ChartConfiguration chartConfiguration = getChartConfiguration();
+        ChartConfiguration<S> chartConfiguration = getChartConfiguration();
         chartConfiguration.getSeriesDefaults().getRendererOptions().setHighlightAlpha(alpha);
     }
 
@@ -376,7 +380,7 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
      * @param showLabels 
      */
     public void setShowLabels(Boolean showLabels) {
-        ChartConfiguration chartConfiguration = getChartConfiguration();
+        ChartConfiguration<S> chartConfiguration = getChartConfiguration();
         chartConfiguration.getSeriesDefaults().getRendererOptions().setShowLables(showLabels);
     }
 
@@ -385,7 +389,7 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
      * @param alpha 
      */
     public void setShadowAlpha(String alpha) {
-        ChartConfiguration chartConfiguration = getChartConfiguration();
+        ChartConfiguration<S> chartConfiguration = getChartConfiguration();
         chartConfiguration.getSeriesDefaults().setShadowAlpha(alpha);
     }
 
@@ -394,7 +398,7 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
      * @param fillZero 
      */
     public void setFillZero(Boolean fillZero) {
-        ChartConfiguration chartConfiguration = getChartConfiguration();
+        ChartConfiguration<S> chartConfiguration = getChartConfiguration();
         chartConfiguration.getSeriesDefaults().getRendererOptions().setFillZero(fillZero);
     }
 
@@ -403,7 +407,7 @@ public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> 
      * @param shadow 
      */
     public void setShadow(Boolean shadow) {
-        ChartConfiguration chartConfiguration = getChartConfiguration();
+        ChartConfiguration<S> chartConfiguration = getChartConfiguration();
         chartConfiguration.getSeriesDefaults().setShadow(shadow);
     }
 

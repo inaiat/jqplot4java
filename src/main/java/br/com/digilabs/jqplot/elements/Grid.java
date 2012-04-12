@@ -16,6 +16,8 @@
  */
 package br.com.digilabs.jqplot.elements;
 
+import java.io.Serializable;
+
 import br.com.digilabs.jqplot.axis.Axis;
 
 /**
@@ -24,9 +26,11 @@ import br.com.digilabs.jqplot.axis.Axis;
  * The Grid object cannot be instantiated directly, but is created by the Plot oject.  
  * Grid properties can be set or overriden by the options passed in from the user. 
  * 
+ * @param <T> Type of {@link Axis}
+ * 
  * @author inaiat
  */
-public class Grid implements Element {
+public class Grid<T extends Serializable> implements Element {
 
     private static final long serialVersionUID = 5478580499167992682L;
     private Boolean drawGridLines;
@@ -51,14 +55,14 @@ public class Grid implements Element {
     private Float bottom;
     private Float width;
     private Float height;
-    private Axis[] axis;
+    private Axis<T>[] axis;
     private String[] rendererOptions;
 
     /**
      * 
      * @return array de Axis
      */
-    public Axis[] getAxis() {
+    public Axis<T>[] getAxis() {
         return axis;
     }
 
@@ -67,7 +71,7 @@ public class Grid implements Element {
      *
      * @param axis the new axis
      */
-    public void setAxis(Axis[] axis) {
+    public void setAxis(Axis<T>[] axis) {
         this.axis = axis;
     }
 

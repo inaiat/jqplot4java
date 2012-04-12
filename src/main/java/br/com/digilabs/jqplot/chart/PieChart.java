@@ -26,7 +26,7 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
  * @author inaiat
  */
 @JqPlotPlugin(values = {JqPlotResources.PieRenderer})
-public class PieChart<T extends Number> extends AbstractChart<PieData<T>> {
+public class PieChart<T extends Number> extends AbstractChart<PieData<T>,String> {
 
 	private static final long serialVersionUID = -9078771567964143651L;
 

@@ -34,7 +34,7 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
  * @param <V> type of value of serie
  */
 @JqPlotPlugin(values = {JqPlotResources.CanvasTextRenderer, JqPlotResources.CategoryAxisRenderer})
-public class LineSeriesChart <I extends Number, V extends Number> extends AbstractChart<LineSeriesData<I,V>>  {
+public class LineSeriesChart <I extends Number, V extends Number> extends AbstractChart<LineSeriesData<I,V>,String>  {
 
 	private static final long serialVersionUID = -563079287340319412L;
 	

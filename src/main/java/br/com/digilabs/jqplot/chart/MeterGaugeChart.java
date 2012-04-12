@@ -28,7 +28,7 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
  * @author inaiat
  */
 @JqPlotPlugin(values = {JqPlotResources.MeterGaugeRenderer})
-public class MeterGaugeChart extends AbstractChart<MeterData> {
+public class MeterGaugeChart extends AbstractChart<MeterData,String> {
 
     private static final long serialVersionUID = -8122703368130701972L;
     private MeterData data = new MeterData(0F);
@@ -54,7 +54,7 @@ public class MeterGaugeChart extends AbstractChart<MeterData> {
      * @param title 
      */
     protected final void initialize(String title) {
-        ChartConfiguration chartConfiguration = getChartConfiguration();
+        ChartConfiguration<String> chartConfiguration = getChartConfiguration();
         chartConfiguration.setTitle(new Title(title));
         SeriesDefaults sd = new SeriesDefaults();
         RendererOptions ro = new RendererOptions();

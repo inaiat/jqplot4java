@@ -27,9 +27,12 @@ import br.com.digilabs.jqplot.elements.TickOptions;
  * 
  * @see http://www.jqplot.com/docs/files/jqplot-core-js.html#Axis
  * 
+ * @param <T> type of Axis, can be String, Number, Date, etc. This is necessary
+ * 			because min,max and tickInterval can be variants types.
+ * 
  * @author inaiat
  */
-public class Axis implements Serializable {
+public class Axis<T extends Serializable> implements Serializable {
 
     /** The Constant serialVersionUID. */
     private static final long serialVersionUID = -5426777530263336010L;
@@ -68,13 +71,13 @@ public class Axis implements Serializable {
     private Float padMax;
     
     /** The min. */
-    private String min;
+    private T min;
     
     /** The max. */
-    private String max;
+    private T max;
     
     /** The tick interval. */
-    private String tickInterval;
+    private T tickInterval;
 
 
     /**
@@ -82,7 +85,7 @@ public class Axis implements Serializable {
      *
      * @return the tick interval
      */
-    public String getTickInterval() {
+    public T getTickInterval() {
         return tickInterval;
     }
 
@@ -91,7 +94,7 @@ public class Axis implements Serializable {
      *
      * @param tickInterval the new tick interval
      */
-    public void setTickInterval(String tickInterval) {
+    public void setTickInterval(T tickInterval) {
         this.tickInterval = tickInterval;
     }
 
@@ -299,7 +302,7 @@ public class Axis implements Serializable {
 	 *
 	 * @return the min
 	 */
-	public String getMin() {
+	public T getMin() {
 		return min;
 	}
 
@@ -308,7 +311,7 @@ public class Axis implements Serializable {
 	 *
 	 * @param min the new min
 	 */
-	public void setMin(String min) {
+	public void setMin(T min) {
 		this.min = min;
 	}
 
@@ -317,7 +320,7 @@ public class Axis implements Serializable {
 	 *
 	 * @return the max
 	 */
-	public String getMax() {
+	public T getMax() {
 		return max;
 	}
 
@@ -326,7 +329,7 @@ public class Axis implements Serializable {
 	 *
 	 * @param max the new max
 	 */
-	public void setMax(String max) {
+	public void setMax(T max) {
 		this.max = max;
 	}
 
