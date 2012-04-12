@@ -17,7 +17,9 @@
 package br.com.digilabs.jqplot.axis;
 
 /**
- *
+ * 
+ * which x axis to use with this series, either ‘xaxis’ or ‘x2axis’.
+ * 
  * @author inaiat
  */
 public class XAxis extends Axis {

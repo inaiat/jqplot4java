@@ -19,7 +19,8 @@ package br.com.digilabs.jqplot.elements;
 import br.com.digilabs.jqplot.renderer.Renderer;
 
 /**
- * Representa uma Legend.
+ * Legend object.  Cannot be instantiated directly, but created by the Plot oject.  
+ * Legend properties can be set or overriden by the options passed in from the user.
  *
  * @author inaiat
  */

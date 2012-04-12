@@ -34,6 +34,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
+ * 
+ * Abstract class to help build end charts.
+ * 
  * @author inaiat
  */
 public abstract class AbstractChart<T extends ChartData<?>> implements Chart<T> {

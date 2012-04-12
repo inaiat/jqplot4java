@@ -20,7 +20,9 @@ import java.util.Arrays;
 import java.util.Collection;
 
 /**
- * Representa a abstração do conjunto de dados de um chart
+ * 
+ * Abstract class to help build end charts that uses collections.
+ * 
  * @author inaiat
  */
 public abstract class AbstractCollectionData<T> implements ChartData<Collection<T>>  {        
