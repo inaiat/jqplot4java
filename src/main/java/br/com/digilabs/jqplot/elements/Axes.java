@@ -16,6 +16,8 @@
  */
 package br.com.digilabs.jqplot.elements;
 
+import java.io.Serializable;
+
 import br.com.digilabs.jqplot.axis.X2Axis;
 import br.com.digilabs.jqplot.axis.XAxis;
 import br.com.digilabs.jqplot.axis.Y2Axis;
@@ -39,68 +41,68 @@ import br.com.digilabs.jqplot.axis.YAxis;
  * @author inaiat
  * 
  */
-public class Axes implements Element {
+public class Axes<T extends Serializable> implements Element {
 
     /** The Constant serialVersionUID. */
     private static final long serialVersionUID = -1464182411022493685L;
-    private XAxis xaxis;
-    private YAxis yaxis;
-    private X2Axis x2axis;
-    private Y2Axis y2axis;
+    private XAxis<T> xaxis;
+    private YAxis<T> yaxis;
+    private X2Axis<T> x2axis;
+    private Y2Axis<T> y2axis;
 
     /**
      * @return the xaxis
      */
-    public XAxis getXaxis() {
+    public XAxis<T> getXaxis() {
         return xaxis;
     }
 
     /**
      * @param xaxis the xaxis to set
      */
-    public void setXaxis(XAxis xaxis) {
+    public void setXaxis(XAxis<T> xaxis) {
         this.xaxis = xaxis;
     }
 
     /**
      * @return the yaxis
      */
-    public YAxis getYaxis() {
+    public YAxis<T> getYaxis() {
         return yaxis;
     }
 
     /**
      * @param yaxis the yaxis to set
      */
-    public void setYaxis(YAxis yaxis) {
+    public void setYaxis(YAxis<T> yaxis) {
         this.yaxis = yaxis;
     }
 
     /**
      * @return the x2axis
      */
-    public X2Axis getX2axis() {
+    public X2Axis<T> getX2axis() {
         return x2axis;
     }
 
     /**
      * @param x2axis the x2axis to set
      */
-    public void setX2axis(X2Axis x2axis) {
+    public void setX2axis(X2Axis<T> x2axis) {
         this.x2axis = x2axis;
     }
 
     /**
      * @return the y2axis
      */
-    public Y2Axis getY2axis() {
+    public Y2Axis<T> getY2axis() {
         return y2axis;
     }
 
     /**
      * @param y2axis the y2axis to set
      */
-    public void setY2axis(Y2Axis y2axis) {
+    public void setY2axis(Y2Axis<T> y2axis) {
         this.y2axis = y2axis;
     }
 }

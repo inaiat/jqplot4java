@@ -20,7 +20,6 @@ import java.io.Serializable;
 import java.util.Collection;
 
 import br.com.digilabs.jqplot.axis.Axis;
-import br.com.digilabs.jqplot.axis.AxisString;
 import br.com.digilabs.jqplot.axis.XAxis;
 import br.com.digilabs.jqplot.axis.YAxis;
 import br.com.digilabs.jqplot.elements.*;
@@ -28,13 +27,15 @@ import br.com.digilabs.jqplot.elements.*;
 import java.util.ArrayList;
 
 /**
- *
- * Base configuration of JqPlot Chart. See jqplot documention http://www.jqplot.com/docs/files/usage-txt.html
- *
+ * 
+ * Base configuration of JqPlot Chart. See jqplot documention
+ * http://www.jqplot.com/docs/files/usage-txt.html
+ * 
+ * @param <T> Type of {@link Axis}
+ * 
  * @author inaiat
  */
-public class ChartConfiguration implements Serializable {
-
+public class ChartConfiguration<T extends Serializable> implements Serializable {
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 7082325039222592701L;
@@ -43,13 +44,13 @@ public class ChartConfiguration implements Serializable {
 	protected Collection<Serie> series;
 	
 	/** The axes. */
-	protected Axes axes;
+	protected Axes<T> axes;
 	
 	/** The title. */
 	protected Title title;
 	
 	/** The axes defaults. */
-	protected Axis axesDefaults;
+	protected Axis<T> axesDefaults;
 	
 	/** The series defaults. */
 	private SeriesDefaults seriesDefaults;
@@ -68,13 +69,7 @@ public class ChartConfiguration implements Serializable {
 	
 	/** The series colors. */
 	private Collection<String> seriesColors;
-	/** The cursor. */
-	private Cursor cursor;
-
-
-	/**
-	 *
-	 * @return
+	
 	/** The animate. */
 	private Boolean animate;
 	
@@ -82,7 +77,11 @@ public class ChartConfiguration implements Serializable {
 	private Highlighter highlighter;
 	
 	/** The grid. */
-	private Grid grid;
+	private Grid<T> grid;
+	
+	
+	/** The cursor. */
+	private Cursor cursor;
 
 	/**
 	 * Checks if is capture right click.
@@ -94,7 +93,6 @@ public class ChartConfiguration implements Serializable {
 	}
 
 	/**
-	 *
 	 * Sets the capture right click.
 	 *
 	 * @param captureRightClick the new capture right click
@@ -116,7 +114,6 @@ public class ChartConfiguration implements Serializable {
 	 * Sets the legend.
 	 *
 	 * @param legend the new legend
-
 	 */
 	public void setLegend(Legend legend) {
 		this.legend = legend;
@@ -136,13 +133,25 @@ public class ChartConfiguration implements Serializable {
 	}
 	
 	/**
+	 * Creates the cursor.
+	 *
+	 * @return the cursor
+	 */
+	public Cursor createCursor() {
+		if (cursor == null) {
+			cursor = new Cursor();
+		}
+		return cursor;
+	}	
+	
+	/**
 	 * Creates the grid.
 	 *
 	 * @return the grid
 	 */
-	public Grid createGrid() {
+	public Grid<T> createGrid() {
 		if (grid == null) {
-			grid = new Grid();
+			grid = new Grid<T>();
 		}
 		return grid;
 	}
@@ -152,9 +161,9 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @return the axes
 	 */
-	public Axes createAxes() {
+	public Axes<T> createAxes() {
 		if (axes == null) {
-			this.axes = new Axes();
+			this.axes = new Axes<T>();
 		}
 		return this.axes;
 	}
@@ -164,10 +173,10 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @return the x axis
 	 */
-	public XAxis createXAxis() {
-		Axes newAxes = createAxes();
+	public XAxis<T> createXAxis() {
+		Axes<T> newAxes = createAxes();
 		if (newAxes.getXaxis() == null) {
-			XAxis xAxis = new XAxis();
+			XAxis<T> xAxis = new XAxis<T>();
 			newAxes.setXaxis(xAxis);
 		}
 		return newAxes.getXaxis();
@@ -178,25 +187,23 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @return the y axis
 	 */
-	public YAxis createYAxis() {
-		Axes newAxes = createAxes();
+	public YAxis<T> createYAxis() {
+		Axes<T> newAxes = createAxes();
 		if (newAxes.getYaxis() == null) {
-			YAxis yAxis = new YAxis();
+			YAxis<T> yAxis = new YAxis<T>();
 			newAxes.setYaxis(yAxis);
 		}
 		return newAxes.getYaxis();
 	}
 
-	
-	
 	/**
 	 * Creates the axes defaults.
 	 *
 	 * @return the axis
 	 */
-	public Axis createAxesDefaults() {
+	public Axis<T> createAxesDefaults() {
 		if (axesDefaults == null) {
-			axesDefaults = new AxisString();
+			axesDefaults = new Axis<T>();
 		}
 		return axesDefaults;
 	}
@@ -242,8 +249,8 @@ public class ChartConfiguration implements Serializable {
 	 * @return the series
 	 */
 	public Collection<Serie> getSeries() {
-        if(series == null)
-            series = new ArrayList<Serie>();
+		if (series == null)
+			series = new ArrayList<Serie>();
 		return series;
 	}
 
@@ -288,7 +295,7 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @return the axesDefaults
 	 */
-	public Axis getAxesDefaults() {
+	public Axis<T> getAxesDefaults() {
 		return axesDefaults;
 	}
 
@@ -297,7 +304,7 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @param axesDefaults the axesDefaults to set
 	 */
-	public void setAxesDefaults(Axis axesDefaults) {
+	public void setAxesDefaults(Axis<T> axesDefaults) {
 		this.axesDefaults = axesDefaults;
 	}
 
@@ -306,7 +313,7 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @return the axes
 	 */
-	public Axes getAxes() {
+	public Axes<T> getAxes() {
 		return axes;
 	}
 
@@ -315,7 +322,7 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @param axes the axes to set
 	 */
-	public void setAxes(Axes axes) {
+	public void setAxes(Axes<T> axes) {
 		this.axes = axes;
 	}
 
@@ -391,11 +398,11 @@ public class ChartConfiguration implements Serializable {
 	 * @return the collection
 	 */
 	public Collection<String> createSeriesColors() {
-    	if (this.seriesColors==null) {
-    		this.seriesColors = new ArrayList<String>();
-    	}
-    	return seriesColors;
-    }
+		if (this.seriesColors == null) {
+			this.seriesColors = new ArrayList<String>();
+		}
+		return seriesColors;
+	}
 
 	/**
 	 * Gets the series colors.
@@ -415,7 +422,6 @@ public class ChartConfiguration implements Serializable {
 		this.seriesColors = seriesColor;
 	}
 
-
 	/**
 	 * Gets the animate.
 	 *
@@ -425,31 +431,15 @@ public class ChartConfiguration implements Serializable {
 		return animate;
 	}
 
-
-    /** Turns on animation for all series in this plot.
-     * @param animate true, false
-     */
-    public void setAnimate(Boolean animate) {
-        this.animate = animate;
-    }
-
-    
-
-    /**
-     * @return hightLighter
-     */
-    public Highlighter getHighlighter() {
-        return highlighter;
-    }
-
-    /**
-     * set the highlighter
-     * @param highlighter property
-     */
-    public void setHighlighter(Highlighter highlighter) {
-        this.highlighter = highlighter;
-    }
-
+	/**
+	 * Turns on animation for all series in this plot.
+	 * 
+	 * @param animate
+	 *            true, false
+	 */
+	public void setAnimate(Boolean animate) {
+		this.animate = animate;
+	}
 
 	/**
 	 * Creates the highlighter.
@@ -463,14 +453,22 @@ public class ChartConfiguration implements Serializable {
 		return highlighter;
 	}
 
-
+	/**
+	 * Gets the highlighter.
+	 *
+	 * @return hightLighter
+	 */
+	public Highlighter getHighlighter() {
+		return highlighter;
+	}
 
 	/**
-	 * Set the cursor
-	 * @param cursor
+	 * set the highlighter.
+	 *
+	 * @param highlighter property
 	 */
-	public void setCursor(Cursor cursor) {
-		this.cursor = cursor;
+	public void setHighlighter(Highlighter highlighter) {
+		this.highlighter = highlighter;
 	}
 
 	/**
@@ -478,7 +476,7 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @return the grid
 	 */
-	public Grid getGrid() {
+	public Grid<T> getGrid() {
 		return grid;
 	}
 
@@ -487,10 +485,25 @@ public class ChartConfiguration implements Serializable {
 	 *
 	 * @param grid the new grid
 	 */
-	public void setGrid(Grid grid) {
+	public void setGrid(Grid<T> grid) {
 		this.grid = grid;
 	}
-    
-	
-    
+
+	/**
+	 * Gets the cursor.
+	 *
+	 * @return the cursor
+	 */
+	public Cursor getCursor() {
+		return cursor;
+	}
+
+	/**
+	 * Sets the cursor.
+	 *
+	 * @param cursor the new cursor
+	 */
+	public void setCursor(Cursor cursor) {
+		this.cursor = cursor;
+	}
 }

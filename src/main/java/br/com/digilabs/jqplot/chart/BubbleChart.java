@@ -29,7 +29,7 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
  * @author inaiat
  */
 @JqPlotPlugin(values = {JqPlotResources.BubbleRenderer})
-public class BubbleChart extends AbstractChart<BubbleData<BubbleItem>> {
+public class BubbleChart extends AbstractChart<BubbleData<BubbleItem>,String> {
 
     private static final long serialVersionUID = -8122703368130701972L;
     
@@ -55,7 +55,7 @@ public class BubbleChart extends AbstractChart<BubbleData<BubbleItem>> {
      * @param title 
      */
     protected final void initialize(String title) {
-        ChartConfiguration chartConfiguration = getChartConfiguration();
+        ChartConfiguration<String> chartConfiguration = getChartConfiguration();
         chartConfiguration.setTitle(new Title(title));
         SeriesDefaults sd = new SeriesDefaults();
         RendererOptions ro = new RendererOptions();

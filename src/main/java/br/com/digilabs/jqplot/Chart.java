@@ -32,7 +32,7 @@ public interface Chart<T extends ChartData<?>> extends Serializable {
      * Return chart configuration
      * @return {@link ChartConfiguration}
      */
-	ChartConfiguration getChartConfiguration();
+	ChartConfiguration<?> getChartConfiguration();
 	
 	/**
 	 * Return chart data. 

@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * @author inaiat
  */
-public class AreaChart<T extends Number> extends AbstractChart<AreaFillData<T>> {
+public class AreaChart<T extends Number> extends AbstractChart<AreaFillData<T>,String> {
 
 	private static final long serialVersionUID = 6050878600406620553L;
 
@@ -51,7 +51,7 @@ public class AreaChart<T extends Number> extends AbstractChart<AreaFillData<T>> 
         SeriesDefaults defaults = new SeriesDefaults();
         defaults.setFill(true);
         setSeriesDefaults(defaults);
-        XAxis xAxis = createXAxis();
+        XAxis<String> xAxis = createXAxis();
         xAxis.setRenderer(JqPlotResources.CategoryAxisRenderer);
     }
 

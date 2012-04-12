@@ -31,7 +31,7 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
  * @author inaiat
  */
 @JqPlotPlugin(values = {JqPlotResources.DonutRenderer})
-public class PieDonutChart<T extends Number> extends AbstractChart<PieDonutData<T>> {
+public class PieDonutChart<T extends Number> extends AbstractChart<PieDonutData<T>,String> {
 
 	private static final long serialVersionUID = -4671992800819368331L;
 
