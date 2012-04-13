@@ -102,7 +102,7 @@ public class LineSerieTest extends TestCase {
 		
 		chart.setLegend(legend);
 		
-		Axis<?> axis = new AxisNumber();
+		Axis<String> axis = new AxisString();
 		axis.setLabelRenderer(JqPlotResources.CanvasAxisLabelRenderer);
 		
 		chart.setAxesDefaults(axis);
