@@ -20,7 +20,8 @@ import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.renderer.Renderer;
 
 /**
- * Renderizador de um CategoryAxis
+ * A plugin for jqPlot to render a category style axis, with equal pixel spacing between y data values of a series.
+ * 
  * @author inaiat
  */
 public class CategoryAxisRenderer implements Renderer {

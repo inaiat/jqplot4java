@@ -25,24 +25,30 @@ import br.com.digilabs.jqplot.elements.Title;
 import java.util.List;
 
 /**
+ * Simple implementation of Area Chart. This class can/should be extended.
+ *
+ * @param <T> the generic type
  * @author inaiat
  */
 public class AreaChart<T extends Number> extends AbstractChart<AreaFillData<T>,String> {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 6050878600406620553L;
 
+	/** The data. */
 	private AreaFillData<T> data = new AreaFillData<T>();
-
+    
     /**
-     * Construtor
+     * Instantiates a new area chart.
      */
     public AreaChart() {
         this(null);
     }
 
     /**
-     * Construtor
-     * @param title 
+     * Instantiates a new area chart.
+     *
+     * @param title the title
      */
     public AreaChart(String title) {
         getChartConfiguration().setTitle(new Title(title));
@@ -55,25 +61,26 @@ public class AreaChart<T extends Number> extends AbstractChart<AreaFillData<T>,S
         xAxis.setRenderer(JqPlotResources.CategoryAxisRenderer);
     }
 
-    /**
-     * 
-     * @return areaFillData
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.Chart#getChartData()
      */
     public AreaFillData<T> getChartData() {
         return data;
     }
 
     /**
-     * Adiciona um valor
-     * @param value 
+     * Adds the value.
+     *
+     * @param value the value
      */
     public void addValue(List<T> value) {
         data.addValue(value);
     }
 
     /**
-     * Adiciona uma lista de valores
-     * @param value 
+     * Adds the values.
+     *
+     * @param value the value
      */
     public void addValues(List<T>... value) {
         data.addValues(value);

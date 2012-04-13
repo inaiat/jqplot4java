@@ -16,15 +16,14 @@
  */
 package br.com.digilabs.jqplot.renderer.core;
 
-import java.io.Serializable;
-
 import br.com.digilabs.jqplot.JqPlotResources;
+import br.com.digilabs.jqplot.renderer.Renderer;
 
 /**
  * Renderizador AxisTick
  * @author inaiat
  */
-public class AxisTickRenderer implements Serializable {
+public class AxisTickRenderer implements Renderer {
 
 	private static final long serialVersionUID = 1L;
 
@@ -238,4 +237,9 @@ public class AxisTickRenderer implements Serializable {
     public void setEscapeHTML(Boolean escapeHTML) {
         this.escapeHTML = escapeHTML;
     }
+
+	@Override
+	public JqPlotResources resource() {
+		return JqPlotResources.AxisTickRenderer;
+	}
 }

@@ -22,6 +22,8 @@ import br.com.digilabs.jqplot.elements.Title;
 import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
 /**
+ *Simple implementation of Line Chart. This class can/should be extended.
+ * 
  * @author inaiat
  */
 @JqPlotPlugin(values = {JqPlotResources.CanvasTextRenderer, JqPlotResources.CategoryAxisRenderer})

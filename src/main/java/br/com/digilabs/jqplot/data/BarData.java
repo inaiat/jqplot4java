@@ -23,7 +23,7 @@ import org.json.JSONArray;
 
 
 /**
- * Data Helper to build Area Charts.
+ * Data Helper to build Bar Charts.
  *
  * @param <T> Type of number. Ex.: Double, Integer, Float, etc.
  * @author inaiat

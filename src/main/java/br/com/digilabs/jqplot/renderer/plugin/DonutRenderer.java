@@ -20,7 +20,10 @@ import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.renderer.Renderer;
 
 /**
- * Renderizador de um chart Donut
+ * Plugin renderer to draw a donut chart. x values, if present, will be used as slice labels. y values give slice size.
+ * 
+ * @see <a href="http://www.jqplot.com/docs/files/plugins/jqplot-donutRenderer-js.html">http://www.jqplot.com/docs/files/plugins/jqplot-donutRenderer-js.html</a>
+ * 
  * @author inaiat
  */
 public class DonutRenderer implements Renderer {

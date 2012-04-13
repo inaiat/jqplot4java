@@ -19,20 +19,33 @@ package br.com.digilabs.jqplot.elements;
 import java.io.Serializable;
 
 /**
+ * The Class FillBetween.
  *
  * @author inaiat
  */
 public class FillBetween implements Serializable {
 
+    /** The Constant serialVersionUID. */
     private static final long serialVersionUID = 8516029001505871387L;
+    
+    /** The serie1. */
     private Integer serie1;
+    
+    /** The serie2. */
     private Integer serie2;
+    
+    /** The color. */
     private String color;
+    
+    /** The base series. */
     private Integer baseSeries;
+    
+    /** The fill. */
     private Boolean fill;
 
     /**
-     * 
+     * Gets the base series.
+     *
      * @return baseSeries
      */
     public Integer getBaseSeries() {
@@ -40,15 +53,17 @@ public class FillBetween implements Serializable {
     }
 
     /**
-     * 
-     * @param baseSeries 
+     * Sets the base series.
+     *
+     * @param baseSeries the new base series
      */
     public void setBaseSeries(Integer baseSeries) {
         this.baseSeries = baseSeries;
     }
 
     /**
-     * 
+     * Gets the color.
+     *
      * @return color
      */
     public String getColor() {
@@ -56,15 +71,17 @@ public class FillBetween implements Serializable {
     }
 
     /**
-     * 
-     * @param color 
+     * Sets the color.
+     *
+     * @param color the new color
      */
     public void setColor(String color) {
         this.color = color;
     }
 
     /**
-     * 
+     * Gets the fill.
+     *
      * @return fill true ou false
      */
     public Boolean getFill() {
@@ -72,15 +89,17 @@ public class FillBetween implements Serializable {
     }
 
     /**
-     * 
-     * @param fill 
+     * Sets the fill.
+     *
+     * @param fill the new fill
      */
     public void setFill(Boolean fill) {
         this.fill = fill;
     }
 
     /**
-     * 
+     * Gets the serie1.
+     *
      * @return serie1
      */
     public Integer getSerie1() {
@@ -88,15 +107,17 @@ public class FillBetween implements Serializable {
     }
 
     /**
-     * 
-     * @param serie1 
+     * Sets the serie1.
+     *
+     * @param serie1 the new serie1
      */
     public void setSerie1(Integer serie1) {
         this.serie1 = serie1;
     }
 
     /**
-     * 
+     * Gets the serie2.
+     *
      * @return serie2
      */
     public Integer getSerie2() {
@@ -104,8 +125,9 @@ public class FillBetween implements Serializable {
     }
 
     /**
-     * 
-     * @param serie2 
+     * Sets the serie2.
+     *
+     * @param serie2 the new serie2
      */
     public void setSerie2(Integer serie2) {
         this.serie2 = serie2;

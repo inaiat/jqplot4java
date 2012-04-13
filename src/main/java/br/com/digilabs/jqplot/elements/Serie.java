@@ -19,59 +19,124 @@ package br.com.digilabs.jqplot.elements;
 import br.com.digilabs.jqplot.JqPlotResources;
 
 /**
- * Representa uma serie
+ * The Class Serie.
+ *
  * @author inaiat
  */
 public class Serie implements Element {
 
+    /** The Constant serialVersionUID. */
     private static final long serialVersionUID = 7138260563176853708L;
+    
+    /** The label. */
     private String label;
+    
+    /** The renderer. */
     private JqPlotResources renderer;
+    
+    /** The renderer options. */
     private RendererOptions rendererOptions;
+    
+    /** The fill. */
     private Boolean fill;
+    
+    /** The line width. */
     private Integer lineWidth;
+    
+    /** The marker options. */
     private MarkerOptions markerOptions;
+    
+    /** The show marker. */
     private Boolean showMarker;
+    
+    /** The show alpha. */
     private Boolean showAlpha;
+    
+    /** The shadow. */
     private Boolean shadow;
+    
+    /** The shadow alpha. */
     private String shadowAlpha;
+    
+    /** The show line. */
     private Boolean showLine;
+    
+    /** The color. */
     private String color;
 
+    /**
+     * Instantiates a new serie.
+     */
     public Serie() {
     }  
 
+    /**
+     * Instantiates a new serie.
+     *
+     * @param label the label
+     */
     public Serie(String label) {
     	this.label = label;
     }
 
+    /**
+     * Line width.
+     *
+     * @param lineWidth the line width
+     * @return the serie
+     */
     public Serie lineWidth(Integer lineWidth) {
     	this.lineWidth = lineWidth;
     	return this;
     }
     
+    /**
+     * Marker options.
+     *
+     * @param markerOptions the marker options
+     * @return the serie
+     */
     public Serie markerOptions(MarkerOptions markerOptions) {
     	this.markerOptions = markerOptions;
     	return this;
     }
     
+    /**
+     * Show line.
+     *
+     * @param showLine the show line
+     * @return the serie
+     */
     public Serie showLine(Boolean showLine) {
     	this.setShowLine(showLine);
     	return this;
     }
     
+    /**
+     * Renderer options.
+     *
+     * @param rendererOptions the renderer options
+     * @return the serie
+     */
     public Serie rendererOptions(RendererOptions rendererOptions) {
     	this.rendererOptions = rendererOptions;
     	return this;
     }
     
+    /**
+     * Renderer.
+     *
+     * @param renderer the renderer
+     * @return the serie
+     */
     public Serie renderer(JqPlotResources renderer) {
     	this.renderer = renderer;
     	return this;
     }
 
     /**
-     * 
+     * Gets the shadow alpha.
+     *
      * @return shadowAlpha
      */
     public String getShadowAlpha() {
@@ -79,15 +144,17 @@ public class Serie implements Element {
     }
 
     /**
-     * 
-     * @param shadowAlpha 
+     * Sets the shadow alpha.
+     *
+     * @param shadowAlpha the new shadow alpha
      */
     public void setShadowAlpha(String shadowAlpha) {
         this.shadowAlpha = shadowAlpha;
     }
 
     /**
-     * 
+     * Gets the show alpha.
+     *
      * @return showAlpha true ou false
      */
     public Boolean getShowAlpha() {
@@ -95,15 +162,17 @@ public class Serie implements Element {
     }
 
     /**
-     * 
-     * @param showAlpha 
+     * Sets the show alpha.
+     *
+     * @param showAlpha the new show alpha
      */
     public void setShowAlpha(Boolean showAlpha) {
         this.showAlpha = showAlpha;
     }
 
     /**
-     * 
+     * Gets the shadow.
+     *
      * @return shadow
      */
     public Boolean getShadow() {
@@ -111,75 +180,90 @@ public class Serie implements Element {
     }
 
     /**
-     * 
-     * @param shadow 
+     * Sets the shadow.
+     *
+     * @param shadow the new shadow
      */
     public void setShadow(Boolean shadow) {
         this.shadow = shadow;
     }
 
     /**
-     * 
-     * @return 
+     * Gets the show marker.
+     *
+     * @return the show marker
      */
     public Boolean getShowMarker() {
         return showMarker;
     }
 
     /**
-     * 
-     * @param showMarker 
+     * Sets the show marker.
+     *
+     * @param showMarker the new show marker
      */
     public void setShowMarker(Boolean showMarker) {
         this.showMarker = showMarker;
     }
     
     /**
-     * 
-     * @return 
+     * Gets the marker options.
+     *
+     * @return the marker options
      */
     public MarkerOptions getMarkerOptions() {
         return markerOptions;
     }
 
     /**
-     * 
-     * @param markerOptions 
+     * Sets the marker options.
+     *
+     * @param markerOptions the new marker options
      */
     public void setMarkerOptions(MarkerOptions markerOptions) {
         this.markerOptions = markerOptions;
     }
 
     /**
-     * 
-     * @return 
+     * Gets the line width.
+     *
+     * @return the line width
      */
     public Integer getLineWidth() {
         return lineWidth;
     }
 
     /**
-     * 
-     * @param lineWidth 
+     * Sets the line width.
+     *
+     * @param lineWidth the new line width
      */
     public void setLineWidth(Integer lineWidth) {
         this.lineWidth = lineWidth;
     }
 
     /**
-     * 
-     * @return 
+     * Gets the renderer options.
+     *
+     * @return the renderer options
      */
     public RendererOptions getRendererOptions() {
         return rendererOptions;
     }
 
+    /**
+     * Sets the renderer options.
+     *
+     * @param rendererOptions the new renderer options
+     */
     public void setRendererOptions(RendererOptions rendererOptions) {
         this.rendererOptions = rendererOptions;
     }
 
     
     /**
+     * Gets the label.
+     *
      * @return the label
      */
     public String getLabel() {
@@ -187,6 +271,8 @@ public class Serie implements Element {
     }
 
     /**
+     * Sets the label.
+     *
      * @param label the label to set
      */
     public void setLabel(String label) {
@@ -194,6 +280,8 @@ public class Serie implements Element {
     }
 
     /**
+     * Gets the renderer.
+     *
      * @return the renderer
      */
     public JqPlotResources getRenderer() {
@@ -201,6 +289,8 @@ public class Serie implements Element {
     }
 
     /**
+     * Sets the renderer.
+     *
      * @param renderer the renderer to set
      */
     public void setRenderer(JqPlotResources renderer) {
@@ -208,6 +298,8 @@ public class Serie implements Element {
     }
 
     /**
+     * Gets the fill.
+     *
      * @return the fill
      */
     public Boolean getFill() {
@@ -215,6 +307,8 @@ public class Serie implements Element {
     }
 
     /**
+     * Sets the fill.
+     *
      * @param fill the fill to set
      */
     public void setFill(Boolean fill) {
@@ -223,6 +317,7 @@ public class Serie implements Element {
 
 
     /**
+     * Gets the color.
      *
      * @return the color
      */
@@ -231,16 +326,28 @@ public class Serie implements Element {
     }
 
     /**
+     * Sets the color.
      *
-     * @param color, "#ffffff" for ex.
+     * @param color the new color
      */
     public void setColor(String color) {
         this.color = color;
     }
+	
+	/**
+	 * Gets the show line.
+	 *
+	 * @return the show line
+	 */
 	public Boolean getShowLine() {
 		return showLine;
 	}
 
+	/**
+	 * Sets the show line.
+	 *
+	 * @param showLine the new show line
+	 */
 	public void setShowLine(Boolean showLine) {
 		this.showLine = showLine;
 	}

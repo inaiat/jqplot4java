@@ -17,7 +17,7 @@
 package br.com.digilabs.jqplot.data;
 
 /**
- * The Class NumberData.
+ * Helper to handle Data Number with generics.
  *
  * @param <T> the generic type
  * @author inaiat

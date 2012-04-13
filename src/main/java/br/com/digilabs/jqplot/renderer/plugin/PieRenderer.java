@@ -21,17 +21,21 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 import br.com.digilabs.jqplot.renderer.Renderer;
 
 /**
- * Renderizador de uma chart Pie
+ * Plugin renderer to draw a pie chart. x values, if present, will be used as slice labels. y values give slice size.
+ * 
+ * @see <a href="http://www.jqplot.com/docs/files/plugins/jqplot-pieRenderer-js.html">http://www.jqplot.com/docs/files/plugins/jqplot-pieRenderer-js.html</a>
+ *
  * @author inaiat
  */
 @JqPlotPlugin(values = {JqPlotResources.PieRenderer})
 public class PieRenderer implements Renderer {
 
+    /** The Constant serialVersionUID. */
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 
-     * @return 
+
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.renderer.Renderer#resource()
      */
     public JqPlotResources resource() {
         return JqPlotResources.PieRenderer;

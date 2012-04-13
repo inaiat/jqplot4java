@@ -20,76 +20,94 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * PointLabels
+ * The Class PointLabels.
+ *
  * @author inaiat
  */
 public class PointLabels implements Serializable {
 
+    /** The Constant serialVersionUID. */
     private static final long serialVersionUID = -2768644134500702341L;
+    
+    /** The show. */
     private Boolean show = true;
+    
+    /** The location. */
     private String location;
+    
+    /** The edge tolerance. */
     private Integer edgeTolerance;
+    
+    /** The labels. */
     private List<String> labels;
 
     /**
-     * 
-     * @return lista de lables
+     * Gets the labels.
+     *
+     * @return the labels
      */
     public List<String> getLabels() {
         return labels;
     }
 
     /**
-     * 
-     * @param labels 
+     * Sets the labels.
+     *
+     * @param labels the new labels
      */
     public void setLabels(List<String> labels) {
         this.labels = labels;
     }
 
     /**
-     * 
-     * @return edgeTolerance
+     * Gets the edge tolerance.
+     *
+     * @return the edge tolerance
      */
     public Integer getEdgeTolerance() {
         return edgeTolerance;
     }
-    
+
     /**
-     * 
-     * @param edgeTolerance 
+     * Sets the edge tolerance.
+     *
+     * @param edgeTolerance the new edge tolerance
      */
     public void setEdgeTolerance(Integer edgeTolerance) {
         this.edgeTolerance = edgeTolerance;
     }
 
     /**
-     * 
-     * @return loocation
+     * Gets the location.
+     *
+     * @return the location
      */
     public String getLocation() {
         return location;
     }
 
     /**
-     * 
-     * @param location 
+     * Sets the location.
+     *
+     * @param location the new location
      */
     public void setLocation(String location) {
         this.location = location;
     }
 
     /**
-     * 
-     * @return show true ou false
+     * Checks if is show.
+     *
+     * @return the boolean
      */
     public Boolean isShow() {
         return show;
     }
 
     /**
-     * 
-     * @param show 
+     * Sets the show.
+     *
+     * @param show the new show
      */
     public void setShow(Boolean show) {
         this.show = show;

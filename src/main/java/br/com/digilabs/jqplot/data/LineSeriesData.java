@@ -25,7 +25,7 @@ import org.json.JSONArray;
 import br.com.digilabs.jqplot.data.item.LineSeriesItem;
 
 /**
- * The Class LineSeriesData.
+ * Data Helper to build Line Series Charts.
  *
  * @param <I> {@link LineSeriesItem} Index type
  * @param <V> {@link LineSeriesItem} Value type

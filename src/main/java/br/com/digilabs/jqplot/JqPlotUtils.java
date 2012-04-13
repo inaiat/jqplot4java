@@ -101,7 +101,7 @@ public class JqPlotUtils {
      * @param jqPlot
      * @return 
      */
-    public static String jqPlotToJson(ChartConfiguration jqPlot) {
+    public static String jqPlotToJson(ChartConfiguration<?> jqPlot) {
 
         XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
 

@@ -25,6 +25,8 @@ import br.com.digilabs.jqplot.elements.Title;
 import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
 /**
+ * Simple implementation of Meter Gauge Chart. This class can/should be extended.
+ * 
  * @author inaiat
  */
 @JqPlotPlugin(values = {JqPlotResources.MeterGaugeRenderer})

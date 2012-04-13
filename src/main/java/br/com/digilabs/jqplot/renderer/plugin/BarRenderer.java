@@ -22,7 +22,8 @@ import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.renderer.Renderer;
 
 /**
- * Redenriza a barra
+ * A plugin renderer for jqPlot to draw a bar plot.  Draws series as a line.
+ * 
  * @author inaiat
  */
 public class BarRenderer implements Renderer {

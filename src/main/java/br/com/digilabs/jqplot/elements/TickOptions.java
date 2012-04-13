@@ -16,13 +16,13 @@
  */
 package br.com.digilabs.jqplot.elements;
 
-import java.io.Serializable;
 
 /**
- * TickOPtions
+ * A “tick” object showing the value of a tick/gridline on the plot.
+ * 
  * @author inaiat
  */
-public class TickOptions implements Serializable {
+public class TickOptions implements Element {
 
     private static final long serialVersionUID = -8139093369426118021L;
     private String formatString;

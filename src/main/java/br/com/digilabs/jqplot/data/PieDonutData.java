@@ -30,10 +30,15 @@ import org.json.JSONArray;
  */
 public class PieDonutData<T extends Number> extends AbstractCollectionData<Collection<LabeledItem<T>>> {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -7450037021913733446L;
 
+	/** The data. */
 	private Collection<Collection<LabeledItem<T>>> data = new ArrayList<Collection<LabeledItem<T>>>();
 
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
+     */
     public String toJsonString() {
         JSONArray dataArray = new JSONArray();
         JSONArray jsonArray = new JSONArray();
@@ -54,6 +59,9 @@ public class PieDonutData<T extends Number> extends AbstractCollectionData<Colle
         return dataArray.toString();
     }
 
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.data.ChartData#getData()
+     */
     public Collection<Collection<LabeledItem<T>>> getData() {
         return data;
     }

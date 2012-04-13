@@ -19,38 +19,72 @@ package br.com.digilabs.jqplot.data.item;
 import java.io.Serializable;
 
 /**
- * 
- * Helper to build line series charts.
- * 
- * @author inaiat
+ * LineSeriesItem's data.
  *
  * @param <I> index of series
  * @param <V> value of series
+ * @author inaiat
  */
 public class LineSeriesItem<I extends Serializable, V extends Serializable> implements BaseItem {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 	
+	/** The index. */
 	private I index;
+	
+	/** The value. */
 	private V value;	
 	
+	/**
+	 * Instantiates a new line series item.
+	 */
 	public LineSeriesItem() {
 	}
 	
+	/**
+	 * Instantiates a new line series item.
+	 *
+	 * @param index the index
+	 * @param value the value
+	 */
 	public LineSeriesItem(I index, V value) {
 		this.index = index;
 		this.value = value;
 	}
 	
+	/**
+	 * Gets the index.
+	 *
+	 * @return the index
+	 */
 	public I getIndex() {
 		return index;
 	}
+	
+	/**
+	 * Sets the index.
+	 *
+	 * @param index the new index
+	 */
 	public void setIndex(I index) {
 		this.index = index;
 	}
+	
+	/**
+	 * Gets the value.
+	 *
+	 * @return the value
+	 */
 	public V getValue() {
 		return value;
 	}
+	
+	/**
+	 * Sets the value.
+	 *
+	 * @param value the new value
+	 */
 	public void setValue(V value) {
 		this.value = value;
 	}	
