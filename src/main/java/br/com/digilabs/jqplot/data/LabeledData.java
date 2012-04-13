@@ -25,29 +25,36 @@ import java.util.List;
 import org.json.JSONArray;
 
 /**
+ * Data Helper to build Labeled Charts.
+ *
+ * @param <T> Type of number. Ex.: Double, Integer, Float, etc.
  * @author inaiat
- * @param <T> 
  */
 public class LabeledData<T extends Number> extends AbstractCollectionData<LabeledItem<T>> {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -1202233319043142424L;
 
+	/** The data. */
 	private List<LabeledItem<T>> data = new ArrayList<LabeledItem<T>>();
 
+    /**
+     * Instantiates a new labeled data.
+     */
     public LabeledData() {
     }
 
     /**
-     * Construtor
-     * @param values 
+     * Instantiates a new labeled data.
+     *
+     * @param values the values
      */
     public LabeledData(LabeledItem<T>... values) {
         addValues(values);
     }
 
-    /**
-     * Retorna o json
-     * @return json
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
      */
     public String toJsonString() {
     	JSONArray jsonArray = new JSONArray();        
@@ -62,9 +69,8 @@ public class LabeledData<T extends Number> extends AbstractCollectionData<Labele
         return outerArray.toString();
     }
 
-    /**
-     * 
-     * @return Collection
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.data.ChartData#getData()
      */
     public Collection<LabeledItem<T>> getData() {
         return data;

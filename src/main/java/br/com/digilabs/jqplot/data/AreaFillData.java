@@ -24,24 +24,30 @@ import org.json.JSONArray;
 
 
 /**
- * Representa os dados do chart AreaFill
+ * Data Helper to build Area Charts.
+ *
+ * @param <T> Type of number. Ex.: Double, Integer, Float, etc.
+ * 
  * @author inaiat
  */
 public class AreaFillData<T extends Number> extends AbstractCollectionData<List<T>> {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -2456625545492808162L;
 
+	/** The data. */
 	private List<List<T>> data = new ArrayList<List<T>>();
 
     /**
-     * Construtor
+     * Instantiates a new area fill data.
      */
     public AreaFillData() {
     }
 
     /**
-     * Construtor
-     * @param values 
+     * Instantiates a new area fill data.
+     *
+     * @param values the values
      */
     public AreaFillData(List<T>... values) {
         for (int i = 0; i < values.length; i++) {
@@ -50,17 +56,15 @@ public class AreaFillData<T extends Number> extends AbstractCollectionData<List<
         }
     }
 
-    /**
-     * 
-     * @return Collection data
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.data.ChartData#getData()
      */
     public Collection<List<T>> getData() {
         return data;
     }
 
-    /**
-     * retorna o json
-     * @return json
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
      */
     public String toJsonString() {
         JSONArray jsonArray = new JSONArray(data);

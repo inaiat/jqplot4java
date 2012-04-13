@@ -21,43 +21,44 @@ import java.util.Collection;
 import java.util.List;
 import org.json.JSONArray;
 
-
-
 /**
- * Dados de um chart Lined
+ * Data Helper to build Line Charts.
+ *
+ * @param <T> Type of number. Ex.: Double, Integer, Float, etc.
  * @author inaiat
  */
 public class LinedData<T extends Number> extends AbstractCollectionData<T> {
     
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -550315213084815871L;
 
+	/** The data. */
 	private List<T> data = new ArrayList<T>();
 
     /**
-     * Construtor
+     * Instantiates a new lined data.
      */
     public LinedData() {
     }
     
     /**
-     * Construtor
-     * @param values 
+     * Instantiates a new lined data.
+     *
+     * @param values the values
      */
     public LinedData(T... values) {
         addValues(values);
     }    
 
-    /**
-     * Obtem os dados
-     * @return data
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.data.ChartData#getData()
      */
     public Collection<T> getData() {
         return data;
     }
 
-    /**
-     * Retorno o json
-     * @return String contendo o json
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
      */
     public String toJsonString() {
         JSONArray jsonArray = new JSONArray();

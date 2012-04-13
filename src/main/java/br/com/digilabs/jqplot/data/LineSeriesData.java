@@ -24,17 +24,31 @@ import org.json.JSONArray;
 
 import br.com.digilabs.jqplot.data.item.LineSeriesItem;
 
+/**
+ * The Class LineSeriesData.
+ *
+ * @param <I> {@link LineSeriesItem} Index type
+ * @param <V> {@link LineSeriesItem} Value type
+ */
 public class LineSeriesData<I extends Number,V extends Number> extends AbstractCollectionData<Collection<LineSeriesItem<I, V>>> {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -8490476851004459871L;
 	
+	/** The data. */
 	private List<Collection<LineSeriesItem<I, V>>> data = new ArrayList<Collection<LineSeriesItem<I, V>>>();
 
+	/* (non-Javadoc)
+	 * @see br.com.digilabs.jqplot.data.ChartData#getData()
+	 */
 	@Override
 	public Collection<Collection<LineSeriesItem<I, V>>> getData() {
 		return data;
 	}	
 
+	/* (non-Javadoc)
+	 * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
+	 */
 	@Override
 	public String toJsonString() {
     	JSONArray jsonArray = new JSONArray();        

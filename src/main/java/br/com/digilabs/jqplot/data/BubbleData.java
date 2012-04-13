@@ -23,26 +23,28 @@ import java.util.Collection;
 import org.json.JSONArray;
 
 /**
- * Dados de um chart bubble
+ * Data Helper to build Area Charts.
+ *
+ * @param <T> BubbleItem or something that extends BubbleItem.
  * @author inaiat
  */
 public class BubbleData<T extends BubbleItem> extends AbstractCollectionData<T> {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 5564319083971645500L;
 
+	/** The data. */
 	private Collection<T> data = new ArrayList<T>();
 
-    /**
-     * 
-     * @return Collection
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.data.ChartData#getData()
      */
     public Collection<T> getData() {
         return data;
     }
 
-    /**
-     * retorna o json
-     * @return json
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
      */
     public String toJsonString() {
         JSONArray outerArray = new JSONArray();

@@ -23,19 +23,21 @@ import java.util.Collection;
 import org.json.JSONArray;
 
 /**
- * Representa os dados de um chart Pie
+ * Data Helper to build Pie Charts.
+ *
+ * @param <T> the generic type
  * @author inaiat
  */
 public class PieData<T extends Number> extends AbstractCollectionData<LabeledItem<T>> {
 
+    /** The Constant serialVersionUID. */
     private static final long serialVersionUID = 5789136755213249502L;
 	
+    /** The data. */
     private Collection<LabeledItem<T>> data = new ArrayList<LabeledItem<T>>();
 
-    /**
-     * Retorna o json
-     * 
-     * @return 
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
      */
     public String toJsonString() {
         JSONArray outerArray = new JSONArray();
@@ -50,9 +52,8 @@ public class PieData<T extends Number> extends AbstractCollectionData<LabeledIte
         return outerArray.toString();
     }
 
-    /**
-     * 
-     * @return Collection
+    /* (non-Javadoc)
+     * @see br.com.digilabs.jqplot.data.ChartData#getData()
      */
     public Collection<LabeledItem<T>> getData() {
         return data;
