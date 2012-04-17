@@ -39,8 +39,8 @@ public class Grid<T extends Serializable> implements Element {
     /** The draw grid lines. */
     private Boolean drawGridLines;
     
-    /** The grid line coler. */
-    private String gridLineColer;
+    /** The grid line color. */
+    private String gridLineColor;
     
     /** The grid line width. */
     private Double gridLineWidth;    
@@ -229,21 +229,21 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * Gets the grid line coler.
+     * Gets the grid line color.
      *
-     * @return gridLineColer
+     * @return gridLineColor
      */
-    public String getGridLineColer() {
-        return gridLineColer;
+    public String getGridLineColor() {
+        return gridLineColor;
     }
 
     /**
-     * Sets the grid line coler.
+     * Sets the grid line color.
      *
-     * @param gridLineColer the new grid line coler
+     * @param gridLineColer the new grid line color
      */
-    public void setGridLineColer(String gridLineColer) {
-        this.gridLineColer = gridLineColer;
+    public void setGridLineColer(String gridLineColor) {
+        this.gridLineColor = gridLineColor;
     }
 
     /**
