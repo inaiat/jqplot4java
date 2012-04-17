@@ -17,36 +17,60 @@
 package br.com.digilabs.jqplot.elements;
 
 /**
+ * Plot Title object.
+ *
  * @author inaiat
  */
 public class Title implements Element {
 
+    /** The Constant serialVersionUID. */
     private static final long serialVersionUID = -277067293084389272L;
+    
+    /** The text. */
     private String text;
+    
+    /** The show. */
     private Boolean show;
+    
+    /** The font family. */
     private String fontFamily;
+    
+    /** The font size. */
     private String fontSize;
+    
+    /** The text align. */
     private String textAlign;
+    
+    /** The text color. */
     private String textColor;
+    
+    /** The renderer. */
     private String renderer;
+    
+    /** The renderer options. */
     private String rendererOptions;
+    
+    /** The escape html. */
     private String escapeHtml;
 
     /**
-     * Construtor
+     * Instantiates a new title.
      */
     public Title() {
     }
 
     /**
-     * 
-     * @param text 
+     * Instantiates a new title.
+     *
+     * @param text the text
      */
     public Title(String text) {
         this.text = text;
     }
 
     /**
+     * Gets the text.
+     *
      * @return the text
      */
     public String getText() {
@@ -54,27 +78,35 @@ public class Title implements Element {
     }
 
     /**
-     * @param show the show to set
+     * Sets the show.
+     *
+     * @param show the new show
      */
     public void setShow(boolean show) {
         this.setShow((Boolean) show);
     }
 
     /**
-     * @return the fontFamily
+     * Gets the font family.
+     *
+     * @return the font family
      */
     public String getFontFamily() {
         return fontFamily;
     }
 
     /**
-     * @param fontFamily the fontFamily to set
+     * Sets the font family.
+     *
+     * @param fontFamily the new font family
      */
     public void setFontFamily(String fontFamily) {
         this.fontFamily = fontFamily;
     }
 
     /**
+     * Gets the font size.
+     *
      * @return the fontSize
      */
     public String getFontSize() {
@@ -82,6 +114,8 @@ public class Title implements Element {
     }
 
     /**
+     * Sets the font size.
+     *
      * @param fontSize the fontSize to set
      */
     public void setFontSize(String fontSize) {
@@ -89,6 +123,8 @@ public class Title implements Element {
     }
 
     /**
+     * Gets the text align.
+     *
      * @return the textAlign
      */
     public String getTextAlign() {
@@ -96,6 +132,8 @@ public class Title implements Element {
     }
 
     /**
+     * Sets the text align.
+     *
      * @param textAlign the textAlign to set
      */
     public void setTextAlign(String textAlign) {
@@ -103,6 +141,8 @@ public class Title implements Element {
     }
 
     /**
+     * Gets the text color.
+     *
      * @return the textColor
      */
     public String getTextColor() {
@@ -110,6 +150,8 @@ public class Title implements Element {
     }
 
     /**
+     * Sets the text color.
+     *
      * @param textColor the textColor to set
      */
     public void setTextColor(String textColor) {
@@ -117,13 +159,17 @@ public class Title implements Element {
     }
 
     /**
+     * Gets the renderer.
+     *
      * @return the renderer
      */
     public String getRenderer() {
         return renderer;
     }
 
-    /**get'
+    /**
+     * get'.
+     *
      * @param renderer the renderer to set
      */
     public void setRenderer(String renderer) {
@@ -131,6 +177,8 @@ public class Title implements Element {
     }
 
     /**
+     * Gets the renderer options.
+     *
      * @return the rendererOptions
      */
     public String getRendererOptions() {
@@ -138,6 +186,8 @@ public class Title implements Element {
     }
 
     /**
+     * Sets the renderer options.
+     *
      * @param rendererOptions the rendererOptions to set
      */
     public void setRendererOptions(String rendererOptions) {
@@ -145,6 +195,8 @@ public class Title implements Element {
     }
 
     /**
+     * Gets the escape html.
+     *
      * @return the escapeHtml
      */
     public String getEscapeHtml() {
@@ -152,6 +204,8 @@ public class Title implements Element {
     }
 
     /**
+     * Sets the escape html.
+     *
      * @param escapeHtml the escapeHtml to set
      */
     public void setEscapeHtml(String escapeHtml) {
@@ -159,6 +213,8 @@ public class Title implements Element {
     }
 
     /**
+     * Gets the show.
+     *
      * @return the show
      */
     public Boolean getShow() {
@@ -166,6 +222,8 @@ public class Title implements Element {
     }
 
     /**
+     * Sets the show.
+     *
      * @param show the show to set
      */
     public void setShow(Boolean show) {
@@ -173,6 +231,8 @@ public class Title implements Element {
     }
 
     /**
+     * Sets the text.
+     *
      * @param text the text to set
      */
     public void setText(String text) {

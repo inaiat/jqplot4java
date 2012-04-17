@@ -35,8 +35,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * 
- * Abstract class to help build end charts.
+ * Abstract class to help build charts.
  * 
  * @author inaiat
  * 

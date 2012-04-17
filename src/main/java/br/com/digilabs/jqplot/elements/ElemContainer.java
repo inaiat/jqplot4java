@@ -17,19 +17,26 @@
 package br.com.digilabs.jqplot.elements;
 
 /**
- * 
+ * The Class ElemContainer.
+ *
  * @author inaiat
  */
 public class ElemContainer implements Element {
 
+    /** The Constant serialVersionUID. */
     private static final long serialVersionUID = -3849421146501469906L;
+    
+    /** The plot width. */
     private Float plotWidth;
+    
+    /** The plot height. */
     private Float plotHeight;
 
     /**
-     * 
-     * @param plotWidth
-     * @param plotHeight 
+     * Instantiates a new elem container.
+     *
+     * @param plotWidth the plot width
+     * @param plotHeight the plot height
      */
     public ElemContainer(Float plotWidth, Float plotHeight) {
         this.plotWidth = plotWidth;
@@ -37,7 +44,8 @@ public class ElemContainer implements Element {
     }
 
     /**
-     * 
+     * Gets the plot height.
+     *
      * @return plotHeight
      */
     public Float getPlotHeight() {
@@ -45,15 +53,17 @@ public class ElemContainer implements Element {
     }
 
     /**
-     * 
-     * @param plotHeight 
+     * Sets the plot height.
+     *
+     * @param plotHeight the new plot height
      */
     public void setPlotHeight(Float plotHeight) {
         this.plotHeight = plotHeight;
     }
 
     /**
-     * 
+     * Gets the plot width.
+     *
      * @return plotWidth
      */
     public Float getPlotWidth() {
@@ -61,13 +71,17 @@ public class ElemContainer implements Element {
     }
 
     /**
-     * 
-     * @param plotWidth 
+     * Sets the plot width.
+     *
+     * @param plotWidth the new plot width
      */
     public void setPlotWidth(Float plotWidth) {
         this.plotWidth = plotWidth;
     }
 
+    /**
+     * Creates the element.
+     */
     public static void createElement() {
     }
 }

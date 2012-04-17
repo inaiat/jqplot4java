@@ -19,6 +19,7 @@ package br.com.digilabs.jqplot.data.item;
 
 /**
  * Representa um item do bubble chart
+ * 
  * @author inaiat
  */
 public class BubbleItem implements BaseItem {

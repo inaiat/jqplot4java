@@ -23,7 +23,7 @@ import java.util.Collection;
 import org.json.JSONArray;
 
 /**
- * Data Helper to build Area Charts.
+ * Data Helper to build Bubble Charts.
  *
  * @param <T> BubbleItem or something that extends BubbleItem.
  * @author inaiat

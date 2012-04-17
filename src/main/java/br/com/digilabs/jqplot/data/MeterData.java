@@ -18,7 +18,6 @@ package br.com.digilabs.jqplot.data;
 
 import org.json.JSONArray;
 
-// TODO: Auto-generated Javadoc
 /**
  * Data Helper to build Meter Charts.
  *

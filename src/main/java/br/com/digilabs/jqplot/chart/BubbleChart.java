@@ -26,6 +26,9 @@ import br.com.digilabs.jqplot.elements.Title;
 import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
 /**
+ * 
+ * Simple implementation of Bubble Chart. This class can/should be extended.
+ * 
  * @author inaiat
  */
 @JqPlotPlugin(values = {JqPlotResources.BubbleRenderer})

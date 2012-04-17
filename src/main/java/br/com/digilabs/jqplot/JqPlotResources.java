@@ -16,6 +16,7 @@
  */
 package br.com.digilabs.jqplot;
 
+// TODO: Auto-generated Javadoc
 /**
  * 
  * Resources of JqPlot aka Plugins.
@@ -24,58 +25,99 @@ package br.com.digilabs.jqplot;
  */
 public enum JqPlotResources {
 
+    /** The Highlighter. */
     Highlighter("$.jqplot.Highlighter", "plugins/jqplot.highlighter.min.js"),
-    Cursor("$.jqplot.Cursor","plugins/jqplot.cursor.min.js"),
-    BarRenderer("$.jqplot.BarRenderer", "plugins/jqplot.barRenderer.min.js"),
-    BubbleRenderer("$.jqplot.BubbleRenderer", "plugins/jqplot.bubbleRenderer.min.js"),
-    PieRenderer("$.jqplot.PieRenderer", "plugins/jqplot.pieRenderer.min.js"),
-    DonutRenderer("$.jqplot.DonutRenderer", "plugins/jqplot.donutRenderer.min.js"),
-    CanvasAxisLabelRenderer("$.jqplot.CanvasAxisLabelRenderer", "plugins/jqplot.canvasAxisLabelRenderer.min.js"),
-    CategoryAxisRenderer("$.jqplot.CategoryAxisRenderer", "plugins/jqplot.categoryAxisRenderer.min.js"),
-    CanvasAxisTickRenderer("$.jqplot.CanvasAxisTickRenderer", "plugins/jqplot.canvasAxisTickRenderer.min.js"),
-    CanvasTextRenderer("$.jqplot.CanvasTextRenderer","plugins/jqplot.canvasTextRenderer.min.js"),
-    DateAxisRenderer("$.jqplot.DateAxisRenderer","plugins/jqplot.dateAxisRenderer.min.js"),
-    MeterGaugeRenderer("$.jqplot.MeterGaugeRenderer","plugins/jqplot.meterGaugeRenderer.min.js"),
-    PointLabels("$.jqplot.DateAxisRenderer","plugins/jqplot.pointLabels.min.js"),
-    ShadowRenderer("$.jqplot.ShadowRenderer", "jquery.jqplot.min.js");
     
+    /** The Cursor. */
+    Cursor("$.jqplot.Cursor","plugins/jqplot.cursor.min.js"),
+    
+    /** The Bar renderer. */
+    BarRenderer("$.jqplot.BarRenderer", "plugins/jqplot.barRenderer.min.js"),
+    
+    /** The Bubble renderer. */
+    BubbleRenderer("$.jqplot.BubbleRenderer", "plugins/jqplot.bubbleRenderer.min.js"),
+    
+    /** The Pie renderer. */
+    PieRenderer("$.jqplot.PieRenderer", "plugins/jqplot.pieRenderer.min.js"),
+    
+    /** The Donut renderer. */
+    DonutRenderer("$.jqplot.DonutRenderer", "plugins/jqplot.donutRenderer.min.js"),
+    
+    /** The Canvas axis label renderer. */
+    CanvasAxisLabelRenderer("$.jqplot.CanvasAxisLabelRenderer", "plugins/jqplot.canvasAxisLabelRenderer.min.js"),
+    
+    /** The Category axis renderer. */
+    CategoryAxisRenderer("$.jqplot.CategoryAxisRenderer", "plugins/jqplot.categoryAxisRenderer.min.js"),
+    
+    /** The Canvas axis tick renderer. */
+    CanvasAxisTickRenderer("$.jqplot.CanvasAxisTickRenderer", "plugins/jqplot.canvasAxisTickRenderer.min.js"),
+    
+    /** The Canvas text renderer. */
+    CanvasTextRenderer("$.jqplot.CanvasTextRenderer","plugins/jqplot.canvasTextRenderer.min.js"),
+    
+    /** The Date axis renderer. */
+    DateAxisRenderer("$.jqplot.DateAxisRenderer","plugins/jqplot.dateAxisRenderer.min.js"),
+    
+    /** The Meter gauge renderer. */
+    MeterGaugeRenderer("$.jqplot.MeterGaugeRenderer","plugins/jqplot.meterGaugeRenderer.min.js"),
+    
+    /** The Point labels. */
+    PointLabels("$.jqplot.DateAxisRenderer","plugins/jqplot.pointLabels.min.js"),
+    
+    /** The Shadow renderer. */
+    ShadowRenderer("$.jqplot.ShadowRenderer", "jquery.jqplot.min.js"),
+    
+    // Core Renderer 
+    /** The Axis tick renderer. */
+    AxisTickRenderer("$.jqplot.AxisTickRenderer");
+    
+    /** The class name. */
     private String className;
+    
+    /** The resource. */
     private String resource;
 
     /**
-     * 
-     * @param className 
+     * Instantiates a new jq plot resources.
+     *
+     * @param className the class name
      */
     private JqPlotResources(String className) {
         this(className, null);
     }
 
     /**
-     * 
-     * @param className
-     * @param resource 
+     * Instantiates a new jq plot resources.
+     *
+     * @param className the class name
+     * @param resource the resource
      */
     private JqPlotResources(String className, String resource) {
         this.className = className;
         this.resource = resource;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Enum#toString()
+     */
     @Override
     public String toString() {
         return className;
     }
 
     /**
-     * 
-     * @return o nome da classe
+     * Gets the class name.
+     *
+     * @return the class name
      */
     public String getClassName() {
         return className;
     }
 
     /**
-     * Retorna o resurce
-     * @return o resource
+     * Gets the resource.
+     *
+     * @return the resource
      */
     public String getResource() {
         return resource;

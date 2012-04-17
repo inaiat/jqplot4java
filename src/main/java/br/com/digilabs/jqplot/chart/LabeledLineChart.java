@@ -27,6 +27,8 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
 /**
  * 
+ * Simple implementation of Labeled Line Chart. This class can/should be extended.
+ * 
  * @author inaiat
  */
 @JqPlotPlugin(values = {

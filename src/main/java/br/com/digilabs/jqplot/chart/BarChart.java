@@ -30,6 +30,8 @@ import br.com.digilabs.jqplot.elements.Title;
 import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
 /**
+ * Simple implementation of Bar Chart. This class can/should be extended.
+ * 
  * @author inaiat
  */
 @JqPlotPlugin(values = {JqPlotResources.CategoryAxisRenderer, JqPlotResources.BarRenderer, JqPlotResources.PointLabels})

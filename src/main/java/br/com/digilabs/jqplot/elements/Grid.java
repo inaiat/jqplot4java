@@ -20,6 +20,7 @@ import java.io.Serializable;
 
 import br.com.digilabs.jqplot.axis.Axis;
 
+// TODO: Auto-generated Javadoc
 /**
  * Object representing the grid on which the plot is drawn.  The grid in this context is the area bounded by the axes, 
  * the area which will contain the series.  Note, the series are drawn on their own canvas.  
@@ -32,34 +33,78 @@ import br.com.digilabs.jqplot.axis.Axis;
  */
 public class Grid<T extends Serializable> implements Element {
 
+    /** The Constant serialVersionUID. */
     private static final long serialVersionUID = 5478580499167992682L;
+    
+    /** The draw grid lines. */
     private Boolean drawGridLines;
+    
+    /** The grid line coler. */
     private String gridLineColer;
-    private Double gridLineWidth;
+    
+    /** The grid line width. */
+    private Double gridLineWidth;    
     
     /** The background. */
     private String background;
+    
+    /** The border color. */
     private String borderColor;
+    
+    /** The border width. */
     private Double borderWidth;
+    
+    /** The draw border. */
     private Boolean drawBorder;
+    
+    /** The shadow. */
     private Boolean shadow;
+    
+    /** The shadow angle. */
     private Double shadowAngle;
+    
+    /** The shadow offset. */
     private Double shadowOffset;
+    
+    /** The shadow width. */
     private Double shadowWidth;
+    
+    /** The shadow depth. */
     private Double shadowDepth;
+    
+    /** The shadow color. */
     private String shadowColor;
+    
+    /** The shadow alpha. */
     private String shadowAlpha;
+    
+    /** The left. */
     private Float left;
+    
+    /** The top. */
     private Float top;
+    
+    /** The right. */
     private Float right;
+    
+    /** The bottom. */
     private Float bottom;
+    
+    /** The width. */
     private Float width;
+    
+    /** The height. */
     private Float height;
+    
+    /** The axis. */
     private Axis<T>[] axis;
+    
+    /** The renderer options. */
     private String[] rendererOptions;
 
     /**
-     * 
+     * Gets the axis.
+     *
      * @return array de Axis
      */
     public Axis<T>[] getAxis() {
@@ -76,7 +121,8 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
+     * Gets the background.
+     *
      * @return background
      */
     public String getBackground() {
@@ -84,15 +130,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param background 
+     * Sets the background.
+     *
+     * @param background the new background
      */
     public void setBackground(String background) {
         this.background = background;
     }
 
     /**
-     * 
+     * Gets the border color.
+     *
      * @return borderColor
      */
     public String getBorderColor() {
@@ -100,15 +148,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param borderColor 
+     * Sets the border color.
+     *
+     * @param borderColor the new border color
      */
     public void setBorderColor(String borderColor) {
         this.borderColor = borderColor;
     }
 
     /**
-     * 
+     * Gets the border width.
+     *
      * @return borderWidth
      */
     public Double getBorderWidth() {
@@ -116,15 +166,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param borderWidth 
+     * Sets the border width.
+     *
+     * @param borderWidth the new border width
      */
     public void setBorderWidth(Double borderWidth) {
         this.borderWidth = borderWidth;
     }
 
     /**
-     * 
+     * Gets the bottom.
+     *
      * @return bottom
      */
     public Float getBottom() {
@@ -132,15 +184,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param bottom 
+     * Sets the bottom.
+     *
+     * @param bottom the new bottom
      */
     public void setBottom(Float bottom) {
         this.bottom = bottom;
     }
 
     /**
-     * 
+     * Gets the draw border.
+     *
      * @return drawBorder true ou false
      */
     public Boolean getDrawBorder() {
@@ -148,15 +202,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param drawBorder 
+     * Sets the draw border.
+     *
+     * @param drawBorder the new draw border
      */
     public void setDrawBorder(Boolean drawBorder) {
         this.drawBorder = drawBorder;
     }
 
     /**
-     * 
+     * Gets the draw grid lines.
+     *
      * @return drawGridLines true ou false
      */
     public Boolean getDrawGridLines() {
@@ -164,15 +220,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param drawGridLines 
+     * Sets the draw grid lines.
+     *
+     * @param drawGridLines the new draw grid lines
      */
     public void setDrawGridLines(Boolean drawGridLines) {
         this.drawGridLines = drawGridLines;
     }
 
     /**
-     * 
+     * Gets the grid line coler.
+     *
      * @return gridLineColer
      */
     public String getGridLineColer() {
@@ -180,15 +238,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param gridLineColer 
+     * Sets the grid line coler.
+     *
+     * @param gridLineColer the new grid line coler
      */
     public void setGridLineColer(String gridLineColer) {
         this.gridLineColer = gridLineColer;
     }
 
     /**
-     * 
+     * Gets the grid line width.
+     *
      * @return gridLineWidth
      */
     public Double getGridLineWidth() {
@@ -196,15 +256,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param gridLineWidth 
+     * Sets the grid line width.
+     *
+     * @param gridLineWidth the new grid line width
      */
     public void setGridLineWidth(Double gridLineWidth) {
         this.gridLineWidth = gridLineWidth;
     }
 
     /**
-     * 
+     * Gets the height.
+     *
      * @return height
      */
     public Float getHeight() {
@@ -212,15 +274,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param height 
+     * Sets the height.
+     *
+     * @param height the new height
      */
     public void setHeight(Float height) {
         this.height = height;
     }
 
     /**
-     * 
+     * Gets the left.
+     *
      * @return left
      */
     public Float getLeft() {
@@ -228,15 +292,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param left 
+     * Sets the left.
+     *
+     * @param left the new left
      */
     public void setLeft(Float left) {
         this.left = left;
     }
 
     /**
-     * 
+     * Gets the renderer options.
+     *
      * @return rendererOptions
      */
     public String[] getRendererOptions() {
@@ -244,15 +310,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param rendererOptions 
+     * Sets the renderer options.
+     *
+     * @param rendererOptions the new renderer options
      */
     public void setRendererOptions(String[] rendererOptions) {
         this.rendererOptions = rendererOptions;
     }
 
     /**
-     * 
+     * Gets the right.
+     *
      * @return right
      */
     public Float getRight() {
@@ -260,15 +328,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param right 
+     * Sets the right.
+     *
+     * @param right the new right
      */
     public void setRight(Float right) {
         this.right = right;
     }
 
     /**
-     * 
+     * Gets the shadow.
+     *
      * @return shadow
      */
     public Boolean getShadow() {
@@ -276,15 +346,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param shadow 
+     * Sets the shadow.
+     *
+     * @param shadow the new shadow
      */
     public void setShadow(Boolean shadow) {
         this.shadow = shadow;
     }
 
     /**
-     * 
+     * Gets the shadow alpha.
+     *
      * @return shadowAlpha
      */
     public String getShadowAlpha() {
@@ -292,15 +364,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param shadowAlpha 
+     * Sets the shadow alpha.
+     *
+     * @param shadowAlpha the new shadow alpha
      */
     public void setShadowAlpha(String shadowAlpha) {
         this.shadowAlpha = shadowAlpha;
     }
 
     /**
-     * 
+     * Gets the shadow angle.
+     *
      * @return shadowAngle
      */
     public Double getShadowAngle() {
@@ -308,15 +382,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param shadowAngle 
+     * Sets the shadow angle.
+     *
+     * @param shadowAngle the new shadow angle
      */
     public void setShadowAngle(Double shadowAngle) {
         this.shadowAngle = shadowAngle;
     }
 
     /**
-     * 
+     * Gets the shadow color.
+     *
      * @return shadowColor
      */
     public String getShadowColor() {
@@ -324,15 +400,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param shadowColor 
+     * Sets the shadow color.
+     *
+     * @param shadowColor the new shadow color
      */
     public void setShadowColor(String shadowColor) {
         this.shadowColor = shadowColor;
     }
 
     /**
-     * 
+     * Gets the shadow depth.
+     *
      * @return shadowDepth
      */
     public Double getShadowDepth() {
@@ -340,15 +418,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param shadowDepth 
+     * Sets the shadow depth.
+     *
+     * @param shadowDepth the new shadow depth
      */
     public void setShadowDepth(Double shadowDepth) {
         this.shadowDepth = shadowDepth;
     }
 
     /**
-     * 
+     * Gets the shadow offset.
+     *
      * @return shadowOffSet
      */
     public Double getShadowOffset() {
@@ -356,15 +436,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param shadowOffset 
+     * Sets the shadow offset.
+     *
+     * @param shadowOffset the new shadow offset
      */
     public void setShadowOffset(Double shadowOffset) {
         this.shadowOffset = shadowOffset;
     }
 
     /**
-     * 
+     * Gets the shadow width.
+     *
      * @return shadowWidth
      */
     public Double getShadowWidth() {
@@ -372,15 +454,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param shadowWidth 
+     * Sets the shadow width.
+     *
+     * @param shadowWidth the new shadow width
      */
     public void setShadowWidth(Double shadowWidth) {
         this.shadowWidth = shadowWidth;
     }
 
     /**
-     * 
+     * Gets the top.
+     *
      * @return top
      */
     public Float getTop() {
@@ -388,15 +472,17 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param top 
+     * Sets the top.
+     *
+     * @param top the new top
      */
     public void setTop(Float top) {
         this.top = top;
     }
 
     /**
-     * 
+     * Gets the width.
+     *
      * @return width
      */
     public Float getWidth() {
@@ -404,8 +490,9 @@ public class Grid<T extends Serializable> implements Element {
     }
 
     /**
-     * 
-     * @param width 
+     * Sets the width.
+     *
+     * @param width the new width
      */
     public void setWidth(Float width) {
         this.width = width;

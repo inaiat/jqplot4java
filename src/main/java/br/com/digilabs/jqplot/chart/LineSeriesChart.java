@@ -26,7 +26,7 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
 /**
  * 
- * Concrete class to build Line Series Chart
+ * Simple implementation of Line Series Chart. This class can/should be extended.
  * 
  * @author inaiat
  *

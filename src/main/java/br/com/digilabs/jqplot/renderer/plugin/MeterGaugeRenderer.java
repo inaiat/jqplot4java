@@ -20,7 +20,14 @@ import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.renderer.Renderer;
 
 /**
- * Renderizador de um chart meter gauge
+ * Plugin renderer to draw a meter gauge chart.
+ *
+ * Data consists of a single series with 1 data point to position the gauge needle. 
+ * 
+ * A meterGauge plot does not support events.
+ * 
+ * @see <a href="http://www.jqplot.com/docs/files/plugins/jqplot-meterGaugeRenderer-js.html">http://www.jqplot.com/docs/files/plugins/jqplot-meterGaugeRenderer-js.html</a>
+ * 
  * @author inaiat
  */
 public class MeterGaugeRenderer implements Renderer {

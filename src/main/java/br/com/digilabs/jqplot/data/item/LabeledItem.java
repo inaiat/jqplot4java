@@ -18,26 +18,43 @@ package br.com.digilabs.jqplot.data.item;
 
 
 /**
- * 
+ * LabeledItem's data.
+ *
+ * @param <T> the generic type
  * @author inaiat
  */
 public class LabeledItem<T extends Number> implements BaseItem {
 
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -3747989015336492114L;
 
+	/** The label. */
 	private String label;
+    
+    /** The value. */
     private T value;
 
+    /**
+     * Instantiates a new labeled item.
+     */
     public LabeledItem() {
     }
 
+    /**
+     * Instantiates a new labeled item.
+     *
+     * @param label the label
+     * @param value the value
+     */
     public LabeledItem(String label, T value) {
         this.label = label;
         this.value = value;
     }
 
     /**
+     * Sets the label.
+     *
      * @param label the label to set
      */
     public void setLabel(String label) {
@@ -45,6 +62,8 @@ public class LabeledItem<T extends Number> implements BaseItem {
     }
 
     /**
+     * Gets the label.
+     *
      * @return the label
      */
     public String getLabel() {
@@ -52,6 +71,8 @@ public class LabeledItem<T extends Number> implements BaseItem {
     }
 
     /**
+     * Sets the value.
+     *
      * @param value the value to set
      */
     public void setValue(T value) {
@@ -59,6 +80,8 @@ public class LabeledItem<T extends Number> implements BaseItem {
     }
 
     /**
+     * Gets the value.
+     *
      * @return the value
      */
     public T getValue() {

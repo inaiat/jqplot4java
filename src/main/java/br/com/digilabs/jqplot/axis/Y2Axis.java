@@ -19,7 +19,6 @@ package br.com.digilabs.jqplot.axis;
 import java.io.Serializable;
 
 /**
- *
  * which y axis to use with this series, either ‘yaxis’ or ‘y2axis’.
  *
  * @author inaiat
