@@ -131,6 +131,7 @@ public class LineSerieTest extends TestCase {
 		
 		Grid grid = new Grid();
 		grid.setBackground("#ffffff");
+		grid.setGridLineColer("#a0a0a0");
 		chart.getChartConfiguration().setGrid(grid);
 		Cursor cursor = new Cursor();
 		cursor.setZoom(true);
@@ -151,7 +152,7 @@ public class LineSerieTest extends TestCase {
      */
 	public Highlighter criarHighlighter() {
 		Highlighter highlighter = new Highlighter();
-		highlighter.setFormatString("<table style='background:#fafafa'>" +
+		highlighter.setFormatString("<table style='background:#fafafa;font-size:12px;color:#000000'>" +
 					"<tr><td COLSPAN=2 style='font-size:12px;color:#0012FF;font-weight:bold'>#serieLabel#</td></tr>"+
       				"<tr><td>DU:</td><td>%s</td></tr>" +
      		 		"<tr><td>Taxa:</td><td>%s%%</td></tr>"+
