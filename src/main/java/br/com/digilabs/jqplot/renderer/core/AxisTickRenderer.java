@@ -238,7 +238,6 @@ public class AxisTickRenderer implements Renderer {
         this.escapeHTML = escapeHTML;
     }
 
-	@Override
 	public JqPlotResources resource() {
 		return JqPlotResources.AxisTickRenderer;
 	}

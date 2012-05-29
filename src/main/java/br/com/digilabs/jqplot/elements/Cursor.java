@@ -79,7 +79,7 @@ public class Cursor implements Element {
 	/** The show horizontal line. */
 	private Boolean showHorizontalLine;
 	
-	/** ‘none’, ‘x’ or ‘y’. */
+	/** 'none', 'x' or 'y'. */
 	private String constrainZoomTo; 
 	
 	/** The intersection threshold. */
@@ -99,7 +99,7 @@ public class Cursor implements Element {
 	
 	/** 
 	 * Show position for the specified axes.  
-	 * This is an array like [[‘xaxis’, ‘yaxis’], [‘xaxis’, ‘y2axis’]] 
+	 * This is an array like [['xaxis', 'yaxis'], ['xaxis', 'y2axis']] 
 	 * Default is to compute automatically for all visible axes.
 	 */
 	private String tooltipAxisGroups;

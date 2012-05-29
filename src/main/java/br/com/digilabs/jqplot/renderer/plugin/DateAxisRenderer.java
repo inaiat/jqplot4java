@@ -21,10 +21,10 @@ import br.com.digilabs.jqplot.renderer.Renderer;
 
 /**
  * A plugin for a jqPlot to render an axis as a series of date values.  This renderer has no options beyond those supplied by the Axis class.  
- * It supplies it’s own tick formatter, so the tickOptions.formatter option should not be overridden.
+ * It supplies it's own tick formatter, so the tickOptions.formatter option should not be overridden.
  *
  * Dates can be passed into the axis in almost any recognizable value and will be parsed.  They will be rendered on the axis in the format specified by 
- * tickOptions.formatString.  e.g. tickOptions.formatString = ‘%Y-%m-%d’.
+ * tickOptions.formatString.  e.g. tickOptions.formatString = '%Y-%m-%d'.
  *
  * Accecptable format codes are:
  *  

@@ -25,8 +25,8 @@ import br.com.digilabs.jqplot.renderer.Renderer;
  * are available.  
  * If the browser has native font support for canvas fonts (currently Mozila 3.5 and Safari 4), you can enable 
  * text rendering with the canvas fillText method.  
- * You do so by setting the “enableFontSupport” option to true. Browsers lacking native font support will have 
- * the text drawn on the canvas using the Hershey font metrics.  Even if the “enableFontSupport” option is true 
+ * You do so by setting the 'enableFontSupport' option to true. Browsers lacking native font support will have 
+ * the text drawn on the canvas using the Hershey font metrics.  Even if the 'enableFontSupport' option is true 
  * non-supporting browsers will still render with the Hershey font.
  * 
  * @see <a href="http://www.jqplot.com/docs/files/plugins/jqplot-canvasAxisTickRenderer-js.html">http://www.jqplot.com/docs/files/plugins/jqplot-canvasAxisTickRenderer-js.html</a>

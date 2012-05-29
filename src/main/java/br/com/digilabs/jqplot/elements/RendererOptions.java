@@ -19,7 +19,6 @@ package br.com.digilabs.jqplot.elements;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO: Auto-generated Javadoc
 /**
  * Renderer options.
  *
@@ -48,7 +47,7 @@ public class RendererOptions implements Element {
     /** The highlight mouse down. */
     private Boolean highlightMouseDown;
     
-    /** The bar margin. */
+    /** The bar margi	n. */
     private Integer barMargin;
     
     /** The bubble gradients. */

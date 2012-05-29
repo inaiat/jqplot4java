@@ -52,7 +52,6 @@ public class LineSeriesChart <I extends Number, V extends Number> extends Abstra
         getChartConfiguration().createXAxis();
     }
 	
-	@Override
 	public LineSeriesData<I, V> getChartData() {
 		return data;
 	}

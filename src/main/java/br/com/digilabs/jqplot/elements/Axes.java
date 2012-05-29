@@ -36,7 +36,7 @@ import br.com.digilabs.jqplot.axis.YAxis;
    }
  }
  * </pre>
- * There are 2 x axes, ‘xaxis’ and ‘x2axis’, and 9 yaxes, ‘yaxis’, ‘y2axis’.  ‘y3axis’, ...  Any or all of which may be specified.
+ * There are 2 x axes, 'xaxis' and 'x2axis', and 9 yaxes, 'yaxis', 'y2axis'.  'y3axis', ...  Any or all of which may be specified.
  * 
  * @author inaiat
  * 

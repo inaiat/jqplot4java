@@ -23,11 +23,11 @@ import br.com.digilabs.jqplot.renderer.Renderer;
  * Plugin renderer to draw a bubble chart. A Bubble chart has data points displayed as colored circles 
  * with an optional text label inside.
  * 
- * Note that all bubble colors will be the same unless the “varyBubbleColors” option is set to true.  
+ * Note that all bubble colors will be the same unless the 'varyBubbleColors' option is set to true.  
  * Colors can be specified in the data array or in the seriesColors array option on the series.  
  * If no colors are defined, the default jqPlot series of 16 colors are used. Colors are automatically 
  * cycled around again if there are more bubbles than colors.  Bubbles are autoscaled by default to fit 
- * within the chart area while maintaining relative sizes.  If the “autoscaleBubbles” option is set to false, 
+ * within the chart area while maintaining relative sizes.  If the 'autoscaleBubbles' option is set to false, 
  * the r(adius) values in the data array a treated as literal pixel values for the radii of the bubbles.
  *
  * Properties are passed into the bubble renderer in the rendererOptions object of the series options like:

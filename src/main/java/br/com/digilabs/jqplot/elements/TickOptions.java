@@ -18,7 +18,7 @@ package br.com.digilabs.jqplot.elements;
 
 
 /**
- * A “tick” object showing the value of a tick/gridline on the plot.
+ * A 'tick' object showing the value of a tick/gridline on the plot.
  * 
  * @author inaiat
  */

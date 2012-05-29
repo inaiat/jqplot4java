@@ -41,7 +41,6 @@ public class LineSeriesData<I extends Number,V extends Number> extends AbstractC
 	/* (non-Javadoc)
 	 * @see br.com.digilabs.jqplot.data.ChartData#getData()
 	 */
-	@Override
 	public Collection<Collection<LineSeriesItem<I, V>>> getData() {
 		return data;
 	}	
@@ -49,7 +48,6 @@ public class LineSeriesData<I extends Number,V extends Number> extends AbstractC
 	/* (non-Javadoc)
 	 * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
 	 */
-	@Override
 	public String toJsonString() {
     	JSONArray jsonArray = new JSONArray();        
         for (Collection<LineSeriesItem<I, V>> col : data) {
