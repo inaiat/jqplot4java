@@ -88,7 +88,7 @@ public class Legend implements Element {
     private String[] lables;
 
     /** The Render Options */
-    private TableLegendRenderer rendererOptions;
+    private LegendRenderer rendererOptions;
 
     /**
      * Instantiates a new legend.
@@ -461,7 +461,7 @@ public class Legend implements Element {
     /**
      *  Gets the {@link RendererOptions}
      */
-	public TableLegendRenderer getRendererOptions()
+	public LegendRenderer getRendererOptions()
 	{
 		return rendererOptions;
 	}
@@ -469,7 +469,7 @@ public class Legend implements Element {
     /**
      *  Sets the {@link RendererOptions}
      */
-	public void setRendererOptions(TableLegendRenderer rendererOptions)
+	public void setRendererOptions(LegendRenderer rendererOptions)
 	{
 		this.rendererOptions = rendererOptions;
 	}
