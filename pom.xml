@@ -12,7 +12,7 @@
 
     <groupId>br.com.digilabs.jqplot</groupId>
     <artifactId>jqplot4java</artifactId>
-    <version>1.2.3-SNAPSHOT</version>
+    <version>1.2.3</version>
     <packaging>jar</packaging>
 
     <name>jqplot4java</name>
