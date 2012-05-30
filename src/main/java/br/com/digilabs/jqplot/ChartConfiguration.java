@@ -82,6 +82,10 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	
 	/** The cursor. */
 	private Cursor cursor;
+	
+	/** The gridPadding attribute */
+	private GridPadding gridPadding;	
+	
 
 	/**
 	 * Checks if is capture right click.
@@ -505,5 +509,23 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 */
 	public void setCursor(Cursor cursor) {
 		this.cursor = cursor;
+	}
+
+	/**
+	 * Gets gridPadding
+	 * 
+	 * @return
+	 */
+	public GridPadding getGridPadding()	{
+		return gridPadding;
+	}
+
+	/**
+	 * Sets the gridPadding
+	 * 
+	 * @param gridPadding the new gridPadding
+	 */
+	public void setGridPadding(GridPadding gridPadding) {
+		this.gridPadding = gridPadding;
 	}
 }

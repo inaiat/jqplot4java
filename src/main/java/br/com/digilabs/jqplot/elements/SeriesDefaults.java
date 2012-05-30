@@ -24,6 +24,7 @@ public class SeriesDefaults extends Serie {
 
     private static final long serialVersionUID = -7921968769382552293L;
     private PointLabels pointLabels;
+    private Trendline trendline;
 
     /**
      * 
@@ -39,5 +40,13 @@ public class SeriesDefaults extends Serie {
      */
     public void setPointLabels(PointLabels pointLabels) {
         this.pointLabels = pointLabels;
+    }
+
+    public Trendline getTrendline() {
+	return trendline;
+    }
+
+    public void setTrendline(Trendline trendline) {
+	this.trendline = trendline;
     }
 }
