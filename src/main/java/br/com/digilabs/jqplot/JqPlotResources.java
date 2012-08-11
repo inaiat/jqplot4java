@@ -50,7 +50,7 @@ public enum JqPlotResources {
     CategoryAxisRenderer("$.jqplot.CategoryAxisRenderer", "plugins/jqplot.categoryAxisRenderer.min.js"),
     
     /** The Canvas axis tick renderer. */
-    CanvasAxisTickRenderer("$.jqplot.CanvasAxisTickRenderer", "plugins/jqplot.canvasAxisTickRenderer.min.js"),
+    CanvasAxisTickRenderer("$.jqplot.CanvasAxisTickRenderer", "plugins/jqplot.canvasAxisTickRenderer.min.js"),    
     
     /** The Canvas text renderer. */
     CanvasTextRenderer("$.jqplot.CanvasTextRenderer","plugins/jqplot.canvasTextRenderer.min.js"),
@@ -69,7 +69,11 @@ public enum JqPlotResources {
     
     // Core Renderer 
     /** The Axis tick renderer. */
-    AxisTickRenderer("$.jqplot.AxisTickRenderer");
+    AxisTickRenderer("$.jqplot.AxisTickRenderer"),
+    
+    /** A class of a formatter for the tick text. */
+    DefaultTickFormatter("$.jqplot.DefaultTickFormatter");
+
     
     /** The class name. */
     private String className;

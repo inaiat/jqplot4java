@@ -24,7 +24,8 @@ import java.lang.annotation.Target;
 import br.com.digilabs.jqplot.JqPlotResources;
 
 /**
- * Representa o plugin para o jqplot
+ * Annotation to inform the resources used by Chart
+ * 
  * @author inaiat
  */
 @Retention(RetentionPolicy.RUNTIME)
