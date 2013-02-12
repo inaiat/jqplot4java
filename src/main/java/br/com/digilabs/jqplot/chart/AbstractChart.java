@@ -79,14 +79,6 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
     }
 
     /**
-     * 
-     * @param ticks
-     */
-    public void setTicks(String... ticks) {
-	getChartConfiguration().getAxes().getXaxis().setTicks(ticks);
-    }
-
-    /**
      * Adiciona uma serie
      * 
      * @param serie
@@ -129,14 +121,6 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      */
     public void setSimpleTitle(String title) {
 	getChartConfiguration().setSimpleTitle(title);
-    }
-
-    /**
-     * 
-     * @param padMin
-     */
-    public void setPadMin(Float padMin) {
-	getChartConfiguration().getAxes().getYaxis().setPadMin(1.05f);
     }
 
     /**
@@ -233,21 +217,6 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
     }
 
     /**
-     * @return the axes
-     */
-    public Axes<S> getAxes() {
-	return getChartConfiguration().getAxes();
-    }
-
-    /**
-     * @param axes
-     *            the axes to set
-     */
-    public void setAxes(Axes<S> axes) {
-	getChartConfiguration().setAxes(axes);
-    }
-
-    /**
      * @return the seriesDefaults
      */
     public SeriesDefaults getSeriesDefaults() {
@@ -278,24 +247,6 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
     public void addIntervals(Integer... values) {
 	getChartConfiguration().getSeriesDefaults().getRendererOptions()
 		.getIntervals().addAll(Arrays.asList(values));
-    }
-
-    /**
-     * 
-     * @param max
-     */
-    public void setMax(Integer max) {
-	getChartConfiguration().getSeriesDefaults().getRendererOptions()
-		.setMax(max);
-    }
-
-    /**
-     * 
-     * @param min
-     */
-    public void setMin(Integer min) {
-	getChartConfiguration().getSeriesDefaults().getRendererOptions()
-		.setMin(min);
     }
 
     /**
@@ -450,4 +401,29 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
     public GridPadding getGridPadding() {
 	return getChartConfiguration().getGridPadding();
     }
+    
+    /**
+     * @return the axes
+     */
+    public Axes<S> getAxes() {
+	return getChartConfiguration().getAxes();
+    }
+
+    /**
+     * @param axes
+     *            the axes to set
+     */
+    public AbstractChart<T, S> setAxes(Axes<S> axes) {
+	getChartConfiguration().setAxes(axes);
+	return this;
+    }
+
+    
+    public XAxis<S> getXAxis() {
+	return getChartConfiguration().getAxes().getXaxis();
+    }
+    
+    public YAxis<S> getYAxis() {
+	return getChartConfiguration().getAxes().getYaxis();
+    }    
 }

@@ -60,8 +60,9 @@ public class Axes<T extends Serializable> implements Element {
     /**
      * @param xaxis the xaxis to set
      */
-    public void setXaxis(XAxis<T> xaxis) {
+    public Axes<T> setXaxis(XAxis<T> xaxis) {
         this.xaxis = xaxis;
+        return this;
     }
 
     /**
@@ -74,8 +75,9 @@ public class Axes<T extends Serializable> implements Element {
     /**
      * @param yaxis the yaxis to set
      */
-    public void setYaxis(YAxis<T> yaxis) {
+    public Axes<T> setYaxis(YAxis<T> yaxis) {
         this.yaxis = yaxis;
+        return this;
     }
 
     /**
@@ -88,8 +90,9 @@ public class Axes<T extends Serializable> implements Element {
     /**
      * @param x2axis the x2axis to set
      */
-    public void setX2axis(X2Axis<T> x2axis) {
+    public Axes<T> setX2axis(X2Axis<T> x2axis) {
         this.x2axis = x2axis;
+        return this;
     }
 
     /**
@@ -102,7 +105,8 @@ public class Axes<T extends Serializable> implements Element {
     /**
      * @param y2axis the y2axis to set
      */
-    public void setY2axis(Y2Axis<T> y2axis) {
+    public Axes<T> setY2axis(Y2Axis<T> y2axis) {
         this.y2axis = y2axis;
+        return this;
     }
 }
