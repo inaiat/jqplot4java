@@ -95,6 +95,9 @@ public class RendererOptions implements Element {
     /** The fill. */
     private Boolean fill;
     
+    /** The fillToZero */
+    private Boolean fillToZero;
+    
     /** The smooth. */
     private Boolean smooth;
     
@@ -223,6 +226,24 @@ public class RendererOptions implements Element {
      */
     public void setFill(Boolean fill) {
         this.fill = fill;
+    }
+    
+    /**
+     * Gets the fillToZero.
+     *
+     * @return fillToZero true ou false
+     */
+    public Boolean getFillToZero() {
+        return fillToZero;
+    }
+
+    /**
+     * Sets the fillToZero.
+     *
+     * @param fillToZero the new fillToZero
+     */
+    public void setFillToZero(Boolean fillToZero) {
+        this.fillToZero = fillToZero;
     }
 
     /**
