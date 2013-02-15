@@ -23,48 +23,53 @@ import org.json.JSONArray;
 
 /**
  * Data Helper to build Line Charts.
- *
- * @param <T> Type of number. Ex.: Double, Integer, Float, etc.
+ * 
+ * @param <T>
+ *            Type of number. Ex.: Double, Integer, Float, etc.
  * @author inaiat
  */
 public class LinedData<T extends Number> extends AbstractCollectionData<T> {
-    
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = -550315213084815871L;
 
-	/** The data. */
-	private List<T> data = new ArrayList<T>();
+    /** The Constant serialVersionUID. */
+    private static final long serialVersionUID = -550315213084815871L;
+
+    /** The data. */
+    private List<T> data = new ArrayList<T>();
 
     /**
      * Instantiates a new lined data.
      */
     public LinedData() {
     }
-    
+
     /**
      * Instantiates a new lined data.
-     *
-     * @param values the values
+     * 
+     * @param values
+     *            the values
      */
     public LinedData(T... values) {
-        addValues(values);
-    }    
+	addValues(values);
+    }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see br.com.digilabs.jqplot.data.ChartData#getData()
      */
     public Collection<T> getData() {
-        return data;
+	return data;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
      */
     public String toJsonString() {
-        JSONArray jsonArray = new JSONArray();
-        jsonArray.put(data);
-        return jsonArray.toString();
-    }    
+	JSONArray jsonArray = new JSONArray();
+	jsonArray.put(data);
+	return jsonArray.toString();
+    }
 
-    
 }

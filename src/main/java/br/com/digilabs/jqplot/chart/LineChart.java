@@ -57,8 +57,8 @@ public class LineChart<T extends Number> extends AbstractChart<LinedData<T>,Stri
      */
     public LineChart(String title, String labelX, String labelY) {
         getChartConfiguration().setTitle(new Title(title));
-        getChartConfiguration().getAxesDefaults().setLabelRenderer(JqPlotResources.CanvasAxisLabelRenderer);
-        getChartConfiguration().getAxes().getXaxis().setPad(0F);
+        getChartConfiguration().withAxesDefaults().setLabelRenderer(JqPlotResources.CanvasAxisLabelRenderer);
+        getChartConfiguration().withAxes().withXaxis().setPad(0F);
         getChartConfiguration().setLabelX(labelX);
         getChartConfiguration().setLabelY(labelY);
     }

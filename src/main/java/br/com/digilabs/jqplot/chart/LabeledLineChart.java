@@ -73,14 +73,14 @@ public class LabeledLineChart<T extends Number> extends AbstractChart<LabeledDat
     public LabeledLineChart(String title, String labelX, String labelY,
             Integer tickAngle) {
         getChartConfiguration().setTitle(new Title(title));
-        Axis<String> xAxis = getChartConfiguration().getAxes().getXaxis();
+        Axis<String> xAxis = getChartConfiguration().withAxes().withXaxis();
         xAxis.setRenderer(JqPlotResources.DateAxisRenderer);
         xAxis.setLabelRenderer(JqPlotResources.CanvasAxisLabelRenderer);
         xAxis.setTickRenderer(JqPlotResources.CanvasAxisTickRenderer);
         TickOptions tickOptions = new TickOptions();
         tickOptions.setAngle(tickAngle);
         xAxis.setTickOptions(tickOptions);
-        getChartConfiguration().getAxes().getYaxis().setLabelRenderer(
+        getChartConfiguration().withAxes().withYaxis().setLabelRenderer(
                 JqPlotResources.CanvasAxisLabelRenderer);
         getChartConfiguration().setLabelX(labelX);
         getChartConfiguration().setLabelY(labelY);
