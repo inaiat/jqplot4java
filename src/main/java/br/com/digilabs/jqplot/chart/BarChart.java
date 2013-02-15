@@ -79,10 +79,8 @@ public class BarChart<T extends Number> extends AbstractChart<BarData<T>, Long> 
         chartConfiguration.setLabelX(labelX);
         chartConfiguration.setLabelY(labelY);
 
-        XAxis<Long> xAxis = getChartConfiguration().createXAxis();
+        XAxis<Long> xAxis = getChartConfiguration().getAxes().getXaxis();
         xAxis.setRenderer(JqPlotResources.CategoryAxisRenderer);
-
-        getChartConfiguration().createYAxis();
     }
     
     /**

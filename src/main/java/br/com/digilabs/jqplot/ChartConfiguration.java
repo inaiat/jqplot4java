@@ -86,6 +86,12 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	/** The gridPadding attribute */
 	private GridPadding gridPadding;	
 	
+	public ChartConfiguration() {
+	    this.axes = new Axes<T>();
+	    this.axesDefaults = new Axis<T>();
+	    this.seriesDefaults  = new SeriesDefaults();
+	}
+	
 
 	/**
 	 * Checks if is capture right click.
@@ -165,6 +171,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 *
 	 * @return the axes
 	 */
+	@Deprecated
 	public Axes<T> createAxes() {
 		if (axes == null) {
 			this.axes = new Axes<T>();
@@ -177,6 +184,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 *
 	 * @return the x axis
 	 */
+	@Deprecated
 	public XAxis<T> createXAxis() {
 		Axes<T> newAxes = createAxes();
 		if (newAxes.getXaxis() == null) {
@@ -191,6 +199,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 *
 	 * @return the y axis
 	 */
+	@Deprecated
 	public YAxis<T> createYAxis() {
 		Axes<T> newAxes = createAxes();
 		if (newAxes.getYaxis() == null) {
@@ -205,6 +214,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 *
 	 * @return the axis
 	 */
+	@Deprecated
 	public Axis<T> createAxesDefaults() {
 		if (axesDefaults == null) {
 			axesDefaults = new Axis<T>();
@@ -219,7 +229,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 */
 	public void setLabelX(String label) {
 		if (label != null) {
-			createXAxis().setLabel(label);
+			getAxes().getXaxis().setLabel(label);
 		}
 	}
 
@@ -230,7 +240,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 */
 	public void setLabelY(String label) {
 		if (label != null) {
-			createYAxis().setLabel(label);
+		    	getAxes().getYaxis().setLabel(label);
 		}
 	}
 
@@ -301,7 +311,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 */
 	public Axis<T> getAxesDefaults() {
 		return axesDefaults;
-	}
+	}	
 
 	/**
 	 * Sets the axes defaults.
@@ -328,13 +338,14 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 */
 	public void setAxes(Axes<T> axes) {
 		this.axes = axes;
-	}
+	}	
 
 	/**
 	 * Creates the series defaults.
 	 *
 	 * @return the series defaults
 	 */
+	@Deprecated
 	public SeriesDefaults createSeriesDefaults() {
 		if (seriesDefaults == null) {
 			seriesDefaults = new SeriesDefaults();

@@ -57,7 +57,7 @@ public class AreaChart<T extends Number> extends AbstractChart<AreaFillData<T>,S
         SeriesDefaults defaults = new SeriesDefaults();
         defaults.setFill(true);
         setSeriesDefaults(defaults);
-        XAxis<String> xAxis = createXAxis();
+        XAxis<String> xAxis = getChartConfiguration().getAxes().getXaxis();
         xAxis.setRenderer(JqPlotResources.CategoryAxisRenderer);
     }
 

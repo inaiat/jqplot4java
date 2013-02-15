@@ -26,44 +26,45 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
 /**
  * 
- * Simple implementation of Line Series Chart. This class can/should be extended.
+ * Simple implementation of Line Series Chart. This class can/should be
+ * extended.
  * 
  * @author inaiat
- *
- * @param <I> type of index of serie
- * @param <V> type of value of serie
+ * 
+ * @param <I>
+ *            type of index of serie
+ * @param <V>
+ *            type of value of serie
  */
-@JqPlotPlugin(values = {JqPlotResources.CanvasTextRenderer, JqPlotResources.CategoryAxisRenderer})
-public class LineSeriesChart <I extends Number, V extends Number> extends AbstractChart<LineSeriesData<I,V>,String>  {
+@JqPlotPlugin(values = { JqPlotResources.CanvasTextRenderer,
+	JqPlotResources.CategoryAxisRenderer })
+public class LineSeriesChart<I extends Number, V extends Number> extends
+	AbstractChart<LineSeriesData<I, V>, String> {
 
-	private static final long serialVersionUID = -563079287340319412L;
-	
-	private LineSeriesData<I,V> data = new LineSeriesData<I,V>();
-	
+    private static final long serialVersionUID = -563079287340319412L;
+
+    private LineSeriesData<I, V> data = new LineSeriesData<I, V>();
+
     public LineSeriesChart(String title) {
-    	this(title,null,null);
+	this(title, null, null);
     }
-	
-	public LineSeriesChart(String title, String labelX, String labelY) {
-        getChartConfiguration().setTitle(new Title(title));
-        getChartConfiguration().setLabelX(labelX);
-        getChartConfiguration().setLabelY(labelY);        
-        getChartConfiguration().createAxesDefaults();
-        getChartConfiguration().createXAxis();
+
+    public LineSeriesChart(String title, String labelX, String labelY) {
+	getChartConfiguration().setTitle(new Title(title));
+	getChartConfiguration().setLabelX(labelX);
+	getChartConfiguration().setLabelY(labelY);
     }
-	
-	public LineSeriesData<I, V> getChartData() {
-		return data;
-	}
-	
-	public void addValue(Collection<LineSeriesItem<I, V>> value) {
-		data.addValue(value);
-	}
 
-	public void addValues(Collection<LineSeriesItem<I, V>>... values) {
-		data.addValues(values);
-	}
+    public LineSeriesData<I, V> getChartData() {
+	return data;
+    }
 
+    public void addValue(Collection<LineSeriesItem<I, V>> value) {
+	data.addValue(value);
+    }
 
+    public void addValues(Collection<LineSeriesItem<I, V>>... values) {
+	data.addValues(values);
+    }
 
 }

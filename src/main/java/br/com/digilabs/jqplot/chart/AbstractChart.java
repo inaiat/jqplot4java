@@ -121,12 +121,13 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      */
     public void setSimpleTitle(String title) {
 	getChartConfiguration().setSimpleTitle(title);
-    }
+    }    
 
     /**
      * 
      * @return Axes
      */
+    @Deprecated
     public Axes<S> createAxes() {
 	return getChartConfiguration().createAxes();
     }
@@ -135,6 +136,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * 
      * @return xAxis
      */
+    @Deprecated
     public XAxis<S> createXAxis() {
 	return getChartConfiguration().createXAxis();
     }
@@ -143,6 +145,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * 
      * @return yAxis
      */
+    @Deprecated
     public YAxis<S> createYAxis() {
 	return getChartConfiguration().createYAxis();
     }
@@ -151,6 +154,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * 
      * @return axis
      */
+    @Deprecated    
     public Axis<S> createAxesDefaults() {
 	return getChartConfiguration().createAxesDefaults();
     }

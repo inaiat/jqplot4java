@@ -45,10 +45,11 @@ public class Axes<T extends Serializable> implements Element {
 
     /** The Constant serialVersionUID. */
     private static final long serialVersionUID = -1464182411022493685L;
-    private XAxis<T> xaxis;
-    private YAxis<T> yaxis;
-    private X2Axis<T> x2axis;
-    private Y2Axis<T> y2axis;
+    
+    private XAxis<T> xaxis = new XAxis<T>();
+    private YAxis<T> yaxis = new YAxis<T>();
+    private X2Axis<T> x2axis = new X2Axis<T>();
+    private Y2Axis<T> y2axis = new Y2Axis<T>();    
 
     /**
      * @return the xaxis
