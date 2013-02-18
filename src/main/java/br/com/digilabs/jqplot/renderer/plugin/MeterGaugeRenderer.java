@@ -30,6 +30,7 @@ import br.com.digilabs.jqplot.renderer.Renderer;
  * 
  * @author inaiat
  */
+@Deprecated
 public class MeterGaugeRenderer implements Renderer {
 
     private static final long serialVersionUID = -6281926919874791228L;

@@ -26,6 +26,7 @@ import br.com.digilabs.jqplot.renderer.Renderer;
  * 
  * @author inaiat
  */
+@Deprecated
 public class BarRenderer implements Renderer {
 
     private static final long serialVersionUID = 2044639222061941989L;

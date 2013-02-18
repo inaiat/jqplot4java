@@ -33,7 +33,7 @@ import br.com.digilabs.jqplot.renderer.Renderer;
  * 
  * @author inaiat
  */
-
+@Deprecated
 public class CanvasAxisTickRenderer implements Renderer {
 
     private static final long serialVersionUID = -2722557983084932478L;

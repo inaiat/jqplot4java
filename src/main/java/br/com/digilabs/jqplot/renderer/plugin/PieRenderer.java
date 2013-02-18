@@ -27,6 +27,7 @@ import br.com.digilabs.jqplot.renderer.Renderer;
  *
  * @author inaiat
  */
+@Deprecated
 @JqPlotPlugin(values = {JqPlotResources.PieRenderer})
 public class PieRenderer implements Renderer {
 

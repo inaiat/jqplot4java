@@ -26,6 +26,7 @@ import br.com.digilabs.jqplot.renderer.Renderer;
  * 
  * @author inaiat
  */
+@Deprecated
 public class DonutRenderer implements Renderer {
 
     private static final long serialVersionUID = -3572013159602499333L;

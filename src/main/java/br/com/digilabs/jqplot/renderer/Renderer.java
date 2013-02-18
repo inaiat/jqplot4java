@@ -6,6 +6,7 @@ import br.com.digilabs.jqplot.elements.Element;
 /**
  * The Interface Renderer.
  */
+@Deprecated
 public interface Renderer extends Element {
 	
 	/**

@@ -23,6 +23,7 @@ import br.com.digilabs.jqplot.renderer.Renderer;
  * Renderizador AxisTick
  * @author inaiat
  */
+@Deprecated
 public class AxisTickRenderer implements Renderer {
 
 	private static final long serialVersionUID = 1L;

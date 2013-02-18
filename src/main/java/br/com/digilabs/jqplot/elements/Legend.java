@@ -16,7 +16,7 @@
  */
 package br.com.digilabs.jqplot.elements;
 
-import br.com.digilabs.jqplot.renderer.Renderer;
+import br.com.digilabs.jqplot.JqPlotResources;
 
 /**
  * Legend object.  
@@ -61,7 +61,7 @@ public class Legend implements Element {
     private String marginLeft;
     
     /** The renderer. */
-    private Renderer renderer;
+    private JqPlotResources renderer;
     
     /** The xoffset. */
     private Double xoffset;
@@ -337,7 +337,7 @@ public class Legend implements Element {
      *
      * @return the renderer
      */
-    public Renderer getRenderer() {
+    public JqPlotResources getRenderer() {
         return renderer;
     }
 
@@ -346,7 +346,7 @@ public class Legend implements Element {
      *
      * @param renderer the new renderer
      */
-    public void setRenderer(Renderer renderer) {
+    public void setRenderer(JqPlotResources renderer) {
         this.renderer = renderer;
     }
 

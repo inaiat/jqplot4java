@@ -23,6 +23,7 @@ import br.com.digilabs.jqplot.renderer.Renderer;
  *
  * @author inaiat
  */
+@Deprecated
 public class ShadowRenderer implements Renderer {
 
 	private static final long serialVersionUID = 4595091532005199206L;
