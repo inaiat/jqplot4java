@@ -69,6 +69,10 @@ public class JqPlotUtils {
 
 		return resources;
 	}
+	
+	public static String createJquery(Chart<?> chart, String divId) {
+		return createJquery(chart, divId, false);
+	}
 
 	/**
 	 * Return JqPlot (Jquery) chart.
@@ -77,8 +81,13 @@ public class JqPlotUtils {
 	 * @param divId
 	 * @return jquery criado
 	 */
-	public static String createJquery(Chart<?> chart, String divId) {
-		return createJquery(chart, divId, null);
+	public static String createJquery(Chart<?> chart, String divId, boolean prettyPrinting) {
+		return createJquery(chart, divId, null, prettyPrinting);
+	}
+	
+	public static String createJquery(Chart<?> chart, String divId,
+			String javaScriptVar) {
+		return createJquery(chart, divId, javaScriptVar, false);		
 	}
 
 	/**
@@ -90,7 +99,7 @@ public class JqPlotUtils {
 	 * @return jquery criado
 	 */
 	public static String createJquery(Chart<?> chart, String divId,
-			String javaScriptVar) {
+			String javaScriptVar, boolean prettyPrinting) {
 		StringBuilder builder = new StringBuilder();
 		builder.append("$(document).ready(function(){\r\n");
 		if (javaScriptVar != null) {
@@ -99,7 +108,7 @@ public class JqPlotUtils {
 		builder.append("   $.jqplot('").append(divId).append("', ");
 		builder.append(chart.getChartData().toJsonString());
 		builder.append(", ");
-		builder.append(jqPlotToJson(chart.getChartConfiguration()));
+		builder.append(jqPlotToJson(chart.getChartConfiguration(),prettyPrinting));
 		builder.append(");\r\n");
 		builder.append("});\r\n");
 		return builder.toString();
@@ -107,8 +116,15 @@ public class JqPlotUtils {
 	
 
 	public static String jqPlotToJson(ChartConfiguration<?> jqPlot) {
-		Gson gson = new GsonBuilder()
-		.setPrettyPrinting()
+		return jqPlotToJson(jqPlot, false);
+	}
+	
+	public static String jqPlotToJson(ChartConfiguration<?> jqPlot, boolean prettyPrinting) {
+		GsonBuilder gsonBuilder = new GsonBuilder();
+		if (prettyPrinting) {
+			gsonBuilder.setPrettyPrinting();
+		}
+		Gson gson = gsonBuilder
 		.registerTypeAdapter(JqPlotResources.class,new JqPlotSerializar())
 		.create();
 		return gson.toJson(jqPlot);
