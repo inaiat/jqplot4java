@@ -46,9 +46,8 @@ public class PieDonutChartTest extends TestCase {
     	
     	
     	chart.addValue(list);
-    	chart.addValue(list2);
+    	chart.addValue(list2);    	
     	
-    	
-        System.out.println(JqPlotUtils.createJquery(chart, "chart"));
+        System.out.println(JqPlotUtils.createJquery(chart, "chart"));        
     }
 }

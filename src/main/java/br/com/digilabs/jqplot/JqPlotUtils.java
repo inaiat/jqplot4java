@@ -16,21 +16,18 @@
  */
 package br.com.digilabs.jqplot;
 
-import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
-import br.com.digilabs.jqplot.support.JqPlotJsonMapHierarchicalWriter;
-
-import java.io.Writer;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
-
-import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.converters.MarshallingContext;
-import com.thoughtworks.xstream.converters.enums.EnumConverter;
-import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
-import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
-import com.thoughtworks.xstream.io.json.JsonWriter;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
 
 /**
  * Utility class to provide json from {@link Chart} object.
@@ -38,107 +35,82 @@ import com.thoughtworks.xstream.io.json.JsonWriter;
  * @author inaiat
  */
 public class JqPlotUtils {
+	
+	private static class JqPlotSerializar implements JsonSerializer<JqPlotResources> {
 
-    /**
-     * Retorna os recursos de javascript
-     * @param chart
-     * @return lista de com os javascripts dos gráficos
-     */
-    public static List<String> retriveJavaScriptResources(Chart<?> chart) {
-        List<String> resources = new ArrayList<String>();
+		public JsonElement serialize(JqPlotResources src, Type typeOfSrc,
+				JsonSerializationContext context) {			
+			return new JsonPrimitive(src.getClassName());
+		}		
+	}
 
-        Class<?> clazz = chart.getClass();
-        if (clazz.isAnnotationPresent(JqPlotPlugin.class)) {
-            JqPlotResources[] jqPlotResourceses = clazz.getAnnotation(
-                    JqPlotPlugin.class).values();
-            for (JqPlotResources jqPlotResources : jqPlotResourceses) {
-                resources.add(jqPlotResources.getResource());
-            }
-        }
+	/**
+	 * Return javascript's resources from Chart
+	 * 
+	 * @param chart
+	 * @return lista de com os javascripts dos gráficos
+	 */
+	public static List<String> retriveJavaScriptResources(Chart<?> chart) {
+		List<String> resources = new ArrayList<String>();
 
-        //can it/should we make this more generic?
-        if(chart.getChartConfiguration().getHighlighter() != null) {
-            resources.add(JqPlotResources.Highlighter.getResource());
-        }
+		Class<?> clazz = chart.getClass();
+		if (clazz.isAnnotationPresent(JqPlotPlugin.class)) {
+			JqPlotResources[] jqPlotResourceses = clazz.getAnnotation(
+					JqPlotPlugin.class).values();
+			for (JqPlotResources jqPlotResources : jqPlotResourceses) {
+				resources.add(jqPlotResources.getResource());
+			}
+		}
 
-        return resources;
-    }
+		// can it/should we make this more generic?
+		if (chart.getChartConfiguration().getHighlighter() != null) {
+			resources.add(JqPlotResources.Highlighter.getResource());
+		}
 
-    /**
-     * Cria um comando jquery
-     * @param chart
-     * @param divId
-     * @return jquery criado
-     */
-    public static String createJquery(Chart<?> chart, String divId) {
-        return createJquery(chart, divId, null);
-    }
+		return resources;
+	}
 
-    /**
-     * Cria um comando jquery
-     * @param chart
-     * @param divId
-     * @param javaScriptVar
-     * @return jquery criado
-     */
-    public static String createJquery(Chart<?> chart, String divId, String javaScriptVar) {
-        StringBuilder builder = new StringBuilder();
-        builder.append("$(document).ready(function(){\r\n");
-        if (javaScriptVar != null) {
-            builder.append("   var ").append(javaScriptVar).append("=");
-        }
-        builder.append("   $.jqplot('").append(divId).append("', ");
-        builder.append(chart.getChartData().toJsonString());
-        builder.append(", ");
-        builder.append(jqPlotToJson(chart.getChartConfiguration()));
-        builder.append(");\r\n");
-        builder.append("});\r\n");
-        return builder.toString();
-    }
+	/**
+	 * Return JqPlot (Jquery) chart.
+	 * 
+	 * @param chart
+	 * @param divId
+	 * @return jquery criado
+	 */
+	public static String createJquery(Chart<?> chart, String divId) {
+		return createJquery(chart, divId, null);
+	}
 
-    /**
-     * Retorna o um json a partir de uma configuração jqplot
-     * @param jqPlot
-     * @return 
-     */
-    public static String jqPlotToJson(ChartConfiguration<?> jqPlot) {
+	/**
+	 * Return JqPlot (Jquery) chart with javascript variable
+	 * 
+	 * @param chart
+	 * @param divId
+	 * @param javaScriptVar
+	 * @return jquery criado
+	 */
+	public static String createJquery(Chart<?> chart, String divId,
+			String javaScriptVar) {
+		StringBuilder builder = new StringBuilder();
+		builder.append("$(document).ready(function(){\r\n");
+		if (javaScriptVar != null) {
+			builder.append("   var ").append(javaScriptVar).append("=");
+		}
+		builder.append("   $.jqplot('").append(divId).append("', ");
+		builder.append(chart.getChartData().toJsonString());
+		builder.append(", ");
+		builder.append(jqPlotToJson(chart.getChartConfiguration()));
+		builder.append(");\r\n");
+		builder.append("});\r\n");
+		return builder.toString();
+	}
+	
 
-        XStream xstream = new XStream(new JsonHierarchicalStreamDriver() {
-
-            @Override
-            public HierarchicalStreamWriter createWriter(Writer writer) {
-                return new JqPlotJsonMapHierarchicalWriter(writer, JsonWriter.DROP_ROOT_MODE) {
-
-                    @Override
-                    public void addAttribute(String name, String value) {
-                        if (!name.contains("class")) {
-                            super.addAttribute(name, value);
-                        }
-                    }
-                };
-            }
-        }) {
-        };
-
-        EnumConverter converter = new EnumConverter() {
-
-            @Override
-            public void marshal(Object source, HierarchicalStreamWriter writer,
-                    MarshallingContext context) {
-                if(source instanceof JqPlotResources) {
-                    JqPlotResources plugin = (JqPlotResources) source;
-                    writer.setValue(plugin.getClassName());
-                } else {
-                    super.marshal(source, writer, context);
-                }
-
-            }
-        };
-
-        converter.canConvert(JqPlotResources.class);
-
-        xstream.registerConverter(converter);
-
-        return xstream.toXML(jqPlot);
-    }
+	public static String jqPlotToJson(ChartConfiguration<?> jqPlot) {
+		Gson gson = new GsonBuilder()
+		.setPrettyPrinting()
+		.registerTypeAdapter(JqPlotResources.class,new JqPlotSerializar())
+		.create();
+		return gson.toJson(jqPlot);
+	}
 }
