@@ -48,24 +48,16 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
 
     private static final long serialVersionUID = -5744130130488157491L;
 
-    private final ChartConfiguration<S> configuration;
-
-    /**
-     * Construtor
-     */
-    public AbstractChart() {
-	this.configuration = new ChartConfiguration<S>();
-    }
 
     public AbstractChart<T, S> addSeriesColors(String... colors) {
 
-	getChartConfiguration().withSeriesColors()
+	getChartConfiguration().seriesColorsInstance()
 		.addAll(Arrays.asList(colors));
 	return this;
     }
 
     public AbstractChart<T, S> addSeriesColors(Collection<String> colors) {
-	getChartConfiguration().withSeriesColors().addAll(colors);
+	getChartConfiguration().seriesColorsInstance().addAll(colors);
 	return this;
     }
 
@@ -75,7 +67,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
     }
 
     public Collection<String> getSeriesColors() {
-	return getChartConfiguration().withSeriesColors();
+	return getChartConfiguration().seriesColorsInstance();
     }
 
     /**
@@ -113,9 +105,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * 
      * @return chartConfiguration
      */
-    public ChartConfiguration<S> getChartConfiguration() {
-	return configuration;
-    }
+    public abstract ChartConfiguration<S> getChartConfiguration();
 
     /**
      * 
@@ -184,7 +174,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @return the series
      */
     public Collection<Serie> getSeries() {
-	return getChartConfiguration().withSeries();
+	return getChartConfiguration().seriesInstance();
     }
 
     /**
@@ -216,7 +206,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @return the axesDefaults
      */
     public Axis<S> getAxesDefaults() {
-	return getChartConfiguration().withAxesDefaults();
+	return getChartConfiguration().axesDefaultsInstance();
     }
 
     /**
@@ -232,7 +222,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @return the seriesDefaults
      */
     public SeriesDefaults getSeriesDefaults() {
-	return getChartConfiguration().withSeriesDefaults();
+	return getChartConfiguration().seriesDefaultsInstance();
     }
 
     /**
@@ -249,7 +239,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @param values
      */
     public AbstractChart<T, S> addIntervalColors(String... values) {
-	getChartConfiguration().withSeriesDefaults().getRendererOptions()
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.getIntervalColors().addAll(Arrays.asList(values));
 	return this;
     }
@@ -259,7 +249,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @param values
      */
     public AbstractChart<T, S> addIntervals(Integer... values) {
-	getChartConfiguration().withSeriesDefaults().getRendererOptions()
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.getIntervals().addAll(Arrays.asList(values));
 	return this;
     }
@@ -287,7 +277,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @param highlightMouseDown
      */
     public AbstractChart<T, S> setHighlightMouseDown(Boolean highlightMouseDown) {
-	getChartConfiguration().withSeriesDefaults().getRendererOptions()
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setHighlightMouseDown(highlightMouseDown);
 	return this;
     }
@@ -297,7 +287,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @param margin
      */
     public AbstractChart<T, S> setBarMargin(Integer margin) {
-	getChartConfiguration().withSeriesDefaults().getRendererOptions()
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setBarMargin(margin);
 	return this;
     }
@@ -307,7 +297,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @param margin
      */
     public AbstractChart<T, S> setSliceMargin(Integer margin) {
-	getChartConfiguration().withSeriesDefaults().getRendererOptions()
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setSliceMargin(margin);
 	return this;
     }
@@ -317,7 +307,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @param dataLabels
      */
     public AbstractChart<T, S> setDataLabels(String dataLabels) {
-	getChartConfiguration().withSeriesDefaults().getRendererOptions()
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setDataLabels(dataLabels);
 	return this;
     }
@@ -327,7 +317,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @param width
      */
     public AbstractChart<T, S> setLineWidth(Integer width) {
-	getChartConfiguration().withSeriesDefaults().getRendererOptions()
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setLineWidth(width);
 	return this;
     }
@@ -337,7 +327,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @param showDataLabels
      */
     public AbstractChart<T, S> setShowDataLabels(Boolean showDataLabels) {
-	getChartConfiguration().withSeriesDefaults().getRendererOptions()
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setShowDataLabels(showDataLabels);
 	return this;
     }
@@ -347,7 +337,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @param fill
      */
     public AbstractChart<T, S> setFill(Boolean fill) {
-	getChartConfiguration().withSeriesDefaults().getRendererOptions()
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setFill(fill);
 	return this;
     }
@@ -357,7 +347,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @param alpha
      */
     public AbstractChart<T, S> setBubbleAlpha(Float alpha) {
-	getChartConfiguration().withSeriesDefaults().getRendererOptions()
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setBubbleAlpha(alpha);
 	return this;
     }
@@ -367,7 +357,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @param alpha
      */
     public AbstractChart<T, S> setHighlightAlpha(Float alpha) {
-	getChartConfiguration().withSeriesDefaults().getRendererOptions()
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setHighlightAlpha(alpha);
 	return this;
     }
@@ -377,7 +367,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @param showLabels
      */
     public AbstractChart<T, S> setShowLabels(Boolean showLabels) {
-	getChartConfiguration().withSeriesDefaults().getRendererOptions()
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setShowLables(showLabels);
 	return this;
     }
@@ -387,7 +377,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @param alpha
      */
     public AbstractChart<T, S> setShadowAlpha(String alpha) {
-	getChartConfiguration().withSeriesDefaults().setShadowAlpha(alpha);
+	getChartConfiguration().seriesDefaultsInstance().setShadowAlpha(alpha);
 	return this;
     }
 
@@ -396,7 +386,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @param fillZero
      */
     public AbstractChart<T, S> setFillZero(Boolean fillZero) {
-	getChartConfiguration().withSeriesDefaults().getRendererOptions()
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setFillZero(fillZero);
 	return this;
     }
@@ -432,7 +422,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @return the axes
      */
     public Axes<S> getAxes() {
-	return getChartConfiguration().withAxes();
+	return getChartConfiguration().axesInstance();
     }
 
     /**
@@ -445,10 +435,10 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
     }
 
     public XAxis<S> getXAxis() {
-	return getChartConfiguration().withXAxis();
+	return getChartConfiguration().xAxisInstance();
     }
 
     public YAxis<S> getYAxis() {
-	return getChartConfiguration().withYAxis();
+	return getChartConfiguration().yAxisInstance();
     }
 }

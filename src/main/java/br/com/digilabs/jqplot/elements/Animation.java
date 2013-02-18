@@ -21,7 +21,8 @@ public class Animation implements Element {
      * set animation speed in ms
      * @param speed in ms
      */
-    public void setSpeed(Integer speed) {
+    public Animation setSpeed(Integer speed) {
         this.speed = speed;
+        return this;
     }
 }

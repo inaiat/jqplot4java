@@ -149,8 +149,9 @@ public class RendererOptions implements Element {
      *
      * @param padding the new padding
      */
-    public void setPadding(Integer padding) {
+    public RendererOptions setPadding(Integer padding) {
         this.padding = padding;
+        return this;
     }
 
     /**
@@ -167,8 +168,9 @@ public class RendererOptions implements Element {
      *
      * @param marginTop the new margin top
      */
-    public void setMarginTop(String marginTop) {
+    public RendererOptions setMarginTop(String marginTop) {
         this.marginTop = marginTop;
+        return this;
     }
 
     /**
@@ -185,8 +187,9 @@ public class RendererOptions implements Element {
      *
      * @param numberRows the new number rows
      */
-    public void setNumberRows(Integer numberRows) {
+    public RendererOptions setNumberRows(Integer numberRows) {
         this.numberRows = numberRows;
+        return this;
     }
 
     /**
@@ -203,8 +206,9 @@ public class RendererOptions implements Element {
      *
      * @param smooth the new smooth
      */
-    public void setSmooth(Boolean smooth) {
+    public RendererOptions setSmooth(Boolean smooth) {
         this.smooth = smooth;
+        return this;
     }
 
     /**
@@ -221,8 +225,9 @@ public class RendererOptions implements Element {
      *
      * @param fill the new fill
      */
-    public void setFill(Boolean fill) {
+    public RendererOptions setFill(Boolean fill) {
         this.fill = fill;
+        return this;
     }
 
     /**
@@ -239,8 +244,9 @@ public class RendererOptions implements Element {
      *
      * @param lineWidth the new line width
      */
-    public void setLineWidth(Integer lineWidth) {
+    public RendererOptions setLineWidth(Integer lineWidth) {
         this.lineWidth = lineWidth;
+        return this;
     }
 
     /**
@@ -260,8 +266,9 @@ public class RendererOptions implements Element {
      *
      * @param intervalColors the new interval colors
      */
-    public void setIntervalColors(List<String> intervalColors) {
+    public RendererOptions setIntervalColors(List<String> intervalColors) {
         this.intervalColors = intervalColors;
+        return this;
     }
 
     /**
@@ -282,8 +289,9 @@ public class RendererOptions implements Element {
      *
      * @param intervals the new intervals
      */
-    public void setIntervals(List<Integer> intervals) {
+    public RendererOptions setIntervals(List<Integer> intervals) {
         this.intervals = intervals;
+        return this;
     }
 
     /**
@@ -300,8 +308,9 @@ public class RendererOptions implements Element {
      *
      * @param intervalOuterRadius the new interval outer radius
      */
-    public void setIntervalOuterRadius(Integer intervalOuterRadius) {
+    public RendererOptions setIntervalOuterRadius(Integer intervalOuterRadius) {
         this.intervalOuterRadius = intervalOuterRadius;
+        return this;
     }
 
     /**
@@ -318,8 +327,9 @@ public class RendererOptions implements Element {
      *
      * @param label the new label
      */
-    public void setLabel(String label) {
+    public RendererOptions setLabel(String label) {
         this.label = label;
+        return this;
     }
 
     /**
@@ -336,8 +346,9 @@ public class RendererOptions implements Element {
      *
      * @param labelHeightAdjust the new label height adjust
      */
-    public void setLabelHeightAdjust(Integer labelHeightAdjust) {
+    public RendererOptions setLabelHeightAdjust(Integer labelHeightAdjust) {
         this.labelHeightAdjust = labelHeightAdjust;
+        return this;
     }
 
     /**
@@ -354,8 +365,9 @@ public class RendererOptions implements Element {
      *
      * @param labelPosition the new label position
      */
-    public void setLabelPosition(String labelPosition) {
+    public RendererOptions setLabelPosition(String labelPosition) {
         this.labelPosition = labelPosition;
+        return this;
     }
 
     /**
@@ -372,8 +384,9 @@ public class RendererOptions implements Element {
      *
      * @param max the new max
      */
-    public void setMax(Integer max) {
+    public RendererOptions setMax(Integer max) {
         this.max = max;
+        return this;
     }
 
     /**
@@ -390,8 +403,9 @@ public class RendererOptions implements Element {
      *
      * @param min the new min
      */
-    public void setMin(Integer min) {
+    public RendererOptions setMin(Integer min) {
         this.min = min;
+        return this;
     }
 
     /**
@@ -408,8 +422,9 @@ public class RendererOptions implements Element {
      *
      * @param showTickLabels the new show tick labels
      */
-    public void setShowTickLabels(Boolean showTickLabels) {
+    public RendererOptions setShowTickLabels(Boolean showTickLabels) {
         this.showTickLabels = showTickLabels;
+        return this;
     }
 
     /**
@@ -426,8 +441,9 @@ public class RendererOptions implements Element {
      *
      * @param showLables the new show lables
      */
-    public void setShowLables(Boolean showLables) {
+    public RendererOptions setShowLables(Boolean showLables) {
         this.showLables = showLables;
+        return this;
     }
 
     /**
@@ -444,8 +460,9 @@ public class RendererOptions implements Element {
      *
      * @param bubbleAlpha the new bubble alpha
      */
-    public void setBubbleAlpha(Float bubbleAlpha) {
+    public RendererOptions setBubbleAlpha(Float bubbleAlpha) {
         this.bubbleAlpha = bubbleAlpha;
+        return this;
     }
 
     /**
@@ -462,8 +479,9 @@ public class RendererOptions implements Element {
      *
      * @param highlightAlpha the new highlight alpha
      */
-    public void setHighlightAlpha(Float highlightAlpha) {
+    public RendererOptions setHighlightAlpha(Float highlightAlpha) {
         this.highlightAlpha = highlightAlpha;
+        return this;
     }
 
     /**
@@ -480,8 +498,9 @@ public class RendererOptions implements Element {
      *
      * @param bubbleGradients the new bubble gradients
      */
-    public void setBubbleGradients(Boolean bubbleGradients) {
+    public RendererOptions setBubbleGradients(Boolean bubbleGradients) {
         this.bubbleGradients = bubbleGradients;
+        return this;
     }
 
     /**
@@ -498,8 +517,9 @@ public class RendererOptions implements Element {
      *
      * @param barMargin the new bar margin
      */
-    public void setBarMargin(Integer barMargin) {
+    public RendererOptions setBarMargin(Integer barMargin) {
         this.barMargin = barMargin;
+        return this;
     }
 
     /**
@@ -516,8 +536,9 @@ public class RendererOptions implements Element {
      *
      * @param highlightMouseDown the new highlight mouse down
      */
-    public void setHighlightMouseDown(Boolean highlightMouseDown) {
+    public RendererOptions setHighlightMouseDown(Boolean highlightMouseDown) {
         this.highlightMouseDown = highlightMouseDown;
+        return this;
     }
 
     /**
@@ -534,8 +555,9 @@ public class RendererOptions implements Element {
      *
      * @param barDirection the new bar direction
      */
-    public void setBarDirection(String barDirection) {
+    public RendererOptions setBarDirection(String barDirection) {
         this.barDirection = barDirection;
+        return this;
     }
 
     /**
@@ -552,8 +574,9 @@ public class RendererOptions implements Element {
      *
      * @param fillZero the new fill zero
      */
-    public void setFillZero(Boolean fillZero) {
+    public RendererOptions setFillZero(Boolean fillZero) {
         this.fillZero = fillZero;
+        return this;
     }
     
     /** The fill zero. */
@@ -573,8 +596,9 @@ public class RendererOptions implements Element {
      *
      * @param showDataLabels the showDataLabels to set
      */
-    public void setShowDataLabels(Boolean showDataLabels) {
+    public RendererOptions setShowDataLabels(Boolean showDataLabels) {
         this.showDataLabels = showDataLabels;
+        return this;
     }
 
     /**
@@ -591,8 +615,9 @@ public class RendererOptions implements Element {
      *
      * @param dataLabels the dataLabels to set
      */
-    public void setDataLabels(String dataLabels) {
+    public RendererOptions setDataLabels(String dataLabels) {
         this.dataLabels = dataLabels;
+        return this;
     }
 
     /**
@@ -609,8 +634,9 @@ public class RendererOptions implements Element {
      *
      * @param sliceMargin the sliceMargin to set
      */
-    public void setSliceMargin(Integer sliceMargin) {
+    public RendererOptions setSliceMargin(Integer sliceMargin) {
         this.sliceMargin = sliceMargin;
+        return this;
     }
 
     /**
@@ -627,8 +653,9 @@ public class RendererOptions implements Element {
      *
      * @param startAngle the startAngle to set
      */
-    public void setStartAngle(Integer startAngle) {
+    public RendererOptions setStartAngle(Integer startAngle) {
         this.startAngle = startAngle;
+        return this;
     }
 
     /**
@@ -646,8 +673,9 @@ public class RendererOptions implements Element {
      * @param animation object for setting
      * different animation speed
      */
-    public void setAnimation(Animation animation) {
+    public RendererOptions setAnimation(Animation animation) {
         this.animation = animation;
+        return this;
     }
 
 	/**
@@ -664,7 +692,8 @@ public class RendererOptions implements Element {
 	 *
 	 * @param varyBarColor the new vary bar color
 	 */
-	public void setVaryBarColor(Boolean varyBarColor) {
+	public RendererOptions setVaryBarColor(Boolean varyBarColor) {
 		this.varyBarColor = varyBarColor;
+		return this;
 	}
 }

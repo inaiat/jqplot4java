@@ -18,6 +18,7 @@ package br.com.digilabs.jqplot.chart;
 
 import java.util.Collection;
 
+import br.com.digilabs.jqplot.ChartConfiguration;
 import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.data.LineSeriesData;
 import br.com.digilabs.jqplot.data.item.LineSeriesItem;
@@ -37,34 +38,42 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
  *            type of value of serie
  */
 @JqPlotPlugin(values = { JqPlotResources.CanvasTextRenderer,
-	JqPlotResources.CategoryAxisRenderer })
+		JqPlotResources.CategoryAxisRenderer })
 public class LineSeriesChart<I extends Number, V extends Number> extends
-	AbstractChart<LineSeriesData<I, V>, String> {
+		AbstractChart<LineSeriesData<I, V>, String> {
 
-    private static final long serialVersionUID = -563079287340319412L;
+	private static final long serialVersionUID = -563079287340319412L;
 
-    private LineSeriesData<I, V> data = new LineSeriesData<I, V>();
+	private final ChartConfiguration<String> chartConfig;
 
-    public LineSeriesChart(String title) {
-	this(title, null, null);
-    }
+	private LineSeriesData<I, V> data = new LineSeriesData<I, V>();
 
-    public LineSeriesChart(String title, String labelX, String labelY) {
-	getChartConfiguration().setTitle(new Title(title));
-	getChartConfiguration().setLabelX(labelX);
-	getChartConfiguration().setLabelY(labelY);
-    }
+	public LineSeriesChart(String title) {
+		this(title, null, null);
+	}
 
-    public LineSeriesData<I, V> getChartData() {
-	return data;
-    }
+	public LineSeriesChart(String title, String labelX, String labelY) {
+		this.chartConfig = new ChartConfiguration<String>();
+		chartConfig.setTitle(new Title(title))
+			.setLabelX(labelX)
+			.setLabelY(labelY);
+	}
 
-    public void addValue(Collection<LineSeriesItem<I, V>> value) {
-	data.addValue(value);
-    }
+	public LineSeriesData<I, V> getChartData() {
+		return data;
+	}
 
-    public void addValues(Collection<LineSeriesItem<I, V>>... values) {
-	data.addValues(values);
-    }
+	public void addValue(Collection<LineSeriesItem<I, V>> value) {
+		data.addValue(value);
+	}
+
+	public void addValues(Collection<LineSeriesItem<I, V>>... values) {
+		data.addValues(values);
+	}
+
+	@Override
+	public ChartConfiguration<String> getChartConfiguration() {
+		return chartConfig;
+	}
 
 }

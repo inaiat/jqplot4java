@@ -16,13 +16,12 @@
  */
 package br.com.digilabs.jqplot.chart;
 
-import br.com.digilabs.jqplot.JqPlotResources;
-import br.com.digilabs.jqplot.axis.XAxis;
-import br.com.digilabs.jqplot.data.AreaFillData;
-import br.com.digilabs.jqplot.elements.SeriesDefaults;
-import br.com.digilabs.jqplot.elements.Title;
-
 import java.util.List;
+
+import br.com.digilabs.jqplot.ChartConfiguration;
+import br.com.digilabs.jqplot.JqPlotResources;
+import br.com.digilabs.jqplot.data.AreaFillData;
+import br.com.digilabs.jqplot.elements.Title;
 
 /**
  * Simple implementation of Area Chart. This class can/should be extended.
@@ -34,6 +33,8 @@ public class AreaChart<T extends Number> extends AbstractChart<AreaFillData<T>,S
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 6050878600406620553L;
+	
+	private final ChartConfiguration<String> chartConfig;
 
 	/** The data. */
 	private AreaFillData<T> data = new AreaFillData<T>();
@@ -51,14 +52,17 @@ public class AreaChart<T extends Number> extends AbstractChart<AreaFillData<T>,S
      * @param title the title
      */
     public AreaChart(String title) {
-        getChartConfiguration().setTitle(new Title(title));
-        getChartConfiguration().setStackSeries(true);
-        getChartConfiguration().setShowMarker(false);
-        SeriesDefaults defaults = new SeriesDefaults();
-        defaults.setFill(true);
-        setSeriesDefaults(defaults);
-        XAxis<String> xAxis = getChartConfiguration().withAxes().withXaxis();
-        xAxis.setRenderer(JqPlotResources.CategoryAxisRenderer);
+    	chartConfig= new ChartConfiguration<String>();
+    	chartConfig
+        	.setTitle(new Title(title))
+        	.setStackSeries(true)
+        	.setShowMarker(false)
+        	.seriesDefaultsInstance()
+        	.setFill(true);
+    	chartConfig
+        	.axesInstance()
+        	.xAxisInstance()
+        	.setRenderer(JqPlotResources.CategoryAxisRenderer);
     }
 
     /* (non-Javadoc)
@@ -85,4 +89,9 @@ public class AreaChart<T extends Number> extends AbstractChart<AreaFillData<T>,S
     public void addValues(List<T>... value) {
         data.addValues(value);
     }
+
+	@Override
+	public ChartConfiguration<String> getChartConfiguration() {
+		return chartConfig;
+	}
 }

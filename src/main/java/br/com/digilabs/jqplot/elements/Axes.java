@@ -54,28 +54,28 @@ public class Axes<T extends Serializable> implements Element {
     private X2Axis<T> x2axis;
     private Y2Axis<T> y2axis;
     
-    public XAxis<T> withXaxis() {
+    public XAxis<T> xAxisInstance() {
 	if (xaxis==null) {
 	    xaxis = new XAxis<T>();
 	}
 	return xaxis;
     }
     
-    public YAxis<T> withYaxis() {
+    public YAxis<T> yAxisInstance() {
 	if (yaxis==null) {
 	    yaxis = new YAxis<T>();
 	}
 	return yaxis;
     }
     
-    public X2Axis<T> withX2axis() {
+    public X2Axis<T> x2axisInstance() {
 	if (x2axis==null) {
 	    x2axis = new X2Axis<T>();
 	}
 	return x2axis;
     }
     
-    public Y2Axis<T> withY2axis() {
+    public Y2Axis<T> y2axisInstance() {
 	if (y2axis==null) {
 	    y2axis = new Y2Axis<T>();
 	}
