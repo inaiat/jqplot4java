@@ -17,14 +17,21 @@
 package br.com.digilabs.jqplot;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import br.com.digilabs.jqplot.axis.Axis;
 import br.com.digilabs.jqplot.axis.XAxis;
 import br.com.digilabs.jqplot.axis.YAxis;
-import br.com.digilabs.jqplot.elements.*;
-
-import java.util.ArrayList;
+import br.com.digilabs.jqplot.elements.Axes;
+import br.com.digilabs.jqplot.elements.Cursor;
+import br.com.digilabs.jqplot.elements.Grid;
+import br.com.digilabs.jqplot.elements.GridPadding;
+import br.com.digilabs.jqplot.elements.Highlighter;
+import br.com.digilabs.jqplot.elements.Legend;
+import br.com.digilabs.jqplot.elements.Serie;
+import br.com.digilabs.jqplot.elements.SeriesDefaults;
+import br.com.digilabs.jqplot.elements.Title;
 
 /**
  * 
@@ -298,7 +305,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 */
 	public ChartConfiguration<T> setLabelX(String label) {
 		if (label != null) {
-			axesInstance().getXaxis().setLabel(label);
+			axesInstance().xAxisInstance().setLabel(label);
 		}
 		return this;
 	}
@@ -311,7 +318,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 */
 	public ChartConfiguration<T> setLabelY(String label) {
 		if (label != null) {
-			axesInstance().getYaxis().setLabel(label);
+			axesInstance().yAxisInstance().setLabel(label);
 		}
 		return this;
 	}
