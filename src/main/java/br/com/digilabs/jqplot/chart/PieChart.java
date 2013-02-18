@@ -16,6 +16,7 @@
  */
 package br.com.digilabs.jqplot.chart;
 
+import br.com.digilabs.jqplot.ChartConfiguration;
 import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.data.PieData;
 import br.com.digilabs.jqplot.data.item.LabeledItem;
@@ -31,6 +32,8 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 public class PieChart<T extends Number> extends AbstractChart<PieData<T>,String> {
 
 	private static final long serialVersionUID = -9078771567964143651L;
+	
+	private final ChartConfiguration<String> chartConfig;
 
 	private PieData<T> data = new PieData<T>();
 
@@ -46,13 +49,14 @@ public class PieChart<T extends Number> extends AbstractChart<PieData<T>,String>
      * @param title 
      */
     public PieChart(String title) {
-        getChartConfiguration().setTitle(new Title(title));
-        getChartConfiguration().setLegend(new Legend(true, Location.e));
-        getChartConfiguration().setSeriesDefaults(new SeriesDefaults());
-        getChartConfiguration().getSeriesDefaults().setRenderer(JqPlotResources.PieRenderer);
-        getChartConfiguration().getSeriesDefaults().setRendererOptions(new RendererOptions());
-        getChartConfiguration().getSeriesDefaults().getRendererOptions().setShowDataLabels(true);
-
+    	this.chartConfig = new ChartConfiguration<String>();
+    	chartConfig
+    		.setTitle(new Title(title))
+    		.setLegend(new Legend(true, Location.e))
+    		.seriesDefaultsInstance()
+    		.setRenderer(JqPlotResources.PieRenderer)
+    		.rendererOptionsInstance()
+    		.setShowLables(true);
     }
 
     /**
@@ -87,5 +91,10 @@ public class PieChart<T extends Number> extends AbstractChart<PieData<T>,String>
     public PieData<T> getChartData() {
         return data;
     }
+
+	@Override
+	public ChartConfiguration<String> getChartConfiguration() {
+		return chartConfig;
+	}
 
 }

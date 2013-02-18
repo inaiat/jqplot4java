@@ -22,21 +22,22 @@ import java.util.List;
 
 import org.json.JSONArray;
 
-
 /**
  * Data Helper to build Area Charts.
- *
- * @param <T> Type of number. Ex.: Double, Integer, Float, etc.
+ * 
+ * @param <T>
+ *            Type of number. Ex.: Double, Integer, Float, etc.
  * 
  * @author inaiat
  */
-public class AreaFillData<T extends Number> extends AbstractCollectionData<List<T>> {
+public class AreaFillData<T extends Number> extends
+	AbstractCollectionData<List<T>> {
 
-	/** The Constant serialVersionUID. */
-	private static final long serialVersionUID = -2456625545492808162L;
+    /** The Constant serialVersionUID. */
+    private static final long serialVersionUID = -2456625545492808162L;
 
-	/** The data. */
-	private List<List<T>> data = new ArrayList<List<T>>();
+    /** The data. */
+    private List<List<T>> data = new ArrayList<List<T>>();
 
     /**
      * Instantiates a new area fill data.
@@ -46,28 +47,33 @@ public class AreaFillData<T extends Number> extends AbstractCollectionData<List<
 
     /**
      * Instantiates a new area fill data.
-     *
-     * @param values the values
+     * 
+     * @param values
+     *            the values
      */
     public AreaFillData(List<T>... values) {
-        for (int i = 0; i < values.length; i++) {
-        	List<T> list = values[i];
-            addValue(list);
-        }
+	for (int i = 0; i < values.length; i++) {
+	    List<T> list = values[i];
+	    addValue(list);
+	}
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see br.com.digilabs.jqplot.data.ChartData#getData()
      */
     public Collection<List<T>> getData() {
-        return data;
+	return data;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
      */
     public String toJsonString() {
-        JSONArray jsonArray = new JSONArray(data);
-        return jsonArray.toString();
+	JSONArray jsonArray = new JSONArray(data);
+	return jsonArray.toString();
     }
 }

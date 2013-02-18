@@ -21,11 +21,7 @@ import java.util.Collection;
 
 import br.com.digilabs.jqplot.ChartConfiguration;
 import br.com.digilabs.jqplot.JqPlotResources;
-import br.com.digilabs.jqplot.axis.XAxis;
 import br.com.digilabs.jqplot.data.BarData;
-import br.com.digilabs.jqplot.elements.PointLabels;
-import br.com.digilabs.jqplot.elements.RendererOptions;
-import br.com.digilabs.jqplot.elements.SeriesDefaults;
 import br.com.digilabs.jqplot.elements.Title;
 import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
@@ -35,9 +31,11 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
  * @author inaiat
  */
 @JqPlotPlugin(values = {JqPlotResources.CategoryAxisRenderer, JqPlotResources.BarRenderer, JqPlotResources.PointLabels})
-public class BarChart<T extends Number> extends AbstractChart<BarData<T>, String> {
+public class BarChart<T extends Number> extends AbstractChart<BarData<T>, Long> {
 
 	private static final long serialVersionUID = 3650210485517566138L;
+	
+	private final ChartConfiguration<Long> chartConfig;
 
 	private BarData<T> barData = new BarData<T>();
 
@@ -64,25 +62,24 @@ public class BarChart<T extends Number> extends AbstractChart<BarData<T>, String
      * @param labelY 
      */
     public BarChart(String title, String labelX, String labelY) {
-        ChartConfiguration<String> chartConfiguration = getChartConfiguration();
-        chartConfiguration.setTitle(new Title(title));
-
-        SeriesDefaults seriesDefaults = new SeriesDefaults();
-        RendererOptions rendererOptions = new RendererOptions();
-        seriesDefaults.setRenderer(JqPlotResources.BarRenderer);
-        seriesDefaults.setRendererOptions(rendererOptions);
-        chartConfiguration.setSeriesDefaults(seriesDefaults);
-        chartConfiguration.getSeriesDefaults().setPointLabels(new PointLabels());
-
-        rendererOptions.setFillZero(true);
-
-        chartConfiguration.setLabelX(labelX);
-        chartConfiguration.setLabelY(labelY);
-
-        XAxis<String> xAxis = getChartConfiguration().createXAxis();
-        xAxis.setRenderer(JqPlotResources.CategoryAxisRenderer);
-
-        getChartConfiguration().createYAxis();
+    	this.chartConfig = new ChartConfiguration<Long>();
+    	
+    	chartConfig
+    		.setTitle(new Title(title))
+        	.seriesDefaultsInstance()
+        	.pointLabelsInstance();
+        	
+    	chartConfig
+        	.setLabelX(labelX)
+        	.setLabelY(labelY)
+        	.seriesDefaultsInstance()
+        	.setRenderer(JqPlotResources.BarRenderer)
+        	.setFill(true);
+        
+    	chartConfig
+        	.axesInstance()
+        	.xAxisInstance()
+        	.setRenderer(JqPlotResources.CategoryAxisRenderer);
     }
     
     /**
@@ -114,5 +111,10 @@ public class BarChart<T extends Number> extends AbstractChart<BarData<T>, String
     public BarData<T> getChartData() {
         return barData;
     }
+
+	@Override
+	public ChartConfiguration<Long> getChartConfiguration() {
+		return this.chartConfig;
+	}
 
 }

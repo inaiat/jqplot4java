@@ -17,11 +17,10 @@
 package br.com.digilabs.jqplot.chart;
 
 
+import br.com.digilabs.jqplot.ChartConfiguration;
 import br.com.digilabs.jqplot.JqPlotResources;
-import br.com.digilabs.jqplot.axis.Axis;
 import br.com.digilabs.jqplot.data.LabeledData;
 import br.com.digilabs.jqplot.data.item.LabeledItem;
-import br.com.digilabs.jqplot.elements.TickOptions;
 import br.com.digilabs.jqplot.elements.Title;
 import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
@@ -42,8 +41,10 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 public class LabeledLineChart<T extends Number> extends AbstractChart<LabeledData<T>,String> {
 
 	private static final long serialVersionUID = -6833884146696085085L;
+	
+	private final ChartConfiguration<String> chartConfig;
 
-	LabeledData<T> labeledData = new LabeledData<T>();
+	private LabeledData<T> labeledData = new LabeledData<T>();
 
     /**
      * Construtor
@@ -72,18 +73,22 @@ public class LabeledLineChart<T extends Number> extends AbstractChart<LabeledDat
      */
     public LabeledLineChart(String title, String labelX, String labelY,
             Integer tickAngle) {
-        getChartConfiguration().setTitle(new Title(title));
-        Axis<String> xAxis = getChartConfiguration().createXAxis();
-        xAxis.setRenderer(JqPlotResources.DateAxisRenderer);
-        xAxis.setLabelRenderer(JqPlotResources.CanvasAxisLabelRenderer);
-        xAxis.setTickRenderer(JqPlotResources.CanvasAxisTickRenderer);
-        TickOptions tickOptions = new TickOptions();
-        tickOptions.setAngle(tickAngle);
-        xAxis.setTickOptions(tickOptions);
-        getChartConfiguration().createYAxis().setLabelRenderer(
-                JqPlotResources.CanvasAxisLabelRenderer);
-        getChartConfiguration().setLabelX(labelX);
-        getChartConfiguration().setLabelY(labelY);
+    	this.chartConfig = new ChartConfiguration<String>();
+    	
+    	chartConfig
+    		.setTitle(new Title(title))
+    		.setLabelX(labelX)
+    		.setLabelY(labelY)    		
+    		.axesInstance()
+    		.xAxisInstance()
+    		.setRenderer(JqPlotResources.DateAxisRenderer)
+    		.setLabelRenderer(JqPlotResources.CanvasAxisLabelRenderer)
+    		.tickOptionsInstance()
+    		.setAngle(tickAngle);
+    	chartConfig
+    		.axesInstance()
+    		.yAxisInstance()
+    		.setLabelRenderer(JqPlotResources.CanvasAxisLabelRenderer);
     }
 
     /**
@@ -109,4 +114,9 @@ public class LabeledLineChart<T extends Number> extends AbstractChart<LabeledDat
     public LabeledData<T> getChartData() {
         return labeledData;
     }
+
+	@Override
+	public ChartConfiguration<String> getChartConfiguration() {
+		return chartConfig;
+	}
 }

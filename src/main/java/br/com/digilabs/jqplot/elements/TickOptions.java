@@ -23,402 +23,421 @@ package br.com.digilabs.jqplot.elements;
  */
 public class TickOptions implements Element {
 
-    /** The Constant serialVersionUID. */
-    private static final long serialVersionUID = -8139093369426118021L;
+	/** The Constant serialVersionUID. */
+	private static final long serialVersionUID = -8139093369426118021L;
 
-    /** The mark. */
-    private String mark;
+	/** The mark. */
+	private String mark;
 
-    /** The show mark. */
-    private Boolean showMark;
+	/** The show mark. */
+	private Boolean showMark;
 
-    /** The show gridline. */
-    private Boolean showGridline;
+	/** The show gridline. */
+	private Boolean showGridline;
 
-    /** The is minor tick. */
-    private Boolean isMinorTick;
+	/** The is minor tick. */
+	private Boolean isMinorTick;
 
-    /** The angle. */
-    private Integer angle;
+	/** The angle. */
+	private Integer angle;
 
-    /** The mark size. */
-    private Integer markSize;
+	/** The mark size. */
+	private Integer markSize;
 
-    /** The show. */
-    private Boolean show;
+	/** The show. */
+	private Boolean show;
 
-    /** The show label. */
-    private Boolean showLabel;
+	/** The show label. */
+	private Boolean showLabel;
 
-    /** The label position. */
-    private String labelPosition;
+	/** The label position. */
+	private String labelPosition;
 
-    /** The label. */
-    private String label;
+	/** The label. */
+	private String label;
 
-    /** The format string. */
-    private String formatString;
+	/** The format string. */
+	private String formatString;
 
-    /** The prefix. */
-    private String prefix;
+	/** The prefix. */
+	private String prefix;
 
-    /** The font family. */
-    private String fontFamily;
+	/** The font family. */
+	private String fontFamily;
 
-    /** The font size. */
-    private String fontSize;
+	/** The font size. */
+	private String fontSize;
 
-    /** The font weight. */
-    private String fontWeight;
+	/** The font weight. */
+	private String fontWeight;
 
-    /** The font stretch. */
-    private Double fontStretch;
+	/** The font stretch. */
+	private Double fontStretch;
 
-    /** The text color. */
-    private String textColor;
+	/** The text color. */
+	private String textColor;
 
-    /** The escape html. */
-    private Boolean escapeHTML;
+	/** The escape html. */
+	private Boolean escapeHTML;
 
-    /**
-     * Gets the format string.
-     * 
-     * @return formatString
-     */
-    public String getFormatString() {
-	return formatString;
-    }
+	/**
+	 * Gets the format string.
+	 * 
+	 * @return formatString
+	 */
+	public String getFormatString() {
+		return formatString;
+	}
 
-    /**
-     * Sets the format string.
-     * 
-     * @param formatString
-     *            the new format string
-     */
-    public void setFormatString(String formatString) {
-	this.formatString = formatString;
-    }
+	/**
+	 * Sets the format string.
+	 * 
+	 * @param formatString
+	 *            the new format string
+	 */
+	public TickOptions setFormatString(String formatString) {
+		this.formatString = formatString;
+		return this;
+	}
 
-    /**
-     * Sets the angle.
-     * 
-     * @param angle
-     *            the angle to set
-     */
-    public void setAngle(Integer angle) {
-	this.angle = angle;
-    }
+	/**
+	 * Sets the angle.
+	 * 
+	 * @param angle
+	 *            the angle to set
+	 */
+	public TickOptions setAngle(Integer angle) {
+		this.angle = angle;
+		return this;
+	}
 
-    /**
-     * Gets the angle.
-     * 
-     * @return the angle
-     */
-    public Integer getAngle() {
-	return angle;
-    }
+	/**
+	 * Gets the angle.
+	 * 
+	 * @return the angle
+	 */
+	public Integer getAngle() {
+		return angle;
+	}
 
-    /**
-     * Gets the label position.
-     * 
-     * @return the labelPosition
-     */
-    public String getLabelPosition() {
-	return labelPosition;
-    }
+	/**
+	 * Gets the label position.
+	 * 
+	 * @return the labelPosition
+	 */
+	public String getLabelPosition() {
+		return labelPosition;
+	}
 
-    /**
-     * Sets the label position.
-     * 
-     * @param labelPosition
-     *            to set
-     */
-    public void setLabelPosition(String labelPosition) {
-	this.labelPosition = labelPosition;
-    }
+	/**
+	 * Sets the label position.
+	 * 
+	 * @param labelPosition
+	 *            to set
+	 */
+	public TickOptions setLabelPosition(String labelPosition) {
+		this.labelPosition = labelPosition;
+		return this;
+	}
 
-    /**
-     * Gets the mark.
-     * 
-     * @return the mark
-     */
-    public String getMark() {
-	return mark;
-    }
+	/**
+	 * Gets the mark.
+	 * 
+	 * @return the mark
+	 */
+	public String getMark() {
+		return mark;
+	}
 
-    /**
-     * Sets the mark.
-     * 
-     * @param mark
-     *            the new mark
-     */
-    public void setMark(String mark) {
-	this.mark = mark;
-    }
+	/**
+	 * Sets the mark.
+	 * 
+	 * @param mark
+	 *            the new mark
+	 */
+	public TickOptions setMark(String mark) {
+		this.mark = mark;
+		return this;
+	}
 
-    /**
-     * Gets the show mark.
-     * 
-     * @return the show mark
-     */
-    public Boolean getShowMark() {
-	return showMark;
-    }
+	/**
+	 * Gets the show mark.
+	 * 
+	 * @return the show mark
+	 */
+	public Boolean getShowMark() {
+		return showMark;
+	}
 
-    /**
-     * Sets the show mark.
-     * 
-     * @param showMark
-     *            the new show mark
-     */
-    public void setShowMark(Boolean showMark) {
-	this.showMark = showMark;
-    }
+	/**
+	 * Sets the show mark.
+	 * 
+	 * @param showMark
+	 *            the new show mark
+	 */
+	public TickOptions setShowMark(Boolean showMark) {
+		this.showMark = showMark;
+		return this;
+	}
 
-    /**
-     * Gets the show gridline.
-     * 
-     * @return the show gridline
-     */
-    public Boolean getShowGridline() {
-	return showGridline;
-    }
+	/**
+	 * Gets the show gridline.
+	 * 
+	 * @return the show gridline
+	 */
+	public Boolean getShowGridline() {
+		return showGridline;
+	}
 
-    /**
-     * Sets the show gridline.
-     * 
-     * @param showGridline
-     *            the new show gridline
-     */
-    public void setShowGridline(Boolean showGridline) {
-	this.showGridline = showGridline;
-    }
+	/**
+	 * Sets the show gridline.
+	 * 
+	 * @param showGridline
+	 *            the new show gridline
+	 */
+	public TickOptions setShowGridline(Boolean showGridline) {
+		this.showGridline = showGridline;
+		return this;
+	}
 
-    /**
-     * Gets the checks if is minor tick.
-     * 
-     * @return the checks if is minor tick
-     */
-    public Boolean getIsMinorTick() {
-	return isMinorTick;
-    }
+	/**
+	 * Gets the checks if is minor tick.
+	 * 
+	 * @return the checks if is minor tick
+	 */
+	public Boolean getIsMinorTick() {
+		return isMinorTick;
+	}
 
-    /**
-     * Sets the checks if is minor tick.
-     * 
-     * @param isMinorTick
-     *            the new checks if is minor tick
-     */
-    public void setIsMinorTick(Boolean isMinorTick) {
-	this.isMinorTick = isMinorTick;
-    }
+	/**
+	 * Sets the checks if is minor tick.
+	 * 
+	 * @param isMinorTick
+	 *            the new checks if is minor tick
+	 */
+	public TickOptions setIsMinorTick(Boolean isMinorTick) {
+		this.isMinorTick = isMinorTick;
+		return this;
+	}
 
-    /**
-     * Gets the mark size.
-     * 
-     * @return the mark size
-     */
-    public Integer getMarkSize() {
-	return markSize;
-    }
+	/**
+	 * Gets the mark size.
+	 * 
+	 * @return the mark size
+	 */
+	public Integer getMarkSize() {
+		return markSize;
+	}
 
-    /**
-     * Sets the mark size.
-     * 
-     * @param markSize
-     *            the new mark size
-     */
-    public void setMarkSize(Integer markSize) {
-	this.markSize = markSize;
-    }
+	/**
+	 * Sets the mark size.
+	 * 
+	 * @param markSize
+	 *            the new mark size
+	 */
+	public TickOptions setMarkSize(Integer markSize) {
+		this.markSize = markSize;
+		return this;
+	}
 
-    /**
-     * Gets the show.
-     * 
-     * @return the show
-     */
-    public Boolean getShow() {
-	return show;
-    }
+	/**
+	 * Gets the show.
+	 * 
+	 * @return the show
+	 */
+	public Boolean getShow() {
+		return show;
+	}
 
-    /**
-     * Sets the show.
-     * 
-     * @param show
-     *            the new show
-     */
-    public void setShow(Boolean show) {
-	this.show = show;
-    }
+	/**
+	 * Sets the show.
+	 * 
+	 * @param show
+	 *            the new show
+	 */
+	public TickOptions setShow(Boolean show) {
+		this.show = show;
+		return this;
+	}
 
-    /**
-     * Gets the show label.
-     * 
-     * @return the show label
-     */
-    public Boolean getShowLabel() {
-	return showLabel;
-    }
+	/**
+	 * Gets the show label.
+	 * 
+	 * @return the show label
+	 */
+	public Boolean getShowLabel() {
+		return showLabel;
+	}
 
-    /**
-     * Sets the show label.
-     * 
-     * @param showLabel
-     *            the new show label
-     */
-    public void setShowLabel(Boolean showLabel) {
-	this.showLabel = showLabel;
-    }
+	/**
+	 * Sets the show label.
+	 * 
+	 * @param showLabel
+	 *            the new show label
+	 */
+	public TickOptions setShowLabel(Boolean showLabel) {
+		this.showLabel = showLabel;
+		return this;
+	}
 
-    /**
-     * Gets the label.
-     * 
-     * @return the label
-     */
-    public String getLabel() {
-	return label;
-    }
+	/**
+	 * Gets the label.
+	 * 
+	 * @return the label
+	 */
+	public String getLabel() {
+		return label;
+	}
 
-    /**
-     * Sets the label.
-     * 
-     * @param label
-     *            the new label
-     */
-    public void setLabel(String label) {
-	this.label = label;
-    }
+	/**
+	 * Sets the label.
+	 * 
+	 * @param label
+	 *            the new label
+	 */
+	public TickOptions setLabel(String label) {
+		this.label = label;
+		return this;
+	}
 
-    /**
-     * Gets the prefix.
-     * 
-     * @return the prefix
-     */
-    public String getPrefix() {
-	return prefix;
-    }
+	/**
+	 * Gets the prefix.
+	 * 
+	 * @return the prefix
+	 */
+	public String getPrefix() {
+		return prefix;
+	}
 
-    /**
-     * Sets the prefix.
-     * 
-     * @param prefix
-     *            the new prefix
-     */
-    public void setPrefix(String prefix) {
-	this.prefix = prefix;
-    }
+	/**
+	 * Sets the prefix.
+	 * 
+	 * @param prefix
+	 *            the new prefix
+	 */
+	public TickOptions setPrefix(String prefix) {
+		this.prefix = prefix;
+		return this;
+	}
+	
 
-    /**
-     * Gets the font family.
-     * 
-     * @return the font family
-     */
-    public String getFontFamily() {
-	return fontFamily;
-    }
+	/**
+	 * Gets the font family.
+	 * 
+	 * @return the font family
+	 */
+	public String getFontFamily() {
+		return fontFamily;
+	}
 
-    /**
-     * Sets the font family.
-     * 
-     * @param fontFamily
-     *            the new font family
-     */
-    public void setFontFamily(String fontFamily) {
-	this.fontFamily = fontFamily;
-    }
+	/**
+	 * Sets the font family.
+	 * 
+	 * @param fontFamily
+	 *            the new font family
+	 */
+	public TickOptions setFontFamily(String fontFamily) {
+		this.fontFamily = fontFamily;
+		return this;
+	}
 
-    /**
-     * Gets the font size.
-     * 
-     * @return the font size
-     */
-    public String getFontSize() {
-	return fontSize;
-    }
+	/**
+	 * Gets the font size.
+	 * 
+	 * @return the font size
+	 */
+	public String getFontSize() {
+		return fontSize;
+	}
 
-    /**
-     * Sets the font size.
-     * 
-     * @param fontSize
-     *            the new font size
-     */
-    public void setFontSize(String fontSize) {
-	this.fontSize = fontSize;
-    }
+	/**
+	 * Sets the font size.
+	 * 
+	 * @param fontSize
+	 *            the new font size
+	 */
+	public TickOptions setFontSize(String fontSize) {
+		this.fontSize = fontSize;
+		return this;
+	}
 
-    /**
-     * Gets the font weight.
-     * 
-     * @return the font weight
-     */
-    public String getFontWeight() {
-	return fontWeight;
-    }
+	/**
+	 * Gets the font weight.
+	 * 
+	 * @return the font weight
+	 */
+	public String getFontWeight() {
+		return fontWeight;
+	}
 
-    /**
-     * Sets the font weight.
-     * 
-     * @param fontWeight
-     *            the new font weight
-     */
-    public void setFontWeight(String fontWeight) {
-	this.fontWeight = fontWeight;
-    }
+	/**
+	 * Sets the font weight.
+	 * 
+	 * @param fontWeight
+	 *            the new font weight
+	 */
+	public TickOptions setFontWeight(String fontWeight) {
+		this.fontWeight = fontWeight;
+		return this;
+	}
 
-    /**
-     * Gets the font stretch.
-     * 
-     * @return the font stretch
-     */
-    public Double getFontStretch() {
-	return fontStretch;
-    }
+	/**
+	 * Gets the font stretch.
+	 * 
+	 * @return the font stretch
+	 */
+	public Double getFontStretch() {
+		return fontStretch;
+	}
 
-    /**
-     * Sets the font stretch.
-     * 
-     * @param fontStretch
-     *            the new font stretch
-     */
-    public void setFontStretch(Double fontStretch) {
-	this.fontStretch = fontStretch;
-    }
+	/**
+	 * Sets the font stretch.
+	 * 
+	 * @param fontStretch
+	 *            the new font stretch
+	 */
+	public TickOptions setFontStretch(Double fontStretch) {
+		this.fontStretch = fontStretch;
+		return this;
+	}
 
-    /**
-     * Gets the text color.
-     * 
-     * @return the text color
-     */
-    public String getTextColor() {
-	return textColor;
-    }
+	/**
+	 * Gets the text color.
+	 * 
+	 * @return the text color
+	 */
+	public String getTextColor() {
+		return textColor;
+	}
 
-    /**
-     * Sets the text color.
-     * 
-     * @param textColor
-     *            the new text color
-     */
-    public void setTextColor(String textColor) {
-	this.textColor = textColor;
-    }
+	/**
+	 * Sets the text color.
+	 * 
+	 * @param textColor
+	 *            the new text color
+	 */
+	public TickOptions setTextColor(String textColor) {
+		this.textColor = textColor;
+		return this;
+	}
 
-    /**
-     * Gets the escape html.
-     * 
-     * @return the escape html
-     */
-    public Boolean getEscapeHTML() {
-	return escapeHTML;
-    }
+	/**
+	 * Gets the escape html.
+	 * 
+	 * @return the escape html
+	 */
+	public Boolean getEscapeHTML() {
+		return escapeHTML;
+	}
 
-    /**
-     * Sets the escape html.
-     * 
-     * @param escapeHTML
-     *            the new escape html
-     */
-    public void setEscapeHTML(Boolean escapeHTML) {
-	this.escapeHTML = escapeHTML;
-    }
+	/**
+	 * Sets the escape html.
+	 * 
+	 * @param escapeHTML
+	 *            the new escape html
+	 */
+	public TickOptions setEscapeHTML(Boolean escapeHTML) {
+		this.escapeHTML = escapeHTML;
+		return this;
+	}
 }

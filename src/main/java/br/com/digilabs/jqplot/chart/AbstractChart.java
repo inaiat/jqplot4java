@@ -17,6 +17,8 @@
 package br.com.digilabs.jqplot.chart;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 import br.com.digilabs.jqplot.Chart;
@@ -32,9 +34,6 @@ import br.com.digilabs.jqplot.elements.Serie;
 import br.com.digilabs.jqplot.elements.SeriesDefaults;
 import br.com.digilabs.jqplot.elements.Title;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 /**
  * Abstract class to help build charts.
  * 
@@ -49,41 +48,26 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
 
     private static final long serialVersionUID = -5744130130488157491L;
 
-    private final ChartConfiguration<S> configuration;
 
-    /**
-     * Construtor
-     */
-    public AbstractChart() {
-	this.configuration = new ChartConfiguration<S>();
+    public AbstractChart<T, S> addSeriesColors(String... colors) {
+
+	getChartConfiguration().seriesColorsInstance()
+		.addAll(Arrays.asList(colors));
+	return this;
     }
 
-    public void addSeriesColors(String... colors) {
-	Collection<String> seriesColor = getChartConfiguration()
-		.createSeriesColors();
-	seriesColor.addAll(Arrays.asList(colors));
+    public AbstractChart<T, S> addSeriesColors(Collection<String> colors) {
+	getChartConfiguration().seriesColorsInstance().addAll(colors);
+	return this;
     }
 
-    public void addSeriesColors(Collection<String> colors) {
-	Collection<String> seriesColor = getChartConfiguration()
-		.createSeriesColors();
-	seriesColor.addAll(colors);
-    }
-
-    public void setSeriesColors(Collection<String> colors) {
+    public AbstractChart<T, S> setSeriesColors(Collection<String> colors) {
 	getChartConfiguration().setSeriesColors(colors);
+	return this;
     }
 
     public Collection<String> getSeriesColors() {
-	return getChartConfiguration().getSeriesColors();
-    }
-
-    /**
-     * 
-     * @param ticks
-     */
-    public void setTicks(String... ticks) {
-	getChartConfiguration().getAxes().getXaxis().setTicks(ticks);
+	return getChartConfiguration().seriesColorsInstance();
     }
 
     /**
@@ -91,12 +75,13 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * 
      * @param serie
      */
-    public void addSerie(Serie serie) {
+    public AbstractChart<T, S> addSerie(Serie serie) {
 	Collection<Serie> series = getSeries();
 	if (series == null) {
 	    series = new ArrayList<Serie>();
 	}
 	series.add(serie);
+	return this;
     }
 
     /**
@@ -104,7 +89,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * 
      * @param series
      */
-    public void addSeries(Serie... series) {
+    public AbstractChart<T, S> addSeries(Serie... series) {
 	Collection<Serie> chartSeries = getSeries();
 	if (chartSeries == null) {
 	    chartSeries = new ArrayList<Serie>();
@@ -112,6 +97,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
 	for (int i = series.length - 1; i >= 0; i--) {
 	    chartSeries.add(series[i]);
 	}
+	return this;
 
     }
 
@@ -119,30 +105,22 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * 
      * @return chartConfiguration
      */
-    public ChartConfiguration<S> getChartConfiguration() {
-	return configuration;
-    }
+    public abstract ChartConfiguration<S> getChartConfiguration();
 
     /**
      * 
      * @param title
      */
-    public void setSimpleTitle(String title) {
+    public AbstractChart<T, S> setSimpleTitle(String title) {
 	getChartConfiguration().setSimpleTitle(title);
-    }
-
-    /**
-     * 
-     * @param padMin
-     */
-    public void setPadMin(Float padMin) {
-	getChartConfiguration().getAxes().getYaxis().setPadMin(1.05f);
+	return this;
     }
 
     /**
      * 
      * @return Axes
      */
+    @Deprecated
     public Axes<S> createAxes() {
 	return getChartConfiguration().createAxes();
     }
@@ -151,6 +129,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * 
      * @return xAxis
      */
+    @Deprecated
     public XAxis<S> createXAxis() {
 	return getChartConfiguration().createXAxis();
     }
@@ -159,6 +138,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * 
      * @return yAxis
      */
+    @Deprecated
     public YAxis<S> createYAxis() {
 	return getChartConfiguration().createYAxis();
     }
@@ -167,6 +147,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * 
      * @return axis
      */
+    @Deprecated
     public Axis<S> createAxesDefaults() {
 	return getChartConfiguration().createAxesDefaults();
     }
@@ -175,31 +156,34 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * 
      * @param label
      */
-    public void setLabelX(String label) {
+    public AbstractChart<T, S> setLabelX(String label) {
 	getChartConfiguration().setLabelX(label);
+	return this;
     }
 
     /**
      * 
      * @param label
      */
-    public void setLabelY(String label) {
+    public AbstractChart<T, S> setLabelY(String label) {
 	getChartConfiguration().setLabelY(label);
+	return this;
     }
 
     /**
      * @return the series
      */
     public Collection<Serie> getSeries() {
-	return getChartConfiguration().createSeries();
+	return getChartConfiguration().seriesInstance();
     }
 
     /**
      * @param series
      *            the series to set
      */
-    public void setSeries(Collection<Serie> series) {
+    public AbstractChart<T, S> setSeries(Collection<Serie> series) {
 	this.getChartConfiguration().setSeries(series);
+	return this;
     }
 
     /**
@@ -213,241 +197,248 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
      * @param title
      *            the title to set
      */
-    public void setTitle(Title title) {
+    public AbstractChart<T, S> setTitle(Title title) {
 	getChartConfiguration().setTitle(title);
+	return this;
     }
 
     /**
      * @return the axesDefaults
      */
     public Axis<S> getAxesDefaults() {
-	return getChartConfiguration().getAxesDefaults();
+	return getChartConfiguration().axesDefaultsInstance();
     }
 
     /**
      * @param axesDefaults
      *            the axesDefaults to set
      */
-    public void setAxesDefaults(Axis<S> axesDefaults) {
+    public AbstractChart<T, S> setAxesDefaults(Axis<S> axesDefaults) {
 	getChartConfiguration().setAxesDefaults(axesDefaults);
-    }
-
-    /**
-     * @return the axes
-     */
-    public Axes<S> getAxes() {
-	return getChartConfiguration().getAxes();
-    }
-
-    /**
-     * @param axes
-     *            the axes to set
-     */
-    public void setAxes(Axes<S> axes) {
-	getChartConfiguration().setAxes(axes);
+	return this;
     }
 
     /**
      * @return the seriesDefaults
      */
     public SeriesDefaults getSeriesDefaults() {
-	return getChartConfiguration().getSeriesDefaults();
+	return getChartConfiguration().seriesDefaultsInstance();
     }
 
     /**
      * @param seriesDefaults
      *            the seriesDefaults to set
      */
-    public void setSeriesDefaults(SeriesDefaults seriesDefaults) {
+    public AbstractChart<T, S> setSeriesDefaults(SeriesDefaults seriesDefaults) {
 	getChartConfiguration().setSeriesDefaults(seriesDefaults);
+	return this;
     }
 
     /**
      * 
      * @param values
      */
-    public void addIntervalColors(String... values) {
-	getChartConfiguration().getSeriesDefaults().getRendererOptions()
+    public AbstractChart<T, S> addIntervalColors(String... values) {
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.getIntervalColors().addAll(Arrays.asList(values));
+	return this;
     }
 
     /**
      * 
      * @param values
      */
-    public void addIntervals(Integer... values) {
-	getChartConfiguration().getSeriesDefaults().getRendererOptions()
+    public AbstractChart<T, S> addIntervals(Integer... values) {
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.getIntervals().addAll(Arrays.asList(values));
-    }
-
-    /**
-     * 
-     * @param max
-     */
-    public void setMax(Integer max) {
-	getChartConfiguration().getSeriesDefaults().getRendererOptions()
-		.setMax(max);
-    }
-
-    /**
-     * 
-     * @param min
-     */
-    public void setMin(Integer min) {
-	getChartConfiguration().getSeriesDefaults().getRendererOptions()
-		.setMin(min);
+	return this;
     }
 
     /**
      * 
      * @param stackSeries
      */
-    public void setStackSeries(Boolean stackSeries) {
+    public AbstractChart<T, S> setStackSeries(Boolean stackSeries) {
 	getChartConfiguration().setStackSeries(stackSeries);
+	return this;
     }
 
     /**
      * 
      * @param captureRightClick
      */
-    public void setCaptureRightClick(Boolean captureRightClick) {
+    public AbstractChart<T, S> setCaptureRightClick(Boolean captureRightClick) {
 	getChartConfiguration().setCaptureRightClick(captureRightClick);
+	return this;
     }
 
     /**
      * 
      * @param highlightMouseDown
      */
-    public void setHighlightMouseDown(Boolean highlightMouseDown) {
-	getChartConfiguration().getSeriesDefaults().getRendererOptions()
+    public AbstractChart<T, S> setHighlightMouseDown(Boolean highlightMouseDown) {
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setHighlightMouseDown(highlightMouseDown);
+	return this;
     }
 
     /**
      * 
      * @param margin
      */
-    public void setBarMargin(Integer margin) {
-	getChartConfiguration().getSeriesDefaults().getRendererOptions()
+    public AbstractChart<T, S> setBarMargin(Integer margin) {
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setBarMargin(margin);
+	return this;
     }
 
     /**
      * 
      * @param margin
      */
-    public void setSliceMargin(Integer margin) {
-	getChartConfiguration().getSeriesDefaults().getRendererOptions()
+    public AbstractChart<T, S> setSliceMargin(Integer margin) {
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setSliceMargin(margin);
+	return this;
     }
 
     /**
      * 
      * @param dataLabels
      */
-    public void setDataLabels(String dataLabels) {
-	getChartConfiguration().getSeriesDefaults().getRendererOptions()
+    public AbstractChart<T, S> setDataLabels(String dataLabels) {
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setDataLabels(dataLabels);
+	return this;
     }
 
     /**
      * 
      * @param width
      */
-    public void setLineWidth(Integer width) {
-	getChartConfiguration().getSeriesDefaults().getRendererOptions()
+    public AbstractChart<T, S> setLineWidth(Integer width) {
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setLineWidth(width);
+	return this;
     }
 
     /**
      * 
      * @param showDataLabels
      */
-    public void setShowDataLabels(Boolean showDataLabels) {
-	getChartConfiguration().getSeriesDefaults().getRendererOptions()
+    public AbstractChart<T, S> setShowDataLabels(Boolean showDataLabels) {
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setShowDataLabels(showDataLabels);
+	return this;
     }
 
     /**
      * 
      * @param fill
      */
-    public void setFill(Boolean fill) {
-	getChartConfiguration().getSeriesDefaults().getRendererOptions()
+    public AbstractChart<T, S> setFill(Boolean fill) {
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setFill(fill);
+	return this;
     }
 
     /**
      * 
      * @param alpha
      */
-    public void setBubbleAlpha(Float alpha) {
-	ChartConfiguration<S> chartConfiguration = getChartConfiguration();
-	chartConfiguration.getSeriesDefaults().getRendererOptions()
+    public AbstractChart<T, S> setBubbleAlpha(Float alpha) {
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setBubbleAlpha(alpha);
+	return this;
     }
 
     /**
      * 
      * @param alpha
      */
-    public void setHighlightAlpha(Float alpha) {
-	ChartConfiguration<S> chartConfiguration = getChartConfiguration();
-	chartConfiguration.getSeriesDefaults().getRendererOptions()
+    public AbstractChart<T, S> setHighlightAlpha(Float alpha) {
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setHighlightAlpha(alpha);
+	return this;
     }
 
     /**
      * 
      * @param showLabels
      */
-    public void setShowLabels(Boolean showLabels) {
-	ChartConfiguration<S> chartConfiguration = getChartConfiguration();
-	chartConfiguration.getSeriesDefaults().getRendererOptions()
+    public AbstractChart<T, S> setShowLabels(Boolean showLabels) {
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setShowLables(showLabels);
+	return this;
     }
 
     /**
      * 
      * @param alpha
      */
-    public void setShadowAlpha(String alpha) {
-	ChartConfiguration<S> chartConfiguration = getChartConfiguration();
-	chartConfiguration.getSeriesDefaults().setShadowAlpha(alpha);
+    public AbstractChart<T, S> setShadowAlpha(String alpha) {
+	getChartConfiguration().seriesDefaultsInstance().setShadowAlpha(alpha);
+	return this;
     }
 
     /**
      * 
      * @param fillZero
      */
-    public void setFillZero(Boolean fillZero) {
-	ChartConfiguration<S> chartConfiguration = getChartConfiguration();
-	chartConfiguration.getSeriesDefaults().getRendererOptions()
+    public AbstractChart<T, S> setFillZero(Boolean fillZero) {
+	getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
 		.setFillZero(fillZero);
+	return this;
     }
 
     /**
      * 
      * @param shadow
      */
-    public void setShadow(Boolean shadow) {
-	ChartConfiguration<S> chartConfiguration = getChartConfiguration();
-	chartConfiguration.getSeriesDefaults().setShadow(shadow);
+    public AbstractChart<T, S> setShadow(Boolean shadow) {
+	getChartConfiguration().getSeriesDefaults().setShadow(shadow);
+	return this;
     }
 
     /**
      * 
      * @param legend
      */
-    public void setLegend(Legend legend) {
+    public AbstractChart<T, S> setLegend(Legend legend) {
 	getChartConfiguration().setLegend(legend);
+	return this;
     }
 
-    public void setGridPadding(GridPadding gridPadding) {
+    public AbstractChart<T, S> setGridPadding(GridPadding gridPadding) {
 	getChartConfiguration().setGridPadding(gridPadding);
+	return this;
     }
 
     public GridPadding getGridPadding() {
 	return getChartConfiguration().getGridPadding();
+    }
+
+    /**
+     * @return the axes
+     */
+    public Axes<S> getAxes() {
+	return getChartConfiguration().axesInstance();
+    }
+
+    /**
+     * @param axes
+     *            the axes to set
+     */
+    public AbstractChart<T, S> setAxes(Axes<S> axes) {
+	getChartConfiguration().setAxes(axes);
+	return this;
+    }
+
+    public XAxis<S> getXAxis() {
+	return getChartConfiguration().xAxisInstance();
+    }
+
+    public YAxis<S> getYAxis() {
+	return getChartConfiguration().yAxisInstance();
     }
 }

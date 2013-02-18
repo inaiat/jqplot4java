@@ -19,8 +19,6 @@ package br.com.digilabs.jqplot.chart;
 import br.com.digilabs.jqplot.ChartConfiguration;
 import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.data.MeterData;
-import br.com.digilabs.jqplot.elements.RendererOptions;
-import br.com.digilabs.jqplot.elements.SeriesDefaults;
 import br.com.digilabs.jqplot.elements.Title;
 import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
@@ -33,13 +31,16 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 public class MeterGaugeChart extends AbstractChart<MeterData,String> {
 
     private static final long serialVersionUID = -8122703368130701972L;
+    
+	private final ChartConfiguration<String> chartConfig;
+    
     private MeterData data = new MeterData(0F);
 
     /**
      * Construtor
      */
     public MeterGaugeChart() {
-        initialize(null);
+        this(null);
 
     }
 
@@ -48,21 +49,12 @@ public class MeterGaugeChart extends AbstractChart<MeterData,String> {
      * @param title 
      */
     public MeterGaugeChart(String title) {
-        initialize(title);
-    }
-
-    /**
-     * Inicialização
-     * @param title 
-     */
-    protected final void initialize(String title) {
-        ChartConfiguration<String> chartConfiguration = getChartConfiguration();
-        chartConfiguration.setTitle(new Title(title));
-        SeriesDefaults sd = new SeriesDefaults();
-        RendererOptions ro = new RendererOptions();
-        sd.setRenderer(JqPlotResources.MeterGaugeRenderer);
-        sd.setRendererOptions(ro);
-        chartConfiguration.setSeriesDefaults(sd);
+        this.chartConfig = new ChartConfiguration<String>();
+        chartConfig
+        .setTitle(new Title(title))
+        .seriesDefaultsInstance()
+        .setRenderer(JqPlotResources.MeterGaugeRenderer)
+        .rendererOptionsInstance();
     }
 
     /**
@@ -84,4 +76,9 @@ public class MeterGaugeChart extends AbstractChart<MeterData,String> {
     public MeterData getChartData() {
         return data;
     }
+
+	@Override
+	public ChartConfiguration<String> getChartConfiguration() {
+		return chartConfig;
+	}
 }

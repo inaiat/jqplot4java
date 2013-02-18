@@ -18,12 +18,10 @@ package br.com.digilabs.jqplot.chart;
 
 import java.util.Collection;
 
-
+import br.com.digilabs.jqplot.ChartConfiguration;
 import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.data.PieDonutData;
 import br.com.digilabs.jqplot.data.item.LabeledItem;
-import br.com.digilabs.jqplot.elements.RendererOptions;
-import br.com.digilabs.jqplot.elements.SeriesDefaults;
 import br.com.digilabs.jqplot.elements.Title;
 import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
@@ -38,6 +36,8 @@ public class PieDonutChart<T extends Number> extends AbstractChart<PieDonutData<
 	private static final long serialVersionUID = -4671992800819368331L;
 
 	PieDonutData<T> data = new PieDonutData<T>();
+	
+	private final ChartConfiguration<String> chartConfig;
 
     /**
      * Construtor
@@ -51,15 +51,15 @@ public class PieDonutChart<T extends Number> extends AbstractChart<PieDonutData<
      * @param title 
      */
     public PieDonutChart(String title) {
-        getChartConfiguration().setTitle(new Title(title));
-        getChartConfiguration().setSeriesDefaults(new SeriesDefaults());
-        getChartConfiguration().getSeriesDefaults().setRenderer(
-                JqPlotResources.DonutRenderer);
-        getChartConfiguration().getSeriesDefaults().setRendererOptions(
-                new RendererOptions());
-        getChartConfiguration().getSeriesDefaults().getRendererOptions().setSliceMargin(4);
-        getChartConfiguration().getSeriesDefaults().getRendererOptions().setShowDataLabels(true);
-        getChartConfiguration().getSeriesDefaults().getRendererOptions().setDataLabels("value");
+    	this.chartConfig = new ChartConfiguration<String>(); 
+    	chartConfig
+    		.setTitle(new Title(title))
+    		.seriesDefaultsInstance()
+    		.setRenderer(JqPlotResources.DonutRenderer)
+    		.rendererOptionsInstance()
+    		.setSliceMargin(4)
+    		.setShowDataLabels(true)
+    		.setDataLabels("value");
     }
 
     /**
@@ -77,4 +77,9 @@ public class PieDonutChart<T extends Number> extends AbstractChart<PieDonutData<
     public PieDonutData<T> getChartData() {
         return data;
     }
+
+	@Override
+	public ChartConfiguration<String> getChartConfiguration() {
+		return chartConfig;
+	}
 }

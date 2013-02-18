@@ -22,284 +22,304 @@ import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.elements.TickOptions;
 
 /**
- * An individual axis object.  Cannot be instantiated directly, but created by the Plot oject.  
- * Axis properties can be set or overriden by the options passed in from the user.
+ * An individual axis object. Cannot be instantiated directly, but created by
+ * the Plot oject. Axis properties can be set or overriden by the options passed
+ * in from the user.
  * 
  * @see http://www.jqplot.com/docs/files/jqplot-core-js.html#Axis
  * 
- * @param <T> type of Axis, can be String, Number, Date, etc. This is necessary
- * 			because min,max and tickInterval can be variants types.
+ * @param <T>
+ *            type of Axis, can be String, Number, Date, etc. This is necessary
+ *            because min,max and tickInterval can be variants types.
  * 
  * @author inaiat
  */
 public class Axis<T extends Serializable> implements Serializable {
 
-    /** The Constant serialVersionUID. */
-    private static final long serialVersionUID = -5426777530263336010L;
-    
-    /** The show. */
-    private Boolean show;
-    
-    /** The renderer. */
-    private JqPlotResources renderer;
-    
-    /** The auto scale. */
-    private Boolean autoScale;
-    
-    /** The tick options. */
-    private TickOptions tickOptions;
-    
-    /** The ticks. */
-    private String[] ticks;
-    
-    /** The label renderer. */
-    private JqPlotResources labelRenderer;
-    
-    /** The tick renderer. */
-    private JqPlotResources tickRenderer;
-    
-    /** The label. */
-    private String label;
-    
-    /** The pad. */
-    private Float pad;
-    
-    /** The pad min. */
-    private Float padMin;
-    
-    /** The pad max. */
-    private Float padMax;
-    
-    /** The min. */
-    private T min;
-    
-    /** The max. */
-    private T max;
-    
-    /** The tick interval. */
-    private T tickInterval;
+	/** The Constant serialVersionUID. */
+	private static final long serialVersionUID = -5426777530263336010L;
 
+	/** The show. */
+	private Boolean show;
 
-    /**
-     * Gets the tick interval.
-     *
-     * @return the tick interval
-     */
-    public T getTickInterval() {
-        return tickInterval;
-    }
+	/** The renderer. */
+	private JqPlotResources renderer;
 
-    /**
-     * Sets the tick interval.
-     *
-     * @param tickInterval the new tick interval
-     */
-    public void setTickInterval(T tickInterval) {
-        this.tickInterval = tickInterval;
-    }
+	/** The auto scale. */
+	private Boolean autoScale;
 
-    /**
-     * Gets the pad min.
-     *
-     * @return the pad min
-     */
-    public Float getPadMin() {
-        return padMin;
-    }
+	/** The tick options. */
+	private TickOptions tickOptions;
 
-    /**
-     * Sets the pad min.
-     *
-     * @param padMin the new pad min
-     */
-    public void setPadMin(Float padMin) {
-        this.padMin = padMin;
-    }
+	/** The ticks. */
+	private String[] ticks;
 
-    /**
-     * Gets the pad max.
-     *
-     * @return the pad max
-     */
-    public Float getPadMax() {
-        return padMax;
-    }
+	/** The label renderer. */
+	private JqPlotResources labelRenderer;
 
-    /**
-     * Sets the pad max.
-     *
-     * @param padMax the new pad max
-     */
-    public void setPadMax(Float padMax) {
-        this.padMax = padMax;
-    }
+	/** The tick renderer. */
+	private JqPlotResources tickRenderer;
 
-    
-    /**
-     * Gets the show.
-     *
-     * @return the show
-     */
-    public Boolean getShow() {
-        return show;
-    }
+	/** The label. */
+	private String label;
 
-    /**
-     * Sets the show.
-     *
-     * @param show the show to set
-     */
-    public void setShow(Boolean show) {
-        this.show = show;
-    }
+	/** The pad. */
+	private Float pad;
 
-    /**
-     * Gets the auto scale.
-     *
-     * @return the autoScale
-     */
-    public Boolean getAutoScale() {
-        return autoScale;
-    }
+	/** The pad min. */
+	private Float padMin;
 
-    /**
-     * Sets the auto scale.
-     *
-     * @param autoScale the autoScale to set
-     */
-    public void setAutoScale(Boolean autoScale) {
-        this.autoScale = autoScale;
-    }
+	/** The pad max. */
+	private Float padMax;
 
-    /**
-     * Gets the tick options.
-     *
-     * @return the tickOptions
-     */
-    public TickOptions getTickOptions() {
-        return tickOptions;
-    }
+	/** The min. */
+	private T min;
 
-    /**
-     * Sets the tick options.
-     *
-     * @param tickOptions the tickOptions to set
-     */
-    public void setTickOptions(TickOptions tickOptions) {
-        this.tickOptions = tickOptions;
-    }
+	/** The max. */
+	private T max;
 
-    /**
-     * Gets the label renderer.
-     *
-     * @return the labelRenderer
-     */
-    public JqPlotResources getLabelRenderer() {
-        return labelRenderer;
-    }
+	/** The tick interval. */
+	private T tickInterval;
 
-    /**
-     * Sets the label renderer.
-     *
-     * @param labelRenderer the labelRenderer to set
-     */
-    public void setLabelRenderer(JqPlotResources labelRenderer) {
-        this.labelRenderer = labelRenderer;
-    }
+	/**
+	 * Gets the tick interval.
+	 * 
+	 * @return the tick interval
+	 */
+	public T getTickInterval() {
+		return tickInterval;
+	}
 
-    /**
-     * Gets the tick renderer.
-     *
-     * @return the tickRenderer
-     */
-    public JqPlotResources getTickRenderer() {
-        return tickRenderer;
-    }
+	/**
+	 * Sets the tick interval.
+	 * 
+	 * @param tickInterval
+	 *            the new tick interval
+	 */
+	public void setTickInterval(T tickInterval) {
+		this.tickInterval = tickInterval;
+	}
 
-    /**
-     * Sets the tick renderer.
-     *
-     * @param tickRenderer the tickRenderer to set
-     */
-    public void setTickRenderer(JqPlotResources tickRenderer) {
-        this.tickRenderer = tickRenderer;
-    }
+	/**
+	 * Gets the pad min.
+	 * 
+	 * @return the pad min
+	 */
+	public Float getPadMin() {
+		return padMin;
+	}
 
-    /**
-     * Gets the label.
-     *
-     * @return the label
-     */
-    public String getLabel() {
-        return label;
-    }
+	/**
+	 * Sets the pad min.
+	 * 
+	 * @param padMin
+	 *            the new pad min
+	 */
+	public void setPadMin(Float padMin) {
+		this.padMin = padMin;
+	}
 
-    /**
-     * Sets the label.
-     *
-     * @param label the label to set
-     */
-    public void setLabel(String label) {
-        this.label = label;
-    }
+	/**
+	 * Gets the pad max.
+	 * 
+	 * @return the pad max
+	 */
+	public Float getPadMax() {
+		return padMax;
+	}
 
-    /**
-     * Gets the pad.
-     *
-     * @return the pad
-     */
-    public Float getPad() {
-        return pad;
-    }
+	/**
+	 * Sets the pad max.
+	 * 
+	 * @param padMax
+	 *            the new pad max
+	 */
+	public void setPadMax(Float padMax) {
+		this.padMax = padMax;
+	}
 
-    /**
-     * Sets the pad.
-     *
-     * @param pad the pad to set
-     */
-    public void setPad(Float pad) {
-        this.pad = pad;
-    }
+	/**
+	 * Gets the show.
+	 * 
+	 * @return the show
+	 */
+	public Boolean getShow() {
+		return show;
+	}
 
-    /**
-     * Gets the renderer.
-     *
-     * @return the renderer
-     */
-    public JqPlotResources getRenderer() {
-        return renderer;
-    }
+	/**
+	 * Sets the show.
+	 * 
+	 * @param show
+	 *            the show to set
+	 */
+	public void setShow(Boolean show) {
+		this.show = show;
+	}
 
-    /**
-     * Sets the renderer.
-     *
-     * @param renderer the renderer to set
-     */
-    public void setRenderer(JqPlotResources renderer) {
-        this.renderer = renderer;
-    }
+	/**
+	 * Gets the auto scale.
+	 * 
+	 * @return the autoScale
+	 */
+	public Boolean getAutoScale() {
+		return autoScale;
+	}
 
-    /**
-     * Gets the ticks.
-     *
-     * @return the ticks
-     */
-    public String[] getTicks() {
-        return ticks;
-    }
+	/**
+	 * Sets the auto scale.
+	 * 
+	 * @param autoScale
+	 *            the autoScale to set
+	 */
+	public Axis<T> setAutoScale(Boolean autoScale) {
+		this.autoScale = autoScale;
+		return this;
+	}
 
-    /**
-     * Sets the ticks.
-     *
-     * @param ticks the ticks to set
-     */
-    public void setTicks(String[] ticks) {
-        this.ticks = ticks;
-    }
+	/**
+	 * Gets the tick options.
+	 * 
+	 * @return the tickOptions
+	 */
+	public TickOptions getTickOptions() {
+		return tickOptions;
+	}
+
+	/**
+	 * Sets the tick options.
+	 * 
+	 * @param tickOptions
+	 *            the tickOptions to set
+	 */
+	public Axis<T> setTickOptions(TickOptions tickOptions) {
+		this.tickOptions = tickOptions;
+		return this;
+	}
+
+	/**
+	 * Gets the label renderer.
+	 * 
+	 * @return the labelRenderer
+	 */
+	public JqPlotResources getLabelRenderer() {
+		return labelRenderer;
+	}
+
+	/**
+	 * Sets the label renderer.
+	 * 
+	 * @param labelRenderer
+	 *            the labelRenderer to set
+	 */
+	public Axis<T> setLabelRenderer(JqPlotResources labelRenderer) {
+		this.labelRenderer = labelRenderer;
+		return this;
+	}
+
+	/**
+	 * Gets the tick renderer.
+	 * 
+	 * @return the tickRenderer
+	 */
+	public JqPlotResources getTickRenderer() {
+		return tickRenderer;
+	}
+
+	/**
+	 * Sets the tick renderer.
+	 * 
+	 * @param tickRenderer
+	 *            the tickRenderer to set
+	 */
+	public Axis<T> setTickRenderer(JqPlotResources tickRenderer) {
+		this.tickRenderer = tickRenderer;
+		return this;
+	}
+
+	/**
+	 * Gets the label.
+	 * 
+	 * @return the label
+	 */
+	public String getLabel() {
+		return label;
+	}
+
+	/**
+	 * Sets the label.
+	 * 
+	 * @param label
+	 *            the label to set
+	 */
+	public Axis<T> setLabel(String label) {
+		this.label = label;
+		return this;
+	}
+
+	/**
+	 * Gets the pad.
+	 * 
+	 * @return the pad
+	 */
+	public Float getPad() {
+		return pad;
+	}
+
+	/**
+	 * Sets the pad.
+	 * 
+	 * @param pad
+	 *            the pad to set
+	 */
+	public Axis<T> setPad(Float pad) {
+		this.pad = pad;
+		return this;
+	}
+
+	/**
+	 * Gets the renderer.
+	 * 
+	 * @return the renderer
+	 */
+	public JqPlotResources getRenderer() {
+		return renderer;
+	}
+
+	/**
+	 * Sets the renderer.
+	 * 
+	 * @param renderer
+	 *            the renderer to set
+	 */
+	public Axis<T> setRenderer(JqPlotResources renderer) {
+		this.renderer = renderer;
+		return this;
+	}
+
+	/**
+	 * Gets the ticks.
+	 * 
+	 * @return the ticks
+	 */
+	public String[] getTicks() {
+		return ticks;
+	}
+
+	/**
+	 * Sets the ticks.
+	 * 
+	 * @param ticks
+	 *            the ticks to set
+	 */
+	public Axis<T> setTicks(String... ticks) {
+		this.ticks = ticks;
+		return this;
+	}
 
 	/**
 	 * Gets the min.
-	 *
+	 * 
 	 * @return the min
 	 */
 	public T getMin() {
@@ -308,16 +328,18 @@ public class Axis<T extends Serializable> implements Serializable {
 
 	/**
 	 * Sets the min.
-	 *
-	 * @param min the new min
+	 * 
+	 * @param min
+	 *            the new min
 	 */
-	public void setMin(T min) {
+	public Axis<T> setMin(T min) {
 		this.min = min;
+		return this;
 	}
 
 	/**
 	 * Gets the max.
-	 *
+	 * 
 	 * @return the max
 	 */
 	public T getMax() {
@@ -326,11 +348,20 @@ public class Axis<T extends Serializable> implements Serializable {
 
 	/**
 	 * Sets the max.
-	 *
-	 * @param max the new max
+	 * 
+	 * @param max
+	 *            the new max
 	 */
-	public void setMax(T max) {
+	public Axis<T> setMax(T max) {
 		this.max = max;
+		return this;
+	}
+	
+	public TickOptions tickOptionsInstance() {
+		if (tickOptions==null) {
+			tickOptions = new TickOptions();
+		}
+		return tickOptions;
 	}
 
 }

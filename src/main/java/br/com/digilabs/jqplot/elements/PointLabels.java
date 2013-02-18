@@ -55,8 +55,9 @@ public class PointLabels implements Serializable {
      *
      * @param labels the new labels
      */
-    public void setLabels(List<String> labels) {
+    public PointLabels setLabels(List<String> labels) {
         this.labels = labels;
+        return this;
     }
 
     /**
@@ -73,8 +74,9 @@ public class PointLabels implements Serializable {
      *
      * @param edgeTolerance the new edge tolerance
      */
-    public void setEdgeTolerance(Integer edgeTolerance) {
+    public PointLabels setEdgeTolerance(Integer edgeTolerance) {
         this.edgeTolerance = edgeTolerance;
+        return this;
     }
 
     /**
@@ -91,8 +93,9 @@ public class PointLabels implements Serializable {
      *
      * @param location the new location
      */
-    public void setLocation(String location) {
+    public PointLabels setLocation(String location) {
         this.location = location;
+        return this;
     }
 
     /**
@@ -109,7 +112,8 @@ public class PointLabels implements Serializable {
      *
      * @param show the new show
      */
-    public void setShow(Boolean show) {
+    public PointLabels setShow(Boolean show) {
         this.show = show;
+        return this;
     }
 }

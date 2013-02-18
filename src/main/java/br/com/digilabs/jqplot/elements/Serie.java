@@ -148,8 +148,9 @@ public class Serie implements Element {
      *
      * @param shadowAlpha the new shadow alpha
      */
-    public void setShadowAlpha(String shadowAlpha) {
+    public Serie setShadowAlpha(String shadowAlpha) {
         this.shadowAlpha = shadowAlpha;
+        return this;
     }
 
     /**
@@ -166,8 +167,9 @@ public class Serie implements Element {
      *
      * @param showAlpha the new show alpha
      */
-    public void setShowAlpha(Boolean showAlpha) {
+    public Serie setShowAlpha(Boolean showAlpha) {
         this.showAlpha = showAlpha;
+        return this;
     }
 
     /**
@@ -184,8 +186,9 @@ public class Serie implements Element {
      *
      * @param shadow the new shadow
      */
-    public void setShadow(Boolean shadow) {
+    public Serie setShadow(Boolean shadow) {
         this.shadow = shadow;
+        return this;
     }
 
     /**
@@ -202,8 +205,9 @@ public class Serie implements Element {
      *
      * @param showMarker the new show marker
      */
-    public void setShowMarker(Boolean showMarker) {
+    public Serie setShowMarker(Boolean showMarker) {
         this.showMarker = showMarker;
+        return this;
     }
     
     /**
@@ -220,8 +224,9 @@ public class Serie implements Element {
      *
      * @param markerOptions the new marker options
      */
-    public void setMarkerOptions(MarkerOptions markerOptions) {
+    public Serie setMarkerOptions(MarkerOptions markerOptions) {
         this.markerOptions = markerOptions;
+        return this;
     }
 
     /**
@@ -238,8 +243,9 @@ public class Serie implements Element {
      *
      * @param lineWidth the new line width
      */
-    public void setLineWidth(Integer lineWidth) {
+    public Serie setLineWidth(Integer lineWidth) {
         this.lineWidth = lineWidth;
+        return this;
     }
 
     /**
@@ -256,8 +262,9 @@ public class Serie implements Element {
      *
      * @param rendererOptions the new renderer options
      */
-    public void setRendererOptions(RendererOptions rendererOptions) {
+    public Serie setRendererOptions(RendererOptions rendererOptions) {
         this.rendererOptions = rendererOptions;
+        return this;
     }
 
     
@@ -275,8 +282,9 @@ public class Serie implements Element {
      *
      * @param label the label to set
      */
-    public void setLabel(String label) {
+    public Serie setLabel(String label) {
         this.label = label;
+        return this;
     }
 
     /**
@@ -293,8 +301,9 @@ public class Serie implements Element {
      *
      * @param renderer the renderer to set
      */
-    public void setRenderer(JqPlotResources renderer) {
+    public Serie setRenderer(JqPlotResources renderer) {
         this.renderer = renderer;
+        return this;
     }
 
     /**
@@ -311,8 +320,9 @@ public class Serie implements Element {
      *
      * @param fill the fill to set
      */
-    public void setFill(Boolean fill) {
+    public Serie setFill(Boolean fill) {
         this.fill = fill;
+        return this;
     }
 
 
@@ -330,8 +340,9 @@ public class Serie implements Element {
      *
      * @param color the new color
      */
-    public void setColor(String color) {
+    public Serie setColor(String color) {
         this.color = color;
+        return this;
     }
 	
 	/**
@@ -348,7 +359,22 @@ public class Serie implements Element {
 	 *
 	 * @param showLine the new show line
 	 */
-	public void setShowLine(Boolean showLine) {
+	public Serie setShowLine(Boolean showLine) {
 		this.showLine = showLine;
+		return this;
+	}
+	
+	public RendererOptions rendererOptionsInstance() {
+		if (rendererOptions==null) {
+			this.rendererOptions = new RendererOptions();
+		}
+		return rendererOptions;
+	}
+	
+	public MarkerOptions markerOptionsInstance() {
+		if (markerOptions==null) {
+			markerOptions = new MarkerOptions();
+		}
+		return markerOptions;
 	}
 }

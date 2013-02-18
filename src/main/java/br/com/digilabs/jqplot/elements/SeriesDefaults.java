@@ -18,35 +18,52 @@ package br.com.digilabs.jqplot.elements;
 
 /**
  * SeriesDafaults
+ * 
  * @author inaiat
  */
 public class SeriesDefaults extends Serie {
 
-    private static final long serialVersionUID = -7921968769382552293L;
-    private PointLabels pointLabels;
-    private Trendline trendline;
+	private static final long serialVersionUID = -7921968769382552293L;
+	private PointLabels pointLabels;
+	private Trendline trendline;
 
-    /**
-     * 
-     * @return pointLables
-     */
-    public PointLabels getPointLabels() {
-        return pointLabels;
-    }
+	/**
+	 * 
+	 * @return pointLables
+	 */
+	public PointLabels getPointLabels() {
+		return pointLabels;
+	}
 
-    /**
-     * 
-     * @param pointLabels 
-     */
-    public void setPointLabels(PointLabels pointLabels) {
-        this.pointLabels = pointLabels;
-    }
+	/**
+	 * 
+	 * @param pointLabels
+	 */
+	public SeriesDefaults setPointLabels(PointLabels pointLabels) {
+		this.pointLabels = pointLabels;
+		return this;
+	}
 
-    public Trendline getTrendline() {
-	return trendline;
-    }
+	public Trendline getTrendline() {
+		return trendline;
+	}
 
-    public void setTrendline(Trendline trendline) {
-	this.trendline = trendline;
-    }
+	public SeriesDefaults setTrendline(Trendline trendline) {
+		this.trendline = trendline;
+		return this;
+	}
+
+	public Trendline trendlineInstance() {
+		if (trendline == null) {
+			trendline = new Trendline();
+		}
+		return trendline;
+	}
+
+	public PointLabels pointLabelsInstance() {
+		if (pointLabels == null) {
+			pointLabels = new PointLabels();
+		}
+		return pointLabels;
+	}
 }

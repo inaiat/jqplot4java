@@ -20,8 +20,6 @@ import br.com.digilabs.jqplot.ChartConfiguration;
 import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.data.BubbleData;
 import br.com.digilabs.jqplot.data.item.BubbleItem;
-import br.com.digilabs.jqplot.elements.RendererOptions;
-import br.com.digilabs.jqplot.elements.SeriesDefaults;
 import br.com.digilabs.jqplot.elements.Title;
 import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 
@@ -31,77 +29,76 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
  * 
  * @author inaiat
  */
-@JqPlotPlugin(values = {JqPlotResources.BubbleRenderer})
-public class BubbleChart extends AbstractChart<BubbleData<BubbleItem>,String> {
+@JqPlotPlugin(values = { JqPlotResources.BubbleRenderer })
+public class BubbleChart extends AbstractChart<BubbleData<BubbleItem>, String> {
 
-    private static final long serialVersionUID = -8122703368130701972L;
-    
-    private BubbleData<BubbleItem> bubbleData = new BubbleData<BubbleItem>();
+	private static final long serialVersionUID = -8122703368130701972L;
 
-    /**
-     * Construtor
-     */
-    public BubbleChart() {
-        initialize(null);
-    }
+	private final ChartConfiguration<String> chartConfig;
 
-    /**
-     * Construtor
-     * @param title 
-     */
-    public BubbleChart(String title) {
-        initialize(title);
-    }
+	private BubbleData<BubbleItem> bubbleData = new BubbleData<BubbleItem>();
 
-    /**
-     * Inicialização
-     * @param title 
-     */
-    protected final void initialize(String title) {
-        ChartConfiguration<String> chartConfiguration = getChartConfiguration();
-        chartConfiguration.setTitle(new Title(title));
-        SeriesDefaults sd = new SeriesDefaults();
-        RendererOptions ro = new RendererOptions();
-        sd.setRenderer(JqPlotResources.BubbleRenderer);
-        sd.setRendererOptions(ro);
-        chartConfiguration.setSeriesDefaults(sd);
-    }
+	/**
+	 * Construtor
+	 */
+	public BubbleChart() {
+		this(null);
+	}
 
-    /**
-     * 
-     * @return chartData
-     */
-    public BubbleData<BubbleItem> getChartData() {
-        return bubbleData;
-    }
-    
-    /**
-     * 
-     * @param item 
-     */
-    public void addValue(BubbleItem item) {
-        bubbleData.addValue(item);
-    }
-    
-    /**
-     * 
-     * @param x
-     * @param y
-     * @param radius
-     * @param label 
-     */
-    public void addValue(Float x, Float y, Float radius, String label) {
-        bubbleData.addValue(new BubbleItem(x, y, radius, label));
-    }
-    
-    /**
-     * 
-     * @param x
-     * @param y
-     * @param radius
-     * @param label 
-     */
-    public void addValue(Integer x, Integer y, Integer radius, String label) {
-        bubbleData.addValue(new BubbleItem(x, y, radius, label));
-    }
+	/**
+	 * Construtor
+	 * 
+	 * @param title
+	 */
+	public BubbleChart(String title) {
+		this.chartConfig = new ChartConfiguration<String>();
+		chartConfig
+			.setTitle(new Title(title))
+			.seriesDefaultsInstance()
+			.setRenderer((JqPlotResources.BubbleRenderer));
+	}
+
+	/**
+	 * 
+	 * @return chartData
+	 */
+	public BubbleData<BubbleItem> getChartData() {
+		return bubbleData;
+	}
+
+	/**
+	 * 
+	 * @param item
+	 */
+	public void addValue(BubbleItem item) {
+		bubbleData.addValue(item);
+	}
+
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @param radius
+	 * @param label
+	 */
+	public void addValue(Float x, Float y, Float radius, String label) {
+		bubbleData.addValue(new BubbleItem(x, y, radius, label));
+	}
+
+	/**
+	 * 
+	 * @param x
+	 * @param y
+	 * @param radius
+	 * @param label
+	 */
+	public void addValue(Integer x, Integer y, Integer radius, String label) {
+		bubbleData.addValue(new BubbleItem(x, y, radius, label));
+	}
+
+	@Override
+	public ChartConfiguration<String> getChartConfiguration() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
