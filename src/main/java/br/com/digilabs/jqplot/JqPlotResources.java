@@ -71,6 +71,8 @@ public enum JqPlotResources {
     /** The Axis tick renderer. */
     AxisTickRenderer("$.jqplot.AxisTickRenderer"),
     
+    EnhancedLegendRenderer("$.jqplot.EnhancedLegendRenderer","plugins/jqplot.enhancedLegendRenderer.min.js"),
+    
     /** A class of a formatter for the tick text. */
     DefaultTickFormatter("$.jqplot.DefaultTickFormatter");
 
