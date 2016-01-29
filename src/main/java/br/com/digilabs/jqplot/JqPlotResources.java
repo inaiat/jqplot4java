@@ -55,6 +55,9 @@ public enum JqPlotResources {
     /** The Canvas text renderer. */
     CanvasTextRenderer("$.jqplot.CanvasTextRenderer","plugins/jqplot.canvasTextRenderer.min.js"),
     
+    /** The CanvasOverlay renderer. */
+    CanvasOverlay("$.jqplot.CanvasOverlay", "plugins/jqplot.canvasOverlay.min.js"),
+
     /** The Date axis renderer. */
     DateAxisRenderer("$.jqplot.DateAxisRenderer","plugins/jqplot.dateAxisRenderer.min.js"),
     
@@ -62,11 +65,11 @@ public enum JqPlotResources {
     MeterGaugeRenderer("$.jqplot.MeterGaugeRenderer","plugins/jqplot.meterGaugeRenderer.min.js"),
     
     /** The Point labels. */
-    PointLabels("$.jqplot.DateAxisRenderer","plugins/jqplot.pointLabels.min.js"),
+    PointLabels("$.jqplot.PointLabels","plugins/jqplot.pointLabels.min.js"),
     
     /** The Shadow renderer. */
     ShadowRenderer("$.jqplot.ShadowRenderer", "jquery.jqplot.min.js"),
-    
+
     // Core Renderer 
     /** The Axis tick renderer. */
     AxisTickRenderer("$.jqplot.AxisTickRenderer"),

@@ -75,4 +75,14 @@ public class LabeledData<T extends Number> extends AbstractCollectionData<Labele
     public Collection<LabeledItem<T>> getData() {
         return data;
     }
+
+    /**
+     * Gets the size of the data.
+     *
+     * @return the data
+     */
+    public int size()
+    {
+        return data.size();
+    }
 }

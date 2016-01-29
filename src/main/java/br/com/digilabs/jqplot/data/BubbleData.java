@@ -43,6 +43,16 @@ public class BubbleData<T extends BubbleItem> extends AbstractCollectionData<T> 
         return data;
     }
 
+    /**
+     * Gets the size of the data.
+     *
+     * @return the data
+     */
+    public int size()
+    {
+        return data.size();
+    }
+
     /* (non-Javadoc)
      * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
      */

@@ -32,6 +32,7 @@ import br.com.digilabs.jqplot.elements.Legend;
 import br.com.digilabs.jqplot.elements.Serie;
 import br.com.digilabs.jqplot.elements.SeriesDefaults;
 import br.com.digilabs.jqplot.elements.Title;
+import br.com.digilabs.jqplot.elements.CanvasOverlay;
 
 /**
  * 
@@ -92,6 +93,9 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 
 	/** The gridPadding attribute */
 	private GridPadding gridPadding;
+
+	/** The canvas overlay. */
+	private CanvasOverlay canvasOverlay;
 
 	/**
 	 * Checks if is capture right click.
@@ -639,5 +643,37 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 			gridPadding = new GridPadding();
 		}
 		return gridPadding;
+	}
+
+	/**
+	 * Instantiates the canvas overlay.
+	 * 
+	 * @return the canvas overlay
+	 */
+	public CanvasOverlay canvasOverlayInstance() {
+		if (canvasOverlay == null) {
+			this.canvasOverlay = new CanvasOverlay();
+		}
+		return this.canvasOverlay;
+	}
+
+	/**
+	 * Gets the canvas overlay.
+	 * 
+	 * @return the canvas overlay
+	 */
+	public CanvasOverlay getCanvasOverlay() {
+		return canvasOverlay;
+	}
+
+	/**
+	 * Sets the canvas overlay.
+	 * 
+	 * @param canvasOverlay
+	 *            the canvasOverlay to set
+	 */
+	public ChartConfiguration<T> setCanvasOverlay(CanvasOverlay canvasOverlay) {
+		this.canvasOverlay = canvasOverlay;
+		return this;
 	}
 }

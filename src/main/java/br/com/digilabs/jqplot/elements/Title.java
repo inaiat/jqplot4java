@@ -37,13 +37,16 @@ public class Title implements Element {
     
     /** The font size. */
     private String fontSize;
-    
+
+    /** The font weight. */
+    private String fontWeight;
+
     /** The text align. */
     private String textAlign;
     
     /** The text color. */
     private String textColor;
-    
+
     /** The renderer. */
     private String renderer;
     
@@ -122,6 +125,25 @@ public class Title implements Element {
      */
     public Title setFontSize(String fontSize) {
         this.fontSize = fontSize;
+        return this;
+    }
+
+    /**
+     * Gets the font weight.
+     *
+     * @return the fontWeight
+     */
+    public String getFontWeight() {
+        return fontWeight;
+    }
+
+    /**
+     * Sets the font weight.
+     *
+     * @param fontWeight the fontWeight to set
+     */
+    public Title setFontWeight(String fontWeight) {
+        this.fontWeight = fontWeight;
         return this;
     }
 

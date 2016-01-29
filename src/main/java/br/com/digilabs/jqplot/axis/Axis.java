@@ -20,6 +20,7 @@ import java.io.Serializable;
 
 import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.elements.TickOptions;
+import br.com.digilabs.jqplot.elements.RendererOptions;
 
 /**
  * An individual axis object. Cannot be instantiated directly, but created by
@@ -44,6 +45,9 @@ public class Axis<T extends Serializable> implements Serializable {
 
 	/** The renderer. */
 	private JqPlotResources renderer;
+
+    /** The renderer options. */
+    private RendererOptions rendererOptions;
 
 	/** The auto scale. */
 	private Boolean autoScale;
@@ -73,20 +77,20 @@ public class Axis<T extends Serializable> implements Serializable {
 	private Float padMax;
 
 	/** The min. */
-	private T min;
+	private Serializable min;
 
 	/** The max. */
-	private T max;
+	private Serializable max;
 
 	/** The tick interval. */
-	private T tickInterval;
+	private Serializable tickInterval;
 
 	/**
 	 * Gets the tick interval.
 	 * 
 	 * @return the tick interval
 	 */
-	public T getTickInterval() {
+	public Serializable getTickInterval() {
 		return tickInterval;
 	}
 
@@ -96,7 +100,7 @@ public class Axis<T extends Serializable> implements Serializable {
 	 * @param tickInterval
 	 *            the new tick interval
 	 */
-	public void setTickInterval(T tickInterval) {
+	public void setTickInterval(Serializable tickInterval) {
 		this.tickInterval = tickInterval;
 	}
 
@@ -237,6 +241,36 @@ public class Axis<T extends Serializable> implements Serializable {
 		return this;
 	}
 
+    /**
+     * Renderer options.
+     *
+     * @param rendererOptions the renderer options
+     * @return the serie
+     */
+    public Axis rendererOptions(RendererOptions rendererOptions) {
+    	this.rendererOptions = rendererOptions;
+    	return this;
+    }
+
+    /**
+     * Gets the renderer options.
+     *
+     * @return the renderer options
+     */
+    public RendererOptions getRendererOptions() {
+        return rendererOptions;
+    }
+
+    /**
+     * Sets the renderer options.
+     *
+     * @param rendererOptions the new renderer options
+     */
+    public Axis setRendererOptions(RendererOptions rendererOptions) {
+        this.rendererOptions = rendererOptions;
+        return this;
+    }
+
 	/**
 	 * Gets the label.
 	 * 
@@ -322,7 +356,7 @@ public class Axis<T extends Serializable> implements Serializable {
 	 * 
 	 * @return the min
 	 */
-	public T getMin() {
+	public Serializable getMin() {
 		return min;
 	}
 
@@ -332,7 +366,7 @@ public class Axis<T extends Serializable> implements Serializable {
 	 * @param min
 	 *            the new min
 	 */
-	public Axis<T> setMin(T min) {
+	public Axis<T> setMin(Serializable min) {
 		this.min = min;
 		return this;
 	}
@@ -342,7 +376,7 @@ public class Axis<T extends Serializable> implements Serializable {
 	 * 
 	 * @return the max
 	 */
-	public T getMax() {
+	public Serializable getMax() {
 		return max;
 	}
 
@@ -352,7 +386,7 @@ public class Axis<T extends Serializable> implements Serializable {
 	 * @param max
 	 *            the new max
 	 */
-	public Axis<T> setMax(T max) {
+	public Axis<T> setMax(Serializable max) {
 		this.max = max;
 		return this;
 	}
@@ -364,4 +398,10 @@ public class Axis<T extends Serializable> implements Serializable {
 		return tickOptions;
 	}
 
+	public RendererOptions rendererOptionsInstance() {
+		if (rendererOptions==null) {
+			this.rendererOptions = new RendererOptions();
+		}
+		return rendererOptions;
+	}
 }

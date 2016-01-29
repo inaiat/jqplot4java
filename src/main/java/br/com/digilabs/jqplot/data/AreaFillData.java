@@ -67,6 +67,16 @@ public class AreaFillData<T extends Number> extends
 	return data;
     }
 
+    /**
+     * Gets the size of the data.
+     *
+     * @return the data
+     */
+    public int size()
+    {
+        return data.size();
+    }
+
     /*
      * (non-Javadoc)
      * 

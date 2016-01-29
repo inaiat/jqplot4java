@@ -45,6 +45,22 @@ public class LineSeriesData<I extends Number,V extends Number> extends AbstractC
 		return data;
 	}	
 
+    /**
+     * Gets the size of the data.
+     *
+     * @return the data
+     */
+    public int size()
+    {
+        int ret = 0;
+        for(Collection<LineSeriesItem<I,V>> series : data)
+        {
+            if(series.size() > 0)
+                ++ret;
+        }
+        return ret;
+    }
+
 	/* (non-Javadoc)
 	 * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
 	 */

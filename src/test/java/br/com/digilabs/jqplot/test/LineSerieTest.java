@@ -97,7 +97,7 @@ public class LineSerieTest extends TestCase {
 		chart.addSerie(criarSerie("Reta", "#066FA7"));
 		
 		Legend legend = new Legend(true, Location.ne);
-		legend.setPlacment("outsideGrid");
+		legend.setPlacement("outsideGrid");
 		
 		
 		chart.setLegend(legend);

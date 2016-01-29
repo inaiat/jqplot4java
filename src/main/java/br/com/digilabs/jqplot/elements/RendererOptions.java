@@ -49,6 +49,9 @@ public class RendererOptions implements Element {
     
     /** The bar margi	n. */
     private Integer barMargin;
+
+    /** The bar width. */
+    private Integer barWidth;
     
     /** The bubble gradients. */
     private Boolean bubbleGradients;
@@ -115,6 +118,12 @@ public class RendererOptions implements Element {
     
     /** The vary bar color. */
     private Boolean varyBarColor;
+
+    /** The force tick at zero. */
+    private Boolean forceTickAt0;
+
+    /** The force tick at 100. */
+    private Boolean forceTickAt100;
     
     /**
      * Smooth.
@@ -544,6 +553,25 @@ public class RendererOptions implements Element {
     }
 
     /**
+     * Gets the bar width.
+     *
+     * @return barWidth
+     */
+    public Integer getBarWidth() {
+        return barWidth;
+    }
+
+    /**
+     * Sets the bar width.
+     *
+     * @param barWidth the new bar width
+     */
+    public RendererOptions setBarWidth(Integer barWidth) {
+        this.barWidth = barWidth;
+        return this;
+    }
+
+    /**
      * Checks if is highlight mouse down.
      *
      * @return highLigthMouseDown
@@ -715,6 +743,44 @@ public class RendererOptions implements Element {
 	 */
 	public RendererOptions setVaryBarColor(Boolean varyBarColor) {
 		this.varyBarColor = varyBarColor;
+		return this;
+	}
+
+	/**
+	 * Gets the force tick at zero.
+	 *
+	 * @return the force tick at zero
+	 */
+	public Boolean getForceTickAt0() {
+		return forceTickAt0;
+	}
+
+	/**
+	 * Sets the force tick at zero.
+	 *
+	 * @param forceTickAt0 the new force tick at zero
+	 */
+	public RendererOptions setForceTickAt0(Boolean forceTickAt0) {
+		this.forceTickAt0 = forceTickAt0;
+		return this;
+	}
+
+	/**
+	 * Gets the force tick at 100.
+	 *
+	 * @return the force tick at 100
+	 */
+	public Boolean getForceTickAt100() {
+		return forceTickAt100;
+	}
+
+	/**
+	 * Sets the force tick at 100.
+	 *
+	 * @param forceTickAt0 the new force tick at 100
+	 */
+	public RendererOptions setForceTickAt100(Boolean forceTickAt100) {
+		this.forceTickAt100 = forceTickAt100;
 		return this;
 	}
 }
