@@ -65,4 +65,14 @@ public class PieDonutData<T extends Number> extends AbstractCollectionData<Colle
     public Collection<Collection<LabeledItem<T>>> getData() {
         return data;
     }
+
+    /**
+     * Gets the size of the data.
+     *
+     * @return the data
+     */
+    public int size()
+    {
+        return data.size();
+    }
 }

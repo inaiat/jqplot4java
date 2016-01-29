@@ -48,6 +48,16 @@ public abstract class NumberData<T extends Number> implements ChartData<T> {
     }
 
     /**
+     * Gets the size of the data.
+     *
+     * @return the data
+     */
+    public int size()
+    {
+        return data.intValue();
+    }
+
+    /**
      * Sets the value.
      *
      * @param value the new value

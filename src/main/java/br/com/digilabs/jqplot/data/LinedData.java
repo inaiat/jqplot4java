@@ -61,6 +61,16 @@ public class LinedData<T extends Number> extends AbstractCollectionData<T> {
 	return data;
     }
 
+    /**
+     * Gets the size of the data.
+     *
+     * @return the data
+     */
+    public int size()
+    {
+        return data.size();
+    }
+
     /*
      * (non-Javadoc)
      * 

@@ -14,36 +14,36 @@
  *  limitations under the License.
  *  under the License.
  */
-package br.com.digilabs.jqplot.data;
+package br.com.digilabs.jqplot.elements;
 
-import java.io.Serializable;
+import br.com.digilabs.jqplot.JqPlotResources;
 
 /**
- * Base interface to handle data.
+ * VerticalLine object.  
+ * 
+ * VerticalLine properties can be set or overriden by the options passed in from the user.
  *
- * @param <T> the generic type
  * @author inaiat
  */
-public interface ChartData<T> extends Serializable {
+public class VerticalLine extends Line {
 
-    /**
-     * Gets the data.
-     *
-     * @return the data
-     */
-    T getData();
-
-    /**
-     * Gets the size of the data.
-     *
-     * @return the data
-     */
-    int size();
+    /** The Constant serialVersionUID. */
+    private static final long serialVersionUID = 7228237374962625669L;
     
+       
     /**
-     * To json string.
-     *
-     * @return the string
+     * Instantiates a new vertical line.
      */
-    String toJsonString();
+    public VerticalLine() {
+    }
+
+    /**
+     * Instantiates a new vertical line.
+     *
+     * @param name the name
+     */
+    public VerticalLine(String name) {
+        setName(name);
+    }
+
 }

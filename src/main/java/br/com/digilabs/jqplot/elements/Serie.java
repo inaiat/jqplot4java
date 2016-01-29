@@ -57,6 +57,9 @@ public class Serie implements Element {
     
     /** The shadow alpha. */
     private String shadowAlpha;
+
+    /** The shadow depth. */
+    private Integer shadowDepth;
     
     /** The show line. */
     private Boolean showLine;
@@ -150,6 +153,25 @@ public class Serie implements Element {
      */
     public Serie setShadowAlpha(String shadowAlpha) {
         this.shadowAlpha = shadowAlpha;
+        return this;
+    }
+
+    /**
+     * Gets the shadow depth.
+     *
+     * @return shadowDepth
+     */
+    public Integer getShadowDepth() {
+        return shadowDepth;
+    }
+
+    /**
+     * Sets the shadow depth.
+     *
+     * @param shadowDepth the new shadow depth
+     */
+    public Serie setShadowDepth(Integer shadowDepth) {
+        this.shadowDepth = shadowDepth;
         return this;
     }
 

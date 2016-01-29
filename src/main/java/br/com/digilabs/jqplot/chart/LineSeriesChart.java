@@ -37,8 +37,12 @@ import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
  * @param <V>
  *            type of value of serie
  */
-@JqPlotPlugin(values = { JqPlotResources.CanvasTextRenderer,
-		JqPlotResources.CategoryAxisRenderer })
+@JqPlotPlugin(values = { JqPlotResources.CanvasTextRenderer, 
+	JqPlotResources.CategoryAxisRenderer, 
+	JqPlotResources.CanvasAxisLabelRenderer, 
+	JqPlotResources.CanvasAxisTickRenderer, 
+	JqPlotResources.CanvasOverlay, 
+	JqPlotResources.DateAxisRenderer })
 public class LineSeriesChart<I extends Number, V extends Number> extends
 		AbstractChart<LineSeriesData<I, V>, String> {
 

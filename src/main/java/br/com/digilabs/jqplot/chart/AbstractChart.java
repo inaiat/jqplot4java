@@ -33,6 +33,8 @@ import br.com.digilabs.jqplot.elements.Legend;
 import br.com.digilabs.jqplot.elements.Serie;
 import br.com.digilabs.jqplot.elements.SeriesDefaults;
 import br.com.digilabs.jqplot.elements.Title;
+import br.com.digilabs.jqplot.elements.CanvasOverlay;
+import br.com.digilabs.jqplot.elements.Line;
 
 /**
  * Abstract class to help build charts.
@@ -457,5 +459,12 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
 	@Deprecated
 	public void setPadMin(Float padMin) {
 		getChartConfiguration().yAxisInstance().setPadMin(1.05f);
+	}
+
+	/**
+	 * @return the canvas overlay
+	 */
+	public CanvasOverlay getCanvasOverlay() {
+		return getChartConfiguration().canvasOverlayInstance();
 	}
 }

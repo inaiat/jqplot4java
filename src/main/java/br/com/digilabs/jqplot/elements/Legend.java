@@ -297,21 +297,21 @@ public class Legend implements Element {
     }
 
     /**
-     * Gets the placment.
+     * Gets the placement.
      *
-     * @return the placment
+     * @return the placement
      */
-    public String getPlacment() {
+    public String getPlacement() {
         return placement;
     }
 
     /**
-     * Sets the placment.
+     * Sets the placement.
      *
-     * @param placment the new placment
+     * @param placement the new placement
      */
-    public void setPlacment(String placment) {
-        this.placement = placment;
+    public void setPlacement(String placement) {
+        this.placement = placement;
     }
 
     /**
