@@ -1,4 +1,6 @@
 /target/
 .settings
+/.idea
 .project
+/jqplot4java.iml
 .classpath
