@@ -39,10 +39,10 @@ public class BubbleItem implements BaseItem {
     /**
      * Construtor
      * 
-     * @param x
-     * @param y
-     * @param radius
-     * @param label
+     * @param x x
+     * @param y y
+     * @param radius radius
+     * @param label label
      */
     public BubbleItem(Float x, Float y, Float radius, String label) {
 	this.x = x;
@@ -54,10 +54,10 @@ public class BubbleItem implements BaseItem {
     /**
      * Construtor
      * 
-     * @param x
-     * @param y
-     * @param radius
-     * @param label
+     * @param x x
+     * @param y y
+     * @param radius radius
+     * @param label label
      */
     public BubbleItem(Integer x, Integer y, Integer radius, String label) {
 	this.x = x.floatValue();

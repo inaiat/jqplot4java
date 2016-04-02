@@ -16,9 +16,8 @@
  */
 package br.com.digilabs.jqplot.elements;
 
-import java.util.Collection;
 import java.util.ArrayList;
-import br.com.digilabs.jqplot.JqPlotResources;
+import java.util.Collection;
 
 /**
  * CanvasOverlay object.  
@@ -141,6 +140,7 @@ public class CanvasOverlay implements Element {
      * Sets the line width.
      *
      * @param lineWidth the new line width
+	 * @return CanvasOverlay
      */
     public CanvasOverlay setLineWidth(Integer lineWidth) {
         this.lineWidth = lineWidth;
@@ -160,7 +160,8 @@ public class CanvasOverlay implements Element {
      * Sets the line cap.
      *
      * @param lineCap the new line cap
-     */
+	 * @return CanvasOverlay
+	 */
     public CanvasOverlay setLineCap(String lineCap) {
         this.lineCap = lineCap;
         return this;
@@ -179,7 +180,8 @@ public class CanvasOverlay implements Element {
      * Sets the color.
      *
      * @param color the new color
-     */
+	 * @return CanvasOverlay
+	 */
     public CanvasOverlay setColor(String color) {
         this.color = color;
         return this;
@@ -198,7 +200,8 @@ public class CanvasOverlay implements Element {
      * Sets the shadow.
      *
      * @param shadow the new shadow
-     */
+	 * @return CanvasOverlay
+	 */
     public CanvasOverlay setShadow(Boolean shadow) {
         this.shadow = shadow;
         return this;
@@ -343,7 +346,8 @@ public class CanvasOverlay implements Element {
      * Sets the xOffset.
      *
      * @param xOffset the new xOffset
-     */
+	 * @return CanvasOverlay
+	 */
     public CanvasOverlay setXOffset(String xOffset) {
         this.xOffset = xOffset;
         return this;
@@ -375,6 +379,7 @@ public class CanvasOverlay implements Element {
 	 * 
 	 * @param objects
 	 *            the objects to set
+	 * @return CanvasOverlay
 	 */
 	public CanvasOverlay setObjects(Collection<LineObject> objects) {
 		this.objects = objects;
@@ -382,9 +387,8 @@ public class CanvasOverlay implements Element {
 	}
 
 	/**
-	 * Adiciona uma linha
-	 * 
-	 * @param line
+	 * Get a {@link DashedHorizontalLine} instance
+	 * @return DashedHorizontalLine
 	 */
 	public DashedHorizontalLine dashedHorizontalLineInstance() {
            LineObject lineObject = new LineObject();
@@ -394,9 +398,8 @@ public class CanvasOverlay implements Element {
 	}
 
 	/**
-	 * Adiciona uma linha
-	 * 
-	 * @param line
+	 * Get a {@link DashedVerticalLine} instance
+	 * @return DashedVerticalLine
 	 */
 	public DashedVerticalLine dashedVerticalLineInstance() {
            LineObject lineObject = new LineObject();
@@ -406,9 +409,8 @@ public class CanvasOverlay implements Element {
 	}
 
 	/**
-	 * Adiciona uma linha
-	 * 
-	 * @param line
+	 * Get a {@link HorizontalLine} instance
+	 * @return HorizontalLine
 	 */
 	public HorizontalLine horizontalLineInstance() {
            LineObject lineObject = new LineObject();
@@ -418,9 +420,8 @@ public class CanvasOverlay implements Element {
 	}
 
 	/**
-	 * Adiciona uma linha
-	 * 
-	 * @param line
+	 * Get a {@link VerticalLine} instance
+	 * @return VerticalLine
 	 */
 	public VerticalLine verticalLineInstance() {
            LineObject lineObject = new LineObject();

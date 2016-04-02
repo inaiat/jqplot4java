@@ -16,14 +16,11 @@
  */
 package br.com.digilabs.jqplot;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collection;
-
 import br.com.digilabs.jqplot.axis.Axis;
 import br.com.digilabs.jqplot.axis.XAxis;
 import br.com.digilabs.jqplot.axis.YAxis;
 import br.com.digilabs.jqplot.elements.Axes;
+import br.com.digilabs.jqplot.elements.CanvasOverlay;
 import br.com.digilabs.jqplot.elements.Cursor;
 import br.com.digilabs.jqplot.elements.Grid;
 import br.com.digilabs.jqplot.elements.GridPadding;
@@ -32,7 +29,10 @@ import br.com.digilabs.jqplot.elements.Legend;
 import br.com.digilabs.jqplot.elements.Serie;
 import br.com.digilabs.jqplot.elements.SeriesDefaults;
 import br.com.digilabs.jqplot.elements.Title;
-import br.com.digilabs.jqplot.elements.CanvasOverlay;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * 
@@ -111,6 +111,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param captureRightClick
 	 *            the new capture right click
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setCaptureRightClick(Boolean captureRightClick) {
 		this.captureRightClick = captureRightClick;
@@ -131,6 +132,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param legend
 	 *            the new legend
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setLegend(Legend legend) {
 		this.legend = legend;
@@ -142,6 +144,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param title
 	 *            the new simple title
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setSimpleTitle(String title) {
 		if (title == null) {
@@ -306,6 +309,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param label
 	 *            the new label x
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setLabelX(String label) {
 		if (label != null) {
@@ -319,6 +323,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param label
 	 *            the new label y
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setLabelY(String label) {
 		if (label != null) {
@@ -351,6 +356,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param series
 	 *            the series to set
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setSeries(Collection<Serie> series) {
 		this.series = series;
@@ -362,6 +368,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param serie
 	 *            the serie
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> addSeries(Serie serie) {
 		this.seriesInstance().add(serie);
@@ -382,6 +389,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param title
 	 *            the title to set
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setTitle(Title title) {
 		this.title = title;
@@ -402,6 +410,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param axesDefaults
 	 *            the axesDefaults to set
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setAxesDefaults(Axis<T> axesDefaults) {
 		this.axesDefaults = axesDefaults;
@@ -422,6 +431,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param axes
 	 *            the axes to set
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setAxes(Axes<T> axes) {
 		this.axes = axes;
@@ -452,6 +462,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param seriesDefaults
 	 *            the seriesDefaults to set
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setSeriesDefaults(SeriesDefaults seriesDefaults) {
 		this.seriesDefaults = seriesDefaults;
@@ -472,6 +483,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param stackSeries
 	 *            the stackSeries to set
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setStackSeries(Boolean stackSeries) {
 		this.stackSeries = stackSeries;
@@ -492,6 +504,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param showMarker
 	 *            the showMarker to set
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setShowMarker(Boolean showMarker) {
 		this.showMarker = showMarker;
@@ -522,6 +535,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param seriesColor
 	 *            the new series colors
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setSeriesColors(Collection<String> seriesColor) {
 		this.seriesColors = seriesColor;
@@ -542,6 +556,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param animate
 	 *            true, false
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setAnimate(Boolean animate) {
 		this.animate = animate;
@@ -572,6 +587,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param highlighter
 	 *            property
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setHighlighter(Highlighter highlighter) {
 		this.highlighter = highlighter;
@@ -592,6 +608,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param grid
 	 *            the new grid
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setGrid(Grid<T> grid) {
 		this.grid = grid;
@@ -612,6 +629,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param cursor
 	 *            the new cursor
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setCursor(Cursor cursor) {
 		this.cursor = cursor;
@@ -621,7 +639,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	/**
 	 * Gets gridPadding
 	 * 
-	 * @return
+	 * @return GridPadding
 	 */
 	public GridPadding getGridPadding() {
 		return gridPadding;
@@ -632,12 +650,17 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param gridPadding
 	 *            the new gridPadding
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setGridPadding(GridPadding gridPadding) {
 		this.gridPadding = gridPadding;
 		return this;
 	}
 
+	/**
+	 * Get instance of GridPadding
+	 * @return GridPadding
+	 */
 	public GridPadding gridPaddingInstance() {
 		if (gridPadding == null) {
 			gridPadding = new GridPadding();
@@ -671,6 +694,7 @@ public class ChartConfiguration<T extends Serializable> implements Serializable 
 	 * 
 	 * @param canvasOverlay
 	 *            the canvasOverlay to set
+	 * @return ChartConfiguration
 	 */
 	public ChartConfiguration<T> setCanvasOverlay(CanvasOverlay canvasOverlay) {
 		this.canvasOverlay = canvasOverlay;

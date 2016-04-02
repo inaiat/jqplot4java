@@ -39,7 +39,7 @@ public class LineChart<T extends Number> extends
 	private LinedData<T> linedData = new LinedData<T>();
 
 	/**
-	 * Construtor
+	 * Line chart construcotr
 	 */
 	public LineChart() {
 		this(null, null, null);
@@ -48,7 +48,7 @@ public class LineChart<T extends Number> extends
 	/**
 	 * Construtor
 	 * 
-	 * @param title
+	 * @param title Title of chart
 	 */
 	public LineChart(String title) {
 		this(title, null, null);
@@ -57,10 +57,10 @@ public class LineChart<T extends Number> extends
 	/**
 	 * Construtor
 	 * 
-	 * @param title
-	 * @param labelX
-	 * @param labelY
-	 */
+	 * @param title title
+	 * @param labelX labelX
+	 * @param labelY labelY
+ 	 */
 	public LineChart(String title, String labelX, String labelY) {
 		this.chartConfig = new ChartConfiguration<String>();
 		chartConfig
@@ -74,24 +74,24 @@ public class LineChart<T extends Number> extends
 	}
 
 	/**
-	 * 
-	 * @param value
+	 * Add a value
+	 * @param value Add a value
 	 */
 	public void addValue(T value) {
 		linedData.addValue(value);
 	}
 
 	/**
-	 * 
-	 * @param values
+	 * Add a value
+	 * @param values value Add values
 	 */
 	public void addValues(T... values) {
 		linedData.addValues(values);
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Get Chart Data
+	 * @return LinedData
 	 */
 	public LinedData<T> getChartData() {
 		return linedData;

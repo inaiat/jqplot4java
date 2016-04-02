@@ -460,6 +460,7 @@ public class Legend implements Element {
 
     /**
      *  Gets the {@link RendererOptions}
+	 * @return LegendRenderer
      */
 	public LegendRenderer getRendererOptions()
 	{
@@ -468,6 +469,7 @@ public class Legend implements Element {
 
     /**
      *  Sets the {@link RendererOptions}
+	 *  @param rendererOptions set the LegendRenderer
      */
 	public void setRendererOptions(LegendRenderer rendererOptions)
 	{

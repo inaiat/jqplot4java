@@ -16,16 +16,14 @@
  */
 package br.com.digilabs.jqplot.chart;
 
-import java.util.Arrays;
-import java.util.Collection;
-
 import br.com.digilabs.jqplot.ChartConfiguration;
 import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.data.LineSeriesData;
 import br.com.digilabs.jqplot.data.item.LineSeriesItem;
 import br.com.digilabs.jqplot.elements.Title;
 import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
-import br.com.digilabs.jqplot.chart.AbstractChart;
+
+import java.util.Collection;
 
 /**
  * Simple implementation of Bar Chart. This class can/should be extended.
@@ -58,7 +56,7 @@ public class BarSeriesChart<I extends Number, V extends Number> extends
 
     /**
      * Construtor
-     * @param title 
+     * @param title Title for bar chart
      */
     public BarSeriesChart(String title) {
         this(title, null, null);
@@ -67,9 +65,9 @@ public class BarSeriesChart<I extends Number, V extends Number> extends
     /**
      * Construtor
      * 
-     * @param title
-     * @param labelX
-     * @param labelY 
+     * @param title Title
+     * @param labelX label for axis x
+     * @param labelY label for axys y
      */
     public BarSeriesChart(String title, String labelX, String labelY) 
     {

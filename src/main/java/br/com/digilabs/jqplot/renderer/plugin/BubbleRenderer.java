@@ -71,7 +71,7 @@ public class BubbleRenderer implements Renderer {
 
     /**
      * 
-     * @return 
+     * @return JqPlotResources
      */
     public JqPlotResources resource() {
         return JqPlotResources.BubbleRenderer;

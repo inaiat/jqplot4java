@@ -16,9 +16,9 @@
  */
 package br.com.digilabs.jqplot.elements;
 
-import java.io.Serializable;
-
 import br.com.digilabs.jqplot.axis.Axis;
+
+import java.io.Serializable;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -240,7 +240,7 @@ public class Grid<T extends Serializable> implements Element {
     /**
      * Sets the grid line color.
      *
-     * @param gridLineColer the new grid line color
+     * @param gridLineColor the new grid line color
      */
     public void setGridLineColer(String gridLineColor) {
         this.gridLineColor = gridLineColor;

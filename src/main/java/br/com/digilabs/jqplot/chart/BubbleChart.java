@@ -48,7 +48,7 @@ public class BubbleChart extends AbstractChart<BubbleData<BubbleItem>, String> {
 	/**
 	 * Construtor
 	 * 
-	 * @param title
+	 * @param title The title
 	 */
 	public BubbleChart(String title) {
 		this.chartConfig = new ChartConfiguration<String>();
@@ -67,30 +67,30 @@ public class BubbleChart extends AbstractChart<BubbleData<BubbleItem>, String> {
 	}
 
 	/**
-	 * 
-	 * @param item
+	 * Add a value
+	 * @param item Add a {@link BubbleItem}
 	 */
 	public void addValue(BubbleItem item) {
 		bubbleData.addValue(item);
 	}
 
 	/**
-	 * 
-	 * @param x
-	 * @param y
-	 * @param radius
-	 * @param label
+	 * Add a value
+	 * @param x x
+	 * @param y y
+	 * @param radius radius
+	 * @param label label
 	 */
 	public void addValue(Float x, Float y, Float radius, String label) {
 		bubbleData.addValue(new BubbleItem(x, y, radius, label));
 	}
 
 	/**
-	 * 
-	 * @param x
-	 * @param y
-	 * @param radius
-	 * @param label
+	 * Add a value
+	 * @param x x
+	 * @param y y
+	 * @param radius radius
+	 * @param label label
 	 */
 	public void addValue(Integer x, Integer y, Integer radius, String label) {
 		bubbleData.addValue(new BubbleItem(x, y, radius, label));

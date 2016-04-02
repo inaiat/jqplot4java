@@ -16,12 +16,12 @@
  */
 package br.com.digilabs.jqplot.elements;
 
-import java.io.Serializable;
-
 import br.com.digilabs.jqplot.axis.X2Axis;
 import br.com.digilabs.jqplot.axis.XAxis;
 import br.com.digilabs.jqplot.axis.Y2Axis;
 import br.com.digilabs.jqplot.axis.YAxis;
+
+import java.io.Serializable;
 
 /**
  * Axes options are specified within an axes object at the top level of the plot
@@ -92,6 +92,7 @@ public class Axes<T extends Serializable> implements Element {
     /**
      * @param xaxis
      *            the xaxis to set
+	 * @return Axes
      */
     public Axes<T> setXaxis(XAxis<T> xaxis) {
 	this.xaxis = xaxis;
@@ -108,6 +109,7 @@ public class Axes<T extends Serializable> implements Element {
     /**
      * @param yaxis
      *            the yaxis to set
+	 * @return Axes
      */
     public Axes<T> setYaxis(YAxis<T> yaxis) {
 	this.yaxis = yaxis;
@@ -124,7 +126,8 @@ public class Axes<T extends Serializable> implements Element {
     /**
      * @param x2axis
      *            the x2axis to set
-     */
+	 * @return Axes
+	 */
     public Axes<T> setX2axis(X2Axis<T> x2axis) {
 	this.x2axis = x2axis;
 	return this;
@@ -140,6 +143,7 @@ public class Axes<T extends Serializable> implements Element {
     /**
      * @param y2axis
      *            the y2axis to set
+	 * @return Axes
      */
     public Axes<T> setY2axis(Y2Axis<T> y2axis) {
 	this.y2axis = y2axis;

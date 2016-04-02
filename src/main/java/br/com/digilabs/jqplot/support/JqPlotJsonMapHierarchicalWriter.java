@@ -32,7 +32,6 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
 
     /**
      * DROP_ROOT_MODE drops the JSON root node.
-     * <p>
      * The root node is the first level of the JSON object i.e.
      * 
      * <pre>
@@ -51,14 +50,12 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
      * 
      * Without a root node, the top level element might now also be an array. However, it is
      * possible to generate invalid JSON unless {@link #STRICT_MODE} is also set.
-     * </p>
-     * 
+     *
      * @since 1.3.1
      */
     public static final int DROP_ROOT_MODE = 1;
     /**
      * STRICT_MODE prevents invalid JSON for single value objects when dropping the root.
-     * <p>
      * The mode is only useful in combination with the {@link #DROP_ROOT_MODE}. An object with a
      * single value as first node i.e.
      * 
@@ -74,8 +71,7 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
      * 
      * However, this is no longer valid JSON. Therefore you can activate {@link #STRICT_MODE}
      * and a {@link ConversionException} is thrown instead.
-     * </p>
-     * 
+     *
      * @since 1.3.1
      */
     public static final int STRICT_MODE = 2;
@@ -92,9 +88,9 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
 
     /**
      * 
-     * @param writer
-     * @param lineIndenter
-     * @param newLine 
+     * @param writer {@link Writer}
+     * @param lineIndenter char array
+     * @param newLine String
      */
     public JqPlotJsonMapHierarchicalWriter(Writer writer, char[] lineIndenter, String newLine) {
         this(writer, lineIndenter, newLine, 0);
@@ -102,27 +98,27 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
 
     /**
      * 
-     * @param writer
-     * @param lineIndenter 
-     */
+     * @param writer {@link Writer}
+     * @param lineIndenter char array
+    */
     public JqPlotJsonMapHierarchicalWriter(Writer writer, char[] lineIndenter) {
         this(writer, lineIndenter, "\n");
     }
 
     /**
      * 
-     * @param writer
-     * @param lineIndenter
-     * @param newLine 
-     */
+     * @param writer {@link Writer}
+     * @param lineIndenter String
+     * @param newLine String
+]     */
     public JqPlotJsonMapHierarchicalWriter(Writer writer, String lineIndenter, String newLine) {
         this(writer, lineIndenter.toCharArray(), newLine);
     }
 
     /**
      * 
-     * @param writer
-     * @param lineIndenter 
+     * @param writer {@link Writer}
+     * @param lineIndenter String
      */
     public JqPlotJsonMapHierarchicalWriter(Writer writer, String lineIndenter) {
         this(writer, lineIndenter.toCharArray());
@@ -130,7 +126,7 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
 
     /**
      * 
-     * @param writer 
+     * @param writer {@link Writer}
      */
     public JqPlotJsonMapHierarchicalWriter(Writer writer) {
         this(writer, new char[]{' ', ' '});
@@ -138,6 +134,10 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
 
     /**
      * @since 1.3.1
+	 * @param writer Writer
+	 * @param lineIndenter array of char
+	 * @param newLine new line
+	 * @param mode mode
      */
     public JqPlotJsonMapHierarchicalWriter(Writer writer, char[] lineIndenter, String newLine, int mode) {
         this.writer = new QuickWriter(writer);
@@ -148,15 +148,13 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
 
     /**
      * Create a JsonWriter where the writer mode can be chosen.
-     * <p>
      * Following constants can be used as bit mask:
      * <ul>
      * <li>{@link #DROP_ROOT_MODE}: drop the root node</li>
      * <li>{@link #STRICT_MODE}: do not throw {@link ConversionException}, if writer should
      * generate invalid JSON</li>
      * </ul>
-     * </p>
-     * 
+     *
      * @param writer the {@link Writer} where the JSON is written to
      * @param mode the JsonWriter mode
      * @since 1.3.1
@@ -175,8 +173,8 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
 
     /**
      * 
-     * @param name
-     * @param clazz 
+     * @param name name of node
+     * @param clazz type of class
      */
     public void startNode(String name, @SuppressWarnings("rawtypes") Class clazz) {
         Node currNode = (Node)elementStack.peek();
@@ -233,8 +231,7 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
     }
 
     /**
-     * 
-     * @param text 
+     * @param text Text
      */
     public void setValue(String text) {
         Node currNode = (Node)elementStack.peek();
@@ -257,8 +254,8 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
 
     /**
      * 
-     * @param key
-     * @param value 
+     * @param key key
+     * @param value value
      */
     public void addAttribute(String key, String value) {
         Node currNode = (Node)elementStack.peek();
@@ -272,8 +269,8 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
 
     /**
      * 
-     * @param writer
-     * @param text 
+     * @param writer writer
+     * @param text text
      */
     protected void writeAttributeValue(QuickWriter writer, String text) {
         writeText(text, null);
@@ -281,8 +278,8 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
 
     /**
      * 
-     * @param writer
-     * @param text 
+     * @param writer writer
+     * @param text text
      */
     protected void writeText(QuickWriter writer, String text) {
         Node foo = (Node)elementStack.peek();
@@ -292,8 +289,8 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
 
     /**
      * 
-     * @param text
-     * @param clazz 
+     * @param text text
+     * @param clazz class
      */
     private void writeText(String text, Class<?> clazz) {
         boolean isJqPlotResource = clazz.isAssignableFrom(JqPlotResources.class);
@@ -332,8 +329,8 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
 
     /**
      * 
-     * @param clazz
-     * @return 
+     * @param clazz class
+     * @return return true if class is a collection
      */
     private boolean isCollection(Class<?> clazz) {
         return clazz != null
@@ -344,8 +341,8 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
 
     /**
      * 
-     * @param clazz
-     * @return 
+     * @param clazz class
+     * @return true if need quotes
      */
     private boolean needsQuotes(Class<?> clazz) {
         
@@ -418,8 +415,7 @@ public class JqPlotJsonMapHierarchicalWriter implements ExtendedHierarchicalStre
     }
 
     /**
-     * 
-     * @return 
+     * @return HierarchicalStreamWriter
      */
     public HierarchicalStreamWriter underlyingWriter() {
         return this;

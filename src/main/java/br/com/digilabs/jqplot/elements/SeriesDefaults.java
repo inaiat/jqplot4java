@@ -36,8 +36,8 @@ public class SeriesDefaults extends Serie {
 	}
 
 	/**
-	 * 
-	 * @param pointLabels
+	 * @param pointLabels Set point lables
+	 * @return SeriesDafaults
 	 */
 	public SeriesDefaults setPointLabels(PointLabels pointLabels) {
 		this.pointLabels = pointLabels;

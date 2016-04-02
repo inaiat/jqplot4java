@@ -16,18 +16,18 @@
  */
 package br.com.digilabs.jqplot.axis;
 
-import java.io.Serializable;
-
 import br.com.digilabs.jqplot.JqPlotResources;
-import br.com.digilabs.jqplot.elements.TickOptions;
 import br.com.digilabs.jqplot.elements.RendererOptions;
+import br.com.digilabs.jqplot.elements.TickOptions;
+
+import java.io.Serializable;
 
 /**
  * An individual axis object. Cannot be instantiated directly, but created by
  * the Plot oject. Axis properties can be set or overriden by the options passed
  * in from the user.
  * 
- * @see http://www.jqplot.com/docs/files/jqplot-core-js.html#Axis
+ * See http://www.jqplot.com/docs/files/jqplot-core-js.html#Axis
  * 
  * @param <T>
  *            type of Axis, can be String, Number, Date, etc. This is necessary
@@ -175,6 +175,7 @@ public class Axis<T extends Serializable> implements Serializable {
 	 * 
 	 * @param autoScale
 	 *            the autoScale to set
+	 * @return Axis
 	 */
 	public Axis<T> setAutoScale(Boolean autoScale) {
 		this.autoScale = autoScale;
@@ -195,6 +196,7 @@ public class Axis<T extends Serializable> implements Serializable {
 	 * 
 	 * @param tickOptions
 	 *            the tickOptions to set
+	 * @return Axis
 	 */
 	public Axis<T> setTickOptions(TickOptions tickOptions) {
 		this.tickOptions = tickOptions;
@@ -215,6 +217,7 @@ public class Axis<T extends Serializable> implements Serializable {
 	 * 
 	 * @param labelRenderer
 	 *            the labelRenderer to set
+	 * @return Axis
 	 */
 	public Axis<T> setLabelRenderer(JqPlotResources labelRenderer) {
 		this.labelRenderer = labelRenderer;
@@ -235,6 +238,7 @@ public class Axis<T extends Serializable> implements Serializable {
 	 * 
 	 * @param tickRenderer
 	 *            the tickRenderer to set
+	 * @return Axis
 	 */
 	public Axis<T> setTickRenderer(JqPlotResources tickRenderer) {
 		this.tickRenderer = tickRenderer;
@@ -265,6 +269,7 @@ public class Axis<T extends Serializable> implements Serializable {
      * Sets the renderer options.
      *
      * @param rendererOptions the new renderer options
+	 * @return Axis
      */
     public Axis setRendererOptions(RendererOptions rendererOptions) {
         this.rendererOptions = rendererOptions;
@@ -285,6 +290,7 @@ public class Axis<T extends Serializable> implements Serializable {
 	 * 
 	 * @param label
 	 *            the label to set
+	 * @return Axis
 	 */
 	public Axis<T> setLabel(String label) {
 		this.label = label;
@@ -305,6 +311,7 @@ public class Axis<T extends Serializable> implements Serializable {
 	 * 
 	 * @param pad
 	 *            the pad to set
+	 * @return Axis
 	 */
 	public Axis<T> setPad(Float pad) {
 		this.pad = pad;
@@ -325,6 +332,7 @@ public class Axis<T extends Serializable> implements Serializable {
 	 * 
 	 * @param renderer
 	 *            the renderer to set
+	 * @return Axis
 	 */
 	public Axis<T> setRenderer(JqPlotResources renderer) {
 		this.renderer = renderer;
@@ -335,6 +343,7 @@ public class Axis<T extends Serializable> implements Serializable {
 	 * Gets the ticks.
 	 * 
 	 * @return the ticks
+	 * @return Array of String
 	 */
 	public String[] getTicks() {
 		return ticks;
@@ -345,6 +354,7 @@ public class Axis<T extends Serializable> implements Serializable {
 	 * 
 	 * @param ticks
 	 *            the ticks to set
+	 * @return Axis
 	 */
 	public Axis<T> setTicks(String... ticks) {
 		this.ticks = ticks;
@@ -365,6 +375,7 @@ public class Axis<T extends Serializable> implements Serializable {
 	 * 
 	 * @param min
 	 *            the new min
+	 * @return Axis
 	 */
 	public Axis<T> setMin(Serializable min) {
 		this.min = min;
@@ -385,6 +396,7 @@ public class Axis<T extends Serializable> implements Serializable {
 	 * 
 	 * @param max
 	 *            the new max
+	 * @return Axis
 	 */
 	public Axis<T> setMax(Serializable max) {
 		this.max = max;

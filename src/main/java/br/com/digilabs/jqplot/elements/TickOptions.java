@@ -94,6 +94,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param formatString
 	 *            the new format string
+	 * @return TickOptions
 	 */
 	public TickOptions setFormatString(String formatString) {
 		this.formatString = formatString;
@@ -105,6 +106,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param angle
 	 *            the angle to set
+	 * @return TickOptions
 	 */
 	public TickOptions setAngle(Integer angle) {
 		this.angle = angle;
@@ -134,6 +136,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param labelPosition
 	 *            to set
+	 * @return TickOptions
 	 */
 	public TickOptions setLabelPosition(String labelPosition) {
 		this.labelPosition = labelPosition;
@@ -154,6 +157,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param mark
 	 *            the new mark
+	 * @return TickOptions
 	 */
 	public TickOptions setMark(String mark) {
 		this.mark = mark;
@@ -174,6 +178,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param showMark
 	 *            the new show mark
+	 * @return TickOptions
 	 */
 	public TickOptions setShowMark(Boolean showMark) {
 		this.showMark = showMark;
@@ -194,6 +199,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param showGridline
 	 *            the new show gridline
+	 * @return TickOptions
 	 */
 	public TickOptions setShowGridline(Boolean showGridline) {
 		this.showGridline = showGridline;
@@ -214,6 +220,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param isMinorTick
 	 *            the new checks if is minor tick
+	 * @return TickOptions
 	 */
 	public TickOptions setIsMinorTick(Boolean isMinorTick) {
 		this.isMinorTick = isMinorTick;
@@ -234,6 +241,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param markSize
 	 *            the new mark size
+	 * @return TickOptions
 	 */
 	public TickOptions setMarkSize(Integer markSize) {
 		this.markSize = markSize;
@@ -254,6 +262,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param show
 	 *            the new show
+	 * @return TickOptions
 	 */
 	public TickOptions setShow(Boolean show) {
 		this.show = show;
@@ -274,6 +283,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param showLabel
 	 *            the new show label
+	 * @return TickOptions
 	 */
 	public TickOptions setShowLabel(Boolean showLabel) {
 		this.showLabel = showLabel;
@@ -294,6 +304,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param label
 	 *            the new label
+	 * @return TickOptions
 	 */
 	public TickOptions setLabel(String label) {
 		this.label = label;
@@ -314,6 +325,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param prefix
 	 *            the new prefix
+	 * @return TickOptions
 	 */
 	public TickOptions setPrefix(String prefix) {
 		this.prefix = prefix;
@@ -335,6 +347,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param fontFamily
 	 *            the new font family
+	 * @return TickOptions
 	 */
 	public TickOptions setFontFamily(String fontFamily) {
 		this.fontFamily = fontFamily;
@@ -355,6 +368,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param fontSize
 	 *            the new font size
+	 * @return TickOptions
 	 */
 	public TickOptions setFontSize(String fontSize) {
 		this.fontSize = fontSize;
@@ -375,6 +389,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param fontWeight
 	 *            the new font weight
+	 * @return TickOptions
 	 */
 	public TickOptions setFontWeight(String fontWeight) {
 		this.fontWeight = fontWeight;
@@ -395,6 +410,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param fontStretch
 	 *            the new font stretch
+	 * @return TickOptions
 	 */
 	public TickOptions setFontStretch(Double fontStretch) {
 		this.fontStretch = fontStretch;
@@ -415,6 +431,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param textColor
 	 *            the new text color
+	 * @return TickOptions
 	 */
 	public TickOptions setTextColor(String textColor) {
 		this.textColor = textColor;
@@ -435,6 +452,7 @@ public class TickOptions implements Element {
 	 * 
 	 * @param escapeHTML
 	 *            the new escape html
+	 * @return TickOptions
 	 */
 	public TickOptions setEscapeHTML(Boolean escapeHTML) {
 		this.escapeHTML = escapeHTML;

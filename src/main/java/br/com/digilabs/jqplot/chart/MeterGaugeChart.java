@@ -46,7 +46,7 @@ public class MeterGaugeChart extends AbstractChart<MeterData,String> {
 
     /**
      * Construtor
-     * @param title 
+     * @param title The title
      */
     public MeterGaugeChart(String title) {
         this.chartConfig = new ChartConfiguration<String>();
@@ -58,8 +58,8 @@ public class MeterGaugeChart extends AbstractChart<MeterData,String> {
     }
 
     /**
-     * 
-     * @param value 
+     *
+     * @param value value
      */
     public void setValue(Float value) {
         data.setValue(value);
@@ -67,7 +67,7 @@ public class MeterGaugeChart extends AbstractChart<MeterData,String> {
 
     /**
      * 
-     * @param value 
+     * @param value value
      */
     public void setValue(Integer value) {
         data.setValue(value.floatValue());

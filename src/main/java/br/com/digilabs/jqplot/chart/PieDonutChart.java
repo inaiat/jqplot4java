@@ -16,14 +16,14 @@
  */
 package br.com.digilabs.jqplot.chart;
 
-import java.util.Collection;
-
 import br.com.digilabs.jqplot.ChartConfiguration;
 import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.data.PieDonutData;
 import br.com.digilabs.jqplot.data.item.LabeledItem;
 import br.com.digilabs.jqplot.elements.Title;
 import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
+
+import java.util.Collection;
 
 /**
  * Simple implementation of Pie Donut Chart. This class can/should be extended.
@@ -48,7 +48,7 @@ public class PieDonutChart<T extends Number> extends AbstractChart<PieDonutData<
 
     /**
      * 
-     * @param title 
+     * @param title The title
      */
     public PieDonutChart(String title) {
     	this.chartConfig = new ChartConfiguration<String>(); 
@@ -64,7 +64,7 @@ public class PieDonutChart<T extends Number> extends AbstractChart<PieDonutData<
 
     /**
      * 
-     * @param value 
+     * @param value Collection of {@link LabeledItem}
      */
     public void addValue(Collection<LabeledItem<T>> value) {
         data.addValue(value);
@@ -72,7 +72,7 @@ public class PieDonutChart<T extends Number> extends AbstractChart<PieDonutData<
 
     /**
      * 
-     * @return 
+     * @return PieDonutData
      */
     public PieDonutData<T> getChartData() {
         return data;

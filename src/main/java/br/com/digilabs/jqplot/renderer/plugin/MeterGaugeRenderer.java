@@ -67,7 +67,7 @@ public class MeterGaugeRenderer implements Renderer {
 
     /**
      * 
-     * @return 
+     * @return JqPlotResources
      */
     public JqPlotResources resource() {
         return JqPlotResources.MeterGaugeRenderer;

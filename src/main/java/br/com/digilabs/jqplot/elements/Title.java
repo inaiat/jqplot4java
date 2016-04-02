@@ -84,6 +84,7 @@ public class Title implements Element {
      * Sets the show.
      *
      * @param show the new show
+	 * @return Title
      */
     public Title setShow(boolean show) {
         this.setShow((Boolean) show);
@@ -103,6 +104,7 @@ public class Title implements Element {
      * Sets the font family.
      *
      * @param fontFamily the new font family
+	 * @return Title
      */
     public Title setFontFamily(String fontFamily) {
         this.fontFamily = fontFamily;
@@ -122,6 +124,7 @@ public class Title implements Element {
      * Sets the font size.
      *
      * @param fontSize the fontSize to set
+	 * @return Title
      */
     public Title setFontSize(String fontSize) {
         this.fontSize = fontSize;
@@ -141,6 +144,7 @@ public class Title implements Element {
      * Sets the font weight.
      *
      * @param fontWeight the fontWeight to set
+	 * @return Title
      */
     public Title setFontWeight(String fontWeight) {
         this.fontWeight = fontWeight;
@@ -160,6 +164,7 @@ public class Title implements Element {
      * Sets the text align.
      *
      * @param textAlign the textAlign to set
+	 * @return Title
      */
     public Title setTextAlign(String textAlign) {
         this.textAlign = textAlign;
@@ -179,6 +184,7 @@ public class Title implements Element {
      * Sets the text color.
      *
      * @param textColor the textColor to set
+	 * @return Title
      */
     public Title setTextColor(String textColor) {
         this.textColor = textColor;
@@ -195,9 +201,8 @@ public class Title implements Element {
     }
 
     /**
-     * get'.
-     *
      * @param renderer the renderer to set
+	 * @return Title
      */
     public Title setRenderer(String renderer) {
         this.renderer = renderer;
@@ -217,6 +222,7 @@ public class Title implements Element {
      * Sets the renderer options.
      *
      * @param rendererOptions the rendererOptions to set
+	 * @return Title
      */
     public Title setRendererOptions(String rendererOptions) {
         this.rendererOptions = rendererOptions;
@@ -236,6 +242,7 @@ public class Title implements Element {
      * Sets the escape html.
      *
      * @param escapeHtml the escapeHtml to set
+	 * @return Title
      */
     public Title setEscapeHtml(String escapeHtml) {
         this.escapeHtml = escapeHtml;
@@ -255,6 +262,7 @@ public class Title implements Element {
      * Sets the show.
      *
      * @param show the show to set
+	 * @return Title
      */
     public Title setShow(Boolean show) {
         this.show = show;

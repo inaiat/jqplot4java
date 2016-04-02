@@ -30,24 +30,24 @@ public abstract class AbstractCollectionData<T> implements ChartData<Collection<
     private static final long serialVersionUID = 7797681985474175237L;
 
 	/**
-     * 
-     * @param value 
+     * Add values to collection data
+     * @param value Collection of values
      */
     public void addValues(Collection<T> value) {
         getData().addAll(value);
     }
 
     /**
-     * 
-     * @param values 
+	 * Add values to collection data
+	 * @param values Collection of values
      */
     public void addValues(T... values) {
         getData().addAll(Arrays.asList(values));
     }
 
     /**
-     * 
-     * @param value 
+	 * Add values to collection data
+	 * @param value generic value
      */
     public void addValue(T value) {
         getData().add(value);

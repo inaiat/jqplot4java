@@ -16,14 +16,6 @@
  */
 package br.com.digilabs.jqplot.elements;
 
-import java.io.Serializable;
-
-import br.com.digilabs.jqplot.elements.Line;
-import br.com.digilabs.jqplot.elements.DashedHorizontalLine;
-import br.com.digilabs.jqplot.elements.DashedVerticalLine;
-import br.com.digilabs.jqplot.elements.HorizontalLine;
-import br.com.digilabs.jqplot.elements.VerticalLine;
-
 /**
  * Container for all line types used with a canvas overlay.
  * 
@@ -78,6 +70,7 @@ public class LineObject implements Element {
     /**
      * @param dashedHorizontalLine
      *            the dashedHorizontalLine to set
+	 * @return DashedHorizontalLine
      */
     public DashedHorizontalLine setDashedHorizontalLine(DashedHorizontalLine dashedHorizontalLine) {
 	this.dashedHorizontalLine = dashedHorizontalLine;
@@ -94,7 +87,8 @@ public class LineObject implements Element {
     /**
      * @param dashedVerticalLine
      *            the dashedVerticalLine to set
-     */
+	 * @return DashedHorizontalLine
+	 */
     public DashedVerticalLine setDashedVerticalLine(DashedVerticalLine dashedVerticalLine) {
 	this.dashedVerticalLine = dashedVerticalLine;
 	return dashedVerticalLine;
@@ -102,6 +96,7 @@ public class LineObject implements Element {
 
     /**
      * @return the horizontalLine
+	 * @return HorizontalLine
      */
     public HorizontalLine getHorizontalLine() {
 	return horizontalLine;
@@ -110,7 +105,8 @@ public class LineObject implements Element {
     /**
      * @param horizontalLine
      *            the horizontalLine to set
-     */
+	 * @return HorizontalLine
+	 */
     public HorizontalLine setHorizontalLine(HorizontalLine horizontalLine) {
 	this.horizontalLine = horizontalLine;
 	return horizontalLine;
@@ -126,6 +122,7 @@ public class LineObject implements Element {
     /**
      * @param verticalLine
      *            the verticalLine to set
+	 * @return VerticalLine
      */
     public VerticalLine setVerticalLine(VerticalLine verticalLine) {
 	this.verticalLine = verticalLine;

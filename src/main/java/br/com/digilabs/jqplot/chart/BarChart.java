@@ -16,14 +16,14 @@
  */
 package br.com.digilabs.jqplot.chart;
 
-import java.util.Arrays;
-import java.util.Collection;
-
 import br.com.digilabs.jqplot.ChartConfiguration;
 import br.com.digilabs.jqplot.JqPlotResources;
 import br.com.digilabs.jqplot.data.BarData;
 import br.com.digilabs.jqplot.elements.Title;
 import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
+
+import java.util.Arrays;
+import java.util.Collection;
 
 /**
  * Simple implementation of Bar Chart. This class can/should be extended.
@@ -48,7 +48,7 @@ public class BarChart<T extends Number> extends AbstractChart<BarData<T>, Long> 
 
     /**
      * Construtor
-     * @param title 
+     * @param title  Set title of bar chart
      */
     public BarChart(String title) {
         this(title, null, null);
@@ -57,9 +57,9 @@ public class BarChart<T extends Number> extends AbstractChart<BarData<T>, Long> 
     /**
      * Construtor
      * 
-     * @param title
-     * @param labelX
-     * @param labelY 
+     * @param title Tilte
+     * @param labelX Label for axis x
+     * @param labelY Label for axis y
      */
     public BarChart(String title, String labelX, String labelY) {
     	this.chartConfig = new ChartConfiguration<Long>();
@@ -83,22 +83,26 @@ public class BarChart<T extends Number> extends AbstractChart<BarData<T>, Long> 
     }
     
     /**
-     * Adiciona um valor
-     * @param value 
+     * Add a value for bar chart
+     * @param value  Set collection of values
      */
     public void addValue(Collection<T> value) {
         barData.addValue(value);
     }
 
-    /**
-     * 
-     * @param value 
-     */
+	/**
+	 * Add a value for bar chart
+	 * @param value  Set collection of values
+	 */
     public void addValues(Collection<T>... value) {
         barData.addValues(value);
     }
     
 	@SuppressWarnings("unchecked")
+	/**
+	 * Add a value for bar chart
+	 * @param value  Set values
+	 */
 	public void addValues(T... values) {
         barData.addValues(Arrays.<T>asList(values));
     }

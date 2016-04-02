@@ -18,19 +18,16 @@ package br.com.digilabs.jqplot;
 
 import br.com.digilabs.jqplot.metadata.JqPlotPlugin;
 import br.com.digilabs.jqplot.support.JqPlotJsonMapHierarchicalWriter;
-
-import java.io.Writer;
-import java.util.ArrayList;
-import java.util.List;
-
-
-
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.converters.MarshallingContext;
 import com.thoughtworks.xstream.converters.enums.EnumConverter;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
 import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
 import com.thoughtworks.xstream.io.json.JsonWriter;
+
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Utility class to provide json from {@link Chart} object.
@@ -41,7 +38,7 @@ public class JqPlotUtils {
 
     /**
      * Retorna os recursos de javascript
-     * @param chart
+     * @param chart Chart
      * @return lista de com os javascripts dos gráficos
      */
     public static List<String> retriveJavaScriptResources(Chart<?> chart) {
@@ -66,9 +63,9 @@ public class JqPlotUtils {
 
     /**
      * Cria um comando jquery
-     * @param chart
-     * @param divId
-     * @return jquery criado
+     * @param chart Chart
+     * @param divId id of element div
+     * @return jquery javascript
      */
     public static String createJquery(Chart<?> chart, String divId) {
         return createJquery(chart, divId, null);
@@ -76,10 +73,10 @@ public class JqPlotUtils {
 
     /**
      * Cria um comando jquery
-     * @param chart
-     * @param divId
-     * @param javaScriptVar
-     * @return jquery criado
+     * @param chart Chart
+     * @param divId id of element div
+     * @param javaScriptVar javascript variable
+     * @return jquery javascript
      */
     public static String createJquery(Chart<?> chart, String divId, String javaScriptVar) {
         StringBuilder builder = new StringBuilder();
@@ -98,8 +95,8 @@ public class JqPlotUtils {
 
     /**
      * Retorna o um json a partir de uma configuração jqplot
-     * @param jqPlot
-     * @return 
+     * @param jqPlot ChartConfiguration
+     * @return String of JSON content
      */
     public static String jqPlotToJson(ChartConfiguration<?> jqPlot) {
 

@@ -16,9 +16,8 @@
  */
 package br.com.digilabs.jqplot.elements;
 
-import java.util.Collection;
 import java.util.ArrayList;
-import br.com.digilabs.jqplot.JqPlotResources;
+import java.util.Collection;
 
 /**
  * Line object.  
@@ -74,12 +73,17 @@ public class Line extends CanvasOverlay {
 	 * 
 	 * @param start
 	 *            the new start
+	 * @return Line
 	 */
 	public Line setStart(Collection<Integer> start) {
 		this.start = start;
 		return this;
 	}
 
+	/**
+	 * Get stop instance
+	 * @return Collection of integer type
+	 */
 	public Collection<Integer> stopInstance() {
 		if (this.stop == null) {
 			this.stop = new ArrayList<Integer>();
@@ -101,6 +105,7 @@ public class Line extends CanvasOverlay {
 	 * 
 	 * @param stop
 	 *            the new stop
+	 * @return Line
 	 */
 	public Line setStop(Collection<Integer> stop) {
 		this.stop = stop;

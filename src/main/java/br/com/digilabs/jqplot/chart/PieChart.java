@@ -46,7 +46,7 @@ public class PieChart<T extends Number> extends AbstractChart<PieData<T>,String>
 
     /**
      * Construtor
-     * @param title 
+     * @param title The title
      */
     public PieChart(String title) {
     	this.chartConfig = new ChartConfiguration<String>();
@@ -61,8 +61,8 @@ public class PieChart<T extends Number> extends AbstractChart<PieData<T>,String>
 
     /**
      * 
-     * @param label
-     * @param value 
+     * @param label label
+     * @param value value
      */
     public void addValue(String label, T value) {
         data.addValue(new LabeledItem<T>(label, value));
@@ -70,7 +70,7 @@ public class PieChart<T extends Number> extends AbstractChart<PieData<T>,String>
 
     /**
      * 
-     * @param value 
+     * @param value value
      */
     public void addValue(LabeledItem<T> value) {
         data.addValue(value);
@@ -78,7 +78,7 @@ public class PieChart<T extends Number> extends AbstractChart<PieData<T>,String>
 
     /**
      * 
-     * @param values 
+     * @param values values
      */
     public void addValues(LabeledItem<T>... values) {
         data.addValues(values);

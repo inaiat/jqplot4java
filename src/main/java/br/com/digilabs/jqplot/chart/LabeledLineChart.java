@@ -55,9 +55,9 @@ public class LabeledLineChart<T extends Number> extends AbstractChart<LabeledDat
 
     /**
      * Construtor
-     * @param title
-     * @param labelX
-     * @param labelY 
+     * @param title title
+     * @param labelX labelX
+     * @param labelY labelY
      */
     public LabeledLineChart(String title, String labelX, String labelY) {
         this(title, labelX, labelY, 15);
@@ -65,11 +65,11 @@ public class LabeledLineChart<T extends Number> extends AbstractChart<LabeledDat
 
     /**
      * Construtor
-     * 
-     * @param title
-     * @param labelX
-     * @param labelY
-     * @param tickAngle 
+     *
+	 * @param title title
+	 * @param labelX labelX
+	 * @param labelY labelY
+     * @param tickAngle tickAngle
      */
     public LabeledLineChart(String title, String labelX, String labelY,
             Integer tickAngle) {
@@ -92,24 +92,24 @@ public class LabeledLineChart<T extends Number> extends AbstractChart<LabeledDat
     }
 
     /**
-     * 
-     * @param value 
+     * Add a value
+     * @param value Add a {@link LabeledItem}
      */
     public void addValue(LabeledItem<T> value) {
         labeledData.addValue(value);
     }
 
-    /**
-     * 
-     * @param values 
-     */
+	/**
+	 * Add a value
+	 * @param values value Add a {@link LabeledItem}
+	 */
     public void addValues(LabeledItem<T>... values) {
         labeledData.addValues(values);
     }
 
     /**
-     * 
-     * @return 
+     *
+     * @return LabeledData
      */
     public LabeledData<T> getChartData() {
         return labeledData;

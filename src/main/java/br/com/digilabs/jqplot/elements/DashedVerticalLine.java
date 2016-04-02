@@ -16,9 +16,8 @@
  */
 package br.com.digilabs.jqplot.elements;
 
-import java.util.Collection;
 import java.util.ArrayList;
-import br.com.digilabs.jqplot.JqPlotResources;
+import java.util.Collection;
 
 /**
  * DashedVerticalLine object.  
@@ -71,6 +70,7 @@ public class DashedVerticalLine extends VerticalLine {
 	 * 
 	 * @param dashPattern
 	 *            the new dash pattern
+	 * @return DashedVerticalLine
 	 */
 	public DashedVerticalLine setDashPattern(Collection<Integer> dashPattern) {
 		this.dashPattern = dashPattern;

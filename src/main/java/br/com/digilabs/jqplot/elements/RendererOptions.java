@@ -160,7 +160,8 @@ public class RendererOptions implements Element {
      * Sets the padding.
      *
      * @param padding the new padding
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setPadding(Integer padding) {
         this.padding = padding;
         return this;
@@ -179,7 +180,8 @@ public class RendererOptions implements Element {
      * Sets the margin top.
      *
      * @param marginTop the new margin top
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setMarginTop(String marginTop) {
         this.marginTop = marginTop;
         return this;
@@ -198,7 +200,8 @@ public class RendererOptions implements Element {
      * Sets the number rows.
      *
      * @param numberRows the new number rows
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setNumberRows(Integer numberRows) {
         this.numberRows = numberRows;
         return this;
@@ -217,7 +220,8 @@ public class RendererOptions implements Element {
      * Sets the smooth.
      *
      * @param smooth the new smooth
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setSmooth(Boolean smooth) {
         this.smooth = smooth;
         return this;
@@ -236,7 +240,8 @@ public class RendererOptions implements Element {
      * Sets the fill.
      *
      * @param fill the new fill
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setFill(Boolean fill) {
         this.fill = fill;
         return this;
@@ -273,7 +278,8 @@ public class RendererOptions implements Element {
      * Sets the line width.
      *
      * @param lineWidth the new line width
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setLineWidth(Integer lineWidth) {
         this.lineWidth = lineWidth;
         return this;
@@ -295,7 +301,8 @@ public class RendererOptions implements Element {
      * Sets the interval colors.
      *
      * @param intervalColors the new interval colors
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setIntervalColors(List<String> intervalColors) {
         this.intervalColors = intervalColors;
         return this;
@@ -318,7 +325,8 @@ public class RendererOptions implements Element {
      * Sets the intervals.
      *
      * @param intervals the new intervals
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setIntervals(List<Integer> intervals) {
         this.intervals = intervals;
         return this;
@@ -337,7 +345,8 @@ public class RendererOptions implements Element {
      * Sets the interval outer radius.
      *
      * @param intervalOuterRadius the new interval outer radius
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setIntervalOuterRadius(Integer intervalOuterRadius) {
         this.intervalOuterRadius = intervalOuterRadius;
         return this;
@@ -356,7 +365,8 @@ public class RendererOptions implements Element {
      * Sets the label.
      *
      * @param label the new label
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setLabel(String label) {
         this.label = label;
         return this;
@@ -375,7 +385,8 @@ public class RendererOptions implements Element {
      * Sets the label height adjust.
      *
      * @param labelHeightAdjust the new label height adjust
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setLabelHeightAdjust(Integer labelHeightAdjust) {
         this.labelHeightAdjust = labelHeightAdjust;
         return this;
@@ -394,7 +405,8 @@ public class RendererOptions implements Element {
      * Sets the label position.
      *
      * @param labelPosition the new label position
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setLabelPosition(String labelPosition) {
         this.labelPosition = labelPosition;
         return this;
@@ -413,7 +425,8 @@ public class RendererOptions implements Element {
      * Sets the max.
      *
      * @param max the new max
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setMax(Integer max) {
         this.max = max;
         return this;
@@ -432,7 +445,8 @@ public class RendererOptions implements Element {
      * Sets the min.
      *
      * @param min the new min
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setMin(Integer min) {
         this.min = min;
         return this;
@@ -451,7 +465,8 @@ public class RendererOptions implements Element {
      * Sets the show tick labels.
      *
      * @param showTickLabels the new show tick labels
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setShowTickLabels(Boolean showTickLabels) {
         this.showTickLabels = showTickLabels;
         return this;
@@ -470,7 +485,8 @@ public class RendererOptions implements Element {
      * Sets the show lables.
      *
      * @param showLables the new show lables
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setShowLables(Boolean showLables) {
         this.showLables = showLables;
         return this;
@@ -489,7 +505,8 @@ public class RendererOptions implements Element {
      * Sets the bubble alpha.
      *
      * @param bubbleAlpha the new bubble alpha
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setBubbleAlpha(Float bubbleAlpha) {
         this.bubbleAlpha = bubbleAlpha;
         return this;
@@ -508,7 +525,8 @@ public class RendererOptions implements Element {
      * Sets the highlight alpha.
      *
      * @param highlightAlpha the new highlight alpha
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setHighlightAlpha(Float highlightAlpha) {
         this.highlightAlpha = highlightAlpha;
         return this;
@@ -527,7 +545,8 @@ public class RendererOptions implements Element {
      * Sets the bubble gradients.
      *
      * @param bubbleGradients the new bubble gradients
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setBubbleGradients(Boolean bubbleGradients) {
         this.bubbleGradients = bubbleGradients;
         return this;
@@ -546,7 +565,8 @@ public class RendererOptions implements Element {
      * Sets the bar margin.
      *
      * @param barMargin the new bar margin
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setBarMargin(Integer barMargin) {
         this.barMargin = barMargin;
         return this;
@@ -565,7 +585,8 @@ public class RendererOptions implements Element {
      * Sets the bar width.
      *
      * @param barWidth the new bar width
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setBarWidth(Integer barWidth) {
         this.barWidth = barWidth;
         return this;
@@ -584,7 +605,8 @@ public class RendererOptions implements Element {
      * Sets the highlight mouse down.
      *
      * @param highlightMouseDown the new highlight mouse down
-     */
+	 * @return RendererOptions
+	 */
     public RendererOptions setHighlightMouseDown(Boolean highlightMouseDown) {
         this.highlightMouseDown = highlightMouseDown;
         return this;
@@ -594,7 +616,8 @@ public class RendererOptions implements Element {
      * Gets the bar direction.
      *
      * @return barDirection
-     */
+	 * @return RendererOptions
+	 */
     public String getBarDirection() {
         return barDirection;
     }
@@ -603,6 +626,7 @@ public class RendererOptions implements Element {
      * Sets the bar direction.
      *
      * @param barDirection the new bar direction
+	 * @return RendererOptions
      */
     public RendererOptions setBarDirection(String barDirection) {
         this.barDirection = barDirection;
@@ -622,6 +646,7 @@ public class RendererOptions implements Element {
      * Sets the fill zero.
      *
      * @param fillZero the new fill zero
+	 * @return RendererOptions
      */
     public RendererOptions setFillZero(Boolean fillZero) {
         this.fillZero = fillZero;
@@ -644,6 +669,7 @@ public class RendererOptions implements Element {
      * Sets the show data labels.
      *
      * @param showDataLabels the showDataLabels to set
+	 * @return RendererOptions
      */
     public RendererOptions setShowDataLabels(Boolean showDataLabels) {
         this.showDataLabels = showDataLabels;
@@ -663,6 +689,7 @@ public class RendererOptions implements Element {
      * Sets the data labels.
      *
      * @param dataLabels the dataLabels to set
+	 * @return RendererOptions
      */
     public RendererOptions setDataLabels(String dataLabels) {
         this.dataLabels = dataLabels;
@@ -682,6 +709,7 @@ public class RendererOptions implements Element {
      * Sets the slice margin.
      *
      * @param sliceMargin the sliceMargin to set
+	 * @return RendererOptions
      */
     public RendererOptions setSliceMargin(Integer sliceMargin) {
         this.sliceMargin = sliceMargin;
@@ -701,6 +729,7 @@ public class RendererOptions implements Element {
      * Sets the start angle.
      *
      * @param startAngle the startAngle to set
+	 * @return RendererOptions
      */
     public RendererOptions setStartAngle(Integer startAngle) {
         this.startAngle = startAngle;
@@ -721,6 +750,7 @@ public class RendererOptions implements Element {
      *
      * @param animation object for setting
      * different animation speed
+	 * @return RendererOptions
      */
     public RendererOptions setAnimation(Animation animation) {
         this.animation = animation;
@@ -740,6 +770,7 @@ public class RendererOptions implements Element {
 	 * Sets the vary bar color.
 	 *
 	 * @param varyBarColor the new vary bar color
+	 * @return RendererOptions
 	 */
 	public RendererOptions setVaryBarColor(Boolean varyBarColor) {
 		this.varyBarColor = varyBarColor;
@@ -759,6 +790,7 @@ public class RendererOptions implements Element {
 	 * Sets the force tick at zero.
 	 *
 	 * @param forceTickAt0 the new force tick at zero
+	 * @return RendererOptions
 	 */
 	public RendererOptions setForceTickAt0(Boolean forceTickAt0) {
 		this.forceTickAt0 = forceTickAt0;
@@ -777,7 +809,8 @@ public class RendererOptions implements Element {
 	/**
 	 * Sets the force tick at 100.
 	 *
-	 * @param forceTickAt0 the new force tick at 100
+	 * @param forceTickAt100 the new force tick at 100
+	 * @return RendererOptions
 	 */
 	public RendererOptions setForceTickAt100(Boolean forceTickAt100) {
 		this.forceTickAt100 = forceTickAt100;
