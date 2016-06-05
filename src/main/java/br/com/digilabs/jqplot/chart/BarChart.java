@@ -79,7 +79,8 @@ public class BarChart<T extends Number> extends AbstractChart<BarData<T>, Long> 
     	chartConfig
         	.axesInstance()
         	.xAxisInstance()
-        	.setRenderer(JqPlotResources.CategoryAxisRenderer);
+        	.setRenderer(JqPlotResources.CategoryAxisRenderer)
+			.rendererOptionsInstance();
     }
     
     /**
