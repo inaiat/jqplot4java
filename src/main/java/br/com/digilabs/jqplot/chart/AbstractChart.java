@@ -413,7 +413,7 @@ public abstract class AbstractChart<T extends ChartData<?>, S extends Serializab
 	 * @return AbstractChart
 	 */
 	public AbstractChart<T, S> setFillZero(Boolean fillZero) {
-		getChartConfiguration().seriesDefaultsInstance().getRendererOptions()
+		getChartConfiguration().seriesDefaultsInstance().rendererOptionsInstance()
 				.setFillZero(fillZero);
 		return this;
 	}
