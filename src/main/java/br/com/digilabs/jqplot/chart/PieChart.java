@@ -56,7 +56,7 @@ public class PieChart<T extends Number> extends AbstractChart<PieData<T>,String>
     		.seriesDefaultsInstance()
     		.setRenderer(JqPlotResources.PieRenderer)
     		.rendererOptionsInstance()
-    		.setShowLables(true);
+            .setShowDataLabels(true);
     }
 
     /**
