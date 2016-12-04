@@ -273,6 +273,7 @@ public class Title implements Element {
      * Sets the text.
      *
      * @param text the text to set
+	 * @return Title
      */
     public Title setText(String text) {
         this.text = text;
