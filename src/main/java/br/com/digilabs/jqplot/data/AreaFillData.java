@@ -1,12 +1,12 @@
 /*
  *  Copyright 2011 Inaiat H. Moraes.
- * 
+ *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
- * 
+ *
  *       http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,14 +20,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.json.JSONArray;
+import com.github.openjson.JSONArray;
 
 /**
  * Data Helper to build Area Charts.
- * 
+ *
  * @param <T>
  *            Type of number. Ex.: Double, Integer, Float, etc.
- * 
+ *
  * @author inaiat
  */
 public class AreaFillData<T extends Number> extends
@@ -47,24 +47,25 @@ public class AreaFillData<T extends Number> extends
 
     /**
      * Instantiates a new area fill data.
-     * 
+     *
      * @param values
      *            the values
      */
     public AreaFillData(List<T>... values) {
-	for (int i = 0; i < values.length; i++) {
-	    List<T> list = values[i];
-	    addValue(list);
-	}
+        for (int i = 0; i < values.length; i++) {
+            List<T> list = values[i];
+            addValue(list);
+        }
     }
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see br.com.digilabs.jqplot.data.ChartData#getData()
      */
+    @Override
     public Collection<List<T>> getData() {
-	return data;
+        return data;
     }
 
     /**
@@ -72,6 +73,7 @@ public class AreaFillData<T extends Number> extends
      *
      * @return the data
      */
+    @Override
     public int size()
     {
         return data.size();
@@ -79,11 +81,12 @@ public class AreaFillData<T extends Number> extends
 
     /*
      * (non-Javadoc)
-     * 
+     *
      * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
      */
+    @Override
     public String toJsonString() {
-	JSONArray jsonArray = new JSONArray(data);
-	return jsonArray.toString();
+        JSONArray jsonArray = new JSONArray(data);
+        return jsonArray.toString();
     }
 }

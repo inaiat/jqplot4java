@@ -1,12 +1,12 @@
 /*
  *  Copyright 2011 Inaiat H. Moraes.
- * 
+ *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
- * 
+ *
  *       http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.json.JSONArray;
+import com.github.openjson.JSONArray;
 
 import br.com.digilabs.jqplot.data.item.LineSeriesItem;
 
@@ -34,22 +34,24 @@ public class LineSeriesData<I extends Number,V extends Number> extends AbstractC
 
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -8490476851004459871L;
-	
+
 	/** The data. */
 	private List<Collection<LineSeriesItem<I, V>>> data = new ArrayList<Collection<LineSeriesItem<I, V>>>();
 
 	/* (non-Javadoc)
 	 * @see br.com.digilabs.jqplot.data.ChartData#getData()
 	 */
+	@Override
 	public Collection<Collection<LineSeriesItem<I, V>>> getData() {
 		return data;
-	}	
+	}
 
     /**
      * Gets the size of the data.
      *
      * @return the data
      */
+    @Override
     public int size()
     {
         int ret = 0;
@@ -64,8 +66,9 @@ public class LineSeriesData<I extends Number,V extends Number> extends AbstractC
 	/* (non-Javadoc)
 	 * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
 	 */
-	public String toJsonString() {
-    	JSONArray jsonArray = new JSONArray();        
+	@Override
+    public String toJsonString() {
+    	JSONArray jsonArray = new JSONArray();
         for (Collection<LineSeriesItem<I, V>> col : data) {
         	JSONArray serie = new JSONArray();
         	for (LineSeriesItem<I, V> lineSeriesItem : col) {
@@ -75,9 +78,9 @@ public class LineSeriesData<I extends Number,V extends Number> extends AbstractC
                 serie.put(itemArray);
 			}
         	jsonArray.put(serie);
-        	
+
         }
         return jsonArray.toString();
 	}
-	
+
 }

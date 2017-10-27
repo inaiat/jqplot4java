@@ -57,11 +57,11 @@
 			<artifactId>junit</artifactId>
 			<version>4.10</version>
 			<scope>test</scope>
-		</dependency>		
+		</dependency>
 		<dependency>
-			<groupId>com.tdunning</groupId>
-			<artifactId>json</artifactId>
-			<version>1.6</version>
+			<groupId>com.github.openjson</groupId>
+			<artifactId>openjson</artifactId>
+			<version>1.0.8</version>
 		</dependency>
 	</dependencies>
 

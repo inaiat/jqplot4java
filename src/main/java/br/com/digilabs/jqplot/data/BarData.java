@@ -1,12 +1,12 @@
 /*
  *  Copyright 2011 Inaiat H. Moraes.
- * 
+ *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
- * 
+ *
  *       http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -19,7 +19,7 @@ package br.com.digilabs.jqplot.data;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.json.JSONArray;
+import com.github.openjson.JSONArray;
 
 
 /**
@@ -29,7 +29,7 @@ import org.json.JSONArray;
  * @author inaiat
  */
 public class BarData<T extends Number> extends AbstractCollectionData<Collection<T>> {
-    
+
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = -2087356275172825289L;
 
@@ -41,7 +41,7 @@ public class BarData<T extends Number> extends AbstractCollectionData<Collection
      */
     public BarData() {
     }
-    
+
     /**
      * Instantiates a new bar data.
      *
@@ -49,11 +49,12 @@ public class BarData<T extends Number> extends AbstractCollectionData<Collection
      */
     public BarData(Collection<T>... values) {
         addValues(values);
-    }    
+    }
 
     /* (non-Javadoc)
      * @see br.com.digilabs.jqplot.data.ChartData#getData()
      */
+    @Override
     public Collection<Collection<T>> getData() {
         return data;
     }
@@ -63,6 +64,7 @@ public class BarData<T extends Number> extends AbstractCollectionData<Collection
      *
      * @return the data
      */
+    @Override
     public int size()
     {
         int ret = 0;
@@ -78,10 +80,11 @@ public class BarData<T extends Number> extends AbstractCollectionData<Collection
     /* (non-Javadoc)
      * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
      */
+    @Override
     public String toJsonString() {
         JSONArray jsonArray = new JSONArray(data);
         return jsonArray.toString();
-    }    
+    }
 
-    
+
 }

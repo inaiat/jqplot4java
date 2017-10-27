@@ -1,12 +1,12 @@
 /*
  *  Copyright 2011 Inaiat H. Moraes.
- * 
+ *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
- * 
+ *
  *       http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,13 +16,13 @@
  */
 package br.com.digilabs.jqplot.data;
 
-import br.com.digilabs.jqplot.data.item.LabeledItem;
-
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import org.json.JSONArray;
+import com.github.openjson.JSONArray;
+
+import br.com.digilabs.jqplot.data.item.LabeledItem;
 
 /**
  * Data Helper to build Labeled Charts.
@@ -56,8 +56,9 @@ public class LabeledData<T extends Number> extends AbstractCollectionData<Labele
     /* (non-Javadoc)
      * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
      */
+    @Override
     public String toJsonString() {
-    	JSONArray jsonArray = new JSONArray();        
+        JSONArray jsonArray = new JSONArray();
         for (LabeledItem<T> labeledItem : data) {
             JSONArray itemArray = new JSONArray();
             itemArray.put(labeledItem.getLabel());
@@ -72,6 +73,7 @@ public class LabeledData<T extends Number> extends AbstractCollectionData<Labele
     /* (non-Javadoc)
      * @see br.com.digilabs.jqplot.data.ChartData#getData()
      */
+    @Override
     public Collection<LabeledItem<T>> getData() {
         return data;
     }
@@ -81,6 +83,7 @@ public class LabeledData<T extends Number> extends AbstractCollectionData<Labele
      *
      * @return the data
      */
+    @Override
     public int size()
     {
         return data.size();
