@@ -1,12 +1,12 @@
 /*
  *  Copyright 2011 Inaiat H. Moraes.
- * 
+ *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
  *  You may obtain a copy of the License at
- * 
+ *
  *       http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  *  Unless required by applicable law or agreed to in writing, software
  *  distributed under the License is distributed on an "AS IS" BASIS,
  *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,11 +16,12 @@
  */
 package br.com.digilabs.jqplot.data;
 
-import br.com.digilabs.jqplot.data.item.LabeledItem;
-
 import java.util.ArrayList;
 import java.util.Collection;
-import org.json.JSONArray;
+
+import com.github.openjson.JSONArray;
+
+import br.com.digilabs.jqplot.data.item.LabeledItem;
 
 /**
  * Data Helper to build Pie Charts.
@@ -32,13 +33,14 @@ public class PieData<T extends Number> extends AbstractCollectionData<LabeledIte
 
     /** The Constant serialVersionUID. */
     private static final long serialVersionUID = 5789136755213249502L;
-	
+
     /** The data. */
     private Collection<LabeledItem<T>> data = new ArrayList<LabeledItem<T>>();
 
     /* (non-Javadoc)
      * @see br.com.digilabs.jqplot.data.ChartData#toJsonString()
      */
+    @Override
     public String toJsonString() {
         JSONArray outerArray = new JSONArray();
         JSONArray jsonArray = new JSONArray();
@@ -55,6 +57,7 @@ public class PieData<T extends Number> extends AbstractCollectionData<LabeledIte
     /* (non-Javadoc)
      * @see br.com.digilabs.jqplot.data.ChartData#getData()
      */
+    @Override
     public Collection<LabeledItem<T>> getData() {
         return data;
     }
@@ -64,6 +67,7 @@ public class PieData<T extends Number> extends AbstractCollectionData<LabeledIte
      *
      * @return the data
      */
+    @Override
     public int size()
     {
         return data.size();
